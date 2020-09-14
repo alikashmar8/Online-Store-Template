@@ -1,24 +1,25 @@
 @extends('app')
 
 @section('content')
-    <div class="container bg-light">
+    <div class="container bg-dark">
         <div class="p-3"></div>
         <div class="row">
 
             <div class="col-md-10">
-                <H2>Categories</H2>
+                <H2 class="text-white">Categories</H2>
             </div>
             <a class="btn btn-outline-success" href={{ url('categories/create') }} >Add</a>
         </div>
-        </br>
+        <br>
         @if(count($categories)>0)
             @foreach($categories as $category)
                 <div class="card bg-secondary">
 
-                    <div class="card-header text-center">
+                    <div class="card-header text-center text-white">
                         {{$category->title}}
                     </div>
                     <a href="/categories/{{$category->id}}/edit" class="btn btn-outline-primary ">Edit</a>
+                    <div class="row m-1"></div>
                     {{ Form::open(['action' => ['App\Http\Controllers\CategoriesController@destroy',$category->id],'method'=>'DELETE','class'=>'btn btn-outline-danger']) }}
                     {{ Form::submit('Delete',['class'=>'btn btn-outline-danger border-0'])}}
                     {{Form::close()}}
