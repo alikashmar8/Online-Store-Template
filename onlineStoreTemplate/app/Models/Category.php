@@ -16,4 +16,8 @@ class Category extends Model
     public $primaryKey = 'id';
 
     use HasFactory;
+
+    public function products(){
+        return $this->hasMany('App\Models\Product');
+    }
 }

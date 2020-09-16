@@ -4,7 +4,6 @@
     <div class="container bg-dark">
         <div class="p-3"></div>
         <div class="row">
-
             <div class="col-md-10">
                 <H2 class="text-white">Categories</H2>
             </div>
@@ -18,10 +17,10 @@
                     <div class="card-header text-center text-white">
                         {{$category->title}}
                     </div>
-                    <a href="/categories/{{$category->id}}/edit" class="btn btn-outline-primary ">Edit</a>
+                    <a href="/categories/{{$category->id}}/edit" class="btn btn-outline-primary">Edit</a>
                     <div class="row m-1"></div>
                     {{ Form::open(['action' => ['App\Http\Controllers\CategoriesController@destroy',$category->id],'method'=>'DELETE','class'=>'btn btn-outline-danger']) }}
-                    {{ Form::submit('Delete',['class'=>'btn btn-outline-danger border-0'])}}
+                    {{ Form::submit('Delete',['class'=>'bg-transparent btn-outline-danger border-0'])}}
                     {{Form::close()}}
 
                 </div>
@@ -30,7 +29,7 @@
 
         @else
             <div>
-                <H2>No Categories to show !!</H2>
+                <H2 class="text-white">No Categories to show !!</H2>
                 <a href={{ url('categories/create') }}>Create Some</a>
             </div>
         @endif

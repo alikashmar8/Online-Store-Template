@@ -11,6 +11,9 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
+                        <input id="role" type="hidden" name="role" value=0>
+
+
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
