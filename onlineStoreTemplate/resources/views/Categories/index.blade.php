@@ -17,11 +17,17 @@
                     <div class="card-header text-center text-white">
                         {{$category->title}}
                     </div>
-                    <a href="/categories/{{$category->id}}/edit" class="btn btn-outline-primary">Edit</a>
-                    <div class="row m-1"></div>
-                    {{ Form::open(['action' => ['App\Http\Controllers\CategoriesController@destroy',$category->id],'method'=>'DELETE','class'=>'btn btn-outline-danger']) }}
-                    {{ Form::submit('Delete',['class'=>'bg-transparent btn-outline-danger border-0'])}}
-                    {{Form::close()}}
+                    @if(!\Illuminate\Support\Facades\Auth::guest())
+{{--                        if logged in--}}
+                        @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
+{{--                            if the user is admin --}}
+                            <a href="/categories/{{$category->id}}/edit" class="btn btn-outline-primary">Edit</a>
+                            <div class="row m-1"></div>
+                            {{ Form::open(['action' => ['App\Http\Controllers\CategoriesController@destroy',$category->id],'method'=>'DELETE','class'=>'btn btn-outline-danger']) }}
+                            {{ Form::submit('Delete',['class'=>'bg-transparent btn-outline-danger border-0'])}}
+                            {{Form::close()}}
+                        @endif
+                    @endif
 
                 </div>
                 <div class="m-4"></div>

@@ -20,7 +20,10 @@ Route::get('/', function () {
 });
 
 Route::resource('categories','\App\Http\Controllers\CategoriesController');
-
+Route::resource('apartments','\App\Http\Controllers\ApartmentsController');
+Route::get('/phpinfo', function() {
+    phpinfo();
+});
 
 Auth::routes();
 
