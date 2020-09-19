@@ -14,6 +14,10 @@
                 {{ Form::text('description','',['class' => 'form-control','placeholder'=>'Description']) }}
             </div>
             <div class="form-group">
+                {{ Form::label('location','Location:') }}
+                {{ Form::text('location','',['class' => 'form-control','placeholder'=>'location']) }}
+            </div>
+            <div class="form-group">
                 {{ Form::label('price','Price:') }}
                 {{ Form::number('price','',['class' => 'form-control','placeholder'=>'Price']) }}
             </div>

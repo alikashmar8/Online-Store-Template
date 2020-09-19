@@ -21,14 +21,16 @@
                 <div class="col-md-1"></div>
 
                 <div class="col-md-5 bg-white p-2">
-                    <h2>Recently Added Apartments = (count)</h2>
-                    <a href="#">Check Now</a>
+                    <h2>Apartments waiting for confirmation = {{ count($notAcceptedApartments) }}</h2>
+                    <a href="/acceptApartments">Check Now</a>
                 </div>
 
                 <div class="col-md-1"></div>
 
                 <div class="col-md-5 bg-white p-2">
-                    <h2>New User Last 24 Hrs: (count)</h2>
+                    <h2>New User Last 24 Hrs: {{ count($recentUsers) }}</h2>
+                    <a href="/users">See Users</a>
+
                 </div>
 
             </div>

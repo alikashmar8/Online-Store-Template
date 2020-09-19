@@ -15,15 +15,24 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+//Admin Routes
+Route::put('/accept/{id}','\App\Http\Controllers\ApartmentsController@accept')->name('apartment.accept');;
+Route::get('/','\App\Http\Controllers\ApartmentsController@index');
+Route::get('/acceptApartments','\App\Http\Controllers\ApartmentsController@viewNotAcceptedApartments');
+Route::get('/acceptedApartments','\App\Http\Controllers\ApartmentsController@allAcceptedApartments');
+Route::get('/users','\App\Http\Controllers\UsersController@index');
+
+Route::get('/apartments/buy','\App\Http\Controllers\ApartmentsController@buyIndex');
+Route::get('/apartments/rent','\App\Http\Controllers\ApartmentsController@rentIndex');
 
 Route::resource('categories','\App\Http\Controllers\CategoriesController');
+
 Route::resource('apartments','\App\Http\Controllers\ApartmentsController');
-Route::get('/phpinfo', function() {
-    phpinfo();
-});
+
 
 Auth::routes();
 
