@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApartmentImagesTable extends Migration
+class AddBioAndImgToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateApartmentImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('apartment_images', function (Blueprint $table) {
-            $table->bigInteger('apartmentId');
-            $table->string('url');
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('profileImg')->nullable();
+            $table->string('bio')->nullable();
         });
     }
 
@@ -26,6 +26,9 @@ class CreateApartmentImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apartment_images');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn("profileImg");
+            $table->dropColumn("bio");
+        });
     }
 }

@@ -2,11 +2,10 @@
 
 @section('content')
     <div class="container bg-white">
-        @if(count($notAcceptedApartments)>0)
+        @if(count($notAcceptedProperties)>0)
             <table class="table" id="myDataTable">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">location</th>
                     <th scope="col">Price</th>
                     <th scope="col">Agent</th>
                     <th scope="col">Details</th>
@@ -15,20 +14,17 @@
                 </tr>
                 </thead>
                 <tbody class="bg-white">
-                @foreach($notAcceptedApartments as $apartment)
+                @foreach($notAcceptedProperties as $property)
                     <tr>
-                        <td>{{ $apartment->location }}</td>
-                        <td>{{ $apartment->price }}</td>
-                        <td>{{ $apartment->userId }}</td>
-                        <td><a class="btn btn-info no-sort" href="/apartments/{{$apartment->id}}">Show</a></td>
-                        <td><a class="btn btn-danger no-sort"  onclick="event.preventDefault(); document.getElementById('delete-form').submit();">Delete</a></td>
-                        <td><a class="btn btn-success no-sort"
-                               onclick="event.preventDefault(); document.getElementById('accept-form').submit();">Accept</a>
-                        </td>
-                        {{--                    //form to trigger accept apartment--}}
-                        {{ Form::open(['action' => ['App\Http\Controllers\ApartmentsController@accept',$apartment->id],'method'=>'PUT' , 'class'=>'hidden','id'=>'accept-form']) }} {{ Form::close() }}
-                        {{--                        form to trigger delete apartment--}}
-                        {{ Form::open(['action' => ['App\Http\Controllers\ApartmentsController@destroy',$apartment->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form']) }} {{ Form::close() }}
+                        <td>{{ $property->price }}</td>
+                        <td>{{ $property->userId }}</td>
+                        <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
+                        <td><a class="btn btn-danger no-sort"  onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();">Delete</a></td>
+                        <td><a class="btn btn-success no-sort" onclick="event.preventDefault(); document.getElementById('accept-form-{{$property->id}}').submit();">Accept</a></td>
+                        {{--                    //form to trigger accept property--}}
+                        {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@accept',$property->id],'method'=>'PUT' , 'class'=>'hidden','id'=>'accept-form-'.$property->id]) }} {{ Form::close() }}
+                        {{--                        form to trigger delete property--}}
+                        {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$property->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$property->id]) }} {{ Form::close() }}
 
                     </tr>
                 @endforeach
@@ -36,7 +32,7 @@
             </table>
 
         @else
-            <h1>No apartments to show !</h1>
+            <h1>No properties to show !</h1>
         @endif
 
     </div>
@@ -57,9 +53,9 @@
     <script>
         $('#myDataTable').DataTable({
             "columnDefs": [
-                {"orderable": false, "targets": 4},
+                {"orderable": false, "targets": 2},
                 {"orderable": false, "targets": 3},
-                {"orderable": false, "targets": 5}
+                {"orderable": false, "targets": 4}
             ]
         });
     </script>

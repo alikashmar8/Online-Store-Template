@@ -41,6 +41,20 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="phoneNumber" class="col-md-4 col-form-label text-md-right">Phone Number:</label>
+
+                            <div class="col-md-6">
+                                <select id="phoneNumberCode" name="phoneNumberCode"  class="form-control" ><option value="+61">+61</option> </select>
+                                <input id="phoneNumber" type="number" class="form-control @error('Phone Number') is-invalid @enderror" name="phoneNumber" value="{{ old('phoneNumber') }}" required autocomplete="phoneNumber" autofocus>
+
+                                @error('phoneNumber')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

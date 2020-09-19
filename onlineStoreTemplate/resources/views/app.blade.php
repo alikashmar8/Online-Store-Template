@@ -51,31 +51,31 @@
                     @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
                         {{--                    admin menu option--}}
                         <li class="nav-item">
-                            <a class="nav-link" href="/acceptedApartments">All Ads</a>
+                            <a class="nav-link" href="/acceptedProperties">All Ads</a>
                         </li>
                     @else
                         {{--                        user menu options--}}
                         <li class="nav-item">
-                            <a class="nav-link" href="/apartments/buy">Buy</a>
+                            <a class="nav-link" href="/properties/buy">Buy</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/apartments/rent">Rent</a>
+                            <a class="nav-link" href="/properties/rent">Rent</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/apartments/create">Sell</a>
+                            <a class="nav-link" href="/properties/create">Sell</a>
                         </li>
                     @endif
                 @endif
                 @if(\Illuminate\Support\Facades\Auth::guest())
                     {{--                    guest only menu options--}}
                     <li class="nav-item">
-                        <a class="nav-link" href="/apartments/buy">Buy</a>
+                        <a class="nav-link" href="/properties/buy">Buy</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/apartments/rent">Rent</a>
+                        <a class="nav-link" href="/properties/rent">Rent</a>
                     </li>
 
                     <li class="nav-item">

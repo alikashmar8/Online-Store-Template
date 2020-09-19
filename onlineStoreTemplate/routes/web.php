@@ -20,22 +20,23 @@ use Illuminate\Http\Request;
 //});
 
 //All users route
-Route::get('/','\App\Http\Controllers\ApartmentsController@index')->name('index');
+Route::get('/','\App\Http\Controllers\PropertiesController@index')->name('index');
 
 
 
 //Admin Routes
-Route::put('/accept/{id}','\App\Http\Controllers\ApartmentsController@accept')->name('apartment.accept')->middleware('auth');
-Route::get('/acceptApartments','\App\Http\Controllers\ApartmentsController@viewNotAcceptedApartments')->middleware('auth');;
-Route::get('/acceptedApartments','\App\Http\Controllers\ApartmentsController@allAcceptedApartments')->middleware('auth');;
+Route::put('/accept/{id}','\App\Http\Controllers\PropertiesController@accept')->name('property.accept')->middleware('auth');
+Route::get('/acceptProperties','\App\Http\Controllers\PropertiesController@viewNotAcceptedProperties')->middleware('auth');
+Route::get('/acceptedProperties','\App\Http\Controllers\PropertiesController@allAcceptedProperties')->middleware('auth');
 Route::get('/users','\App\Http\Controllers\UsersController@index')->middleware('auth');
 
-Route::get('/apartments/buy','\App\Http\Controllers\ApartmentsController@buyIndex');
-Route::get('/apartments/rent','\App\Http\Controllers\ApartmentsController@rentIndex');
+Route::get('/properties/buy','\App\Http\Controllers\PropertiesController@buyIndex');
+Route::get('/properties/rent','\App\Http\Controllers\PropertiesController@rentIndex');
 
-Route::resource('categories','\App\Http\Controllers\CategoriesController');
+//Route::resource('categories','\App\Http\Controllers\CategoriesController');
 
-Route::resource('apartments','\App\Http\Controllers\ApartmentsController')->middleware('auth');;
+//Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@show');
+Route::resource('properties', '\App\Http\Controllers\PropertiesController')->middleware('auth');
 
 
 Auth::routes();

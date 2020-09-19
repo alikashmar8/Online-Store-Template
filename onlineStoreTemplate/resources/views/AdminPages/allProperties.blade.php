@@ -3,11 +3,10 @@
 @section('content')
 
     <div class="container bg-white">
-        @if(count($apartments)>0)
+        @if(count($properties)>0)
             <table class="table" id="myDataTable">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">location</th>
                     <th scope="col">Price</th>
                     <th scope="col">Agent</th>
                     <th scope="col">Details</th>
@@ -16,12 +15,11 @@
                 </tr>
                 </thead>
                 <tbody class="bg-white">
-                @foreach($apartments as $apartment)
+                @foreach($properties as $property)
                     <tr>
-                        <td>{{ $apartment->location }}</td>
-                        <td>{{ $apartment->price }}</td>
+                        <td>{{ $property->price }}</td>
                         <td>{{ $apartment->userId }}</td>
-                        <td><a class="btn btn-info no-sort" href="/apartments/{{$apartment->id}}">Show</a></td>
+                        <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
                         <td><a class="btn btn-danger no-sort" href="#">Delete</a></td>
                         <td><a class="btn btn-success no-sort" href="#">Accept</a></td>
                     </tr>
@@ -30,7 +28,7 @@
             </table>
 
         @else
-            <h1>No accepted apartments to show !</h1>
+            <h1>No accepted properties to show !</h1>
         @endif
 
     </div>
@@ -45,9 +43,9 @@
     <script>
         $('#myDataTable').DataTable({
             "columnDefs": [
-                { "orderable": false, "targets": 4 },
+                { "orderable": false, "targets": 2 },
                 { "orderable": false, "targets": 3 },
-                { "orderable": false, "targets": 5 }
+                { "orderable": false, "targets": 4 }
             ]
         });
     </script>

@@ -21,8 +21,8 @@
                 <div class="col-md-1"></div>
 
                 <div class="col-md-5 bg-white p-2">
-                    <h2>Apartments waiting for confirmation = {{ count($notAcceptedApartments) }}</h2>
-                    <a href="/acceptApartments">Check Now</a>
+                    <h2>Apartments waiting for confirmation = {{ count($notAcceptedProperties) }}</h2>
+                    <a href="/acceptProperties">Check Now</a>
                 </div>
 
                 <div class="col-md-1"></div>

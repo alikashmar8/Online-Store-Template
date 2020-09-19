@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DeleteProductsTable extends Migration
+class CreatePropertyImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class DeleteProductsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('products');
+        Schema::create('property_images', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('propertyId');
+            $table->string('url');
+        });
     }
 
     /**
@@ -23,5 +27,6 @@ class DeleteProductsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('property_images');
     }
 }

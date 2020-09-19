@@ -5,9 +5,9 @@
         <div class="bg-dark container text-white">
             <div id="carouselEx" class="carousel slide carousel-fade col-md-6" data-ride="carousel">
                 <div class="carousel-inner">
-                    @foreach($apartment->images as $image)
+                    @foreach($property->images as $image)
                         <div class="carousel-item @if($loop->first) active @endif">
-                            <img class="d-block w-100" src="{{url('/storage/cover_images/' . $image->url)}}" alt="No Image">
+                            <img class="d-block w-100" src="{{url('/storage/properties_images/' . $image->url)}}" alt="No Image">
                         </div>
                     @endforeach
 
@@ -27,17 +27,15 @@
                 <div class="col-md-6">
                     <h3>Details:</h3>
 
-                    <p>{{ $apartment->title }}</p>
-            <p>Description: {{ $apartment->description }}</p>
-            <p>Location: {{ $apartment->location }}</p>
-            <p>Price: {{ $apartment->price }} $</p>
-            <p>Placed On: {{ $apartment->created_at }}</p>
+            <p>Description: {{ $property->description }}</p>
+            <p>Price: {{ $property->price }} $</p>
+            <p>Placed On: {{ $property->created_at }}</p>
                 </div>
                 <div class="col-md-6">
                     <h3>Contact Info:</h3>
-                    <p>Agent Name: {{ $apartment->agent->name }}</p>
+                    <p>Agent Name: {{ $property->agent->name }}</p>
                     <p>Phone Number: 123456789</p>
-                    <p>Email: {{ $apartment->agent->email }}</p>
+                    <p>Email: {{ $property->agent->email }}</p>
 
                 </div>
             </div>
