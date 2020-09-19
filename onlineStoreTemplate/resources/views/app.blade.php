@@ -23,14 +23,13 @@
     <!-- Custom styles for this template -->
     <link href={{ asset("bootstrap/css/sticky-footer-navbar.css") }} rel="stylesheet"/>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css"/>
-
-
 
 
 </head>
@@ -55,7 +54,7 @@
                             <a class="nav-link" href="/acceptedApartments">All Ads</a>
                         </li>
                     @else
-{{--                        user menu options--}}
+                        {{--                        user menu options--}}
                         <li class="nav-item">
                             <a class="nav-link" href="/apartments/buy">Buy</a>
                         </li>
@@ -70,7 +69,7 @@
                     @endif
                 @endif
                 @if(\Illuminate\Support\Facades\Auth::guest())
-{{--                    guest only menu options--}}
+                    {{--                    guest only menu options--}}
                     <li class="nav-item">
                         <a class="nav-link" href="/apartments/buy">Buy</a>
                     </li>
@@ -98,17 +97,23 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a class="nav-link">
+                            {{--                            id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre--}}
+                            {{--                           data-toggle="dropdown" --}}
                             {{ Auth::user()->name }}
                         </a>
+                    </li>
+                <li class="nav-tabs m-3"></li>
+                    <li>
+                        <a class="btn btn-outline-danger text-danger" role="button" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Logout</a>
 
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-white" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+{{--                            <a class="dropdown-item text-white" href="{{ route('logout') }}"--}}
+{{--                               onclick="event.preventDefault();--}}
+{{--                                                     document.getElementById('logout-form').submit();">--}}
+{{--                                {{ __('Logout') }}--}}
+{{--                            </a>--}}
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
