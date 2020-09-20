@@ -35,6 +35,7 @@
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/laravelcollective/html" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/league/commonmark" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/league/mime-type-detection" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/myclabs/deep-copy" />

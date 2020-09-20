@@ -8,9 +8,16 @@ use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $users = User::all();
 //            ->except(Auth::user()->id);
-        return view('AdminPages.users',compact('users'));
+        return view('AdminPages.users', compact('users'));
+    }
+
+    public function show($id)
+    {
+        $user = User::find($id);
+        return view('Users.show', compact('user'));
     }
 }

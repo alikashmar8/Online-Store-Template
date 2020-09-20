@@ -7,7 +7,8 @@
                 <div class="carousel-inner">
                     @foreach($property->images as $image)
                         <div class="carousel-item @if($loop->first) active @endif">
-                            <img class="d-block w-100" src="{{url('/storage/properties_images/' . $image->url)}}" alt="No Image">
+                            <img class="d-block w-100" src="{{url('/storage/properties_images/' . $image->url)}}"
+                                 alt="No Image">
                         </div>
                     @endforeach
 
@@ -27,9 +28,9 @@
                 <div class="col-md-6">
                     <h3>Details:</h3>
 
-            <p>Description: {{ $property->description }}</p>
-            <p>Price: {{ $property->price }} $</p>
-            <p>Placed On: {{ $property->created_at }}</p>
+                    <p>Description: {{ $property->description }}</p>
+                    <p>Price: {{ $property->price }} $</p>
+                    <p>Placed On: {{ $property->created_at }}</p>
                 </div>
                 <div class="col-md-6">
                     <h3>Contact Info:</h3>

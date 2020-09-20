@@ -6,8 +6,12 @@
             <table class="table" id="myDataTable">
                 <thead class="thead-dark">
                 <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Images</th>
                     <th scope="col">Price</th>
-                    <th scope="col">Agent</th>
+                    <th scope="col">Showing Price</th>
+                    <th scope="col">Agent Details</th>
+                    <th scope="col">Type</th>
                     <th scope="col">Details</th>
                     <th scope="col">Delete</th>
                     <th scope="col">Accept</th>
@@ -16,11 +20,57 @@
                 <tbody class="bg-white">
                 @foreach($notAcceptedProperties as $property)
                     <tr>
-                        <td>{{ $property->price }}</td>
-                        <td>{{ $property->userId }}</td>
+                        <td>{{ $property->id }}</td>
+                        <td style="height: 80px; width: 200px;">
+                            <div id="carouselExampleFade-{{$property->id}}"
+                                 class="carousel slide carousel-fade"
+                                 data-ride="carousel">
+                                <div class="carousel-inner">
+                                    @foreach($property->images as $image)
+
+                                        <div class="carousel-item @if($loop->first) active @endif">
+                                            <div style="width: 100%; height: 100%;">
+                                                <img style="height: 100px; width: 200px;"
+                                                     src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                     alt="No Image">
+                                            </div>
+                                        </div>
+                                    @endforeach
+
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleFade-{{$property->id}}"
+                                   role="button"
+                                   data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleFade-{{$property->id}}"
+                                   role="button"
+                                   data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </td>
+                        <td>{{ $property->price }} $</td>
+                        @if($property->showPrice == 0)
+                            <td class="text-danger">False</td>
+                        @else
+                            <td class="text-success">True</td>
+                        @endif
+                        <td><a href="/users/{{ $property->userId }}">{{ $property->agent->name }}</a></td>
+                        @if($property->type == 0)
+                            <td>Sell</td>
+                        @else
+                            <td>Rent</td>
+                        @endif
                         <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
-                        <td><a class="btn btn-danger no-sort"  onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();">Delete</a></td>
-                        <td><a class="btn btn-success no-sort" onclick="event.preventDefault(); document.getElementById('accept-form-{{$property->id}}').submit();">Accept</a></td>
+                        <td><a class="btn btn-danger no-sort"
+                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();">Delete</a>
+                        </td>
+                        <td><a class="btn btn-success no-sort"
+                               onclick="event.preventDefault(); document.getElementById('accept-form-{{$property->id}}').submit();">Accept</a>
+                        </td>
                         {{--                    //form to trigger accept property--}}
                         {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@accept',$property->id],'method'=>'PUT' , 'class'=>'hidden','id'=>'accept-form-'.$property->id]) }} {{ Form::close() }}
                         {{--                        form to trigger delete property--}}
@@ -53,9 +103,10 @@
     <script>
         $('#myDataTable').DataTable({
             "columnDefs": [
-                {"orderable": false, "targets": 2},
-                {"orderable": false, "targets": 3},
-                {"orderable": false, "targets": 4}
+                {"orderable": false, "targets": 1},
+                {"orderable": false, "targets": 6},
+                {"orderable": false, "targets": 7},
+                {"orderable": false, "targets": 8}
             ]
         });
     </script>
