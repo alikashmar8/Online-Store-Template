@@ -15,7 +15,7 @@
                             @foreach($property->images as $image)
 
                                 <div class="carousel-item @if($loop->first) active @endif">
-                                    <div style="width: 100%; height: 100%;"  >
+                                    <div style="width: 100%; height: 100%;">
                                         <img style="height: 300px; width: 500px;"
                                              src="{{url('/storage/properties_images/' . $image->url)}}"
                                              alt="Second slide">
@@ -41,7 +41,11 @@
                 <div class="p-1"></div>
             @endforeach
         @else
-            <h2>No properties for sale</h2>
+            @if (Request::is('properties/rent'))
+                <h2>No properties for rent</h2>
+            @else
+                <h2>No properties for sale</h2>
+            @endif
         @endif
     </div>
 @endsection

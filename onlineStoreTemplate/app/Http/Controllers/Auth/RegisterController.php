@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\PropertyImage;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -50,8 +51,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'name' => ['required', 'string', 'max:190'],
+            'bio' => ['nullable','string', 'max:190'],
+            'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
+            'phoneNumber' => ['required', 'string', 'max:25','unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
 
         ]);
@@ -66,11 +69,31 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $nb = $data['phoneNumberCode'].'!'.$data['phoneNumber'];
+        $fileNameToStore = 'noImage.jpg';
+        $bio = NULL;
+        if (isset($data['profileImg'])) {
+            $image = $data['profileImg'];
+            // Get filename with the extension
+            $filenameWithExt = $image->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $image->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+            // Upload Image
+            $path = $image->storeAs('public/user_profile_images', $fileNameToStore);
+        }
+        if(isset($data['bio'])){
+            $bio = $data['bio'];
+        }
         return User::create([
             'name' => $data['name'],
+            'bio' => $bio,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'phoneNumber' => $nb,
+            'profileImg' => $fileNameToStore,
 
         ]);
     }
