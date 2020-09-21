@@ -30,42 +30,6 @@ class PropertiesController extends Controller
         return view('welcome');
     }
 
-    public function buyIndex()
-    {
-        $properties = Property::where('categoryId', '=', 0)->where('accepted','=',1)->get();
-        foreach ($properties as $property) {
-            $property->images = PropertyImage::where('propertyId', $property->id)->get();
-        }
-        return view("Properties.index", compact('properties'));
-    }
-
-    public function rentIndex()
-    {
-        $properties = Property::where('categoryId', '=', 1)->where('accepted','=',1)->get();
-        foreach ($properties as $property) {
-            $property->images = PropertyImage::where('propertyId', $property->id)->get();
-        }
-        return view("Properties.index", compact('properties'));
-    }
-    public function viewNotAcceptedProperties(){
-        if (Auth::user()->role == 0) {
-            $notAcceptedProperties = Property::where('accepted', '=', 0)->get();
-            foreach ($notAcceptedProperties as $property) {
-                $property->images = PropertyImage::where('propertyId', $property->id)->get();
-                $property->agent = User::find($property->userId);
-            }
-            return view("AdminPages.acceptProperties", compact('notAcceptedProperties'));
-        }
-    }
-    public function allAcceptedProperties(){
-        $properties = Property::where('accepted', '=', 1)->get();
-        foreach ($properties as $property) {
-            $property->images = PropertyImage::where('propertyId', $property->id)->get();
-            $property->agent = User::find($property->userId);
-        }
-        return view('AdminPages.allProperties',compact('properties'));
-    }
-
 /* @param int $id */
     public function accept($id){
         $property =  Property::find($id);
@@ -138,8 +102,8 @@ class PropertiesController extends Controller
      */
     public function show($id)
     {
-        $property = Property::find($id);
-        $property->agent = User::find($property->userId);
+        $property = Property::findOrFail($id);
+        $property->agent = User::findOrFail($property->userId);
         $property->images = PropertyImage::where('propertyId', $property->id)->get();
 
         return view("Properties.show")->with('property', $property);
@@ -187,5 +151,54 @@ class PropertiesController extends Controller
         $imags->delete();
         $property->delete();
         return redirect('/acceptProperties');
+    }
+
+    public function buyIndex()
+    {
+        $properties = Property::where('categoryId', '=', 0)->where('accepted','=',1)->get();
+        foreach ($properties as $property) {
+            $property->images = PropertyImage::where('propertyId', $property->id)->get();
+        }
+        return view("Properties.index", compact('properties'));
+    }
+
+    public function rentIndex()
+    {
+        $properties = Property::where('categoryId', '=', 1)->where('accepted','=',1)->get();
+        foreach ($properties as $property) {
+            $property->images = PropertyImage::where('propertyId', $property->id)->get();
+        }
+        return view("Properties.index", compact('properties'));
+    }
+
+    public function viewNotAcceptedProperties(){
+        if (Auth::user()->role == 0) {
+            $notAcceptedProperties = Property::where('accepted', '=', 0)->get();
+            foreach ($notAcceptedProperties as $property) {
+                $property->images = PropertyImage::where('propertyId', $property->id)->get();
+                $property->agent = User::find($property->userId);
+            }
+            return view("AdminPages.acceptProperties", compact('notAcceptedProperties'));
+        }
+    }
+
+    public function allAcceptedProperties(){
+        $properties = Property::where('accepted', '=', 1)->get();
+        foreach ($properties as $property) {
+            $property->images = PropertyImage::where('propertyId', $property->id)->get();
+            $property->agent = User::find($property->userId);
+        }
+        return view('AdminPages.allProperties',compact('properties'));
+    }
+
+    public function myProperties(){
+
+        $properties = Property::where('userId','=',Auth::id())->get();
+        foreach ($properties as $property) {
+            $property->images = PropertyImage::where('propertyId', $property->id)->get();
+        }
+        return view("Properties.myProperties", compact('properties'));
+
+
     }
 }

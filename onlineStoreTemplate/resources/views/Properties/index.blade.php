@@ -5,7 +5,11 @@
     <div class="container bg-light">
 
         @if(count($properties)>0)
-            <h1>Apartments to buy:</h1>
+            @if (Request::is('properties/rent'))
+                <h2>Apartments for rent:</h2>
+            @else
+                <h2>Apartments for sell:</h2>
+            @endif
 
             @foreach($properties as $property)
                 <div class="bg-dark container text-white">
@@ -35,7 +39,8 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    {{ $property->title }} - {{$property->price}} $
+
+                    @if($property->showPrice == 1){{$property->price}} $ @else <h4>Contact the agent for price</h4> @endif
                     <p><a href="/properties/{{$property->id}}">View details</a></p>
                 </div>
                 <div class="p-1"></div>

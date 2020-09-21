@@ -29,18 +29,15 @@
                     <h3>Details:</h3>
 
                     <p>Description: {{ $property->description }}</p>
-                    <p>Price: {{ $property->price }} $</p>
+                    <p>Price: </p>@if($property->showPrice == 1){{$property->price}} $ @else <h4>Contact the agent for price</h4> @endif
                     <p>Placed On: {{ $property->created_at }}</p>
                 </div>
                 <div class="col-md-6">
                     <h3>Contact Info:</h3>
-                    <p>Agent Name: {{ $property->agent->name }}</p>
-                    <p>Phone Number: 123456789</p>
-                    <p>Email: {{ $property->agent->email }}</p>
-
+                    <p>{{ $property->contactInfo }}</p>
                 </div>
             </div>
-
+w
         </div>
     </div>
 @endsection

@@ -36,8 +36,9 @@ Route::get('/properties/rent', '\App\Http\Controllers\PropertiesController@rentI
 Route::get('/users/{id}', '\App\Http\Controllers\UsersController@show')->middleware('auth');
 
 
-//Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@show');
-Route::resource('properties', '\App\Http\Controllers\PropertiesController')->middleware('auth');
+Route::get('/properties/myProperties', '\App\Http\Controllers\PropertiesController@myProperties');
+Route::resource('properties', '\App\Http\Controllers\PropertiesController', ['except' => ['show']])->middleware('auth');
+Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@show');
 
 
 Auth::routes();

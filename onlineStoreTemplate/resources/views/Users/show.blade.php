@@ -26,11 +26,13 @@
                     <div class="row">{{$user->name}}</div>
                     <div class="row">{{$user->phoneNumber}}</div>
                     <div class="row">{{$user->email}}</div>
+
+                    <button class="btn btn-outline-warning">Edit Profile</button>
                 </div>
             @else
                 {{--                ristricted area--}}
                 <script type="text/javascript">
-                    window.location = "/";//here double curly bracket
+                    window.location = "/";
                 </script>
             @endif
 

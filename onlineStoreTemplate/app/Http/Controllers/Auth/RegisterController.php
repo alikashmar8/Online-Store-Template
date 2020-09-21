@@ -69,7 +69,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $nb = $data['phoneNumberCode'].'!'.$data['phoneNumber'];
-        $fileNameToStore = 'noImage.jpg';
+        $fileNameToStore = 'profileImage.png';
         $bio = NULL;
         if (isset($data['profileImg'])) {
             $image = $data['profileImg'];

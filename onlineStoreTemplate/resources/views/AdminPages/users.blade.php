@@ -22,8 +22,8 @@
                     <tbody class="bg-white">
                     @foreach($users as $user)
                         <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
+                            <td><a href="/users/{{ $user->id }}">{{ $user->id }}</a></td>
+                            <td><a href="/users/{{ $user->id }}">{{ $user->name }}</a></td>
                             <td>12345678</td>
                             <td>{{ $user->email }} </td>
                             @if($user->email_verified_at == NULL)
