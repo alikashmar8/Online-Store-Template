@@ -60,10 +60,14 @@ class PropertiesController extends Controller
             'description' => 'required',
             'price' => 'required',
             'type' => 'required',
+            'longitude' => 'required',
+            'latitude' => 'required',
         ]);
         $property = new Property();
         $property->price = $request->price;
         $property->description = $request->description;
+        $property->longitude = $request->longitude;
+        $property->latitude = $request->latitude;
         if(isset($request->showPrice)) $property->showPrice = $request->showPrice; else $property->showPrice = 0;
         $property->bedroomsNumber = $request->bedroomsNumber;
         $property->accepted = 0;
