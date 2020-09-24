@@ -94,6 +94,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'phoneNumber' => $nb,
             'profileImg' => $fileNameToStore,
+            'role' => 1,
 
         ]);
     }
