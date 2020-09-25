@@ -95,6 +95,7 @@ class RegisterController extends Controller
             'phoneNumber' => $nb,
             'profileImg' => $fileNameToStore,
             'role' => 1,
+
         ]);
     }
 }
