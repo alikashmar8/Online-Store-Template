@@ -80,7 +80,7 @@
                             <label for="profileImg" >Profile Image</label>
 
 
-                            <input id="profileImg" type="file" class="@error('profileImg') is-invalid @enderror " name="profileImg" value="{{ old('profileImg') }}" required autocomplete="profileImg" autofocus>
+                            <input id="profileImg" type="file" class="@error('profileImg') is-invalid @enderror " name="profileImg" value="{{ old('profileImg') }}" autocomplete="profileImg" autofocus>
 
 
                         </div>
