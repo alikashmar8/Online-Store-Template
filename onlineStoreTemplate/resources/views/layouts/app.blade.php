@@ -12,8 +12,8 @@
     {{--    Scripts--}}
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-{{--    leafletMap--}}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    {{--    leafletMap--}}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -30,33 +30,35 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
-{{--    <link href={{ asset("bootstrap/css/bootstrap.css") }} rel="stylesheet"/>--}}
+    {{--    <link href={{ asset("bootstrap/css/bootstrap.css") }} rel="stylesheet"/>--}}
 
-    <!-- Custom styles for this template -->
-{{--    <link href={{ asset("bootstrap/css/sticky-footer-navbar.css") }} rel="stylesheet"/>--}}
+<!-- Custom styles for this template -->
+    {{--    <link href={{ asset("bootstrap/css/sticky-footer-navbar.css") }} rel="stylesheet"/>--}}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Optional theme -->
-{{--    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">--}}
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css"/>
 
 
 </head>
 
-<body class=" bg-css">
+<body class="bg-css">
 <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+    <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue">
         <a class="navbar-brand navbar-margin" href="/">Real Estate</a>
+{{--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">--}}
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarsExample05" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarsExample05" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse navbar-margin" id="navbarText">
-            <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse navbar-margin" id="navbarSupportedContent">
+            <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
                 </li>
@@ -123,17 +125,17 @@
                             {{ Auth::user()->name }}
                         </a>
                     </li>
-                <li class="nav-tabs m-3"></li>
+                    <li class="nav-tabs m-3"></li>
                     <li>
                         <a class="btn btn-outline-danger text-danger" role="button" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
 
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
-{{--                            <a class="dropdown-item text-white" href="{{ route('logout') }}"--}}
-{{--                               onclick="event.preventDefault();--}}
-{{--                                                     document.getElementById('logout-form').submit();">--}}
-{{--                                {{ __('Logout') }}--}}
-{{--                            </a>--}}
+                            {{--                            <a class="dropdown-item text-white" href="{{ route('logout') }}"--}}
+                            {{--                               onclick="event.preventDefault();--}}
+                            {{--                                                     document.getElementById('logout-form').submit();">--}}
+                            {{--                                {{ __('Logout') }}--}}
+                            {{--                            </a>--}}
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
@@ -149,7 +151,6 @@
 <main class="py-4">
     @yield('content')
 </main>
-
 
 
 </body>
