@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('content')
     @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
@@ -24,7 +24,7 @@
                         <tr>
                             <td><a href="/users/{{ $user->id }}">{{ $user->id }}</a></td>
                             <td><a href="/users/{{ $user->id }}">{{ $user->name }}</a></td>
-                            <td>12345678</td>
+                            <td>{{ $user->phoneNumber }}</td>
                             <td>{{ $user->email }} </td>
                             @if($user->email_verified_at == NULL)
                                 <td class="text-danger">False</td>
