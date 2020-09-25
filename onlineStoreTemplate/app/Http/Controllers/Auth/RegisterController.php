@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:190'],
             'bio' => ['nullable','string', 'max:190'],
             'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
-            'phoneNumberCode'.'!'.'phoneNumber' => ['required', 'string', 'max:25','unique:users'],
+            'phoneNumber' => ['required', 'string', 'max:25','unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -93,7 +93,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'phoneNumber' => $nb,
             'profileImg' => $fileNameToStore,
-            'role' => 1,
+            'role' => $data['role'],
 
         ]);
     }

@@ -50,7 +50,7 @@
 <div>
     <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue">
         <a class="navbar-brand navbar-margin" href="/">Real Estate</a>
-{{--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">--}}
+        {{--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">--}}
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarsExample05" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -113,12 +113,21 @@
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
+                        {{--                        <button class="nav-item navbar-toggler" data-toggle="collapse" data-target="#registerType" type="button">--}}
+                        <a class="nav-link" href="{{ route('register') }}">As User</a>
+                        {{--                                {{ __('Register') }}--}}
+
+
+                        <a class="nav-link" href="registerAgent">As Agent</a>
                     @endif
                 @else
                     <li class="nav-item dropdown">
+                        <a href="/users/{{ Auth::id() }}">
+                            <img style="width: 40px; height: 40px; border-radius: 50%;"
+                                 src="{{url('/storage/user_profile_images/' . \Illuminate\Support\Facades\Auth::user()->profileImg)}}">
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/users/{{ Auth::id() }}">
                             {{--                            id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre--}}
                             {{--                           data-toggle="dropdown" --}}

@@ -32,7 +32,13 @@
                                 <td class="text-success">True</td>
                             @endif
                             <td>{{ $user->created_at }}</td>
-                            <td><a class="btn btn-danger" href="#">Delete</a></td>
+
+                            <td><a class="btn btn-danger"
+                                   onclick="event.preventDefault(); document.getElementById('delete-form-{{$user->id}}').submit();">Delete</a>
+                            </td>
+                            {{--                        form to trigger delete property--}}
+                            {{ Form::open(['action' => ['\App\Http\Controllers\UsersController@destroy',$user->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$user->id]) }} {{ Form::close() }}
+
 
                         </tr>
                     @endforeach

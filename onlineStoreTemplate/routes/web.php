@@ -32,15 +32,16 @@ Route::get('/users', '\App\Http\Controllers\UsersController@index')->middleware(
 Route::get('/properties/buy', '\App\Http\Controllers\PropertiesController@buyIndex');
 Route::get('/properties/rent', '\App\Http\Controllers\PropertiesController@rentIndex');
 
-
 Route::get('/users/{id}', '\App\Http\Controllers\UsersController@show')->middleware('auth');
+Route::delete('/users/destroy/{id}', '\App\Http\Controllers\UsersController@destroy' )->middleware('auth');
 
 
 Route::get('/properties/myProperties', '\App\Http\Controllers\PropertiesController@myProperties');
 Route::resource('properties', '\App\Http\Controllers\PropertiesController', ['except' => ['show']])->middleware('auth');
 Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@show');
 
-
+//Auth routes
+Route::get('registerAgent', '\App\Http\Controllers\UsersController@registerAgent')->middleware('guest');
 Auth::routes();
 
 
