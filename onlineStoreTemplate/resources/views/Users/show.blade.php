@@ -18,16 +18,22 @@
         @else
             @if(\Illuminate\Support\Facades\Auth::id() == $user->id)
                 {{--                user viewing his profile                --}}
-                <div class="container bg-white">
-                    <div class="row"><img class=" img-thumbnail" style="height: 100px; width: 100px;"
+                <div class=" profile">
+                    <div class="num1">
+                        <img class=" img-thumbnail"
                                           src="{{url('/storage/user_profile_images/' . $user->profileImg)}}"
-                                          alt="Profile Image"></div>
-                    <div class="row">{{$user->id}}</div>
-                    <div class="row">{{$user->name}}</div>
-                    <div class="row">{{$user->phoneNumber}}</div>
-                    <div class="row">{{$user->email}}</div>
+                                          alt="Profile Image">
+                        <p> ID: {{$user->id}}</p>
+                    </div>
+                    <div class="num2">
 
-                    <button class="btn btn-outline-warning">Edit Profile</button>
+                        <h2>{{$user->name}}</h2>
+                        <p> Phone number: {{$user->phoneNumber}}</p>
+                        <p>Email: {{$user->email}}</p>
+                        <p>Bio: {{$user->bio}}</p>
+
+                        <button class="btn">Edit Profile</button>
+                    </div>
                 </div>
             @else
                 {{--                ristricted area--}}

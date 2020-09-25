@@ -1,34 +1,37 @@
 @extends('app')
 
 @section('content')
-    <div class="container bg-light">
-        <h1>Place New Ad:</h1>
+    <div class="container creat_app">
+
+
+        <h2>Place New Appartment</h2>
         <div>
+
             {{ Form::open(['action' => 'App\Http\Controllers\PropertiesController@store','method'=>'POST','enctype'=>'multipart/form-data']) }}
 
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div class="form-group form-label-group">
                         {{ Form::label('price','Price:') }}
                         {{ Form::number('price','',['class' => 'form-control','placeholder'=>'Price']) }}
                     </div>
-                    <div class="form-group">
-                        {{ Form::label('showPrice','Show Price ?') }}
+                    <div class="form-group form-label-group special">
                         {{ Form::checkbox('showPrice', 1, true) }}
+                        {{ Form::label('showPrice','Show Price') }}
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-label-group">
                         {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}
                         {{ Form::number('bedroomsNumber','',['class' => 'form-control','placeholder'=>'bedroomsNumber']) }}
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-label-group">
                         {{ Form::label('type','Type:') }}
                         {{ Form::select('type', array(0 => 'Sell', 1 => 'Rent'), 0) }}
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-label-group">
                         {{ Form::label('description','Description:') }}
                         {{ Form::text('description','',['class' => 'form-control','placeholder'=>'Description']) }}
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-label-group">
                         {{ Form::label('images','Images:') }}
                         <input type="file" name="images[]" multiple>
                     </div>
