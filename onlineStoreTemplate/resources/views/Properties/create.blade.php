@@ -6,7 +6,7 @@
 
         <h2>Place New Appartment</h2>
         <div>
-
+c
             {{ Form::open(['action' => 'App\Http\Controllers\PropertiesController@store','method'=>'POST','enctype'=>'multipart/form-data']) }}
 
             <div class="row">

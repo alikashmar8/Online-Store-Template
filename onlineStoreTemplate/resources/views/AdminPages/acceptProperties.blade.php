@@ -68,11 +68,15 @@
                         <td><a class="btn btn-danger no-sort"
                                onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();">Delete</a>
                         </td>
-                        <td><a class="btn btn-success no-sort"
-                               onclick="event.preventDefault(); document.getElementById('accept-form-{{$property->id}}').submit();">Accept</a>
+                        <td>
+                            <button type="button" class="btn btn-success accept" data-toggle="modal"
+                                    data-target="#exampleModal" >Accept
+{{--                                    data-whatever={{ $property->id }}--}}
+                            </button>
                         </td>
+
+                        {{--                        <a class="btn btn-success no-sort" onclick="event.preventDefault(); document.getElementById('accept-form-{{$property->id}}').submit();">Accept</a>--}}
                         {{--                    //form to trigger accept property--}}
-                        {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@accept',$property->id],'method'=>'PUT' , 'class'=>'hidden','id'=>'accept-form-'.$property->id]) }} {{ Form::close() }}
                         {{--                        form to trigger delete property--}}
                         {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$property->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$property->id]) }} {{ Form::close() }}
 
@@ -85,6 +89,40 @@
             <h1>No properties to show !</h1>
         @endif
 
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+{{--                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@acceptProperty',$property->id],'method'=>'put' ]) }}--}}
+                <form action="/accept" method="post" id="acceptForm" >
+                    {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="pId" class="col-form-label">Property ID:</label>
+                        <input type="text" class="form-control" name="pId" id="pId" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Please add your contact info:</label>
+                        <textarea class="form-control" name='contactInfo' id="message-text" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-success" value="Accept">
+                </div>
+{{--                {{ Form::close() }}--}}
+                </form>
+
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -101,7 +139,8 @@
     <script type="text/JavaScript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
 
     <script>
-        $('#myDataTable').DataTable({
+
+        var table = $('#myDataTable').DataTable({
             "columnDefs": [
                 {"orderable": false, "targets": 1},
                 {"orderable": false, "targets": 6},
@@ -109,6 +148,27 @@
                 {"orderable": false, "targets": 8}
             ]
         });
+
+        table.on('click','.accept', function () {
+            $tr = $(this).closest('tr');
+            if($($tr).hasClass('child')) {
+                $tr = $tr.prev('.parent');
+            }
+            var data = table.row($tr).data();
+            // console.log(data);
+            $('#message-text').val(data[2]);
+            $('#pId').val(data[0]);
+        });
+
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('Accept Property ?')
+            // modal.find('.modal-body input').val(recipient)
+        })
     </script>
 
 @endsection

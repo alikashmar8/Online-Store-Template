@@ -30,12 +30,18 @@ class PropertiesController extends Controller
         return view('welcome');
     }
 
-/* @param int $id */
-    public function accept($id){
-        $property =  Property::find($id);
-        $property->accepted = 1;
-        $property->save();
-       return redirect('/acceptProperties');
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function accept(Request $request){
+        dd($request);
+//        $property =  Property::find($id);
+//        $property->accepted = 1;
+//        $property->save();
+//       return redirect('/acceptProperties');
     }
 
     /**
@@ -202,7 +208,10 @@ class PropertiesController extends Controller
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
         }
         return view("Properties.myProperties", compact('properties'));
+    }
 
-
+    public function acceptProperty($request,$id)
+    {
+        dd($request);
     }
 }

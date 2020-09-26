@@ -24,10 +24,12 @@ Route::get('/', '\App\Http\Controllers\PropertiesController@index')->name('index
 
 
 //Admin Routes
-Route::put('/accept/{id}', '\App\Http\Controllers\PropertiesController@accept')->name('property.accept')->middleware('auth');
+//Route::put('acceptProperty/{id}','App\Http\Controllers\PropertiesController@acceptProperty');
+Route::post('/accept', '\App\Http\Controllers\PropertiesController@accept')->middleware('auth');
 Route::get('/acceptProperties', '\App\Http\Controllers\PropertiesController@viewNotAcceptedProperties')->middleware('auth');
 Route::get('/acceptedProperties', '\App\Http\Controllers\PropertiesController@allAcceptedProperties')->middleware('auth');
 Route::get('/users', '\App\Http\Controllers\UsersController@index')->middleware('auth');
+
 
 Route::get('/properties/buy', '\App\Http\Controllers\PropertiesController@buyIndex');
 Route::get('/properties/rent', '\App\Http\Controllers\PropertiesController@rentIndex');
@@ -41,7 +43,7 @@ Route::resource('properties', '\App\Http\Controllers\PropertiesController', ['ex
 Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@show');
 
 //Auth routes
-Route::get('registerAgent', '\App\Http\Controllers\UsersController@registerAgent')->middleware('guest');
+//Route::get('registerAgent', '\App\Http\Controllers\UsersController@registerAgent')->middleware('guest');
 Auth::routes();
 
 

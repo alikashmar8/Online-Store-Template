@@ -105,11 +105,7 @@
 
 
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-
-
                         </div>
-
-                        <input type="hidden" name="role" value=2>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
@@ -125,7 +121,7 @@
     </div>
 </div>
 
-    /*second form*/
+{{--    /*second form*/--}}
 
 <div class="container">
     <div class="row justify-content-center">
@@ -137,7 +133,7 @@
 
 
                     <div class="card-header"><h5 class="card-title text-center">{{ __('Register') }}</h5></div>
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="agentForm">
                         @csrf
 
                         <input id="role" type="hidden" name="role" value=2>
@@ -267,4 +263,5 @@
         </div>
     </div>
 </div>
+
 @endsection
