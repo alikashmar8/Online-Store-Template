@@ -59,9 +59,7 @@
 
         <div class="collapse navbar-collapse navbar-margin" id="navbarSupportedContent">
             <ul class="nav navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
-                </li>
+
                 {{--                <li class="nav-item">--}}
                 {{--                    <a class="nav-link" href="/categories">Categories</a>--}}
                 {{--                </li>--}}
@@ -114,11 +112,10 @@
                     </li>
                     @if (Route::has('register'))
                         {{--                        <button class="nav-item navbar-toggler" data-toggle="collapse" data-target="#registerType" type="button">--}}
-                        <a class="nav-link" href="{{ route('register') }}">As User</a>
+                        <a class="nav-link" href="{{ route('register') }}">Register</a>
                         {{--                                {{ __('Register') }}--}}
 
 
-                        <a class="nav-link" href="registerAgent">As Agent</a>
                     @endif
                 @else
                     <li class="nav-item dropdown">
