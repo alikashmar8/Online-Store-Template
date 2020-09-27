@@ -65,8 +65,9 @@
                             <td>Rent</td>
                         @endif
                         <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
-                        <td><a class="btn btn-danger no-sort"
-                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();">Delete</a>
+                        <td><button class="btn btn-danger no-sort delete" data-toggle="modal" data-target="#deleteModal">Delete</button>
+{{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();"--}}
+
                         </td>
                         {{--                        form to trigger delete property--}}
                         {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$property->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$property->id]) }} {{ Form::close() }}
@@ -80,6 +81,28 @@
             <h1>No accepted properties to show !</h1>
         @endif
 
+    </div>
+
+
+    {{--    Delete Modal--}}
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete ?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <input type="hidden" name="deleteId" id="deleteId">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-danger" value="Delete" onclick="deleteProperty()">
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -96,13 +119,29 @@
     <script type="text/JavaScript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
 
     <script>
-        $('#myDataTable').DataTable({
+        var table = $('#myDataTable').DataTable({
             "columnDefs": [
                 {"orderable": false, "targets": 1},
                 {"orderable": false, "targets": 6},
                 {"orderable": false, "targets": 7}
             ]
         });
+
+        table.on('click','.delete', function () {
+            $tr = $(this).closest('tr');
+            if($($tr).hasClass('child')) {
+                $tr = $tr.prev('.parent');
+            }
+            var data = table.row($tr).data();
+            console.log(data);
+            $('#deleteId').val(data[0]);
+        });
+
+        function deleteProperty() {
+            event.preventDefault();
+            console.log($('#deleteId').val())
+            document.getElementById('delete-form-'+$('#deleteId').val()).submit();
+        }
     </script>
 
 @endsection

@@ -65,8 +65,9 @@
                             <td>Rent</td>
                         @endif
                         <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
-                        <td><a class="btn btn-danger no-sort"
-                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();">Delete</a>
+                        <td><button class="btn btn-danger no-sort delete" data-toggle="modal"  data-target="#deleteModal">Delete</button>
+{{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();"--}}
+
                         </td>
                         <td>
                             <button type="button" class="btn btn-success accept" data-toggle="modal"
@@ -91,6 +92,8 @@
 
     </div>
 
+
+{{--    Accept Modal--}}
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -107,7 +110,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="pId" class="col-form-label">Property ID:</label>
-                        <input type="text" class="form-control" name="pId" id="pId" readonly>
+                        <input type="text" class="form-control" name="id" id="id" readonly>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Please add your contact info:</label>
@@ -120,6 +123,30 @@
                 </div>
 {{--                {{ Form::close() }}--}}
                 </form>
+
+            </div>
+        </div>
+    </div>
+
+
+{{--    Delete Modal--}}
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete ?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <input type="hidden" name="deleteId" id="deleteId">
+                {{--                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@acceptProperty',$property->id],'method'=>'put' ]) }}--}}
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-danger" value="Delete" onclick="deleteProperty()">
+                    </div>
+                    {{--                {{ Form::close() }}--}}
 
             </div>
         </div>
@@ -156,8 +183,17 @@
             }
             var data = table.row($tr).data();
             // console.log(data);
-            $('#message-text').val(data[2]);
-            $('#pId').val(data[0]);
+            $('#id').val(data[0]);
+        });
+
+        table.on('click','.delete', function () {
+            $tr = $(this).closest('tr');
+            if($($tr).hasClass('child')) {
+                $tr = $tr.prev('.parent');
+            }
+            var data = table.row($tr).data();
+            // console.log(data);
+            $('#deleteId').val(data[0]);
         });
 
         $('#exampleModal').on('show.bs.modal', function (event) {
@@ -169,6 +205,12 @@
             modal.find('.modal-title').text('Accept Property ?')
             // modal.find('.modal-body input').val(recipient)
         })
+
+        function deleteProperty() {
+            event.preventDefault();
+            console.log($('#deleteId').val())
+            document.getElementById('delete-form-'+$('#deleteId').val()).submit();
+        }
     </script>
 
 @endsection

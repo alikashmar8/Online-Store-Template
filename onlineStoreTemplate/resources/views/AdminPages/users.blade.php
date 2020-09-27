@@ -22,7 +22,7 @@
                     <tbody class="bg-white">
                     @foreach($users as $user)
                         <tr>
-                            <td><a href="/users/{{ $user->id }}">{{ $user->id }}</a></td>
+                            <td>{{ $user->id }}</td>
                             <td><a href="/users/{{ $user->id }}">{{ $user->name }}</a></td>
                             <td>{{ $user->phoneNumber }}</td>
                             <td>{{ $user->email }} </td>
@@ -33,9 +33,8 @@
                             @endif
                             <td>{{ $user->created_at }}</td>
 
-                            <td><a class="btn btn-danger"
-                                   onclick="event.preventDefault(); document.getElementById('delete-form-{{$user->id}}').submit();">Delete</a>
-                            </td>
+                            <td><button class="btn btn-danger no-sort delete" data-toggle="modal"  data-target="#deleteModal">Delete</button>
+
                             {{--                        form to trigger delete property--}}
                             {{ Form::open(['action' => ['\App\Http\Controllers\UsersController@destroy',$user->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$user->id]) }} {{ Form::close() }}
 
@@ -49,6 +48,33 @@
                 <h2>No Users in DB</h2>
             @endif
         </div>
+
+        {{--    Delete Modal--}}
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete ?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>All properties and information added by this user will be delete also</h6>
+                    </div>
+                    <input type="hidden" name="deleteId" id="deleteId">
+                    {{--                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@acceptProperty',$property->id],'method'=>'put' ]) }}--}}
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-danger" value="Delete" onclick="deleteProperty()">
+                    </div>
+                    {{--                {{ Form::close() }}--}}
+
+                </div>
+            </div>
+        </div>
+
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -65,11 +91,27 @@
                 src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
 
         <script>
-            $('#myDataTable').DataTable({
+            var table = $('#myDataTable').DataTable({
                 "columnDefs": [
                     {"orderable": false, "targets": 6}
                 ]
             });
+
+            table.on('click','.delete', function () {
+                $tr = $(this).closest('tr');
+                if($($tr).hasClass('child')) {
+                    $tr = $tr.prev('.parent');
+                }
+                var data = table.row($tr).data();
+                // console.log(data);
+                $('#deleteId').val(data[0]);
+            });
+
+            function deleteProperty() {
+                event.preventDefault();
+                console.log($('#deleteId').val())
+                document.getElementById('delete-form-'+$('#deleteId').val()).submit();
+            }
         </script>
     @else
         {{--                ristricted area--}}

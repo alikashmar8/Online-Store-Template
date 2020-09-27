@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Models\PropertyImage;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -82,6 +83,12 @@ class RegisterController extends Controller
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             // Upload Image
             $path = $image->storeAs('public/user_profile_images', $fileNameToStore);
+        }
+        if($data['role']==1){
+            $company = new Company;
+            $company->name = $data['comp_name'];
+            $company->licenseNumber = $data['license'];
+            $company->save();
         }
         if(isset($data['bio'])){
             $bio = $data['bio'];

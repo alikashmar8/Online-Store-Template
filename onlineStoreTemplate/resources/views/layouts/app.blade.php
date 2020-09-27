@@ -159,6 +159,13 @@
     @yield('content')
 </main>
 
+{{--footer side--}}
+<footer class="fixed-bottom bg-blue">
+    <div class="container">
+        @include('layouts.footer')
+    </div>
+</footer>
+
 
 </body>
 </html>

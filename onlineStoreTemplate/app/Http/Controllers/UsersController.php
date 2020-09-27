@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\User;
@@ -37,11 +38,24 @@ class UsersController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-        Storage::delete('public/user_profile_images/' . $user->profileImg);
-//        $path = public_path() . '\storage\user_profile_images\\' . $user->profileImg;
-//        unlink($path);
+        if ($user->profileImg != 'profileImage.png') {
+            Storage::delete('public/user_profile_images/' . $user->profileImg);
+        }
+        $properties = Property::where('userId', '=', $user->id)->get();
+        foreach ($properties as $property) {
+            app('\App\Http\Controllers\PropertiesController')->destroy($property->id);
+        }
+        if ($user->role == 1) {
+            $company = Company::where('agentId', '=', $user->id);
+            $company->delete();
+        }
         $user->delete();
-        return redirect('/users');
+        if (Auth::user()->role == 0) {
+            return redirect('/users');
+        }
+        else{
+            return redirect('/');
+        }
     }
 
 }

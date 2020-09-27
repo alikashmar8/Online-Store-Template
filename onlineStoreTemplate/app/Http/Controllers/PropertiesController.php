@@ -37,11 +37,12 @@ class PropertiesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function accept(Request $request){
-        dd($request);
-//        $property =  Property::find($id);
-//        $property->accepted = 1;
-//        $property->save();
-//       return redirect('/acceptProperties');
+//        dd($request['id']);
+        $property =  Property::findOrFail($request['id']);
+        $property->accepted = 1;
+        $property->contactInfo = $request['contactInfo'];
+        $property->save();
+       return redirect('/acceptProperties');
     }
 
     /**
@@ -158,9 +159,16 @@ class PropertiesController extends Controller
             $path = public_path().'\storage\properties_images\\'.$image->url;
             unlink($path);
         }
-        $imags->delete();
-        $property->delete();
-        return redirect('/acceptProperties');
+
+        if($property->accepted == 0) {
+            $imags->delete();
+            $property->delete();
+            return redirect('/acceptProperties');
+        }else{
+            $imags->delete();
+            $property->delete();
+            return redirect('/acceptedProperties');
+        }
     }
 
     public function buyIndex()
