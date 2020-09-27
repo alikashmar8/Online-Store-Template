@@ -71,6 +71,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/acceptedProperties">All Ads</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/users" class="nav-link">All Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/agents" class="nav-link">Agents</a>
+                        </li>
                     @else
                         {{--                        user menu options--}}
                         <li class="nav-item">
@@ -160,7 +166,7 @@
 </main>
 
 {{--footer side--}}
-<footer class="fixed-bottom bg-blue">
+<footer class="fixed-bottom bg-blue p-2">
     <div class="container">
         @include('layouts.footer')
     </div>

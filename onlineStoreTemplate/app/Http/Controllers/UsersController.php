@@ -18,6 +18,12 @@ class UsersController extends Controller
         return view('AdminPages.users', compact('users'));
     }
 
+    public function agentsIndex()
+    {
+        $users = User::where('role','=',1)->get();
+        return view('AdminPages.users', compact('users'));
+    }
+
     public function show($id)
     {
         $user = User::findOrFail($id);

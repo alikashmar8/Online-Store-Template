@@ -28,6 +28,7 @@ Route::post('/accept', '\App\Http\Controllers\PropertiesController@accept')->mid
 Route::get('/acceptProperties', '\App\Http\Controllers\PropertiesController@viewNotAcceptedProperties')->middleware('auth');
 Route::get('/acceptedProperties', '\App\Http\Controllers\PropertiesController@allAcceptedProperties')->middleware('auth');
 Route::get('/users', '\App\Http\Controllers\UsersController@index')->middleware('auth');
+Route::get('/agents', '\App\Http\Controllers\UsersController@agentsIndex')->middleware('auth');
 
 
 Route::get('/properties/buy', '\App\Http\Controllers\PropertiesController@buyIndex');
