@@ -51,7 +51,7 @@
 
                         @if($property->showPrice == 0) <td class="text-danger">False</td> @else <td class="text-success">True</td> @endif
 
-                        @if($property->type == 0) <td>Sell</td> @else <td>Rent</td> @endif
+                        @if($property->categoryId == 0) <td>Sell</td> @else <td>Rent</td> @endif
 
                        @if($property->accepted == 0) <td class="text-warning">Waiting confirmation</td> @else <td class="text-success">Listed</td> @endif
 
