@@ -93,6 +93,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/properties/myProperties">My Properties</a>
                         </li>
+                        <ul class="navbar-nav ml-5">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Tips</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Evaluate</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Insurance</a>
+                            </li>
+                        </ul>
                     @endif
                 @endif
                 @if(\Illuminate\Support\Facades\Auth::guest())
@@ -108,6 +119,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">Sell</a>
                     </li>
+
+                    <ul class="navbar-nav ml-5">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Tips</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Evaluate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Insurance</a>
+                        </li>
+                    </ul>
                 @endif
             </ul>
 
@@ -161,7 +184,7 @@
     </nav>
 </div>
 
-<main class="py-4">
+<main class="container py-4">
     @yield('content')
 </main>
 

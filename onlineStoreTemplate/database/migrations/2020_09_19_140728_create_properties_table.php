@@ -29,6 +29,8 @@ class CreatePropertiesTable extends Migration
             $table->bigInteger('cityId')->nullable();
             $table->string("contactInfo")->nullable();
             $table->timestamps();
+            $table->double('longitude')->nullable();
+            $table->double('latitude')->nullable();
         });
     }
 

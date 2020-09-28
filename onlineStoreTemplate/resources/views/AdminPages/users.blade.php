@@ -21,10 +21,13 @@
                     </thead>
                     <tbody class="bg-white">
                     @foreach($users as $user)
+{{--                        {{ $pn = $user->phoneNumber }}--}}
+{{--                        {{$phoneNumber = explode(' ', "hi by")}}--}}
+{{--                        {{$phoneNumber = split(' ', "hi by")}}--}}
                         <tr>
                             <td>{{ $user->id }}</td>
                             <td><a href="/users/{{ $user->id }}">{{ $user->name }}</a></td>
-                            <td>{{ $user->phoneNumber }}</td>
+                            <td>  {{ $user->phoneNumber }}</td>
                             <td>{{ $user->email }} </td>
                             @if($user->email_verified_at == NULL)
                                 <td class="text-danger">False</td>
