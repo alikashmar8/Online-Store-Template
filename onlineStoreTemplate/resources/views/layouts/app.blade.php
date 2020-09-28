@@ -50,7 +50,7 @@
 <body class="bg-css">
 <div>
     <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue">
-        <a class="navbar-brand navbar-margin" href="/">Real Estate</a>
+        <a class="navbar-brand " href="/">Real Estate</a>
         {{--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">--}}
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -58,7 +58,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse navbar-margin" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="nav navbar-nav mr-auto">
 
                 {{--                <li class="nav-item">--}}
@@ -93,18 +93,27 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/properties/myProperties">My Properties</a>
                         </li>
-                        <ul class="navbar-nav ml-5">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Tips</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Evaluate</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Insurance</a>
-                            </li>
+
                         </ul>
-                    @endif
+
+                        <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Find agent</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <div class="dropdown1">
+                            <button class="dropbtn1">More
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown1-content">
+                                <a href="#" class="nav-link">Tips</a>
+                                <a href="#" class="nav-link">Evaluate</a>
+                                <a href="#" class="nav-link">Insurance</a>
+                            </div>
+                        </div>
+                        </li>
+                        @endif
                 @endif
                 @if(\Illuminate\Support\Facades\Auth::guest())
                     {{--                    guest only menu options--}}
@@ -120,17 +129,22 @@
                         <a class="nav-link" href="{{ route('login') }}">Sell</a>
                     </li>
 
-                    <ul class="navbar-nav ml-5">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Tips</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Evaluate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Insurance</a>
-                        </li>
-                    </ul>
+                </ul>
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Find agent</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Tips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Evaluate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Insurance</a>
+                    </li>
+
                 @endif
             </ul>
 
@@ -148,12 +162,7 @@
 
                     @endif
                 @else
-                    <li class="nav-item dropdown">
-                        <a href="/users/{{ Auth::id() }}">
-                            <img style="width: 40px; height: 40px; border-radius: 50%;"
-                                 src="{{url('/storage/user_profile_images/' . \Illuminate\Support\Facades\Auth::user()->profileImg)}}">
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="/users/{{ Auth::id() }}">
                             {{--                            id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre--}}

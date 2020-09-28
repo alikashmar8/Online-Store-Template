@@ -2665,39 +2665,39 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-.btn-primary {
+.btn-primary1 {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #C92208;
+  border-color: #C92208;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #227dc7;
-  border-color: #2176bd;
+  background-color: #a21e0a;
+  border-color: #a21e0a;
 }
 
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: #227dc7;
-  border-color: #2176bd;
+  background-color: #C92208;
+  border-color: #C92208;
   box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
 }
 
 .btn-primary.disabled,
 .btn-primary:disabled {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #c44430;
+  border-color: #c44430;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #2176bd;
-  border-color: #1f6fb2;
+  background-color: #C92208;
+  border-color: #C92208;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus,
@@ -4701,37 +4701,37 @@ input[type=button].btn-block {
 }
 
 @media (min-width: 992px) {
-  .navbar-expand-lg {
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-  }
+    .navbar-expand-lg {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+    }
 
-  .navbar-expand-lg .navbar-nav {
-    flex-direction: row;
-  }
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+    }
 
-  .navbar-expand-lg .navbar-nav .dropdown-menu {
-    position: absolute;
-  }
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: absolute;
+    }
 
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-  }
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
 
-  .navbar-expand-lg > .container,
-  .navbar-expand-lg > .container-fluid,
-  .navbar-expand-lg > .container-sm,
-  .navbar-expand-lg > .container-md,
-  .navbar-expand-lg > .container-lg,
-  .navbar-expand-lg > .container-xl {
-    flex-wrap: nowrap;
-  }
+    .navbar-expand-lg > .container,
+    .navbar-expand-lg > .container-fluid,
+    .navbar-expand-lg > .container-sm,
+    .navbar-expand-lg > .container-md,
+    .navbar-expand-lg > .container-lg,
+    .navbar-expand-lg > .container-xl {
+        flex-wrap: nowrap;
+    }
 
-  .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-  }
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
 
   .navbar-expand-lg .navbar-toggler {
     display: none;
@@ -7031,7 +7031,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #007bff !important;
+  background-color: #C92208 !important;
 }
 
 a.bg-dark:hover,
@@ -10969,7 +10969,7 @@ section{
     margin-bottom: 0;
     /* Override default `<label>` margin */
     line-height: 1.5;
-    color: #007bff;
+    color: #C92208;
     border: 1px solid transparent;
     border-radius: .25rem;
     transition: all .1s ease-in-out;
@@ -11011,8 +11011,8 @@ section{
 .form-label-group select {
     height: 45px;
     border-radius: 2rem;
-    border-color: #007bff;
-    color:#007bff;
+    border-color: #C92208;
+    color:#C92208;
     padding: 5px 12px;
 
     display: inline;
@@ -11038,7 +11038,7 @@ section{
 
 }
 .bg-blue{
-    background-color: #007bff !important;
+    background-color: #C92208 !important;
 }
 
 .profile{
@@ -11057,7 +11057,7 @@ section{
     width:30%;
     float: left;
 
-    color: #007bff;
+    color: #C92208;
     display: block;
 }
 
@@ -11088,26 +11088,26 @@ section{
     max-height: 300px;
     max-width: 300px;
     border-radius: 50%;
-    border: 2px solid #007bff;
+    border: 2px solid #C92208;
 
     box-sizing: border-box;
 }
 .profile .num1 p{
     width: 100%;
     height: 100%;
-    color: #007bff;
+    color: #C92208;
     text-align: center;
 }
 
 .profile .num2 button{
-    color: #007bff;
-    border-color: #007bff;
+    color: #C92208;
+    border-color: #C92208;
 }
 
 profile .num2 button:hover {
     color: #ffffff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #C92208;
+    border-color: #C92208;
 }
 
 profile .num2 button:focus{
@@ -11119,7 +11119,7 @@ profile .num2 button:focus{
     padding-top: calc(var(--input-padding-y) / 3);
     padding-bottom: calc(var(--input-padding-y) / 3);
     font-size: 14px;
-    color: #007bff;
+    color: #C92208;
 }*/
 
 
@@ -11238,7 +11238,7 @@ profile .num2 button:focus{
 }
 
 .details .card-header{
-    border: 1px solid #007bff;
+    border: 1px solid #C92208;
     background-color: #ffffff;
 }
 .details .btn-primary {
@@ -11249,7 +11249,7 @@ profile .num2 button:focus{
 
 
 .footer{
-    background: #007bff;
+    background: #C92208;
     color:white;
 }
 
@@ -11285,6 +11285,76 @@ profile .num2 button:focus{
     border-top:1px solid rgba(255,255,255,.1);
 }
 
+
+/*dropdown*/
+
+
+.dropdown1 {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown1 .dropbtn1 {
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    color: rgba(255,255,255,.5);
+    padding: 10px 1px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.dropdown1 .dropbtn1:hover {
+    color: rgba(255, 255, 255, .75);
+}
+.dropdown1-content {
+    display: none;
+    position: absolute;
+    background-color: #C92208;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown1-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown1-content a:hover {
+    color: #000000;
+}
+
+.dropdown1:hover .dropdown1-content {
+    display: block;
+}
+
+
+/*my properties*/
+
+.table1 {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border: 1px solid #C92208 ;
+}
+.table1 th{
+
+    background-color: #C92208;
+    border: 1px solid #C92208 ;
+    padding: 20px;
+}
+.table1 td{
+
+    background-color: #ffffff;
+    border: 1px solid #C92208 ;
+    padding: 20px;
+}
 
 /* Fallback for Edge
 -------------------------------------------------- */

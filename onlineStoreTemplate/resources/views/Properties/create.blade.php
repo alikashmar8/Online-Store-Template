@@ -6,11 +6,11 @@
 
         <h2>Place New Appartment</h2>
         <div>
-c
+
             {{ Form::open(['action' => 'App\Http\Controllers\PropertiesController@store','method'=>'POST','enctype'=>'multipart/form-data']) }}
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" style="height:500px">
                     <div class="form-group form-label-group">
                         {{ Form::label('price','Price:') }}
                         {{ Form::number('price','',['class' => 'form-control','placeholder'=>'Price']) }}
@@ -36,7 +36,7 @@ c
                         <input type="file" name="images[]" multiple>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" style="height:500px">
                     <div id="map" style="position: absolute; right: 0; left: 0; top: 0; bottom: 0;"></div>
                     <input type="text" name="longitude" id="longitude" />
                     <input type="text" name="latitude" id="latitude" />
@@ -44,7 +44,7 @@ c
             </div>
 
             <div>
-                {{ Form::submit('Add',['class'=>'btn btn-primary']) }}
+                {{ Form::submit('Add',['class'=>'btn btn-primary1']) }}
             </div>
             {{ Form::close() }}
         </div>

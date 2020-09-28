@@ -3,7 +3,7 @@
 @section('content')
     <div class="container bg-white p-5">
     @if(count($properties)>0)
-            <table class="table border border-dark" id="myDataTable">
+            <table class="table1" id="myDataTable">
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">Images</th>

@@ -25,11 +25,16 @@
             </div>
         @else
             {{--            user logged in--}}
-            <div class="d-flex flex-column">
+
+            <div class="row mt-5 pt-5">
+                <div class="d-flex flex-column m-auto ">
                 <form class="form-inline my-2 my-lg-0">
+                    <div class="form-label-group">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-primary1"  type="submit">Search</button>
+                    </div>
                 </form>
+            </div>
             </div>
         @endif
 
@@ -38,8 +43,10 @@
         <div class="row mt-5 pt-5">
         <div class="d-flex flex-column m-auto ">
             <form class="form-inline my-2 my-lg-0">
+                <div class="form-label-group">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class=" btn btn-primary1" type="submit">Search</button>
+                </div>
             </form>
         </div>
         </div>

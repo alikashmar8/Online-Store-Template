@@ -14,8 +14,10 @@ class AddBioAndImgToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            /**
             $table->string('profileImg')->nullable();
             $table->string('bio')->nullable();
+             * */
         });
     }
 
@@ -27,8 +29,10 @@ class AddBioAndImgToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            /**
             $table->dropColumn("profileImg");
             $table->dropColumn("bio");
+             * */
         });
     }
 }
