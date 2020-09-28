@@ -166,10 +166,10 @@
 </main>
 
 {{--footer side--}}
-<footer class="fixed-bottom bg-blue p-2">
-    <div class="container">
+<footer >
+
         @include('layouts.footer')
-    </div>
+
 </footer>
 
 
