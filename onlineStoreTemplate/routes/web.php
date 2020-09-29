@@ -15,13 +15,25 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/tips', function () {
+    return view('tips');
+});
+
+Route::get('/evaluate', function () {
+    return view('evaluate');
+});
+
+Route::get('/insurance', function () {
+    return view('insurance');
+});
+Route::get('/findAgents', function () {
+    return view('findAgents');
+});
 
 //All users route
 Route::get('/', '\App\Http\Controllers\PropertiesController@index')->name('index');
-
+Route::get('/properties/buy', '\App\Http\Controllers\PropertiesController@buyIndex');
+Route::get('/properties/rent', '\App\Http\Controllers\PropertiesController@rentIndex');
 
 //Admin Routes
 Route::post('/accept', '\App\Http\Controllers\PropertiesController@accept')->middleware('auth');
@@ -31,9 +43,6 @@ Route::get('/users', '\App\Http\Controllers\UsersController@index')->middleware(
 Route::get('/agents', '\App\Http\Controllers\UsersController@agentsIndex')->middleware('auth');
 
 
-Route::get('/properties/buy', '\App\Http\Controllers\PropertiesController@buyIndex');
-Route::get('/properties/rent', '\App\Http\Controllers\PropertiesController@rentIndex');
-
 Route::get('/users/{id}', '\App\Http\Controllers\UsersController@show')->middleware('auth');
 Route::delete('/users/destroy/{id}', '\App\Http\Controllers\UsersController@destroy' )->middleware('auth');
 
@@ -41,6 +50,7 @@ Route::delete('/users/destroy/{id}', '\App\Http\Controllers\UsersController@dest
 Route::get('/properties/myProperties', '\App\Http\Controllers\PropertiesController@myProperties');
 Route::resource('properties', '\App\Http\Controllers\PropertiesController', ['except' => ['show']])->middleware('auth');
 Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@show');
+Route::get('/search-result', '\App\Http\Controllers\SearchController@searchAgent');
 
 //Auth routes
 //Route::get('registerAgent', '\App\Http\Controllers\UsersController@registerAgent')->middleware('guest');

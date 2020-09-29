@@ -94,26 +94,26 @@
                             <a class="nav-link" href="/properties/myProperties">My Properties</a>
                         </li>
 
-                        </ul>
+            </ul>
 
-                        <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Find agent</a>
-                        </li>
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="/findAgents" class="nav-link">Find agent</a>
+                </li>
 
-                        <li class="nav-item">
-                        <div class="dropdown1">
-                            <button class="dropbtn1">More
-                                <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="dropdown1-content">
-                                <a href="#" class="nav-link">Tips</a>
-                                <a href="#" class="nav-link">Evaluate</a>
-                                <a href="#" class="nav-link">Insurance</a>
-                            </div>
+                <li class="nav-item">
+                    <div class="dropdown1">
+                        <button class="dropbtn1">More
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown1-content">
+                            <a href="/tips" class="nav-link">Tips</a>
+                            <a href="/evaluate" class="nav-link">Evaluate</a>
+                            <a href="/insurance" x class="nav-link">Insurance</a>
                         </div>
-                        </li>
-                        @endif
+                    </div>
+                </li>
+                @endif
                 @endif
                 @if(\Illuminate\Support\Facades\Auth::guest())
                     {{--                    guest only menu options--}}
@@ -129,21 +129,24 @@
                         <a class="nav-link" href="{{ route('login') }}">Sell</a>
                     </li>
 
-                </ul>
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Find agent</a>
-                    </li>
+            </ul>
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="/findAgents" class="nav-link">Find agent</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Tips</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Evaluate</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Insurance</a>
-                    </li>
+                <li class="nav-item">
+                    <div class="dropdown1">
+                        <button class="dropbtn1">More
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown1-content">
+                            <a href="/tips" class="nav-link">Tips</a>
+                            <a href="/evaluate" class="nav-link">Evaluate</a>
+                            <a href="/insurance" class="nav-link">Insurance</a>
+                        </div>
+                    </div>
+                </li>
 
                 @endif
             </ul>
@@ -172,7 +175,7 @@
                     </li>
                     <li class="nav-tabs m-3"></li>
                     <li>
-                        <a class="btn btn-outline-danger text-danger" role="button" onclick="event.preventDefault();
+                        <a class="btn btn-light text-warning" role="button" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
 
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
@@ -198,9 +201,9 @@
 </main>
 
 {{--footer side--}}
-<footer >
+<footer>
 
-        @include('layouts.footer')
+    @include('layouts.footer')
 
 </footer>
 
