@@ -11356,6 +11356,77 @@ profile .num2 button:focus{
     padding: 20px;
 }
 
+/*tips*/
+
+
+.h2-tips {
+    color: #344b6a;
+    font-weight: 300;
+    margin-bottom: .5rem;
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+
+.h3-tips {
+    color: #636466;
+    margin-bottom: .5rem;
+    line-height: 1.25;
+    font-weight: 400;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;-webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.h3-tips span {
+
+    margin-right: 10px;
+    margin-left: 5px;
+    font-size:1.8rem;
+    transform: translateY(-10%);
+    color:#c92208;
+
+}
+
+.div-tip {
+    color: #636466;
+    border-bottom-width: 2px;
+}
+
+.p-tip {
+    margin-bottom: 0;
+    padding: 1rem;
+    margin-left:20px;
+    background-color: #ededed;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 1rem;
+
+}
+/*posts*/
+
+.post{
+    width:95%;
+    margin: auto;
+    background-color: #ffffff;
+    color: #C92208;
+    padding: 20px;
+}
+
+.post a , .post a span{
+    color: #c92208;
+
+
+
+    text-align: center;
+}
+
 /* Fallback for Edge
 -------------------------------------------------- */
 
