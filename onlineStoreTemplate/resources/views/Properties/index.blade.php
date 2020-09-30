@@ -38,17 +38,18 @@
                     </div>
 
                     <div class="post-details">
-                    <p class="price">
-                    @if($property->showPrice == 1){{$property->price}} $ @else <h4>Contact the agent for price</h4> @endif
-                    </p>
-                    <p>
-                    {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>
-                    </p>
-                    <a  href="/properties/{{$property->id}}">View details</a>
+
+                        @if($property->showPrice == 1) <p class="price">{{$property->price}} $ </p>@else <h4>Contact the
+                            agent for price</h4> @endif
+
+                        <p>
+                            {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>
+                        </p>
+                        <a href="/properties/{{$property->id}}">View details</a>
                     </div>
                 </div>
-                <div class="p-1"></div>
-            @endforeach
+                    <div class="p-1"></div>
+                @endforeach
         @else
             @if (Request::is('properties/rent'))
                 <h2>No properties for rent</h2>

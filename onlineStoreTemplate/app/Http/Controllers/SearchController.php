@@ -9,8 +9,12 @@ class SearchController extends Controller
 {
     public function searchAgent(Request $request)
     {
-        $users = User::where('role', '=', 1)->where('name', 'like', '%' . $request->name . '%')->get();
-        dd($users);
+        $searched = $request->name;
+        $results = User::where('role', '=', 1)->where('name', 'like', '%' . $request->name . '%')->get();
+        $type = $request->type;
+
+
+        return view('searchResults', compact('searched', 'results', 'type'));
 
     }
 }
