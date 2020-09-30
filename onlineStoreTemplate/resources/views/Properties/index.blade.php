@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="">
+    <div class="m-5">
 
         @if(count($properties)>0)
             @if (Request::is('properties/rent'))
@@ -12,18 +12,17 @@
             @endif
 
             @foreach($properties as $property)
-                <div class="post" style="height: 400px;">
-                    <div id="carouselExampleFade-{{$property->id}}" class="carousel slide carousel-fade col-md-6 py-0 m-0"
-                         data-ride="carousel">
+                <div class="post" >
+                    <div id="carouselExampleFade-{{$property->id}}" class="post-slider" data-ride="carousel">
                         <div class="carousel-inner">
                             @foreach($property->images as $image)
 
                                 <div class="carousel-item @if($loop->first) active @endif">
-                                    <div style="width: 100%; height: 100%;">
-                                        <img style="height: 300px; "
+
+                                        <img style="width: 100%;border: 3px solid #C92208; max-height:500px ;border-radius: .5rem; "
                                              src="{{url('/storage/properties_images/' . $image->url)}}"
-                                             alt="Second slide">
-                                    </div>
+                                             alt="Second slide" >
+
                                 </div>
                             @endforeach
 
@@ -38,9 +37,15 @@
                         </a>
                     </div>
 
+                    <div class="post-details">
+                    <p class="price">
                     @if($property->showPrice == 1){{$property->price}} $ @else <h4>Contact the agent for price</h4> @endif
-
-                    <p><a  href="/properties/{{$property->id}}">View details</a></p>
+                    </p>
+                    <p>
+                    {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>
+                    </p>
+                    <a  href="/properties/{{$property->id}}">View details</a>
+                    </div>
                 </div>
                 <div class="p-1"></div>
             @endforeach

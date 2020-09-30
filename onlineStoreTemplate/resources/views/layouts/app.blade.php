@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Real Estate</title>
+    <title>Oz Property Market</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
 <body class="bg-css">
 <div>
     <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue">
-        <a class="navbar-brand " href="/">Real Estate</a>
+        <a class="navbar-brand " href="/">Oz Property Market</a>
         {{--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">--}}
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -84,12 +84,14 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/properties/rent">Rent</a>
+                            <a class="nav-link" href="/properties/create">Sell</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/properties/create">Sell</a>
+                            <a class="nav-link" href="/properties/rent">Rent / Share</a>
                         </li>
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="/properties/myProperties">My Properties</a>
                         </li>
@@ -122,12 +124,13 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/properties/rent">Rent</a>
+                        <a class="nav-link" href="{{ route('login') }}">Sell</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Sell</a>
+                        <a class="nav-link" href="/properties/rent">Rent / Share</a>
                     </li>
+
 
             </ul>
             <ul class="nav navbar-nav mr-auto">

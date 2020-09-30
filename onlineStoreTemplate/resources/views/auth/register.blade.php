@@ -9,7 +9,7 @@
             <div id="agent" class="decor" onclick="select_agent()"><a>Agent</a></div>
         </div>
 
-        <div class="details">
+        <div class="details" id="d3">
             <div id="private-det">
                 <div class="card-header "><h5 class="card-title text-center">Private {{ __('Register') }}</h5></div>
                 <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
@@ -34,10 +34,11 @@
 
                     </div>
 
-                    <div class="form-label-group">
+                    <div class="form-label-group" style="display: none;">
+
                         <label for="bio">Bio</label>
                         <textarea id="bio" type="text" class="form-control @error('bio') is-invalid @enderror"
-                                  name="bio" value="{{ old('bio') }}" autocomplete="bio" autofocus></textarea>
+                                  name="bio" value="{{ old('bio') }}" autocomplete="bio" autofocus  ></textarea>
                         @error('bio')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -60,8 +61,8 @@
 
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
-                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
-                            <option value="+61">+61</option>
+                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control" style="display: none;">
+                            <option value="+61" >+61</option>
                         </select>
                         <input id="phoneNumber" type="number"
                                class="form-control @error('Phone Number') is-invalid @enderror" name="phoneNumber"
@@ -74,7 +75,7 @@
                     </div>
 
 
-                    <div class="form-label-group">
+                    <div class="form-label-group" style="display: none;">
                         <label for="profileImg">Profile Image</label>
                         <input id="profileImg" type="file" class="@error('profileImg') is-invalid @enderror "
                                name="profileImg" value="{{ old('profileImg') }}" autocomplete="profileImg" autofocus>
@@ -104,11 +105,12 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary1">
                                 {{ __('Register') }}
                             </button>
-                        </div>
+                        </div><BR>
                     </div>
+
                 </form>
 
             </div>
@@ -180,7 +182,7 @@
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
 
-                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
+                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control" style="display: none;">
                             <option value="+61">+61</option>
                         </select>
                         <input id="phoneNumber" type="number"
@@ -194,7 +196,7 @@
 
                     </div>
 
-                    <div class="form-label-group">
+                    <div class="form-label-group" style="display: none;">
                         <label for="profileImg">Profile Image</label>
                         <input id="profileImg" type="file" class="@error('profileImg') is-invalid @enderror "
                                name="profileImg" value="{{ old('profileImg') }}" autocomplete="profileImg" autofocus>
@@ -227,7 +229,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary1">
                                 {{ __('Register') }}
                             </button>
                         </div>
@@ -248,9 +250,11 @@
 
 
         function select_private() {
-            document.getElementById("private").style.background = "#20aae3";
-            document.getElementById("agent").style.background = "#2740c7";
-
+            document.getElementById("private").style.background = "#c92208";
+            document.getElementById("private").style.color = "#ffffff";
+            document.getElementById("agent").style.background = "#ffffff";
+            document.getElementById("agent").style.color = "#c92208";
+            document.getElementById("d3").style.height = "590px";
 
             const t = new TimelineMax();
             t.fromTo(loc, 1.5, {height: "0%;"}, {height: "100%"})
@@ -263,9 +267,11 @@
         }
 
         function select_agent() {
-            document.getElementById("private").style.background = "#2740c7";
-            document.getElementById("agent").style.background = "#72a7ff";
-
+            document.getElementById("private").style.background = "#ffffff";
+            document.getElementById("private").style.color = "#c92208";
+            document.getElementById("agent").style.background = "#c92208";
+            document.getElementById("agent").style.color = "#ffffff";
+            document.getElementById("d3").style.height = "720px";
 
             const t = new TimelineMax();
             t.fromTo(loc, 1, {height: "100%;"}, {height: "0%"})
