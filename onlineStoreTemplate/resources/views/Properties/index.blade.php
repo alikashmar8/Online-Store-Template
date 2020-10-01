@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/female-hand-operating-calculator-front-villa-house-model_1387-956.jpg);
+    " >
+        <div class="inner">
+            <h1>Get Your Future Home</h1>
+        </div>
+    </div>
     <div class="m-5">
 
         @if(count($properties)>0)

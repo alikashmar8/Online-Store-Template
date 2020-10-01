@@ -1,12 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="hero" style=" background-image: linear-gradient(#c92208, #f5f5f5);
+    " >
+        <div class="inner">
+            <h1>Clients</h1>
+        </div>
+    </div>
+    <BR><BR>
+
     @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
         {{--        admin area--}}
         <div class="container bg-white">
 
             @if(count($users)>0)
-                <table class="table" id="myDataTable">
+                <table class="table1" id="myDataTable">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">ID</th>

@@ -34,9 +34,9 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+  --font-family-sans-serif: 'Hind', sans-serif !important;
+  --font-family-monospace: 'Hind', sans-serif;/*SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+*/}
 
 *,
 *::before,
@@ -66,7 +66,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Hind', sans-serif !important;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -93,6 +93,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+    font-family: 'Sansita Swashed', cursive !important;
 }
 
 p {
@@ -6376,7 +6377,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Hind', sans-serif !important;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6501,7 +6502,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Hind', sans-serif !important;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -11018,6 +11019,19 @@ section{
     display: inline;
 }
 
+.form-label-group checkbox {
+    height: 35px;
+    border-radius: 2rem;
+    border-color: #C92208;
+    background-color:#C92208;
+    padding: 1px 1px;
+    margin: 20px;
+    display: inline;
+}
+.form-label-group input:checked {
+    background-color:#C92208;
+}
+
 .creat_app{
     margin-top:80px ;
     margin-bottom:80px ;
@@ -11439,6 +11453,26 @@ position: relative;
     font-size: 28px;
     font-weight: bold;
 }
+
+
+/*hero section*/
+
+.hero{
+
+    height:390px;
+    background-position: 50% 50%;
+    background-size:cover;
+    position : relative;
+}
+.hero .inner{
+
+    position: absolute;
+    top:40%;
+    left:50%;
+
+    transform: translate(-50%, -50%);
+}
+
 /* Fallback for Edge
 -------------------------------------------------- */
 

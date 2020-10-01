@@ -2,12 +2,16 @@
 
 @section('content')
 
+    <div class="hero" style=" background-image: url(https://image.freepik.com/free-vector/stock-market-analysis_23-2148598449.jpg);
+    " >
+        <div class="inner">
+             <h1>Evaluate</h1>
+        </div>
+    </div>
 
-    <h1>EVALUATE</h1>
-
-
-    <div >
-        <div class="card-header ">
+    <Br><BR><BR>
+    <div class="container p-5  bg-white" >
+        <div class="card-header  ">
 
             <h5 class="card-title text-center">Evaluation Form</h5>
         </div>
@@ -48,7 +52,7 @@
 
             <div class="form-label-group">
                 <label for="phoneNumber">Phone Number*</label>
-                <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
+                <select id="phoneNumberCode" name="phoneNumberCode" class="form-control" style="display: none;">
                     <option value="+61">+61</option>
                 </select>
                 <input id="phoneNumber" type="number"
@@ -110,9 +114,19 @@
             </div>
 
 
+            <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" name="check1"
+                       id="check1"  >
+                <label class="custom-control-label"
+                       for="check1">&nbsp;&nbsp;&nbsp;&nbsp; I am the owner of this property </label>
+            </div>
 
-
-
+            <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" name="check2"
+                       id="check2"  >
+                <label class="custom-control-label"
+                       for="check2">&nbsp;&nbsp;&nbsp;&nbsp; Note that the price will be given based on research, area, and landsize </label>
+            </div>
 
 
 

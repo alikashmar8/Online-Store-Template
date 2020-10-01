@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/close-up-financial-instruments-with-glasses_23-2148285273.jpg);
+    " >
+        <div class="inner">
+            <h1>Your Insight</h1>
+        </div>
+    </div>
+<br><BR>
     <div class="container bg-white p-5">
     @if(count($properties)>0)
             <table class="table1" id="myDataTable">

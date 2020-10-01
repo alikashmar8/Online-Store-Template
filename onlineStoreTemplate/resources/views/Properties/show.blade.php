@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
     <div class="container bg-light">
         <div class="bg-dark container text-white">
             <div id="carouselEx" class="carousel slide carousel-fade col-md-6" data-ride="carousel">
@@ -37,7 +39,8 @@
                     <p>{{ $property->contactInfo }}</p>
                 </div>
             </div>
-w
+
         </div>
     </div>
+
 @endsection

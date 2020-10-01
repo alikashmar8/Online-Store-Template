@@ -7,8 +7,8 @@
     <title>Oz Property Market</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <!link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind&family=Pacifico&family=Sansita+Swashed&display=swap" rel="stylesheet">
     {{--    Scripts--}}
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -199,7 +199,7 @@
     </nav>
 </div>
 
-<main class="container-fluid py-4">
+<main class="m-0 p-0">
     @yield('content')
 </main>
 

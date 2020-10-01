@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
+
 @section('content')
+
+    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/businessman-profile-looking-left_1098-295.jpg);
+    " >
+        <div class="inner">
+            <h1>Plofile</h1>
+        </div>
+    </div>
 
     @if(!\Illuminate\Support\Facades\Auth::guest())
         {{--        user loggedin--}}

@@ -1,10 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="hero" style=" background-image: linear-gradient(#c92208, #f5f5f5);
+    " >
+        <div class="inner">
+            <h1>All Properties</h1>
+        </div>
+    </div>
+    <BR><BR>
 
     <div class="container bg-white">
         @if(count($properties)>0)
-            <table class="table" id="myDataTable">
+            <table class="table1" id="myDataTable">
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">ID</th>

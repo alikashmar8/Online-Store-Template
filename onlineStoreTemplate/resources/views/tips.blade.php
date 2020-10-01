@@ -2,21 +2,26 @@
 
 @section('content')
 
-    <div class="row mt-5 pt-5">
-        <div class="d-flex flex-column m-auto ">
+    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/two-illuminated-crumpled-yellow-paper-light-bulb-white-background_23-2147890100.jpg);
+    " >
+        <div class="inner">
+            <div class="row mt-5 pt-5">
+                <div class="d-flex flex-column m-auto ">
 
 
-                <div class="form-label-group">
-                      <H1>TIPS</H1>
-                        <p>Search for FAQ..</p>
-                    <input type="text" id="myInput" class="form-control mr-sm-2" onkeyup="myFunction()" title="Type in a name">
+                        <div class="form-label-group">
+                              <H1>TIPS</H1>
+                                <p>Search for FAQ..</p>
+                            <input type="text" id="myInput" class="form-control mr-sm-2" onkeyup="myFunction()" title="Type in a name">
+                        </div>
                 </div>
+            </div>
         </div>
     </div>
 
 <BR><br><BR>
 
-    <div  id="myUL">
+    <div  id="myUL" style="padding: 30px">
 
 
             <h2 data-v-7b9eaa4d="" class="h2-tips">
