@@ -2,14 +2,15 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: linear-gradient(#c92208, #f5f5f5);
+    <div class="hero" style="height: 120px;  background-image: linear-gradient(#df0505, #f5f5f5);
+
     " >
         <div class="inner">
             <h1>Accept Properties</h1>
         </div>
     </div>
         <BR><BR>
-    <div class="container bg-white">
+    <div class="container bg-white" style="overflow-x: scroll;">
         @if(count($notAcceptedProperties)>0)
             <table class="table1" id="myDataTable">
                 <thead class="thead-dark">
@@ -49,13 +50,18 @@
                                 <a class="carousel-control-prev" href="#carouselExampleFade-{{$property->id}}"
                                    role="button"
                                    data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="carousel-control-prev-icon" aria-hidden="true">
+
+                                        <i class="fa fa-chevron-left" style="color: #df0505" aria-hidden="true"></i>
+                                    </span>
                                     <span class="sr-only">Previous</span>
                                 </a>
                                 <a class="carousel-control-next" href="#carouselExampleFade-{{$property->id}}"
                                    role="button"
                                    data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="carousel-control-next-icon" aria-hidden="true">
+                                        <i class="fa fa-chevron-right" style="color: #df0505" aria-hidden="true"></i>
+                                    </span>
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>

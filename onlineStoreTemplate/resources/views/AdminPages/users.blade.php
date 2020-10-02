@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero" style=" background-image: linear-gradient(#c92208, #f5f5f5);
+    <div class="hero" style="height: 120px;  background-image: linear-gradient(#df0505, #f5f5f5);
     " >
         <div class="inner">
             <h1>Clients</h1>
@@ -11,11 +11,12 @@
 
     @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
         {{--        admin area--}}
-        <div class="container bg-white">
+        <div class="container bg-white"  style="overflow-x: scroll;">
 
             @if(count($users)>0)
+
                 <table class="table1" id="myDataTable">
-                    <thead class="thead-dark">
+                    <thead class="">
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
@@ -27,7 +28,7 @@
 
                     </tr>
                     </thead>
-                    <tbody class="bg-white">
+                    <tbody class="">
                     @foreach($users as $user)
 {{--                        {{ $pn = $user->phoneNumber }}--}}
 {{--                        {{$phoneNumber = explode(' ', "hi by")}}--}}

@@ -9,10 +9,10 @@
         </div>
     </div>
 <br><BR>
-    <div class="container bg-white p-5">
+    <div class="container bg-white p-5" style="overflow-x: scroll;">
     @if(count($properties)>0)
             <table class="table1" id="myDataTable">
-                <thead class="thead-dark">
+                <thead class="">
                 <tr>
                     <th scope="col">Images</th>
                     <th scope="col">Price</th>
@@ -21,7 +21,7 @@
                     <th scope="col">Status</th>
                 </tr>
                 </thead>
-                <tbody class="bg-white">
+                <tbody class="">
                 @foreach($properties as $property)
                     <tr>
                         <td style="height: 80px; width: 200px;">
@@ -44,13 +44,17 @@
                                 <a class="carousel-control-prev" href="#carouselExampleFade-{{$property->id}}"
                                    role="button"
                                    data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="carousel-control-prev-icon" aria-hidden="true">
+                                        <i class="fa fa-chevron-left" style="color: #df0505" aria-hidden="true"></i>
+                                    </span>
                                     <span class="sr-only">Previous</span>
                                 </a>
                                 <a class="carousel-control-next" href="#carouselExampleFade-{{$property->id}}"
                                    role="button"
                                    data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="carousel-control-next-icon" aria-hidden="true">
+                                        <i class="fa fa-chevron-right" style="color: #df0505" aria-hidden="true"></i>
+                                    </span>
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>

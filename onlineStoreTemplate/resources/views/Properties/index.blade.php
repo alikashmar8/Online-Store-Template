@@ -7,6 +7,10 @@
             <h1>Get Your Future Home</h1>
         </div>
     </div>
+
+    <div class="main-content">
+
+        <div class="main2">
     <div class="m-5">
 
         @if(count($properties)>0)
@@ -18,42 +22,45 @@
 
             @foreach($properties as $property)
                 <div class="post" >
-                    <div id="carouselExampleFade-{{$property->id}}" class="post-slider" data-ride="carousel">
+                    <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
                         <div class="carousel-inner">
                             @foreach($property->images as $image)
-
                                 <div class="carousel-item @if($loop->first) active @endif">
-
-                                        <img style="width: 100%;border: 3px solid #C92208; max-height:500px ;border-radius: .5rem; "
-                                             src="{{url('/storage/properties_images/' . $image->url)}}"
-                                             alt="Second slide" >
-
+                                    <img class="d-block w-100" src="{{url('/storage/properties_images/' . $image->url)}}"
+                                         alt="No Image">
                                 </div>
                             @endforeach
 
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleFade-{{$property->id}}" role="button"
+                        <a class="carousel-control-prev" href="#carouselEx" role="button"
                            data-slide="prev">
-                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            <span class="carousel-control-prev-icon" aria-hidden="true">
+                                <i class="fa fa-chevron-left" style="color: #df0505" aria-hidden="true"></i>
+                            </span>
+                            <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleFade-{{$property->id}}" role="button"
+                        <a class="carousel-control-next" href="#carouselEx" role="button"
                            data-slide="next">
-                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <span class="carousel-control-next-icon" aria-hidden="true">
+                                <i class="fa fa-chevron-right" style="color: #df0505" aria-hidden="true"></i>
+                            </span>
+                            <span class="sr-only">Next</span>
                         </a>
                     </div>
+
 
                     <div class="post-details">
 
-                        @if($property->showPrice == 1) <p class="price">{{$property->price}} $ </p>@else <h4>Contact the
+                        @if($property->showPrice == 1) <p class="price"><i class="fa fa-usd" aria-hidden="true"></i> {{$property->price}}   </p>@else <h4>Contact the
                             agent for price</h4> @endif
 
-                        <p>
+                        <p style="color: #0a0807;padding-left: 0.5rem;">
                             {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>
                         </p>
-                        <a href="/properties/{{$property->id}}">View details</a>
+                        <a class="special-link" style="color: #0a0807;padding-left: -0.5rem;" href="/properties/{{$property->id}}">View details</a>
                     </div>
                 </div>
-                    <div class="p-1"></div>
+
                 @endforeach
         @else
             @if (Request::is('properties/rent'))
@@ -63,6 +70,18 @@
             @endif
         @endif
     </div>
+
+    </div>
+
+    <div class="main3">
+        <div class="container">
+
+
+        </div>
+
+    </div>
+    </div>
+
 @endsection
 
 
