@@ -51,7 +51,7 @@
             </div>
 
             <div>
-                {{ Form::submit('Add',['class'=>'btn btn-primary1']) }}
+                {{ Form::submit('Add',['class'=>' btn-primary1']) }}
             </div>
             {{ Form::close() }}
         </div>

@@ -2,6 +2,14 @@
 
 @section('content')
 
+    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/register-text-keyboard-button_2227-1409.jpg);
+    " >
+        <div class="inner">
+            <h1></h1>
+        </div>
+    </div>
+    <BR><br>
+
     <div class="info1">
 
         <div class="top">
@@ -102,10 +110,10 @@
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
                                required autocomplete="new-password">
                     </div>
-
+                    <br>
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-primary1">
+                            <button type="submit" class=" btn-primary1">
                                 {{ __('Register') }}
                             </button>
                         </div><BR>
@@ -229,7 +237,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-primary1">
+                            <button type="submit" class=" btn-primary1">
                                 {{ __('Register') }}
                             </button>
                         </div>

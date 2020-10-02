@@ -28,7 +28,7 @@
                     <p>Email: {{$user->email}}</p>
                     <p>Bio: {{$user->bio}}</p>
 
-                    <button class="btn">Edit Profile</button>
+                    <button class="btn-primary1">Edit Profile</button>
                 </div>
             </div>
         @else
@@ -48,7 +48,7 @@
                         <p>Email: {{$user->email}}</p>
                         <p>Bio: {{$user->bio}}</p>
 
-                        <button class="btn">Edit Profile</button>
+                        <button class="btn-primary1">Edit Profile</button>
                     </div>
                 </div>
             @else

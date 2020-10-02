@@ -31,6 +31,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f9262e0935.js" crossorigin="anonymous"></script>
+
     {{--    <link href={{ asset("bootstrap/css/bootstrap.css") }} rel="stylesheet"/>--}}
 
 <!-- Custom styles for this template -->
@@ -69,87 +72,85 @@
                     @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
                         {{--                    admin menu option--}}
                         <li class="nav-item">
-                            <a class="nav-link" href="/acceptedProperties">All Ads</a>
+                            <a class="special-link" href="/acceptedProperties">All Properties</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/users" class="nav-link">All Users</a>
+                            <a href="/users" class="special-link">All Users</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/agents" class="nav-link">Agents</a>
+                            <a href="/agents" class="special-link">Agents</a>
                         </li>
                     @else
                         {{--                        user menu options--}}
                         <li class="nav-item">
-                            <a class="nav-link" href="/properties/buy">Buy</a>
+                            <a class="special-link" href="/properties/buy">Buy</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/properties/create">Sell</a>
+                            <a class="special-link" href="/properties/create">Sell</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/properties/rent">Rent / Share</a>
+                            <a class="special-link" href="/properties/rent">Rent / Share</a>
                         </li>
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/properties/myProperties">My Properties</a>
+                            <a class="special-link" href="/properties/myProperties">My Properties</a>
                         </li>
 
             </ul>
 
             <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="/findAgents" class="nav-link">Find agent</a>
+                    <a href="/findAgents" class="special-link">Find agent</a>
                 </li>
 
                 <li class="nav-item">
-                    <div class="dropdown1">
-                        <button class="dropbtn1">More
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown1-content">
-                            <a href="/tips" class="nav-link">Tips</a>
-                            <a href="/evaluate" class="nav-link">Evaluate</a>
-                            <a href="/insurance" x class="nav-link">Insurance</a>
-                        </div>
-                    </div>
+                    <a href="/tips" class="special-link">Tips</a>
                 </li>
+                <li class="nav-item">
+                    <a href="/evaluate" class="special-link">Evaluate</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/insurance" class="special-link">Insurance</a>
+                </li>
+
+
                 @endif
                 @endif
                 @if(\Illuminate\Support\Facades\Auth::guest())
                     {{--                    guest only menu options--}}
                     <li class="nav-item">
-                        <a class="nav-link" href="/properties/buy">Buy</a>
+                        <a class="special-link" href="/properties/buy">Buy</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Sell</a>
+                        <a class="special-link" href="{{ route('login') }}">Sell</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/properties/rent">Rent / Share</a>
+                        <a class="special-link" href="/properties/rent">Rent / Share</a>
                     </li>
 
 
             </ul>
             <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="/findAgents" class="nav-link">Find agent</a>
+                    <a href="/findAgents" class="special-link">Find agent</a>
                 </li>
 
                 <li class="nav-item">
-                    <div class="dropdown1">
-                        <button class="dropbtn1">More
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown1-content">
-                            <a href="/tips" class="nav-link">Tips</a>
-                            <a href="/evaluate" class="nav-link">Evaluate</a>
-                            <a href="/insurance" class="nav-link">Insurance</a>
-                        </div>
-                    </div>
+                    <a href="/tips" class="special-link">Tips</a>
                 </li>
+                <li class="nav-item">
+                    <a href="/evaluate" class="special-link">Evaluate</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/insurance" class="special-link">Insurance</a>
+                </li>
+
+
 
                 @endif
             </ul>
@@ -158,11 +159,11 @@
             <ul class="navbar-nav ml-auto">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="special-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         {{--                        <button class="nav-item navbar-toggler" data-toggle="collapse" data-target="#registerType" type="button">--}}
-                        <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        <a class="special-link" href="{{ route('register') }}">Register</a>
                         {{--                                {{ __('Register') }}--}}
 
 
@@ -170,7 +171,7 @@
                 @else
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/users/{{ Auth::id() }}">
+                        <a class="special-link" href="/users/{{ Auth::id() }}">
                             {{--                            id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre--}}
                             {{--                           data-toggle="dropdown" --}}
                             {{ Auth::user()->name }}

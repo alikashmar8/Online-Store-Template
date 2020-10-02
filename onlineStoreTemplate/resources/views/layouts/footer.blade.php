@@ -7,19 +7,20 @@
                 <p><a href="#">
                         <i class="fa fa-facebook-square mr-1"></i>
                     </a>
-                    <a href="#"><i class="fa fa-linkedin-square"></i>
+                    <a href="#">
+                        <i class="fa fa-linkedin-square"></i>
                     </a>
                 </p>
             </div>
             <div class="col-lg-3 col-xs-12 links">
                 <h4 class="mt-lg-0 mt-sm-3">Links</h4>
                 <ul class="m-0 p-0">
-                    <li>- <a href="#">Home</a></li>
-                    <li>- <a href="#">Buy</a></li>
-                    <li>- <a href="#">Rent</a></li>
-                    <li>- <a href="#">Sell</a></li>
-                    <li>- <a href="#">Tips</a></li>
-                    <li>- <a href="#">Evaluate</a></li>
+                    <li>- <a href="#" class="special-link">Home</a></li>
+                    <li>- <a href="#" class="special-link">Buy</a></li>
+                    <li>- <a href="#" class="special-link">Rent</a></li>
+                    <li>- <a href="#" class="special-link">Sell</a></li>
+                    <li>- <a href="#" class="special-link">Tips</a></li>
+                    <li>- <a href="#" class="special-link">Evaluate</a></li>
                 </ul>
             </div>
             <div class="col-lg-4 col-xs-12 location">

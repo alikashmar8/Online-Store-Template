@@ -2148,11 +2148,11 @@ pre code {
 }
 
 .form-control:focus {
-  color: #495057;
+  color: #df0505;
   background-color: #fff;
-  border-color: #a1cbef;
+  border-color: #df0505;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+    box-shadow: 0 0 0 0.2rem #7c7e85;
 }
 
 .form-control::-moz-placeholder {
@@ -2667,38 +2667,52 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary1 {
-  color: #fff;
-  background-color: #C92208;
-  border-color: #C92208;
+    color: #fff;
+    background-color: #df0505;
+    border: 1px solid #df0505;
+    outline:none;
+
+    padding: .375rem .75rem;
+    border-radius: 2rem;
+
+    transition: transform 1s;
+    transition: background-color 1.5s;
+
 }
 
-.btn-primary:hover {
-  color: #fff;
-  background-color: #a21e0a;
-  border-color: #a21e0a;
+.btn-primary1:hover {
+  color: #df0505;
+  background-color: #0a0807;
+  border-color: #df0505;
+    transform: translateY(-1.5px);
+    text-decoration: underline;
+
+
 }
 
-.btn-primary:focus,
-.btn-primary.focus {
+.btn-primary1:focus,
+.btn-primary1.focus {
   color: #fff;
-  background-color: #C92208;
-  border-color: #C92208;
-  box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
+  background-color: #df0505;
+  border-color: #df0505;
+  box-shadow: 0 0 0 0.2rem #7c7e85;
+    outline:none;
+
 }
 
 .btn-primary.disabled,
 .btn-primary:disabled {
-  color: #fff;
-  background-color: #c44430;
-  border-color: #c44430;
+  color: #df0505;
+  background-color: #7c7e85;
+  border-color: #df0505;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #C92208;
-  border-color: #C92208;
+  background-color: #df0505;
+  border-color: #df0505;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus,
@@ -4418,6 +4432,7 @@ input[type=button].btn-block {
 .nav-link:hover,
 .nav-link:focus {
   text-decoration: none;
+    color: #0a0807;
 }
 
 .nav-link.disabled {
@@ -7032,7 +7047,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #C92208 !important;
+  background-color: #df0505 !important;
 }
 
 a.bg-dark:hover,
@@ -10954,6 +10969,19 @@ section{
 .form-label-group input {
     height: 45px;
     border-radius: 2rem;
+    border: 1px solid  #df0505;
+    margin: auto;
+}
+.form-label-group input[type=file] {
+    border: none;
+}
+
+.form-label-group input:focus{
+color: #df0505;
+    background-color: #fff;
+    border-color: #df0505;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #7c7e85;
 }
 
 .form-label-group>input,
@@ -10970,7 +10998,7 @@ section{
     margin-bottom: 0;
     /* Override default `<label>` margin */
     line-height: 1.5;
-    color: #C92208;
+    color: #df0505;
     border: 1px solid transparent;
     border-radius: .25rem;
     transition: all .1s ease-in-out;
@@ -11012,8 +11040,8 @@ section{
 .form-label-group select {
     height: 45px;
     border-radius: 2rem;
-    border-color: #C92208;
-    color:#C92208;
+    border-color: #df0505;
+    color:#df0505;
     padding: 5px 12px;
 
     display: inline;
@@ -11022,14 +11050,14 @@ section{
 .form-label-group checkbox {
     height: 35px;
     border-radius: 2rem;
-    border-color: #C92208;
-    background-color:#C92208;
+    border-color: #df0505;
+    background-color:#df0505;
     padding: 1px 1px;
     margin: 20px;
     display: inline;
 }
 .form-label-group input:checked {
-    background-color:#C92208;
+    background-color:#df0505;
 }
 
 .creat_app{
@@ -11052,7 +11080,7 @@ section{
 
 }
 .bg-blue{
-    background-color: #C92208 !important;
+    background-color: #df0505 !important;
 }
 
 .profile{
@@ -11071,7 +11099,7 @@ section{
     width:30%;
     float: left;
 
-    color: #C92208;
+    color: #df0505;
     display: block;
 }
 
@@ -11102,38 +11130,38 @@ section{
     max-height: 300px;
     max-width: 300px;
     border-radius: 50%;
-    border: 2px solid #C92208;
+    border: 2px solid #df0505;
 
     box-sizing: border-box;
 }
 .profile .num1 p{
     width: 100%;
     height: 100%;
-    color: #C92208;
+    color: #df0505;
     text-align: center;
 }
-
+/*
 .profile .num2 button{
-    color: #C92208;
-    border-color: #C92208;
+    color: #df0505;
+    border-color: #df0505;
 }
 
 profile .num2 button:hover {
     color: #ffffff;
-    background-color: #C92208;
-    border-color: #C92208;
+    background-color: #df0505;
+    border-color: #df0505;
 }
 
 profile .num2 button:focus{
-    box-shadow: 0 0 0 0.2rem rgba(255, 237, 74, 0.5);
-}
+    box-shadow: 0 0 0 0.2rem #7c7e85;
+}*/
 
 /*
 .form-label-group input:not(:placeholder-shown)~label {
     padding-top: calc(var(--input-padding-y) / 3);
     padding-bottom: calc(var(--input-padding-y) / 3);
     font-size: 14px;
-    color: #C92208;
+    color: #df0505;
 }*/
 
 
@@ -11164,7 +11192,7 @@ profile .num2 button:focus{
 }
 #private{
     grid-column:1;
-    background: #c92208;
+    background: #df0505;
     height: 100px;
     text-align: center;
     padding :10%;
@@ -11199,7 +11227,7 @@ profile .num2 button:focus{
     text-align: center;
     padding :10%;
     border-radius:5px;
-    color: #c92208;
+    color: #df0505;
 }
 
 .details{
@@ -11207,7 +11235,7 @@ profile .num2 button:focus{
     position:relative;
     margin-left: 10%;
     transform: translate(0px, -10px);
-    box-shadow: 0px 10px 7px #c92208;
+    box-shadow: 0px 10px 7px #df0505;
 }
 #d3{
     height: 590px;
@@ -11255,7 +11283,7 @@ profile .num2 button:focus{
 }
 
 .details .card-header{
-    border: 1px solid #C92208;
+    border: 1px solid #df0505;
     background-color: rgba(0,0,0,.03);
 }
 .details .btn-primary {
@@ -11266,7 +11294,7 @@ profile .num2 button:focus{
 
 
 .footer{
-    background: #C92208;
+    background: #df0505;
     color:white;
 }
 
@@ -11303,52 +11331,8 @@ profile .num2 button:focus{
 }
 
 
-/*dropdown*/
 
 
-.dropdown1 {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown1 .dropbtn1 {
-    font-size: 1rem;
-    border: none;
-    outline: none;
-    color: rgba(255,255,255,.5);
-    padding: 10px 1px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-.dropdown1 .dropbtn1:hover {
-    color: rgba(255, 255, 255, .75);
-}
-.dropdown1-content {
-    display: none;
-    position: absolute;
-    background-color: #C92208;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown1-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown1-content a:hover {
-    color: #000000;
-}
-
-.dropdown1:hover .dropdown1-content {
-    display: block;
-}
 
 
 /*my properties*/
@@ -11358,20 +11342,31 @@ profile .num2 button:focus{
     max-width: 100%;
     margin-bottom: 1rem;
     background-color: transparent;
-    border: 1px solid #C92208 ;
+    border: transparent;
+    border-collapse: collapse;
+
+    border-radius: 1rem;
+
+
+    overflow: hidden;
+
 }
 .table1 th{
-
-    background-color: #C92208;
-    border: 1px solid #C92208 ;
+    background-color: #df0505;
+    color:#ffffff;
     padding: 20px;
+    border-left: 1px solid white;
 }
 .table1 td{
 
     background-color: #ffffff;
-    border: 1px solid #C92208 ;
+    border: 0.5px solid #df0505 ;
     padding: 20px;
 }
+.table1 tr:hover {background-color: #ddd;}
+.table1 tr:nth-child(even){background-color: #f2f2f2;}
+
+
 
 /*tips*/
 
@@ -11407,7 +11402,7 @@ profile .num2 button:focus{
     margin-left: 5px;
     font-size:1.8rem;
     transform: translateY(-10%);
-    color:#c92208;
+    color:#df0505;
 
 }
 
@@ -11432,7 +11427,7 @@ profile .num2 button:focus{
     width:95%;
     margin: auto;
     background-color: #ffffff;
-    color: #C92208;
+    color: #df0505;
     padding: 20px;
     border-radius: .25rem;
 }
@@ -11440,7 +11435,7 @@ profile .num2 button:focus{
 position: relative;
 }
 .post a , .post a span{
-    color: #c92208;
+    color: #df0505;
     text-align: center;
     width: auto;
 }
@@ -11471,6 +11466,114 @@ position: relative;
     left:50%;
 
     transform: translate(-50%, -50%);
+}
+
+
+/*special-link*/
+
+
+.special-link {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 0rem;
+    padding-left: 15px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.special-link:hover,
+.special-link:focus {
+    text-decoration: none;
+    color: #0a0807;
+}
+
+.special-link.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.special-link:hover::after {
+    content: "";
+    display: block;
+    position: absolute;
+
+    width: 100%;
+    color: #000000;
+    /* Adjust height and bottom values to work with selected font */
+    height: .08em;
+    bottom: .5em;
+    left: 0.5em;
+    /* Create gradient */
+    background-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000000 30%,
+        #000000 50%,
+        #000000 70%,
+        transparent 100%
+    );
+
+    /* Set-up fade-in animation */
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*main page*/
+
+.main1{
+    width: 100%;
+    display:flex;
+    padding: 50px;
+
+
+}
+.main1 div{
+    width: 33%;
+    text-align: center;
+
+}
+.main1 h1{
+    color: #df0505;
+}
+.main1 p{
+    padding: 50px;
+    padding-top: 0;
+}
+.main-content{
+    width: 100%;
+    display: flex;
+
+}
+.main2{
+    width: 75%;
+    padding: 20px;
+
+}
+.main3{
+    width:  25%;
+    background-color: #df0505;
+    background: url("https://www.adweek.com/wp-content/uploads/2017/06/case-studies1.jpg");
+    background-size: cover;
+    background-position: 0% 0%;
+}
+@media (max-width: 750px) {
+    .main2{
+        width: 100%;
+    }
+    .main3{
+        display: none;
+    }
+
 }
 
 /* Fallback for Edge

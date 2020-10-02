@@ -2,6 +2,15 @@
 
 @section('content')
 
+    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/top-view-lock-with-username-password-information_23-2148578101.jpg);
+    " >
+        <div class="inner">
+            <h1></h1>
+        </div>
+    </div>
+    <BR><br>
+
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -47,11 +56,10 @@
                                 <input type="checkbox" class="custom-control-input" name="remember"
                                        id="remember" {{ old('remember') ? 'checked' : '' }}>
                                 <label class="custom-control-label"
-                                       for="customCheck1">&nbsp;&nbsp;&nbsp;&nbsp;{{ __('Remember Me') }}</label>
+                                       for="customCheck1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ __('Remember Me') }}</label>
                             </div>
 
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase"
-                                    type="submit"> {{ __('Login') }}</button>
+
 
 
                             @if (Route::has('password.request'))
@@ -59,7 +67,13 @@
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             @endif
-
+                            <BR>
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-6 offset-md-4">
+                            <button class="btn-primary1" style=""
+                                    type="submit"> {{ __('Login') }}</button>
+                                    </div>
+                                </div>
 
                         </form>
                     </div>
