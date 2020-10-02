@@ -4,6 +4,7 @@
 
     @if(count($results) > 0)
         <H2>Results for '{{ $searched }}':</H2>
+        <h3>{{ count($results) }} results found !</h3>
         @if($type == 'agents')
             @foreach($results as $agent)
                 <li class="list-group-item">
@@ -24,7 +25,7 @@
             {{ $results }}
         @endif
     @else
-        <h2 class="alert-warning">No results found for : {{ $searched }}!</h2>
+        <h2 class="alert-warning">No results found for : '{{ $searched }}' !</h2>
     @endif
 
 @endsection

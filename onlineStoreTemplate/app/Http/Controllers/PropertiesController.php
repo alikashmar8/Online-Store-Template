@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\User;
@@ -20,11 +21,16 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-        if(!Auth::guest()) {
-            if (Auth::user()->role == 0) {
-                $notAcceptedProperties = Property::where('accepted', '=', 0)->get();
-                $recentUsers = User::where('created_at', '>=', new DateTime('today'))->get();
-                return view("welcome", compact('notAcceptedProperties', 'recentUsers'));
+        if (Auth::guest() || (!Auth::guest() && Auth::user()->role != 0)) {
+            $categories = Category::all();
+            return view('welcome', compact('categories'));
+        } else {
+            if (!Auth::guest()) {
+                if (Auth::user()->role == 0) {
+                    $notAcceptedProperties = Property::where('accepted', '=', 0)->get();
+                    $recentUsers = User::where('created_at', '>=', new DateTime('today'))->get();
+                    return view("welcome", compact('notAcceptedProperties', 'recentUsers'));
+                }
             }
         }
         return view('welcome');
@@ -42,7 +48,7 @@ class PropertiesController extends Controller
         $property->accepted = 1;
         $property->contactInfo = $request['contactInfo'];
         $property->save();
-       return redirect('/acceptProperties');
+        return redirect('/acceptProperties');
     }
 
     /**

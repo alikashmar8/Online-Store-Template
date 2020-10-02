@@ -12,7 +12,7 @@
 
     <div class="row mt-5 pt-5">
         <div class="d-flex flex-column m-auto ">
-            <form action="/search-result" method="GET" class="form-inline my-2 my-lg-0">
+            <form action="/search-agents" method="GET" class="form-inline my-2 my-lg-0">
                 <input type="hidden" name="type" value="agents">
                 <div class="form-label-group">
                     <input class="form-control mr-sm-2" type="search" name="name" placeholder="Search">
