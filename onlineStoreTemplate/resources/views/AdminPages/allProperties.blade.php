@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero" style=" height: 120px;  background-image: linear-gradient(#df0505, #f5f5f5);
+    <div class="hero" style=" height: 100px;  background-image: linear-gradient(#df0505, #f5f5f5);
     " >
         <div class="inner">
-            <h1>All Properties</h1>
+            <h1></h1>
         </div>
     </div>
+    <BR>
+    <h1 style=" text-align: center">All Properties</h1>
     <BR><BR>
 
     <div class="container bg-white" style="overflow-x: scroll;">

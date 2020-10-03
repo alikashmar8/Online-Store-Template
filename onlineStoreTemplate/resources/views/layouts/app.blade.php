@@ -52,7 +52,7 @@
 
 <body class="bg-css">
 <div>
-    <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue">
+    <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue" >
         <a class="navbar-brand " href="/">Oz Property Market</a>
         {{--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">--}}
 

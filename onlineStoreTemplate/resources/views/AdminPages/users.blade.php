@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hefro" style=" background-image: linear-gradient(#c92208, #f5f5f5);
+    <div class="hero" style="height: 100px; background-image: linear-gradient(#df0505, #f5f5f5);
     ">
-        <div class="inner">
-            <h1>Clients</h1>
-        </div>
+
     </div>
+    <BR>
+        <h1 style=" text-align: center">Clients</h1>
+
     <BR><BR>
 
             @if(\Illuminate\Support\Facades\Auth::user()->role == 0)

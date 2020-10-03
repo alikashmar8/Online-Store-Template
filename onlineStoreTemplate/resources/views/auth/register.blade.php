@@ -4,6 +4,9 @@
 
     <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/register-text-keyboard-button_2227-1409.jpg);
     " >
+        <div style="position: absolute; width:100%;top: 0;height: 20px; background-image: linear-gradient(#df0505, transparent); ">
+
+        </div>
         <div class="inner">
             <h1></h1>
         </div>

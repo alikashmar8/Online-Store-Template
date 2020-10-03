@@ -3,6 +3,10 @@
 @section('content')
     <div class="hero" style=" background-image: url(https://img.freepik.com/free-photo/sea-view-dining-living-room-luxury-summer-beach-house-with-swimming-pool-near-wooden-terrace_42251-141.jpg?size=626&ext=jpg&ga=GA1.2.1536601498.1589793154);
     ">
+        <div style="position: absolute; width:100%;top: 0;height: 20px; background-image: linear-gradient(#df0505, transparent); ">
+
+        </div>
+
         <div class="inner">
             @if(\Illuminate\Support\Facades\Auth::guest() || (!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::user()->role != 0))
                 {{--        if user guest or not admin --}}
@@ -53,19 +57,22 @@
                 </div>
 
             @else
+        </div>
+    </div>
                 @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
                     {{--            admin home page--}}
-                    <div class="row container">
+                    <div class="row container py-0" style="margin: auto">
+                        <BR><BR>
                         <div class="col-md-1"></div>
 
-                        <div class="col-md-5 bg-white p-2">
+                        <div class="col-md-5 bg-white p-2 m-0">
                             <h2>Apartments waiting for confirmation = {{ count($notAcceptedProperties) }}</h2>
                             <a href="/acceptProperties">Check Now</a>
                         </div>
 
                         <div class="col-md-1"></div>
 
-                        <div class="col-md-5 bg-white p-2">
+                        <div class="col-md-5 bg-white p-2 m-0">
                             <h2>New User Last 24 Hrs: {{ count($recentUsers) }}</h2>
                             <a href="/users">See Users</a>
 
@@ -75,6 +82,6 @@
                 @endif
 
             @endif
-        </div>
-    </div>
+
+
 @endsection
