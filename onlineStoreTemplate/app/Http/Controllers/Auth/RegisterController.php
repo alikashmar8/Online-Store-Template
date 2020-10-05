@@ -84,16 +84,11 @@ class RegisterController extends Controller
             // Upload Image
             $path = $image->storeAs('public/user_profile_images', $fileNameToStore);
         }
-        if($data['role']==1){
-            $company = new Company;
-            $company->name = $data['comp_name'];
-            $company->licenseNumber = $data['license'];
-            $company->save();
-        }
+
         if(isset($data['bio'])){
             $bio = $data['bio'];
         }
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'bio' => $bio,
             'email' => $data['email'],
@@ -103,5 +98,13 @@ class RegisterController extends Controller
             'role' => $data['role'],
 
         ]);
+        if ($data['role'] == 1) {
+            $company = new Company;
+            $company->name = $data['comp_name'];
+            $company->licenseNumber = $data['license'];
+            $company->AgentId = $user->id;
+            $company->save();
+        }
+        return $user;
     }
 }

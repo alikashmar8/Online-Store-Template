@@ -35,8 +35,9 @@
                                 </select>
                                 <select name="minPrice">
 
-                                    <option name=100" value="0">Min Price</option>
-                                    <option name=100" value="999999">999999 $</option>
+                                    <option name=100" value="0" id="0">Min Price</option>
+                                    <option name=100" value="1000" id="1000">1000 $</option>
+                                    <option name=100" value="100" id="100">100 $</option>
                                 </select>
                                 <select name="bedroomsNumber">
                                     <option value=-1>Bedrooms Number</option>
