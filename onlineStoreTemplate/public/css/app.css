@@ -11470,6 +11470,14 @@ position: relative;
     background-size:cover;
     position : relative;
 }
+.hero::after{
+    content: "";
+    position: absolute;
+    width:100%;
+    top: 0;
+    height: 20px;
+    background-image: linear-gradient(#df0505, transparent);
+}
 .hero .inner{
 
     position: absolute;

@@ -1,15 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero" style=" background-image: url(https://img.freepik.com/free-photo/sea-view-dining-living-room-luxury-summer-beach-house-with-swimming-pool-near-wooden-terrace_42251-141.jpg?size=626&ext=jpg&ga=GA1.2.1536601498.1589793154);
-    ">
-        <div style="position: absolute; width:100%;top: 0;height: 20px; background-image: linear-gradient(#df0505, transparent); ">
 
-        </div>
+    @if(\Illuminate\Support\Facades\Auth::guest() || (!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::user()->role != 0))
+        {{--        if user guest or not admin --}}
+    <div class="hero" style=" height: 500px; background-image: url(https://www.webside.xyz/MK/img/m.jpg); background-position: 50% 17%;">
+
 
         <div class="inner">
-            @if(\Illuminate\Support\Facades\Auth::guest() || (!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::user()->role != 0))
-                {{--        if user guest or not admin --}}
 
                 <div class="row mt-5 pt-5">
                     <div class="d-flex flex-column m-auto ">
@@ -56,11 +54,79 @@
                     </div>
                 </div>
 
-            @else
+
         </div>
     </div>
-                @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
+
+        <div class="main1">
+            <div>
+                <h1>
+                    <i class="fas fa-laptop-house"></i>
+                </h1>
+                <p>
+                    Get an online access to buy, sell, and rent prop
+
+                </p>
+            </div>
+            <div>
+                <h1>
+                    <i class="fas fa-money-check-alt"></i>
+                </h1>
+                <p>
+                    Save money and time in achieving your goals
+                </p>
+            </div>
+            <div>
+                <h1>
+                    <i class="fas fa-house-user"></i>
+                </h1>
+                <p>
+                    Track your property to monitor local sales
+                </p>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main2">
+                <div class="container p-4">
+                    <h1>
+                        Welcome Text
+                    </h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                    </p>
+                </div>
+                <div class="container p-4">
+                    <h1>
+                        about us
+                    </h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                    </p>
+                </div>
+                <div class="container p-4">
+                    <h1>
+                        contact us
+                    </h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                    </p>
+                </div>
+            </div>
+            <div class="main3">
+
+            </div>
+        </div>
+    @else
+
+    @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
                     {{--            admin home page--}}
+
+        <div class="hero" style=" height: 500px; background-image: url(https://www.webside.xyz/MK/img/m.jpg); background-position: 50% 17%;">
+
+        </div>
                     <div class="row container py-0" style="margin: auto">
                         <BR><BR>
                         <div class="col-md-1"></div>

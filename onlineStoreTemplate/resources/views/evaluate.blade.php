@@ -4,9 +4,6 @@
 
     <div class="hero" style=" background-image: url(https://image.freepik.com/free-vector/stock-market-analysis_23-2148598449.jpg);
     " >
-        <div style="position: absolute; width:100%;top: 0;height: 20px; background-image: linear-gradient(#df0505, transparent); ">
-
-        </div>
 
         <div class="inner">
              <h1>Evaluate</h1>

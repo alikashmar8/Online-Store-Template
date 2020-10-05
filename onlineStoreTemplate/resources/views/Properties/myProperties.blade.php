@@ -4,9 +4,7 @@
 
     <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/close-up-financial-instruments-with-glasses_23-2148285273.jpg);
     " >
-        <div style="position: absolute; width:100%;top: 0;height: 20px; background-image: linear-gradient(#df0505, transparent); ">
 
-        </div>
         <div class="inner">
             <h1>Your Insight</h1>
         </div>
