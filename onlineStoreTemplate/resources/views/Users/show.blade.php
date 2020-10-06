@@ -51,7 +51,8 @@
                         <p>Email: {{$user->email}}</p>
                         <p>Bio: {{$user->bio}}</p>
 
-                        <button class="btn-primary1">Edit Profile</button>
+                        <button class="btn-primary1" data-toggle="modal" data-target="#exampleModal">Edit Profile
+                        </button>
                     </div>
                 </div>
             @else
@@ -64,5 +65,46 @@
         @endif
 
     @endif
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/users/edit" method="post" id="editForm">
+
+                    {{ csrf_field() }}
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="hidden" value="{{ $user->id }}" name="id">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" name="name" value="{{ $user->name }}" required">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-form-label">Email:</label>
+                            <input type="email" class="form-control" name="email" value="{{ $user->email }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber" class="col-form-label">Phone Number:</label>
+                            <input type="text" class="form-control" name="phoneNumber" value="{{ $user->phoneNumber }}"
+                                   required>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-success" value="edit">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
 
 @endsection

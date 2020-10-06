@@ -42,7 +42,7 @@ Route::get('/acceptedProperties', '\App\Http\Controllers\PropertiesController@al
 Route::get('/users', '\App\Http\Controllers\UsersController@index')->middleware('auth');
 Route::get('/agents', '\App\Http\Controllers\UsersController@agentsIndex')->middleware('auth');
 
-
+Route::post('/users/edit', '\App\Http\Controllers\UsersController@edit')->middleware('auth');
 Route::get('/users/{id}', '\App\Http\Controllers\UsersController@show')->middleware('auth');
 Route::delete('/users/destroy/{id}', '\App\Http\Controllers\UsersController@destroy')->middleware('auth');
 
