@@ -38,7 +38,7 @@
 
                     <p>Price: @if($property->showPrice == 1){{$property->price}} $ @else <h4>Contact the agent for
                         price</h4> @endif </p>
-                    <p>Placed On: {{ $property->created_at }}</p>
+                    <p>Placed On: {{ $property->created_at->toDateString() }}</p>
                     <p>Description: {{ $property->description }}</p>
                 </div>
                 <br><br>
