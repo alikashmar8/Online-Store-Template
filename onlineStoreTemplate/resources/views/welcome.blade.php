@@ -4,15 +4,15 @@
 
     @if(\Illuminate\Support\Facades\Auth::guest() || (!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::user()->role != 0))
         {{--        if user guest or not admin --}}
-    <div class="hero" style=" height: 500px; background-image: url(https://www.webside.xyz/MK/img/m.jpg); background-position: 50% 17%;">
+        <div class="hero" style=" height: 650px; background-image: url(https://www.webside.xyz/MK/img/m1.jpg); background-position: 50% 45%;">
 
 
-        <div class="inner">
+            <div class="inner">
 
                 <div class="row mt-5 pt-5">
                     <div class="d-flex flex-column m-auto ">
                         <form class="form-inline my-2 my-lg-0" action="/search-properties" method="GET">
-                            <div class="btn-group btn-group-toggle " data-toggle="buttons">
+                            <div class="btn-group btn-group-toggle " data-toggle="buttons" style="display: none">
                                 <div class="bg-secondary p-2">Category:</div>
                                 <label class="btn btn-secondary active">
                                     <input type="radio" name="type" value=-1 autocomplete="off" checked> Any
@@ -24,40 +24,72 @@
                                     </label>
                                 @endforeach
                             </div>
-                            <div class="form-label-group">
-                                <input class="form-control mr-sm-2" type="search" name="location"
-                                       hint="Search by location" placeholder="Search by location">
+                            <div class="search-bar">
+                                <table>
+                                    <tr >
+                                        <td colspan="3">
+                                            <input class="" type="search" name="location"
+                                               hint="Search by location" placeholder="Search by location">
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary1" style=" border-radius: 0rem;" type="submit">
+                                                Search
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
 
-                                <select name="maxPrice">
-                                    {{--                                    Max Price one hundred million dollar--}}
-                                    <option name=100" value="1000000000">Max Price</option>
-                                    <option name=100" value="999999">999999 $</option>
-                                </select>
-                                <select name="minPrice">
+                                    <td>
 
-                                    <option name=100" value="0">Min Price</option>
-                                    <option name=100" value="999999">999999 $</option>
-                                </select>
-                                <select name="bedroomsNumber">
-                                    <option value=-1>Bedrooms Number</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                                <button class="btn btn-primary1" style=" border-radius: 2rem;" type="submit">
-                                    Search
-                                </button>
+                                        <select name="maxPrice" >
+                                            {{--                                    Max Price one hundred million dollar--}}
+                                            <option name=100" value="1000000000" selected  >Max Price</option>
+                                            <option name=100" value="500000" id="500000">500,000</option>
+                                            <option name=100" value="1000000" id="1000000">1,000,000</option>
+                                            <option name=100" value="2000000" id="2000000">2,000,000</option>
+                                            <option name=100" value="3000000" id="3000000">3,000,000</option>
+                                            <option name=100" value="4000000" id="4000000">4,000,000</option>
+
+
+                                        </select>
+
+                                    </td>
+                                    <td>
+
+                                        <select name="minPrice" >
+                                            {{--                                    min Price --}}
+                                            <option name=100" value="0" id="0" selected  >Min Price</option>
+                                            <option name=100" value="50" id="50" >50</option>
+                                            <option name=100" value="100" id="100" >100</option>
+                                            <option name=100" value="150" id="150" >150</option>
+                                            <option name=100" value="200" id="200" >200</option>
+                                            <option name=100" value="300" id="300" >300</option>
+                                            <option name=100" value="400" id="400" >400</option>
+
+                                        </select>
+
+                                    </td>
+                                    <td>
+                                        <select name="bedroomsNumber">
+                                            <option value=-1>Bedrooms Number</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                        </select>
+
+                                    </td>
+
+                                    </tr>
+                                </table>
                             </div>
                         </form>
                     </div>
                 </div>
-
-
+            </div>
         </div>
-    </div>
-
         <div class="main1">
             <div>
                 <h1>
@@ -65,7 +97,6 @@
                 </h1>
                 <p>
                     Get an online access to buy, sell, and rent prop
-
                 </p>
             </div>
             <div>
@@ -93,7 +124,6 @@
                     </h1>
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
                     </p>
                 </div>
                 <div class="container p-4">
@@ -102,7 +132,6 @@
                     </h1>
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
                     </p>
                 </div>
                 <div class="container p-4">
@@ -111,43 +140,30 @@
                     </h1>
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
                     </p>
                 </div>
             </div>
             <div class="main3">
-
             </div>
         </div>
     @else
-
-    @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
-                    {{--            admin home page--}}
-
-        <div class="hero" style=" height: 500px; background-image: url(https://www.webside.xyz/MK/img/m.jpg); background-position: 50% 17%;">
-
-        </div>
-                    <div class="row container py-0" style="margin: auto">
-                        <BR><BR>
+        @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
+            {{--            admin home page--}}
+            <div class="hero" style=" height: 650px; background-image: url(https://www.webside.xyz/MK/img/m1.jpg); background-position: 50% 45%;">
+            </div>
+            <div class="row container py-0" style="margin: auto">
+                <BR><BR>
                         <div class="col-md-1"></div>
-
-                        <div class="col-md-5 bg-white p-2 m-0">
+                        <div class="col-md-5 bg-white p-2   control" >
                             <h2>Apartments waiting for confirmation = {{ count($notAcceptedProperties) }}</h2>
-                            <a href="/acceptProperties">Check Now</a>
+                            <a class="special-link" style="color: #df0505" href="/acceptProperties">Check Now</a>
                         </div>
-
                         <div class="col-md-1"></div>
-
-                        <div class="col-md-5 bg-white p-2 m-0">
+                        <div class="col-md-5 bg-white p-2 control">
                             <h2>New User Last 24 Hrs: {{ count($recentUsers) }}</h2>
-                            <a href="/users">See Users</a>
-
+                            <a class="special-link" style="color: #df0505" href="/users">See Users</a>
                         </div>
-
-                    </div>
-                @endif
-
-            @endif
-
-
+            </div>
+        @endif
+    @endif
 @endsection

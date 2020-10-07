@@ -10971,7 +10971,7 @@ section{
 .form-label-group input {
     height: 45px;
     border-radius: 2rem;
-    border: 1px solid  #df0505;
+    border: 1px solid  #7c7e85;
     margin: auto;
 }
 .form-label-group input[type=file] {
@@ -10979,11 +10979,11 @@ section{
 }
 
 .form-label-group input:focus{
-color: #df0505;
+color: #0a0807;
     background-color: #fff;
-    border-color: #df0505;
+    border-color: #7c7e85;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem #7c7e85;
+    box-shadow: 0 0 0 0.2rem #df050550;
 }
 
 .form-label-group>input,
@@ -11000,7 +11000,7 @@ color: #df0505;
     margin-bottom: 0;
     /* Override default `<label>` margin */
     line-height: 1.5;
-    color: #df0505;
+    color: #0a0807;
     border: 1px solid transparent;
     border-radius: .25rem;
     transition: all .1s ease-in-out;
@@ -11042,8 +11042,8 @@ color: #df0505;
 .form-label-group select {
     height: 45px;
     border-radius: 2rem;
-    border-color: #df0505;
-    color:#df0505;
+    border-color: #df050550;
+    color:#0a0807;
     padding: 5px 12px;
 
     display: inline;
@@ -11052,14 +11052,14 @@ color: #df0505;
 .form-label-group checkbox {
     height: 35px;
     border-radius: 2rem;
-    border-color: #df0505;
-    background-color:#df0505;
+    border-color: #df050550;
+    background-color:#7c7e85;
     padding: 1px 1px;
     margin: 20px;
     display: inline;
 }
 .form-label-group input:checked {
-    background-color:#df0505;
+    background-color:#0a0807;
 }
 
 .creat_app{
@@ -11082,7 +11082,15 @@ color: #df0505;
 
 }
 .bg-blue{
-    background-color: #df0505 !important;
+    /*background-color: #df0505 !important;*/
+    background-image: linear-gradient(#df0505, transparent);
+    /*background-image:  linear-gradient(#df0505,#df050570,#df050540,transparent);*/
+    z-index: 1;
+}
+@media (max-width : 995px){
+    .bg-blue {
+        background-image: linear-gradient(#df0505, #df0505, #df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505, transparent);
+    }
 }
 
 .profile{
@@ -11237,7 +11245,7 @@ profile .num2 button:focus{
     position:relative;
     margin-left: 10%;
     transform: translate(0px, -10px);
-    box-shadow: 0px 10px 7px #df0505;
+    box-shadow: 0px 10px 5px #7c7e85;
 }
 #d3{
     height: 590px;
@@ -11298,6 +11306,10 @@ profile .num2 button:focus{
 .footer{
     background: #df0505;
     color:white;
+    margin-top: 150px;
+}
+.footer h2 , .footer h4{
+    color: #0a0807;
 }
 
 .footer .links ul {
@@ -11328,8 +11340,15 @@ profile .num2 button:focus{
     font-size: 18px;
 }
 
+.footer .copyright {
+    background-color: #7c7e85;
+    color: #ffffff;
+}
 .footer .copyright p{
     border-top:1px solid rgba(255,255,255,.1);
+    color: #ffffff;
+    padding: 0px;
+    padding-right: 20px;
 }
 
 
@@ -11465,11 +11484,12 @@ position: relative;
 
 .hero{
 
-    height:390px;
+    height:450px;
     background-position: 50% 50%;
     background-size:cover;
     position : relative;
-}
+    transform: translateY(-90px);
+}/*
 .hero::after{
     content: "";
     position: absolute;
@@ -11477,7 +11497,7 @@ position: relative;
     top: 0;
     height: 20px;
     background-image: linear-gradient(#df0505, transparent);
-}
+}*/
 .hero .inner{
 
     position: absolute;
@@ -11487,7 +11507,10 @@ position: relative;
     transform: translate(-50%, -50%);
 }
 
-
+.control{
+    margin-bottom: 100px;
+    box-shadow: 0 0 10px #7c7e85;
+}
 /*special-link*/
 
 
@@ -11561,8 +11584,10 @@ position: relative;
     text-align: center;
 
 }
-.main1 h1{
+.main1 h1 i{
     color: #df0505;
+
+
 }
 .main1 p{
     padding: 50px;
@@ -11594,6 +11619,60 @@ position: relative;
     }
 
 }
+
+/*search bar*/
+.search-bar {
+    width: 70%;
+}
+
+.search-bar table{
+    width: 100%;
+}
+
+.search-bar td{
+    padding: 0;
+    margin: 0;
+
+}
+.search-bar input{
+    margin: 0;
+    width: 100%;
+    border: none;
+    border-left: 2px solid #df0505;
+
+    height: 45px;
+
+    padding: 5px 5px;
+    font-size: 1rem;
+    font-weight: 400;
+
+    color: #0a0807;
+    background-color: #fff;
+    border-radius: 0rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    line-height: 1.5px;
+    outline:none;
+
+
+}
+.search-bar button{
+    height: 45px;
+    outline:none;
+}
+
+.search-bar select{
+    margin: 0;
+    background-color: #ffffff;
+    border: 1px solid #7c7e85;
+    border-bottom: none;
+    height: 45px;
+    outline:none;
+}
+.search-bar select:hover {
+    background-color: #7c7e85;
+    color: #0a0807;
+}
+
 
 /* Fallback for Edge
 -------------------------------------------------- */

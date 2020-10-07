@@ -1,9 +1,9 @@
-<div class="py-2 footer">
-    <div class="p-4">
-        <div class="row">
+<div class="footer">
+    <div class="">
+        <div class="row p-4">
             <div class="col-lg-5 col-xs-12 about-company">
                 <h2>Oz Property Market</h2>
-                <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
+                <p class="pr-5  ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
                 <p><a href="#">
                         <i class="fa fa-facebook-square mr-1"></i>
                     </a>
@@ -30,9 +30,9 @@
                 <p><i class="fa fa-envelope-o mr-3"></i>info@hsdf.com</p>
             </div>
         </div>
-        <div class="row mt-5">
-            <div class="col copyright">
-                <p class=""><small class="text-white-50">© 2020 Real Estate, all Rights Reserved. Developed by ... </small></p>
+        <div class="  ">
+            <div class="col copyright p-2 " >
+                <p class=""><small >© 2020 Real Estate, all Rights Reserved. Developed by ... </small></p>
             </div>
         </div>
     </div>

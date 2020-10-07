@@ -6,9 +6,10 @@
 
     " >
         <div class="inner">
-            <h1>Accept Properties</h1>
+
         </div>
     </div>
+    <h1 style=" text-align: center">Accept Properties</h1>
         <BR><BR>
     <div class="container bg-white" style="overflow-x: scroll;">
         @if(count($notAcceptedProperties)>0)
