@@ -16,6 +16,12 @@
                 <input type="hidden" name="type" value="agents">
                 <div class="form-label-group">
                     <input class="form-control mr-sm-2" type="search" name="name" placeholder="Search">
+                    Search By:
+                    <select name="searchBy">
+                        <option value="name">Agent Name</option>
+                        <option value="companyName">Company Name</option>
+                        <option value="location">Location</option>
+                    </select>
                     <button class="btn btn-primary1" type="submit">Search</button>
                 </div>
             </form>

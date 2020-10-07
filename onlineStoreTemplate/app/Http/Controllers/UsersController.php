@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Company;
 use App\Models\Property;
 use App\Models\PropertyImage;
@@ -58,10 +59,32 @@ class UsersController extends Controller
         $user->delete();
         if (Auth::user()->role == 0) {
             return redirect('/users');
-        }
-        else{
+        } else {
             return redirect('/');
         }
+    }
+
+    public function edit(Request $request)
+    {
+        dd($request);
+        return view('Users.edit');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+
+        dd($request);
+        $category = Category::find($id);
+        $category->title = $request->input('title');
+        $category->save();
+        return redirect('/categories');
     }
 
 }

@@ -158,19 +158,23 @@ class PropertiesController extends Controller
     public function destroy($id)
     {
         $property = Property::find($id);
-        $imags = PropertyImage::where('propertyId','=',$property->id);
+        $imags = PropertyImage::where('propertyId', '=', $property->id);
         $images = $imags->get();
-        foreach ($images as $image){
+        foreach ($images as $image) {
             Storage::delete('public/properties_image/' . $image->url);
-            $path = public_path().'\storage\properties_images\\'.$image->url;
+            $path = public_path() . '\storage\properties_images\\' . $image->url;
             unlink($path);
         }
 
-        if($property->accepted == 0) {
+        $imags->delete();
+        $property->delete();
+        return redirect('/');
+
+        if ($property->accepted == 0) {
             $imags->delete();
             $property->delete();
             return redirect('/acceptProperties');
-        }else{
+        } else {
             $imags->delete();
             $property->delete();
             return redirect('/acceptedProperties');

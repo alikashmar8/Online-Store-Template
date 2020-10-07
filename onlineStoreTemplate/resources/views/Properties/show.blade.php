@@ -36,23 +36,33 @@
                     <h3>Details:</h3>
 
 
-                    <p>Price: @if($property->showPrice == 1){{$property->price}} $ @else <h4>Contact the agent for price</h4> @endif </p>
-                    <p>Placed On: {{ $property->created_at }}</p>
+                    <p>Price: @if($property->showPrice == 1){{$property->price}} $ @else <h4>Contact the agent for
+                        price</h4> @endif </p>
+                    <p>Placed On: {{ $property->created_at->toDateString() }}</p>
                     <p>Description: {{ $property->description }}</p>
                 </div>
                 <br><br>
                 <div class="p-5">
                     <h3>Contact Info:</h3>
                     <p>{{ $property->contactInfo }}</p>
+                    <hr>
+                    <form>
+                        Contact us about this property:
+                        <div class="form-group">
+                            <label class="form-label-group" for="message">Message:</label>
+                            <textarea name="message" class="form-control"></textarea>
+                        </div>
+                        <input type="submit" value="Send">
+                    </form>
                 </div>
                 <br><br>
 
                 {{--      maps   --}}
-                <div class="container p-5 my-5" style="height:300px; background-image: url(https://sunny95.com/wp-content/blogs.dir/16/files/2017/08/Columbus-and-Oakwood.jpg); background-size: cover;">
+                <div class="container p-5 my-5"
+                     style="height:300px; background-image: url(https://sunny95.com/wp-content/blogs.dir/16/files/2017/08/Columbus-and-Oakwood.jpg); background-size: cover;">
 
                 </div>
             </div>
-
 
 
         </div>
