@@ -128,8 +128,8 @@
 
         </div>
                     <div class="row container py-0" style="margin: auto">
-                        <BR><BR>
-                        <div class="col-md-1"></div>
+
+                        <div class="col-md-1">  </div>
 
                         <div class="col-md-5 bg-white p-2 m-0">
                             <h2>Apartments waiting for confirmation = {{ count($notAcceptedProperties) }}</h2>
