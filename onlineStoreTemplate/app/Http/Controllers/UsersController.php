@@ -81,10 +81,43 @@ class UsersController extends Controller
     {
 
         dd($request);
-        $category = Category::find($id);
-        $category->title = $request->input('title');
-        $category->save();
-        return redirect('/categories');
+        $user = User::findOrFail($id);
+        $user = $request['phoneNumberCode'] . '-' . $request['phoneNumber'];
+        $user->name = $request->name;
+        if ($user->bio != null) {
+            $bio = $request->bio;
+        }
+        if (isset($request['profileImg'])) {
+            $image = $request['profileImg'];
+            // Get filename with the extension
+            $filenameWithExt = $image->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $image->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+            // Upload Image
+            $user->profileImg = $fileNameToStore;
+            $path = $image->storeAs('public/user_profile_images', $fileNameToStore);
+        }
+
+        if (isset($request['bio'])) {
+            $bio = $request['bio'];
+        }
+
+        if ($request->email != Auth::user()->email) {
+
+        }
+//        if ($request['role'] == 1) {
+//            $company = new Company;
+//            $company->name = $request['comp_name'];
+//            $company->licenseNumber = $request['license'];
+//            $company->AgentId = $user->id;
+//            $company->save();
+//        }
+        $user->save();
+        return redirect('users/' . $user->id);
     }
 
 }

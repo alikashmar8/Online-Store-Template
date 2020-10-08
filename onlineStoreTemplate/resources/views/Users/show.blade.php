@@ -108,7 +108,8 @@
                             </select>
                             <input id="phoneNumber" type="number"
                                    class="form-control @error('Phone Number') is-invalid @enderror" name="phoneNumber"
-                                   value="{{ old('phoneNumber') }}" required autocomplete="phoneNumber" autofocus>
+                                   value="{{ Str::of($user->phoneNumber)->explode('-')[1] }}" required
+                                   autocomplete="phoneNumber" autofocus>
                             @error('phoneNumber')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
