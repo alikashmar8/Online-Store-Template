@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero" style=" background-image: url(http://myglamourdesign.com/public/imagaga123/buy.jpg);
+    <div class="hero" style=" background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/buy.jpg);
     ">
 
         <div class="inner">

@@ -4,7 +4,7 @@
 
     @if(\Illuminate\Support\Facades\Auth::guest() || (!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::user()->role != 0))
         {{--        if user guest or not admin --}}
-    <div class="hero" style=" height: 600px; background-image: url(http://myglamourdesign.com/public/imagaga123/home.jpg); background-position: 50% 40%;">
+    <div class="hero" style=" height: 600px; background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/home.jpg); background-position: 50% 40%;">
 
 
         <div class="inner " style="text-align: left;">

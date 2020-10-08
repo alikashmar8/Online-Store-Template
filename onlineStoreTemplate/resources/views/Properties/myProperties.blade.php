@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(http://myglamourdesign.com/public/imagaga123/insight.jpg); background-position: 50% 30%;
+    <div class="hero" style=" background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/insight.jpg); background-position: 50% 30%;
     ">
 
         <div class="inner">
