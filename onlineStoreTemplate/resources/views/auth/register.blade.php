@@ -71,7 +71,12 @@
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
                         <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
-                            <option>+61</option>
+                            @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
+                                <option value="+{{$countryCode->phonecode}}"
+                                        @if($countryCode->phonecode == 61) selected @endif>
+                                    +{{ $countryCode->phonecode }} - {{ $countryCode->iso }}</option>
+                            @endforeach
+
                         </select>
                         <input id="phoneNumber" type="number"
                                class="form-control @error('Phone Number') is-invalid @enderror" name="phoneNumber"
@@ -191,8 +196,11 @@
                         <label for="phoneNumber">Phone Number*</label>
 
                         <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
-
-                            <option>+61</option>
+                            @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
+                                <option value="+{{$countryCode->phonecode}}"
+                                        @if($countryCode->phonecode == 61) selected @endif>
+                                    +{{ $countryCode->phonecode }} - {{ $countryCode->iso }}</option>
+                            @endforeach
                         </select>
                         <input id="phoneNumber" type="number"
                                class="form-control @error('Phone Number') is-invalid @enderror" name="phoneNumber"

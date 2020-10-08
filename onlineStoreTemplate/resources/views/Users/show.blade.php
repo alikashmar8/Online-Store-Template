@@ -4,8 +4,9 @@
 @section('content')
 
     <div class="hero" style=" background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/profile.jpg);
-    " >
-        <div style="position: absolute; width:100%;top: 0;height: 20px; background-image: linear-gradient(#df0505, transparent); ">
+    ">
+        <div
+            style="position: absolute; width:100%;top: 0;height: 20px; background-image: linear-gradient(#df0505, transparent); ">
 
         </div>
         <div class="inner">
@@ -77,32 +78,63 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="/users/edit" method="post" id="editForm">
+                <div class="alert alert-warning">Please note changing your email address needs new email confirmation
+                    process
+                </div>
+                {{--                <form action="/users/edit" method="post" id="editForm">--}}
+                {{ Form::open(['action' => ['App\Http\Controllers\UsersController@update',$user->id],'method'=>'PUT']) }}
 
-                    {{ csrf_field() }}
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <input type="hidden" value="{{ $user->id }}" name="id">
-                            <label for="name" class="col-form-label">Name:</label>
-                            <input type="text" class="form-control" name="name" value="{{ $user->name }}" required">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="col-form-label">Email:</label>
-                            <input type="email" class="form-control" name="email" value="{{ $user->email }}" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phoneNumber" class="col-form-label">Phone Number:</label>
-                            <input type="text" class="form-control" name="phoneNumber" value="{{ $user->phoneNumber }}"
-                                   required>
-                        </div>
-
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" value="{{ $user->id }}" name="id">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" name="name" value="{{ $user->name }}" required>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-success" value="edit">
+                    <div class="form-group">
+                        <label for="email" class="col-form-label">Email:</label>
+                        <input type="email" class="form-control" name="email" value="{{ $user->email }}" required>
                     </div>
-                </form>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label for="phoneNumber">Phone Number*</label>
+                            <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
+                                @foreach(\App\Models\CountryCode::orderBy('nicename')->get() as $countryCode)
+                                    <option value="+{{$countryCode->phonecode}}"
+                                            @if($countryCode->nicename == "Australia") selected @endif>
+                                        {{ $countryCode->nicename }} +{{ $countryCode->phonecode }}</option>
+                                @endforeach
 
+                            </select>
+                            <input id="phoneNumber" type="number"
+                                   class="form-control @error('Phone Number') is-invalid @enderror" name="phoneNumber"
+                                   value="{{ old('phoneNumber') }}" required autocomplete="phoneNumber" autofocus>
+                            @error('phoneNumber')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio" class="col-form-label">Bio:</label>
+                        <input type="text" class="form-control" name="bio" value="{{ $user->bio }}">
+                    </div>
+
+                    <div class="form-label-group">
+                        <label for="profileImg">Profile Image:</label>
+                        <input id="profileImg" type="file" class="@error('profileImg') is-invalid @enderror "
+                               name="profileImg" value="{{ old('profileImg') }}" autocomplete="profileImg" autofocus>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-success" value="edit">
+                </div>
+                {{--                </form>--}}
+                {{ Form::close() }}
             </div>
         </div>
     </div>

@@ -41,46 +41,52 @@
                                                 @endforeach
                                             </div>
                                             <div class=" ">
-                                                <table >
-                                                    <tr >
+                                                <table>
+                                                    <tr>
                                                         <td colspan="3">
                                                             <input class=" " type="search" name="location"
-                                                                   hint="Search by location" placeholder="Search by location">
+                                                                   id="searchBar"
+                                                                   hint="Search by location"
+                                                                   placeholder="Search by location">
 
                                                         </td>
                                                         <td>
-                                                            <button class="btn-primary1  " style=" border-radius: 0rem;" type="submit">
+                                                            <button class="btn-primary1  " style=" border-radius: 0rem;"
+                                                                    type="submit">
                                                                 Search
                                                             </button>
                                                         </td>
 
                                                     </tr>
-                                                    <tr >
+                                                    <tr>
                                                         <td>
-                                                            <select name="maxPrice" style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">
+                                                            <select name="maxPrice" id="maxPriceSelect"
+                                                                    style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">
                                                                 {{--                                    Max Price one hundred million dollar--}}
                                                                 <option name=100" value="1000000000">Max Price</option>
-                                                                <option name=100" value="2000000">$ 2,000,000 </option>
-                                                                <option name=100" value="1500000">$ 1,500,000 </option>
-                                                                <option name=100" value="1000000">$ 1,000,000 </option>
-                                                                <option name=100" value="500000">$ 500,000 </option>
-                                                                <option name=100" value="200000">$ 200,000 </option>
+                                                                <option name=100" value="2000000">$ 2,000,000</option>
+                                                                <option name=100" value="1500000">$ 1,500,000</option>
+                                                                <option name=100" value="1000000">$ 1,000,000</option>
+                                                                <option name=100" value="500000">$ 500,000</option>
+                                                                <option name=100" value="200000">$ 200,000</option>
                                                             </select>
                                                         </td>
                                                         <td>
-                                                            <select name="minPrice" style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">
+                                                            <select id="minPriceSelect" name="minPrice"
+                                                                    style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">
 
                                                                 <option name=100" value="0">Min Price</option>
-                                                                <option name=100" value="500">$ 500 </option>
-                                                                <option name=100" value="350">$ 350 </option>
-                                                                <option name=100" value="200">$ 200 </option>
-                                                                <option name=100" value="150">$ 150 </option>
-                                                                <option name=100" value="100">$ 100 </option>
-                                                                <option name=100" value="50">$ 50 </option>
+                                                                <option name=100" value="500">$ 500</option>
+                                                                <option name=100" value="350">$ 350</option>
+                                                                <option name=100" value="200">$ 200</option>
+                                                                <option name=100" value="150">$ 150</option>
+                                                                <option name=100" value="100">$ 100</option>
+                                                                <option name=100" value="50">$ 50</option>
                                                             </select>
                                                         </td>
                                                         <td>
-                                                            <select name="bedroomsNumber" style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">
+                                                            <select name="bedroomsNumber" id="bedroomsSelect"
+                                                                    style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">
                                                                 <option value=-1>Bedrooms</option>
                                                                 <option>1</option>
                                                                 <option>2</option>

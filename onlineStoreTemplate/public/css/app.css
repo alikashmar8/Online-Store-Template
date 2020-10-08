@@ -11714,22 +11714,30 @@ position: relative;
     }
 
 }
-@media (max-width : 405px){
-    .search-bar{
+
+@media (max-width: 405px) {
+    .search-bar {
         font-size: 14px;
     }
-    .search-bar button{
+
+    .search-bar button {
         padding: 5px;
     }
 
 }
+
+body {
+    overflow-x: hidden;
+}
+
 /* Fallback for Edge
 -------------------------------------------------- */
 
 @supports (-ms-ime-align: auto) {
-    .form-label-group>label {
+    .form-label-group > label {
         display: none;
     }
+
     .form-label-group input::-ms-input-placeholder {
         color: #777;
     }

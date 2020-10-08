@@ -42,11 +42,11 @@ Route::get('/acceptedProperties', '\App\Http\Controllers\PropertiesController@al
 Route::get('/users', '\App\Http\Controllers\UsersController@index')->middleware('auth');
 Route::get('/agents', '\App\Http\Controllers\UsersController@agentsIndex')->middleware('auth');
 
-Route::post('/users/edit', '\App\Http\Controllers\UsersController@edit')->middleware('auth');
+Route::resource('users', '\App\Http\Controllers\UsersController', ['except' => ['index', 'store', 'create', 'show', 'edit', 'destroy']])->middleware('auth');
 Route::get('/users/{id}', '\App\Http\Controllers\UsersController@show')->middleware('auth');
 Route::delete('/users/destroy/{id}', '\App\Http\Controllers\UsersController@destroy')->middleware('auth');
 
-
+//Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@edit')->middleware('auth');
 Route::get('/properties/myProperties', '\App\Http\Controllers\PropertiesController@myProperties');
 Route::resource('properties', '\App\Http\Controllers\PropertiesController', ['except' => ['show']])->middleware('auth');
 Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@show');

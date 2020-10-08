@@ -134,7 +134,8 @@ class PropertiesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $property = Property::findOrFail($id);
+        return view('properties.edit', compact('property'));
     }
 
     /**

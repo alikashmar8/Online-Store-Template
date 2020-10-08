@@ -23,6 +23,7 @@
                         <th scope="col">Type</th>
                         <th scope="col">Status</th>
                         <th scope="col">Show</th>
+                        <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
                     </tr>
                     </thead>
@@ -83,6 +84,8 @@
                                 <td class="text-success">Listed</td> @endif
 
                             <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
+
+                            <td><a href="/properties/{{$property->id}}/edit" class="btn btn-secondary">Edit</a></td>
 
                             <td>
                                 <button class="btn btn-danger no-sort delete" data-toggle="modal"
