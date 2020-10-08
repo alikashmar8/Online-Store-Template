@@ -4,15 +4,15 @@
 
     @if(\Illuminate\Support\Facades\Auth::guest() || (!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::user()->role != 0))
         {{--        if user guest or not admin --}}
-    <div class="hero" style=" height: 500px; background-image: url(https://www.webside.xyz/MK/img/m.jpg); background-position: 50% 17%;">
+    <div class="hero" style=" height: 600px; background-image: url(http://myglamourdesign.com/public/imagaga123/home.jpg); background-position: 50% 40%;">
 
 
-        <div class="inner">
+        <div class="inner " style="text-align: left;">
 
-                <div class="row mt-5 pt-5">
-                    <div class="d-flex flex-column m-auto ">
-                        <form class="form-inline my-2 my-lg-0" action="/search-properties" method="GET">
-                            <div class="btn-group btn-group-toggle " data-toggle="buttons">
+                <div class="search-bar ">
+
+                        <form class=" " action="/search-properties" method="GET">
+                            <div class="btn-group btn-group-toggle " data-toggle="buttons" style="display: none">
                                 <div class="bg-secondary p-2">Category:</div>
                                 <label class="btn btn-secondary active">
                                     <input type="radio" name="type" value=-1 autocomplete="off" checked> Any
@@ -24,34 +24,66 @@
                                     </label>
                                 @endforeach
                             </div>
-                            <div class="form-label-group">
-                                <input class="form-control mr-sm-2" type="search" name="location"
-                                       hint="Search by location" placeholder="Search by location">
+                            <div class=" ">
+                                <table>
+                                    <tr>
+                                        <td colspan="3">
+                                            <input class=" " type="search" name="location"
+                                                   hint="Search by location" placeholder="Search by location">
 
-                                <select name="maxPrice">
-                                    {{--                                    Max Price one hundred million dollar--}}
-                                    <option name=100" value="1000000000">Max Price</option>
-                                    <option name=100" value="999999">999999 $</option>
-                                </select>
-                                <select name="minPrice">
+                                        </td>
+                                        <td>
+                                            <button class="btn-primary1  " style=" border-radius: 0rem;" type="submit">
+                                                Search
+                                            </button>
+                                        </td>
 
-                                    <option name=100" value="0">Min Price</option>
-                                    <option name=100" value="999999">999999 $</option>
-                                </select>
-                                <select name="bedroomsNumber">
-                                    <option value=-1>Bedrooms Number</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                                <button class="btn btn-primary1" style=" border-radius: 2rem;" type="submit">
-                                    Search
-                                </button>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <select name="maxPrice">
+                                                {{--                                    Max Price one hundred million dollar--}}
+                                                <option name=100" value="1000000000">Max Price</option>
+                                                <option name=100" value="2000000">$ 2,000,000 </option>
+                                                <option name=100" value="1500000">$ 1,500,000 </option>
+                                                <option name=100" value="1000000">$ 1,000,000 </option>
+                                                <option name=100" value="500000">$ 500,000 </option>
+                                                <option name=100" value="200000">$ 200,000 </option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select name="minPrice">
+
+                                                <option name=100" value="0">Min Price</option>
+                                                <option name=100" value="500">$ 500 </option>
+                                                <option name=100" value="350">$ 350 </option>
+                                                <option name=100" value="200">$ 200 </option>
+                                                <option name=100" value="150">$ 150 </option>
+                                                <option name=100" value="100">$ 100 </option>
+                                                <option name=100" value="50">$ 50 </option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select name="bedroomsNumber">
+                                                <option value=-1>Bedrooms</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+
+
+
+
                             </div>
                         </form>
-                    </div>
+
                 </div>
 
 
@@ -124,7 +156,7 @@
     @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
                     {{--            admin home page--}}
 
-        <div class="hero" style=" height: 500px; background-image: url(https://www.webside.xyz/MK/img/m.jpg); background-position: 50% 17%;">
+        <div class="hero" style=" height: 600px; background-image: url(https://www.webside.xyz/MK/img/m1.jpg); background-position: 50% 40%;">
 
         </div>
                     <div class="row container py-0" style="margin: auto">

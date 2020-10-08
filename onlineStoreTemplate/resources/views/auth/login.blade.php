@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/top-view-lock-with-username-password-information_23-2148578101.jpg);
+    <div class="hero" style=" background-image: url(http://myglamourdesign.com/public/imagaga123/log.jpg);
     " >
 
 

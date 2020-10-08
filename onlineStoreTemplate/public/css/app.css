@@ -11039,6 +11039,14 @@ color: #0a0807;
     width:100%;
     display: block;
 }
+.form-label-group textarea:focus{
+    color: #0a0807;
+    background-color: #fff;
+    border-color: #7c7e85;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #df050550;
+}
+
 .form-label-group select {
     height: 45px;
     border-radius: 2rem;
@@ -11090,6 +11098,9 @@ color: #0a0807;
 @media (max-width : 995px){
     .bg-blue {
         background-image: linear-gradient(#df0505, #df0505, #df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505, transparent);
+    }
+    .search-bar{
+        width: 100%;
     }
 }
 
@@ -11484,7 +11495,7 @@ position: relative;
 
 .hero{
 
-    height:450px;
+    height:500px;
     background-position: 50% 50%;
     background-size:cover;
     position : relative;
@@ -11500,8 +11511,11 @@ position: relative;
 }*/
 .hero .inner{
 
-    position: absolute;
-    top:40%;
+    position: relative;
+
+    text-align: center;
+
+    top:50%;
     left:50%;
 
     transform: translate(-50%, -50%);
@@ -11574,14 +11588,26 @@ position: relative;
 
 .main1{
     width: 100%;
-    display:flex;
+    display:block;
     padding: 50px;
+    margin: auto;
 
 
 }
 .main1 div{
-    width: 33%;
+    width: 32%;
+    margin: auto;
     text-align: center;
+    display: inline-block;
+    text-align: center;
+
+
+}
+@media only screen and (max-width: 768px){
+    .main1 div{
+        width: 100%;
+
+    }
 
 }
 .main1 h1 i{
@@ -11622,18 +11648,22 @@ position: relative;
 
 /*search bar*/
 .search-bar {
-    width: 70%;
+    margin: auto;
+    width: 50%;
 }
 
 .search-bar table{
     width: 100%;
+
 }
 
 .search-bar td{
     padding: 0;
     margin: 0;
+    width: 25%;
 
 }
+
 .search-bar input{
     margin: 0;
     width: 100%;
@@ -11662,8 +11692,9 @@ position: relative;
 
 .search-bar select{
     margin: 0;
+    width: 100%;
     background-color: #ffffff;
-    border: 1px solid #7c7e85;
+    border: 0.5px solid #7c7e85;
     border-bottom: none;
     height: 45px;
     outline:none;
@@ -11673,7 +11704,25 @@ position: relative;
     color: #0a0807;
 }
 
+@media (max-width : 995px){
 
+    .search-bar{
+        width: 100%;
+    }
+    .search-bar td{
+        width: 0;
+    }
+
+}
+@media (max-width : 405px){
+    .search-bar{
+        font-size: 14px;
+    }
+    .search-bar button{
+        padding: 5px;
+    }
+
+}
 /* Fallback for Edge
 -------------------------------------------------- */
 

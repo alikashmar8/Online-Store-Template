@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/close-up-financial-instruments-with-glasses_23-2148285273.jpg);
+    <div class="hero" style=" background-image: url(http://myglamourdesign.com/public/imagaga123/insight.jpg); background-position: 50% 30%;
     ">
 
         <div class="inner">

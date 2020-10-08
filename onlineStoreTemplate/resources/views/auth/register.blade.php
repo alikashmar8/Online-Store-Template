@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/register-text-keyboard-button_2227-1409.jpg);
+    <div class="hero" style=" background-image: url(http://myglamourdesign.com/public/imagaga123/log.jpg);
     " >
 
         <div class="inner">
@@ -71,10 +71,7 @@
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
                         <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
-                            @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
-                                <option value={{$countryCode->iso}} @if($countryCode->phonecode == 61) selected @endif>
-                                    +{{ $countryCode->phonecode }} - {{ $countryCode->iso }}</option>
-                            @endforeach
+                            <option>+61</option>
                         </select>
                         <input id="phoneNumber" type="number"
                                class="form-control @error('Phone Number') is-invalid @enderror" name="phoneNumber"
@@ -194,10 +191,8 @@
                         <label for="phoneNumber">Phone Number*</label>
 
                         <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
-                            @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
-                                <option value={{$countryCode->iso}} @if($countryCode->phonecode == 61) selected @endif>
-                                    +{{ $countryCode->phonecode }} - {{ $countryCode->iso }}</option>
-                            @endforeach
+
+                            <option>+61</option>
                         </select>
                         <input id="phoneNumber" type="number"
                                class="form-control @error('Phone Number') is-invalid @enderror" name="phoneNumber"

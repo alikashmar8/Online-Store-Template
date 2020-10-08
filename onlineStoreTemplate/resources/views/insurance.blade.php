@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/hands-protect-paper-figures_99433-864.jpg);
+    <div class="hero" style=" height: 500px; background-image: url(http://myglamourdesign.com/public/imagaga123/insurance.jpg);
     " >
 
         <div class="inner">

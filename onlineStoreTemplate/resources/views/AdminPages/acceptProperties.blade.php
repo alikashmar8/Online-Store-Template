@@ -123,13 +123,13 @@
                 <form action="/accept" method="post" id="acceptForm" >
                     {{ csrf_field() }}
                 <div class="modal-body">
-                    <div class="form-group">
+                    <div class="form-label-group">
                         <label for="pId" class="col-form-label">Property ID:</label>
                         <input type="text" class="form-control" name="id" id="id" readonly>
                     </div>
-                    <div class="form-group">
+                    <div class="form-label-group">
                         <label for="message-text" class="col-form-label">Please add your contact info:</label>
-                        <textarea class="form-control" name='contactInfo' id="message-text" required></textarea>
+                        <textarea class=" " name='contactInfo' id="message-text" required></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

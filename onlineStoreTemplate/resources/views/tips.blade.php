@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/two-illuminated-crumpled-yellow-paper-light-bulb-white-background_23-2147890100.jpg);
+    <div class="hero" style=" background-image: url(http://myglamourdesign.com/public/imagaga123/tips.jpg); background-position: 0% 50%;
     " >
 
 

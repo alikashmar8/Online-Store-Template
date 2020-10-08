@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://image.freepik.com/free-vector/stock-market-analysis_23-2148598449.jpg);
+    <div class="hero" style=" background-image: url(http://myglamourdesign.com/public/imagaga123/eval.jpg);
     " >
 
         <div class="inner">

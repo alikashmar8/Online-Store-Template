@@ -34,27 +34,36 @@
             <div class="my-2">
                 <div class="p-5">
                     <h3>Details:</h3>
+                    <hr>
 
 
-                    <p>Price: @if($property->showPrice == 1){{$property->price}} $ @else <h4>Contact the agent for
+                    <p class="">Price: @if($property->showPrice == 1) $ {{$property->price}}  @else <h4>Contact the agent for
                         price</h4> @endif </p>
                     <p>Placed On: {{ $property->created_at->toDateString() }}</p>
                     <p>Description: {{ $property->description }}</p>
                 </div>
                 <br><br>
+                @if(\Illuminate\Support\Facades\Auth::guest())
+                    <div class="p-5">
+                        <h3>Login to get the contact information</h3>
+                    </div>
+                @else
                 <div class="p-5">
                     <h3>Contact Info:</h3>
                     <p>{{ $property->contactInfo }}</p>
                     <hr>
                     <form>
-                        Contact us about this property:
-                        <div class="form-group">
+                        Contact the owner about this property of code <strong>{{ $property->id }}</strong>:
+                        <div class="form-label-group">
                             <label class="form-label-group" for="message">Message:</label>
                             <textarea name="message" class="form-control"></textarea>
                         </div>
-                        <input type="submit" value="Send">
+                        <input type="submit" value="Send" class="btn-primary1">
+
                     </form>
                 </div>
+                @endif
+
                 <br><br>
 
                 {{--      maps   --}}

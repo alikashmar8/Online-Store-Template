@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/signing-contract-sale-buyer-seller_36897-696.jpg);
+    <div class="hero" style=" background-image: url(http://myglamourdesign.com/public/imagaga123/sell.jpg);
     " >
 
         <div class="inner">

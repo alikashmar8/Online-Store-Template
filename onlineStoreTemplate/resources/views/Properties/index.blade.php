@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero" style=" background-image: url(https://image.freepik.com/free-photo/female-hand-operating-calculator-front-villa-house-model_1387-956.jpg);
+    <div class="hero" style=" background-image: url(http://myglamourdesign.com/public/imagaga123/buy.jpg);
     ">
 
         <div class="inner">
@@ -12,7 +12,7 @@
     <div class="main-content">
 
         <div class="main2">
-            <div class="m-5">
+            <div class="m-1">
 
                 @if(count($properties)>0)
                     @if (Request::is('properties/rent'))
@@ -25,54 +25,78 @@
                         @if($type == "properties")
                             <div class="inner">
 
-                                <div class="row mt-5 pt-5">
-                                    <div class="d-flex flex-column m-auto ">
-                                        <form class="form-inline my-2 my-lg-0" action="/search-properties" method="GET">
-                                            <div class="btn-group btn-group-toggle " data-toggle="buttons">
+                                <div class="search-bar " style="width: 85%;">
+                                    <div >
+                                        <form class=" " action="/search-properties" method="GET">
+                                            <div class="btn-group btn-group-toggle " data-toggle="buttons" style="display: none">
                                                 <div class="bg-secondary p-2">Category:</div>
                                                 <label class="btn btn-secondary active">
-                                                    <input type="radio" name="type" value=-1 autocomplete="off" checked>
-                                                    Any
+                                                    <input type="radio" name="type" value=-1 autocomplete="off" checked> Any
                                                 </label>
                                                 @foreach($categories as $category)
                                                     <label class="btn btn-secondary">
                                                         <input type="radio" name="type" value="{{ $category->id }}"
-                                                               id="{{$category->id}}"
-                                                               autocomplete="off"> {{ $category->title }}
+                                                               id="{{$category->id}}" autocomplete="off"> {{ $category->title }}
                                                     </label>
                                                 @endforeach
                                             </div>
-                                            <div class="form-label-group">
-                                                <input class="form-control mr-sm-2" type="search" name="location"
-                                                       hint="Search by location" placeholder="Search by location"
-                                                       id="searchBar">
+                                            <div class=" ">
+                                                <table >
+                                                    <tr >
+                                                        <td colspan="3">
+                                                            <input class=" " type="search" name="location"
+                                                                   hint="Search by location" placeholder="Search by location">
 
-                                                <select name="maxPrice" id="maxPriceSelect">
-                                                    {{--                                    Max Price one hundred million dollar--}}
-                                                    <option name=100" value="1000000000" id="1000000000">Max Price
-                                                    </option>
-                                                    <option name=999999" value="999999" id="999999">999999 $</option>
-                                                </select>
-                                                <select name="minPrice" id="minPriceSelect">
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn-primary1  " style=" border-radius: 0rem;" type="submit">
+                                                                Search
+                                                            </button>
+                                                        </td>
 
-                                                    <option name=100" value="0" id="0">Min Price</option>
-                                                    <option name=100" value="1000" id="1000">1000 $</option>
-                                                    <option name=100" value="100" id="100">100 $</option>
-                                                </select>
-                                                <select name="bedroomsNumber" id="bedroomsSelect">
-                                                    <option value=-1>Bedrooms Number</option>
-                                                    <option value=1>1</option>
-                                                    <option value=2>2</option>
-                                                    <option value=3>3</option>
-                                                    <option value=4>4</option>
-                                                    <option value=5>5</option>
-                                                    <option value=6>6</option>
+                                                    </tr>
+                                                    <tr >
+                                                        <td>
+                                                            <select name="maxPrice" style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">
+                                                                {{--                                    Max Price one hundred million dollar--}}
+                                                                <option name=100" value="1000000000">Max Price</option>
+                                                                <option name=100" value="2000000">$ 2,000,000 </option>
+                                                                <option name=100" value="1500000">$ 1,500,000 </option>
+                                                                <option name=100" value="1000000">$ 1,000,000 </option>
+                                                                <option name=100" value="500000">$ 500,000 </option>
+                                                                <option name=100" value="200000">$ 200,000 </option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <select name="minPrice" style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">
 
-                                                </select>
-                                                <button class="btn btn-primary1" style=" border-radius: 2rem;"
-                                                        type="submit">
-                                                    Search
-                                                </button>
+                                                                <option name=100" value="0">Min Price</option>
+                                                                <option name=100" value="500">$ 500 </option>
+                                                                <option name=100" value="350">$ 350 </option>
+                                                                <option name=100" value="200">$ 200 </option>
+                                                                <option name=100" value="150">$ 150 </option>
+                                                                <option name=100" value="100">$ 100 </option>
+                                                                <option name=100" value="50">$ 50 </option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <select name="bedroomsNumber" style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">
+                                                                <option value=-1>Bedrooms</option>
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+                                                                <option>5</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+
+
+
+
+                                            <br>
                                             </div>
                                         </form>
                                     </div>
@@ -81,8 +105,8 @@
 
                             </div>
                             <div class="m-2 p-2">
-                                <H2>Results for '{{ $searched ?? '' }}':</H2>
-                                <h3>{{ count($properties) }} results found !</h3>
+                                <H3>Results for '{{ $searched ?? '' }}':</H3>
+                                <h4>{{ count($properties) }} results found !</h4>
                             </div>
                         @endif
                     @endif
@@ -136,9 +160,9 @@
                     @endforeach
                 @else
                     @if (Request::is('properties/rent'))
-                        <h2>No properties for rent</h2>
+                        <h3 class="bg-white p-3">No properties for rent</h3>
                     @else
-                        <h2>No properties for sale</h2>
+                        <h3 class="bg-white p-3">No properties for sale</h3>
                     @endif
                 @endif
             </div>
