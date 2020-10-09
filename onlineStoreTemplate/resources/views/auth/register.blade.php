@@ -70,7 +70,7 @@
 
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
-                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
+                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control"  style="display: none;">
                             @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
                                 <option value="+{{$countryCode->phonecode}}"
                                         @if($countryCode->phonecode == 61) selected @endif>
@@ -195,7 +195,7 @@
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
 
-                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
+                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control"  style="display: none;">
                             @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
                                 <option value="+{{$countryCode->phonecode}}"
                                         @if($countryCode->phonecode == 61) selected @endif>

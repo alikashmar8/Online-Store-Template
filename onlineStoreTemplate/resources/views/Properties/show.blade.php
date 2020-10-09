@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class="container ">
+    <div class="container  ">
         <div class="post p-4 m-3">
 
             <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
@@ -36,11 +36,14 @@
                     <h3>Details:</h3>
                     <hr>
 
-
-                    <p class="">Price: @if($property->showPrice == 1) $ {{$property->price}}  @else <h4>Contact the agent for
+                    <div class="post-details p-2" >
+                    <p class="price">Price: @if($property->showPrice == 1) $ {{$property->price}}  @else <h4>Contact the agent for
                         price</h4> @endif </p>
-                    <p>Placed On: {{ $property->created_at->toDateString() }}</p>
+                    <p>{{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i></p>
+                    <BR>
                     <p>Description: {{ $property->description }}</p>
+                    <p>Placed On: {{ $property->created_at->toDateString() }}</p>
+                    </div>
                 </div>
                 <br><br>
                 @if(\Illuminate\Support\Facades\Auth::guest())

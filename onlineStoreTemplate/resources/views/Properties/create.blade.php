@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group form-label-group">
                         {{ Form::label('description','Description:') }}
-                        {{ Form::text('description','',['class' => 'form-control','placeholder'=>'Description']) }}
+                        {{ Form::textarea('description','',['class' => 'form-control','placeholder'=>'Description']) }}
                     </div>
                     <div class="form-group form-label-group">
                         {{ Form::label('images','Images:') }}
@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <div>
+            <div class="my-5 py-2">
                 {{ Form::submit('Add',['class'=>' btn-primary1']) }}
             </div>
             {{ Form::close() }}

@@ -2699,6 +2699,9 @@ fieldset:disabled a.btn {
     outline:none;
 
 }
+.btn-primary2{
+    border-radius: 2rem !important;
+}
 
 .btn-primary.disabled,
 .btn-primary:disabled {
@@ -11059,8 +11062,8 @@ color: #0a0807;
 
 .form-label-group checkbox {
     height: 35px;
-    border-radius: 2rem;
-    border-color: #df050550;
+    border-radius: 2rem;/*
+    border-color: #df050550;*/
     background-color:#7c7e85;
     padding: 1px 1px;
     margin: 20px;
@@ -11388,7 +11391,7 @@ profile .num2 button:focus{
 }
 .table1 td{
     /*border: 0.005rem solid #7c7e85;*/
-
+    text-align: center;
     padding: 20px;
 }
 .table1 tr:nth-child(even){background-color: #f2f2f2;}

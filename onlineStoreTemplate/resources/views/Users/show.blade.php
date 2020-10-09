@@ -73,7 +73,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -86,19 +86,19 @@
 
                 {{ csrf_field() }}
                 <div class="modal-body">
-                    <div class="form-group">
+                    <div class="form-group form-label-group">
                         <input type="hidden" value="{{ $user->id }}" name="id">
                         <label for="name" class="col-form-label">Name:</label>
                         <input type="text" class="form-control" name="name" value="{{ $user->name }}" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-label-group">
                         <label for="email" class="col-form-label">Email:</label>
                         <input type="email" class="form-control" name="email" value="{{ $user->email }}" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-label-group">
                         <div class="form-label-group">
                             <label for="phoneNumber">Phone Number*</label>
-                            <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
+                            <select id="phoneNumberCode" name="phoneNumberCode" class="form-control" style="display: none">
                                 @foreach(\App\Models\CountryCode::orderBy('nicename')->get() as $countryCode)
                                     <option value="+{{$countryCode->phonecode}}"
                                             @if($countryCode->nicename == "Australia") selected @endif>
@@ -118,12 +118,12 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-label-group">
                         <label for="bio" class="col-form-label">Bio:</label>
-                        <input type="text" class="form-control" name="bio" value="{{ $user->bio }}">
+                        <textarea type="text" class="form-control" name="bio" value="{{ $user->bio }}" maxlength="180"></textarea>
                     </div>
 
-                    <div class="form-label-group">
+                    <div class="form-group form-label-group">
                         <label for="profileImg">Profile Image:</label>
                         <input id="profileImg" type="file" class="@error('profileImg') is-invalid @enderror "
                                name="profileImg" value="{{ old('profileImg') }}" autocomplete="profileImg" autofocus>
@@ -131,8 +131,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-success" value="edit">
+                    <button type="button" class="btn btn-secondary btn-primary2"  data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-success btn-primary2"  value="edit">
                 </div>
                 {{--                </form>--}}
                 {{ Form::close() }}

@@ -17,7 +17,7 @@
                     <tr>
                         <th scope="col" hidden>#</th>
                         <th scope="col">Images</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Bedrooms</th>
                         <th scope="col">Price</th>
                         <th scope="col">Showing Price</th>
                         <th scope="col">Type</th>
@@ -67,23 +67,23 @@
                                     </a>
                                 </div>
                             </td>
-                            <td>{{ $property->description }} </td>
+                            <td> {{ $property->bedroomsNumber }} </td>
 
                             <td>{{ $property->price }} $</td>
 
                             @if($property->showPrice == 0)
-                                <td class="text-danger">False</td> @else
-                                <td class="text-success">True</td> @endif
+                                <td class="text-danger">No</td> @else
+                                <td class="text-success">Yes</td> @endif
 
                             @if($property->categoryId == 0)
                                 <td>Sell</td> @else
                                 <td>Rent</td> @endif
 
                             @if($property->accepted == 0)
-                                <td class="text-warning">Waiting confirmation</td> @else
+                                <td class="text-warning">Waiting for confirmation</td> @else
                                 <td class="text-success">Listed</td> @endif
 
-                            <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
+                            <td><a class="btn btn-success" href="/properties/{{$property->id}}">Show</a></td>
 
                             <td><a href="/properties/{{$property->id}}/edit" class="btn btn-secondary">Edit</a></td>
 
