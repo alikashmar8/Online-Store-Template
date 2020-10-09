@@ -24,6 +24,8 @@
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/filp/whoops" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/fruitcake/laravel-cors" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/giggsey/libphonenumber-for-php" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/giggsey/locale" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/graham-campbell/result-type" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/guzzlehttp/promises" />
@@ -35,6 +37,7 @@
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/laravelcollective/html" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/league/commonmark" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/league/iso3166" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/league/mime-type-detection" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/monolog/monolog" />
@@ -57,6 +60,7 @@
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/phpunit/php-text-template" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/phpunit/php-timer" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/propaganistas/laravel-phone" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/psr/http-client" />

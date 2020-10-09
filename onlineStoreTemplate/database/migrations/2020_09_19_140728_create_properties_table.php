@@ -19,18 +19,22 @@ class CreatePropertiesTable extends Migration
             $table->double("price");
             $table->integer("showPrice")->default(1);
             $table->integer("roomsNumber")->nullable();
-            $table->integer("bedroomsNumber");
+            $table->integer("bathroomsNumber")->nullable();
+            $table->integer("parkingNumber")->nullable();
+            $table->integer("bedroomsNumber")->nullable();
             $table->integer("accepted")->default(0);
             $table->foreignId('userId')->constrained('users');
             $table->bigInteger('categoryId');
+            $table->bigInteger('typeId');
             $table->string("locationDescription")->nullable();
             $table->bigInteger('countryId')->nullable();
             $table->bigInteger('stateId')->nullable();
             $table->bigInteger('cityId')->nullable();
             $table->string("contactInfo")->nullable();
-            $table->timestamps();
             $table->double('longitude')->nullable();
             $table->double('latitude')->nullable();
+            $table->timestamps();
+
         });
     }
 

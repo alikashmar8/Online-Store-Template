@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Property;
 use App\Models\PropertyImage;
+use App\Models\PropertyType;
 use App\Models\User;
 use DateTime;
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class PropertiesController extends Controller
     {
         if (Auth::guest() || (!Auth::guest() && Auth::user()->role != 0)) {
             $categories = Category::all();
-            return view('welcome', compact('categories'));
+            $types = PropertyType::all();
+            return view('welcome', compact('categories', 'types'));
         } else {
             if (!Auth::guest()) {
                 if (Auth::user()->role == 0) {

@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Company;
+use App\Models\CountryCode;
 use App\Models\PropertyImage;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class RegisterController extends Controller
 {
@@ -53,10 +55,13 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:190'],
-            'bio' => ['nullable','string', 'max:190'],
+            'bio' => ['nullable', 'string', 'max:190'],
             'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
-            'phoneNumber' => ['required', 'string', 'max:25','unique:users'],
+//            'phoneNumber' => ['required', 'string', 'max:25','unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phoneNumber' => 'phone:phoneNumberCode',
+            'phoneNumberCode' => 'required_with:phoneNumber',
+
         ]);
     }
 
@@ -68,7 +73,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $nb = $data['phoneNumberCode'] . '-' . $data['phoneNumber'];
+        $country = CountryCode::where('iso', '=', $data['phoneNumberCode'])->get();
+//        console.log($country);
+        $nb = '+' . $country[0]->phonecode . '-' . $data['phoneNumber'];
         $fileNameToStore = 'profileImage.png';
         $bio = NULL;
         if (isset($data['profileImg'])) {

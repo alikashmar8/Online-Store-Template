@@ -26,17 +26,35 @@
                             <div class="inner">
 
                                 <div class="search-bar " style="width: 85%;">
-                                    <div >
+                                    <div>
                                         <form class=" " action="/search-properties" method="GET">
-                                            <div class="btn-group btn-group-toggle " data-toggle="buttons" style="display: none">
-                                                <div class="bg-secondary p-2">Category:</div>
+
+                                            <div class="btn-group btn-group-toggle " data-toggle="buttons">
+                                                <div class="bg-secondary p-2">Property Type:</div>
                                                 <label class="btn btn-secondary active">
-                                                    <input type="radio" name="type" value=-1 autocomplete="off" checked> Any
+                                                    <input type="radio" name="type" value=-1 autocomplete="off" checked>
+                                                    Any
+                                                </label>
+                                                @foreach($types as $category)
+                                                    <label class="btn btn-secondary">
+                                                        <input type="radio" name="type" value="{{ $category->id }}"
+                                                               id="{{$category->id}}"
+                                                               autocomplete="off"> {{ $category->title }}
+                                                    </label>
+                                                @endforeach
+                                            </div>
+
+                                            <div class="btn-group btn-group-toggle " data-toggle="buttons">
+                                                <div class="bg-secondary p-2">Listing Type:</div>
+                                                <label class="btn btn-secondary active">
+                                                    <input type="radio" name="type" value=-1 autocomplete="off" checked>
+                                                    Any
                                                 </label>
                                                 @foreach($categories as $category)
                                                     <label class="btn btn-secondary">
                                                         <input type="radio" name="type" value="{{ $category->id }}"
-                                                               id="{{$category->id}}" autocomplete="off"> {{ $category->title }}
+                                                               id="{{$category->id}}"
+                                                               autocomplete="off"> {{ $category->title }}
                                                     </label>
                                                 @endforeach
                                             </div>

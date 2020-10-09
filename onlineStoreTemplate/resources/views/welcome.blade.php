@@ -4,36 +4,52 @@
 
     @if(\Illuminate\Support\Facades\Auth::guest() || (!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::user()->role != 0))
         {{--        if user guest or not admin --}}
-    <div class="hero" style=" height: 600px; background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/home.jpg); background-position: 50% 40%;">
+        <div class="hero"
+             style=" height: 600px; background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/home.jpg); background-position: 50% 40%;">
 
 
-        <div class="inner " style="text-align: left;">
+            <div class="inner " style="text-align: left;">
 
                 <div class="search-bar ">
 
-                        <form class=" " action="/search-properties" method="GET">
-                            <div class="btn-group btn-group-toggle " data-toggle="buttons" style="display: none">
-                                <div class="bg-secondary p-2">Category:</div>
-                                <label class="btn btn-secondary active">
-                                    <input type="radio" name="type" value=-1 autocomplete="off" checked> Any
+                    <form class=" " action="/search-properties" method="GET">
+                        <div class="btn-group btn-group-toggle " data-toggle="buttons">
+                            <div class="bg-secondary p-2">Property Type:</div>
+                            <label class="btn btn-secondary active">
+                                <input type="radio" name="type" value=-1 autocomplete="off" checked> Any
+                            </label>
+                            @foreach($types as $category)
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="type" value="{{ $category->id }}"
+                                           id="{{$category->id}}" autocomplete="off"> {{ $category->title }}
                                 </label>
-                                @foreach($categories as $category)
-                                    <label class="btn btn-secondary">
-                                        <input type="radio" name="type" value="{{ $category->id }}"
-                                               id="{{$category->id}}" autocomplete="off"> {{ $category->title }}
-                                    </label>
-                                @endforeach
-                            </div>
-                            <div class=" ">
-                                <table>
-                                    <tr>
-                                        <td colspan="3">
-                                            <input class=" " type="search" name="location"
-                                                   hint="Search by location" placeholder="Search by location">
+                            @endforeach
+                        </div>
 
-                                        </td>
-                                        <td>
-                                            <button class="btn-primary1  " style=" border-radius: 0rem;" type="submit">
+                        <div class="row m-2"></div>
+                        <div class="btn-group btn-group-toggle " data-toggle="buttons">
+                            <div class="bg-secondary p-2">Listing Type:</div>
+                            <label class="btn btn-secondary active">
+                                <input type="radio" name="type" value=-1 autocomplete="off" checked> Any
+                            </label>
+                            @foreach($categories as $category)
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="type" value="{{ $category->id }}"
+                                           id="{{$category->id}}" autocomplete="off"> {{ $category->title }}
+                                </label>
+                            @endforeach
+                        </div>
+                        <div class="row m-2"></div>
+                        <div class=" ">
+                            <table>
+                                <tr>
+                                    <td colspan="3">
+                                        <input class=" " type="search" name="location"
+                                               hint="Search by location" placeholder="Search by location">
+
+                                    </td>
+                                    <td>
+                                        <button class="btn-primary1  " style=" border-radius: 0rem;" type="submit">
                                                 Search
                                             </button>
                                         </td>

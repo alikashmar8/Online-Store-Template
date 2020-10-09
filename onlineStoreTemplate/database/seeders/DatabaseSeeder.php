@@ -36,6 +36,7 @@ class CountryCodesSeeder extends Seeder
     {
 
         DB::table('country_codes')->delete();
+        DB::table('property_types')->delete();
 
         $countries = array(
             array('id' => '1', 'iso' => 'AF', 'name' => 'AFGHANISTAN', 'nicename' => 'Afghanistan', 'iso3' => 'AFG', 'numcode' => '4', 'phonecode' => '93'),
@@ -293,7 +294,20 @@ class CountryCodesSeeder extends Seeder
             array('id' => '253', 'iso' => 'SS', 'name' => 'SOUTH SUDAN', 'nicename' => 'South Sudan', 'iso3' => 'SSD', 'numcode' => '728', 'phonecode' => '211')
         );
 
+        $types = array(
+            array('id' => '1', 'title' => 'Apartments & Units'),
+            array('id' => '2', 'title' => 'House'),
+            array('id' => '3', 'title' => 'TownHouse'),
+            array('id' => '4', 'title' => 'Villa'),
+            array('id' => '5', 'title' => 'Land'),
+            array('id' => '6', 'title' => 'Acreage'),
+            array('id' => '7', 'title' => 'Rural'),
+            array('id' => '8', 'title' => 'Block of Units'),
+            array('id' => '9', 'title' => 'Retirement Living')
+        );
+
         DB::table('country_codes')->insert($countries);
+        DB::table('property_types')->insert($types);
 
     }
 }
