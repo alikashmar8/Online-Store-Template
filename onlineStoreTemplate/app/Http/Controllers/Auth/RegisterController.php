@@ -8,10 +8,12 @@ use App\Models\CountryCode;
 use App\Models\PropertyImage;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use http\Env\Response;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Symfony\Component\Console\Input\Input;
 
 class RegisterController extends Controller
 {
@@ -53,13 +55,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $var = ltrim($data['phoneNumber'], '0');
+        $data['phoneNumber'] = $var;
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:190'],
             'bio' => ['nullable', 'string', 'max:190'],
             'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
 //            'phoneNumber' => ['required', 'string', 'max:25','unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phoneNumber' => 'phone:phoneNumberCode',
+            'phoneNumber' => ['unique:users', 'phone:phoneNumberCode'],
             'phoneNumberCode' => 'required_with:phoneNumber',
 
         ]);
@@ -73,9 +78,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         $country = CountryCode::where('iso', '=', $data['phoneNumberCode'])->get();
-//        console.log($country);
-        $nb = '+' . $country[0]->phonecode . '-' . $data['phoneNumber'];
+        $code = $country[0]->phonecode;
         $fileNameToStore = 'profileImage.png';
         $bio = NULL;
         if (isset($data['profileImg'])) {
@@ -100,7 +105,8 @@ class RegisterController extends Controller
             'bio' => $bio,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'phoneNumber' => $nb,
+            'phoneNumber' => ltrim($data['phoneNumber'], '0'),
+            'phoneNumberCode' => $code,
             'profileImg' => $fileNameToStore,
             'role' => $data['role'],
 

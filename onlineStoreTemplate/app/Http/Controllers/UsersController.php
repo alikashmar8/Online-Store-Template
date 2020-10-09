@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Company;
+use App\Models\CountryCode;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\User;
@@ -79,15 +80,44 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $var = ltrim($request['phoneNumber'], '0');
+        $request['phoneNumber'] = $var;
+//        dd($request);
 
-        dd($request);
-        $user = User::findOrFail($id);
-        $user = $request['phoneNumberCode'] . '-' . $request['phoneNumber'];
-        $user->name = $request->name;
-        if ($user->bio != null) {
-            $bio = $request->bio;
+        $country = CountryCode::where('iso', '=', $request['phoneNumberCode'])->get();
+        $code = $country[0]->phonecode;
+
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:190'],
+            'bio' => ['nullable', 'string', 'max:190'],
+        ]);
+
+        if ($request->email != Auth::user()->email) {
+            $validatedData = $request->validate([
+                'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
+            ]);
         }
-        if (isset($request['profileImg'])) {
+        if ($request->phoneNumber != Auth::user()->phoneNumber || $code != Auth::user()->phoneNumberCode) {
+            $validatedData = $request->validate([
+                'phoneNumber' => ['unique:users', 'phone:phoneNumberCode'],
+                'phoneNumberCode' => 'required_with:phoneNumber',
+            ]);
+        }
+
+
+//        dd($request);
+        $user = User::findOrFail($id);
+        $user->phoneNumber = $request['phoneNumber'];
+        $user->phoneNumberCode = $code;
+        $user->name = $request->name;
+        $user->bio = $request->bio;
+//        if ($user->bio != null) {
+//            $bio = $request->bio;
+//        }
+//        if ($request['bio'] != null) {
+//            $bio = $request['bio'];
+//        }
+        if ($request['profileImg'] != null) {
             $image = $request['profileImg'];
             // Get filename with the extension
             $filenameWithExt = $image->getClientOriginalName();
@@ -102,20 +132,11 @@ class UsersController extends Controller
             $path = $image->storeAs('public/user_profile_images', $fileNameToStore);
         }
 
-        if (isset($request['bio'])) {
-            $bio = $request['bio'];
-        }
+
 
         if ($request->email != Auth::user()->email) {
-
+            $user->email_verified_at = null;
         }
-//        if ($request['role'] == 1) {
-//            $company = new Company;
-//            $company->name = $request['comp_name'];
-//            $company->licenseNumber = $request['license'];
-//            $company->AgentId = $user->id;
-//            $company->save();
-//        }
         $user->save();
         return redirect('users/' . $user->id);
     }

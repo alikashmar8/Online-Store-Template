@@ -28,7 +28,7 @@
                 <div class="num2">
 
                     <h2>{{$user->name}}</h2>
-                    <p> Phone number: {{$user->phoneNumber}}</p>
+                    <p> Phone number: +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
                     <p>Email: {{$user->email}}</p>
                     <p>Bio: {{$user->bio}}</p>
 
@@ -48,7 +48,7 @@
                     <div class="num2">
 
                         <h2>{{$user->name}}</h2>
-                        <p> Phone number: {{$user->phoneNumber}}</p>
+                        <p> Phone number: +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
                         <p>Email: {{$user->email}}</p>
                         <p>Bio: {{$user->bio}}</p>
 
@@ -89,26 +89,40 @@
                     <div class="form-group form-label-group">
                         <input type="hidden" value="{{ $user->id }}" name="id">
                         <label for="name" class="col-form-label">Name:</label>
-                        <input type="text" class="form-control" name="name" value="{{ $user->name }}" required>
+                        <input type="text" class="form-control  @error('name') is-invalid @enderror" name="name"
+                               value="{{ $user->name }}" required>
                     </div>
+
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                     <div class="form-group form-label-group">
                         <label for="email" class="col-form-label">Email:</label>
-                        <input type="email" class="form-control" name="email" value="{{ $user->email }}" required>
+                        <input type="email" class="form-control  @error('email') is-invalid @enderror" name="email"
+                               value="{{ $user->email }}" required>
                     </div>
+
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                     <div class="form-group form-label-group">
                         <div class="form-label-group">
                             <label for="phoneNumber">Phone Number*</label>
-                            <select id="phoneNumberCode" name="phoneNumberCode" class="form-control" style="display: none">
+                            <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
                                 @foreach(\App\Models\CountryCode::orderBy('nicename')->get() as $countryCode)
-                                    <option value="+{{$countryCode->phonecode}}"
-                                            @if($countryCode->nicename == "Australia") selected @endif>
-                                        {{ $countryCode->nicename }} +{{ $countryCode->phonecode }}</option>
+                                    <option value="{{$countryCode->iso}}"
+                                            @if($countryCode->phonecode == $user->phoneNumberCode) selected @endif>
+                                        +{{ $countryCode->phonecode }}</option>
                                 @endforeach
 
                             </select>
                             <input id="phoneNumber" type="number"
-                                   class="form-control @error('Phone Number') is-invalid @enderror" name="phoneNumber"
-                                   value="{{ Str::of($user->phoneNumber)->explode('-')[1] }}" required
+                                   class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber"
+                                   value="{{ $user->phoneNumber }}" required
                                    autocomplete="phoneNumber" autofocus>
                             @error('phoneNumber')
                             <span class="invalid-feedback" role="alert">
@@ -120,19 +134,31 @@
 
                     <div class="form-group form-label-group">
                         <label for="bio" class="col-form-label">Bio:</label>
-                        <textarea type="text" class="form-control" name="bio" value="{{ $user->bio }}" maxlength="180"></textarea>
+                        <textarea type="text" class="form-control  @error('bio') is-invalid @enderror" name="bio"
+                                  value="{{ $user->bio }}" maxlength="180"></textarea>
                     </div>
+
+                    @error('bio')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
 
                     <div class="form-group form-label-group">
                         <label for="profileImg">Profile Image:</label>
                         <input id="profileImg" type="file" class="@error('profileImg') is-invalid @enderror "
                                name="profileImg" value="{{ old('profileImg') }}" autocomplete="profileImg" autofocus>
                     </div>
+                    @error('profileImg')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-primary2"  data-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-success btn-primary2"  value="edit">
+                    <button type="button" class="btn btn-secondary btn-primary2" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-success btn-primary2" value="edit">
                 </div>
                 {{--                </form>--}}
                 {{ Form::close() }}

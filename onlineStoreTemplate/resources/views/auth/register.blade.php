@@ -194,23 +194,22 @@
 
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
-
-                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control"  style="display: none;">
+                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control" style="display: none;">
                             @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
-                                <option value="+{{$countryCode->phonecode}}"
+                                <option value="{{$countryCode->iso}}"
                                         @if($countryCode->phonecode == 61) selected @endif>
                                     +{{ $countryCode->phonecode }} - {{ $countryCode->iso }}</option>
                             @endforeach
+
                         </select>
                         <input id="phoneNumber" type="number"
-                               class="form-control @error('Phone Number') is-invalid @enderror" name="phoneNumber"
+                               class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber"
                                value="{{ old('phoneNumber') }}" required autocomplete="phoneNumber" autofocus>
                         @error('phoneNumber')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                         @enderror
-
                     </div>
 
                     <div class="form-label-group" style="display: none;">
