@@ -75,9 +75,7 @@
                                 <td class="text-danger">No</td> @else
                                 <td class="text-success">Yes</td> @endif
 
-                            @if($property->categoryId == 0)
-                                <td>Sell</td> @else
-                                <td>Rent</td> @endif
+                            <td>{{ \App\Models\Category::where('id','=',$property->categoryId)->first()->title }}</td>
 
                             @if($property->accepted == 0)
                                 <td class="text-warning">Waiting for confirmation</td> @else

@@ -32,8 +32,21 @@
                         {{ Form::number('bedroomsNumber','',['class' => 'form-control','placeholder'=>'bedroomsNumber']) }}
                     </div>
                     <div class="form-group form-label-group">
-                        {{ Form::label('type','Type:') }}
-                        {{ Form::select('type', array(0 => 'Sell', 1 => 'Rent'), 0) }}
+                        {{ Form::label('type','Property Type:') }}
+                        <select name="type">
+                            @foreach(\App\Models\PropertyType::all() as $type)
+                                <option value="{{$type->id}}">{{ $type->title }} </option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group form-label-group">
+                        {{ Form::label('category','Listing Type:') }}
+                        <select name="category">
+                            @foreach(\App\Models\Category::all() as $type)
+                                <option value="{{$type->id}}">{{ $type->title }} </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group form-label-group">
                         {{ Form::label('description','Description:') }}

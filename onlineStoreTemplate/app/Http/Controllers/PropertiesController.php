@@ -83,11 +83,12 @@ class PropertiesController extends Controller
         $property->description = $request->description;
         $property->longitude = $request->longitude;
         $property->latitude = $request->latitude;
-        if(isset($request->showPrice)) $property->showPrice = $request->showPrice; else $property->showPrice = 0;
+        if (isset($request->showPrice)) $property->showPrice = $request->showPrice; else $property->showPrice = 0;
         $property->bedroomsNumber = $request->bedroomsNumber;
         $property->accepted = 0;
         $property->userId = Auth::user()->id;
-        $property->categoryId = $request->type;
+        $property->categoryId = $request->category;
+        $property->typeId = $request->type;
 
         $property->save();
         // Handle File Upload
@@ -169,24 +170,21 @@ class PropertiesController extends Controller
             unlink($path);
         }
 
-        $imags->delete();
-        $property->delete();
-        return redirect('/');
-
-        if ($property->accepted == 0) {
+        if (Auth::user()->role == 0) {
             $imags->delete();
             $property->delete();
             return redirect('/acceptProperties');
         } else {
             $imags->delete();
             $property->delete();
-            return redirect('/acceptedProperties');
+            return redirect('/myProperties');
         }
     }
 
     public function buyIndex()
     {
-        $properties = Property::where('categoryId', '=', 0)->where('accepted','=',1)->get();
+        $category = Category::where('title', '=', 'Buy')->first();
+        $properties = Property::where('categoryId', '=', $category->id)->where('accepted', '=', 1)->get();
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
         }
@@ -195,7 +193,8 @@ class PropertiesController extends Controller
 
     public function rentIndex()
     {
-        $properties = Property::where('categoryId', '=', 1)->where('accepted','=',1)->get();
+        $category = Category::where('title', '=', 'Rent')->first();
+        $properties = Property::where('categoryId', '=', $category->id)->where('accepted', '=', 1)->get();
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
         }

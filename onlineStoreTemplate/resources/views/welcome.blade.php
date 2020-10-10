@@ -30,11 +30,11 @@
                         <div class="btn-group btn-group-toggle " data-toggle="buttons">
                             <div class="bg-secondary p-2">Listing Type:</div>
                             <label class="btn btn-secondary active">
-                                <input type="radio" name="type" value=-1 autocomplete="off" checked> Any
+                                <input type="radio" name="category" value=-1 autocomplete="off" checked> Any
                             </label>
                             @foreach($categories as $category)
                                 <label class="btn btn-secondary">
-                                    <input type="radio" name="type" value="{{ $category->id }}"
+                                    <input type="radio" name="category" value="{{ $category->id }}"
                                            id="{{$category->id}}" autocomplete="off"> {{ $category->title }}
                                 </label>
                             @endforeach

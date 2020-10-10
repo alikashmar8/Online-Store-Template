@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Company;
 use App\Models\Property;
 use App\Models\PropertyImage;
+use App\Models\PropertyType;
 use App\Models\User;
 use Illuminate\Http\Request;
 use function Sodium\add;
@@ -42,10 +43,12 @@ class SearchController extends Controller
     public function searchProperties(Request $request)
     {
 //        dd($request);
+        $properties = Property::where('accepted', '=', 1);
         if ($request->type != -1) {
-            $properties = Property::where('accepted', '=', 1)->where('categoryId', '=', $request->type);
-        } else {
-            $properties = Property::where('accepted', '=', 1);
+            $properties = $properties->where('typeId', '=', $request->type);
+        }
+        if ($request->category != -1) {
+            $properties = $properties->where('categoryId', '=', $request->category);
         }
         $minPrice = $request->minPrice;
         $maxPrice = $request->maxPrice;
@@ -64,8 +67,9 @@ class SearchController extends Controller
         $searched = $request->location;
         $type = "properties";
         $categories = Category::all();
+        $types = PropertyType::all();
 
 
-        return view('Properties.index', compact('searched', 'properties', 'type', 'categories', 'minPrice', 'maxPrice', 'bedroomsNumber'));
+        return view('Properties.index', compact('searched', 'properties', 'type', 'categories', 'minPrice', 'maxPrice', 'bedroomsNumber', 'types'));
     }
 }
