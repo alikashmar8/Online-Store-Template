@@ -168,10 +168,15 @@
 
                             <div class="post-details">
 
-                                @if($property->showPrice == 1) <p class="price"><i class="fa fa-usd"
-                                                                                   aria-hidden="true"></i> {{$property->price}}
-                                </p>@else <h4>Contact the
-                                    agent for price</h4> @endif
+                                @if($property->showPrice == 1)
+                                    <p class="price">
+                                        <i class="fa fa-usd" aria-hidden="true"></i>
+                                        {{$property->price}}
+                                </p>
+                                @else
+                                    <p style="color: #df0505">
+                                        Contact the agent for price
+                                    </p> @endif
 
                                 <p style="color: #0a0807;padding-left: 0.5rem;">
                                     {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>

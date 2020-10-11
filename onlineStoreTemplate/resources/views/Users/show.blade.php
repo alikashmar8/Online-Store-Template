@@ -24,6 +24,7 @@
                          src="{{url('/storage/user_profile_images/' . $user->profileImg)}}"
                          alt="Profile Image">
                     <p> ID: {{$user->id}}</p>
+
                 </div>
                 <div class="num2">
 
@@ -33,6 +34,7 @@
                     <p>Bio: {{$user->bio}}</p>
 
                     <button class="btn-primary1">Edit Profile</button>
+
                 </div>
             </div>
         @else

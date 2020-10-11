@@ -99,9 +99,7 @@
                             <a class="special-link" href="/properties/myProperties">My Properties</a>
                         </li>
 
-            </ul>
 
-            <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">
                     <a href="/findAgents" class="special-link">Find agent</a>
                 </li>
@@ -114,6 +112,13 @@
                 </li>
                 <li class="nav-item">
                     <a href="/insurance" class="special-link">Insurance</a>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a href="#" class="special-link">Commercial</a>
                 </li>
 
 
@@ -134,8 +139,6 @@
                     </li>
 
 
-            </ul>
-            <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">
                     <a href="/findAgents" class="special-link">Find agent</a>
                 </li>
@@ -150,7 +153,12 @@
                     <a href="/insurance" class="special-link">Insurance</a>
                 </li>
 
+            </ul>
+            <ul class="nav navbar-nav mr-auto">
 
+                <li class="nav-item">
+                    <a href="#" class="special-link">Commercial</a>
+                </li>
 
                 @endif
             </ul>

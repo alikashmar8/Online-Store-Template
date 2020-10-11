@@ -67,9 +67,9 @@
                         </td>
                         <td>{{ $property->price }} $</td>
                         @if($property->showPrice == 0)
-                            <td class="text-danger">False</td>
+                            <td class="text-danger">No</td>
                         @else
-                            <td class="text-success">True</td>
+                            <td class="text-success">Yes</td>
                         @endif
                         <td><a href="/users/{{ $property->userId }}">{{ $property->agent->name }}</a></td>
                         @if($property->type == 0)

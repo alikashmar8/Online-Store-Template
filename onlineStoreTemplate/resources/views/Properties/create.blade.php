@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-md-6" style="height:500px">
                     <div class="form-group form-label-group">
-                        {{ Form::label('price','Price:') }}
+                        {{ Form::label('price','Price:', 'required') }}
                         {{ Form::number('price','',['class' => 'form-control','placeholder'=>'Price']) }}
                     </div>
                     <div class="form-group form-label-group special">

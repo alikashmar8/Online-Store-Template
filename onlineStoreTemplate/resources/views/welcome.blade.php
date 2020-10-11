@@ -10,95 +10,91 @@
 
             <div class="inner " style="text-align: left;">
 
-                <div class="search-bar ">
 
-                    <form class=" " action="/search-properties" method="GET">
-                        <div class="btn-group btn-group-toggle " data-toggle="buttons">
-                            <div class="bg-secondary p-2">Property Type:</div>
-                            <label class="btn btn-secondary active">
-                                <input type="radio" name="type" value=-1 autocomplete="off" checked> Any
-                            </label>
-                            @foreach($types as $category)
-                                <label class="btn btn-secondary">
-                                    <input type="radio" name="type" value="{{ $category->id }}"
-                                           id="{{$category->id}}" autocomplete="off"> {{ $category->title }}
-                                </label>
-                            @endforeach
+                <div class="search-form-container">
+                    <form class="form " action="/search-properties" method="GET">
+                        <div class="search-bar-section">
+                            <h1>Search for a property</h1>
+
                         </div>
 
-                        <div class="row m-2"></div>
-                        <div class="btn-group btn-group-toggle " data-toggle="buttons">
-                            <div class="bg-secondary p-2">Listing Type:</div>
-                            <label class="btn btn-secondary active">
-                                <input type="radio" name="category" value=-1 autocomplete="off" checked> Any
-                            </label>
-                            @foreach($categories as $category)
-                                <label class="btn btn-secondary">
-                                    <input type="radio" name="category" value="{{ $category->id }}"
-                                           id="{{$category->id}}" autocomplete="off"> {{ $category->title }}
-                                </label>
-                            @endforeach
-                        </div>
-                        <div class="row m-2"></div>
-                        <div class=" ">
-                            <table>
-                                <tr>
-                                    <td colspan="3">
-                                        <input class=" " type="search" name="location"
-                                               hint="Search by location" placeholder="Search by location">
+                        <div class="search-bar-section">
+                            <div class="search-bar-nav ">
 
-                                    </td>
-                                    <td>
-                                        <button class="btn-primary1  " style=" border-radius: 0rem;" type="submit">
-                                                Search
-                                            </button>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <select name="maxPrice">
-                                                {{--                                    Max Price one hundred million dollar--}}
-                                                <option name=100" value="1000000000">Max Price</option>
-                                                <option name=100" value="2000000">$ 2,000,000 </option>
-                                                <option name=100" value="1500000">$ 1,500,000 </option>
-                                                <option name=100" value="1000000">$ 1,000,000 </option>
-                                                <option name=100" value="500000">$ 500,000 </option>
-                                                <option name=100" value="200000">$ 200,000 </option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <select name="minPrice">
-
-                                                <option name=100" value="0">Min Price</option>
-                                                <option name=100" value="500">$ 500 </option>
-                                                <option name=100" value="350">$ 350 </option>
-                                                <option name=100" value="200">$ 200 </option>
-                                                <option name=100" value="150">$ 150 </option>
-                                                <option name=100" value="100">$ 100 </option>
-                                                <option name=100" value="50">$ 50 </option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <select name="bedroomsNumber">
-                                                <option value=-1>Bedrooms</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </table>
-
-
-
-
-
+                                <label for="1" id="buy-label"> Buy</label>
+                                <input type="radio" class="search-bar-nav-remove" name="category" value="1" id="1"   onclick="buy_clicked();" checked >
 
                             </div>
-                        </form>
+                            <div class="search-bar-nav ">
+
+                                <label for="2" id="rent-label"> Rent</label>
+                                <input type="radio" class="search-bar-nav-remove" name="category" value="2"  id="2" onclick="rent_clicked();"  >
+
+                            </div>
+                            <div class="search-bar-nav ">
+
+                                <label for="3" id="share-label"> Share</label>
+                                <input type="radio" class="search-bar-nav-remove" name="category" value="3"  id="3" onclick="share_clicked();"  >
+
+                            </div>
+
+                        </div>
+
+                        <div class="search-bar-section">
+                            <input  id="location"  type="search" name="location"
+                                   hint="Search by location" placeholder="Search by location"  >
+
+
+                            <button type="submit"  id="submit"  class="btn-primary1"   >Search
+                            </button>
+                        </div>
+
+                        <div class="search-bar-section">
+                            <select name="type">
+                                <option class="option" name="type" value=-1>Property type</option>
+                                <option class="option"  name="type" value="1" id="1">Apartment & Unit</option>
+                                <option class="option" name="type" value="2" id="2">House</option>
+
+                                <option class="option"  name="type" value="3" id="3">Townhouse</option>
+                                <option class="option"  name="type" value="4" id="4">Villa</option>
+                                <option class="option" name="type" value="5" id="5">Land</option>
+                                <option class="option" name="type" value="6" id="6">Acreage</option>
+                                <option class="option" name="type" value="7" id="7">Rural</option>
+                                <option class="option" name="type" value="8" id="8">Block of Units</option>
+                                <option class="option" name="type" value="9" id="9">Retirement Living</option>
+                            </select>
+                            <select>
+                                <option class="option">Beds</option>
+                                <option class="option">1</option>
+                                <option class="option">2</option>
+                                <option class="option">3</option>
+                                <option class="option">4</option>
+                                <option class="option">5+</option>
+                            </select>
+                            <select id="min-price">
+
+                                <option class="option" name="100" value="0">Min Price</option>
+                                <option class="option"  name="100" value="500000" >$500,000</option>
+                                <option class="option" name="100" value="750000" >$ 750,000</option>
+                                <option class="option" name="100" value="1000000" >$ 1,000,000</option>
+                                <option class="option" name="100" value="1500000" >$ 1,500,000</option>
+                                <option class="option" name="100" value="2000000" >$ 2,000,000</option>
+
+                            </select>
+                            <select id="max-price">
+                                <option class='option' name="100" value="1000000000" >Max Price</option>
+                                <option class='option' name="100" value="2000000" >$ 2,000,000</option>
+                                <option class='option' name="100" value="5000000" >$ 5,000,000</option>
+                                <option class='option' name="100" value="10000000" >$ 10,000,000</option>
+                                <option class='option' name="100" value="12000000" >$ 12,000,000</option>
+                                <option class='option' name="100" value="15000000" >$ 15,000,000</option>
+
+                            </select>
+                        </div>
+
+                    </form>
+
+
 
                 </div>
 
@@ -197,5 +193,36 @@
 
             @endif
 
+    <script>
+        function buy_clicked(){
+            document.getElementById("buy-label").style.background="#e4002b";
+            document.getElementById("rent-label").style.background="#91969c";
+            document.getElementById("share-label").style.background="#91969c";
+
+
+            document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='500000'>$500,000</option><option class='option' name='100' value='750000'>$ 750,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option><option class='option' name='100' value='1500000'>$ 1,500,000</option><option class='option' name='100' value='2000000'>$ 2,000,000</option>";
+            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='2000000'>$ 2,000,000</option><option class='option' name='100' value='5000000'>$ 5,000,000</option><option class='option' name='100' value='10000000'>$ 10,000,000</option><option class='option' name='100' value='12000000'>$ 12,000,000</option><option class='option' name='100' value='15000000'>$ 15,000,000</option>";
+
+        }
+        function rent_clicked(){
+            document.getElementById("buy-label").style.background="#91969c";
+            document.getElementById("rent-label").style.background="#e4002b";
+            document.getElementById("share-label").style.background="#91969c";
+            document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='100'>$100</option><option class='option' name='100' value='250'>$ 250</option><option class='option' name='100' value='500'>$ 500</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option>";
+            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='750'>$ 750</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option><option class='option' name='100' value='3000'>$ 3,000</option><option class='option' name='100' value='5000'>$ 5,000</option>";
+
+
+        }
+        function share_clicked(){
+            document.getElementById("buy-label").style.background="#91969c";
+
+            document.getElementById("rent-label").style.background="#91969c";
+            document.getElementById("share-label").style.background="#e4002b";
+            document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='100'>$100</option><option class='option' name='100' value='250'>$ 250</option><option class='option' name='100' value='500'>$ 500</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option>";
+            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='750'>$ 750</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option><option class='option' name='100' value='3000'>$ 3,000</option><option class='option' name='100' value='5000'>$ 5,000</option>";
+
+
+        }
+    </script>
 
 @endsection

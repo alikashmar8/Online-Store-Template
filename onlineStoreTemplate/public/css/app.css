@@ -2148,9 +2148,9 @@ pre code {
 }
 
 .form-control:focus {
-  color: #df0505;
+  color: #e4002b;
   background-color: #fff;
-  border-color: #df0505;
+  border-color: #e4002b;
   outline: 0;
     box-shadow: 0 0 0 0.2rem #7c7e85;
 }
@@ -2668,8 +2668,8 @@ fieldset:disabled a.btn {
 
 .btn-primary1 {
     color: #fff;
-    background-color: #df0505;
-    border: 1px solid #df0505;
+    background-color: #e4002b;
+    border: 1px solid #e4002b;
     outline:none;
 
     padding: .375rem .75rem;
@@ -2681,9 +2681,9 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary1:hover {
-  color: #df0505;
+  color: #e4002b;
   background-color: #0a0807;
-  border-color: #df0505;
+  border-color: #e4002b;
     transform: translateY(-1.5px);
     text-decoration: underline;
 
@@ -2693,8 +2693,8 @@ fieldset:disabled a.btn {
 .btn-primary1:focus,
 .btn-primary1.focus {
   color: #fff;
-  background-color: #df0505;
-  border-color: #df0505;
+  background-color: #e4002b;
+  border-color: #e4002b;
   box-shadow: 0 0 0 0.2rem #7c7e85;
     outline:none;
 
@@ -2705,17 +2705,17 @@ fieldset:disabled a.btn {
 
 .btn-primary.disabled,
 .btn-primary:disabled {
-  color: #df0505;
+  color: #e4002b;
   background-color: #7c7e85;
-  border-color: #df0505;
+  border-color: #e4002b;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #df0505;
-  border-color: #df0505;
+  background-color: #e4002b;
+  border-color: #e4002b;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus,
@@ -7052,7 +7052,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #df0505 !important;
+  background-color: #e4002b !important;
 }
 
 a.bg-dark:hover,
@@ -10986,7 +10986,7 @@ color: #0a0807;
     background-color: #fff;
     border-color: #7c7e85;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem #df050550;
+    box-shadow: 0 0 0 0.2rem #e4002b50;
 }
 
 .form-label-group>input,
@@ -11047,13 +11047,13 @@ color: #0a0807;
     background-color: #fff;
     border-color: #7c7e85;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem #df050550;
+    box-shadow: 0 0 0 0.2rem #e4002b50;
 }
 
 .form-label-group select {
     height: 45px;
     border-radius: 2rem;
-    border-color: #df050550;
+    border-color: #e4002b50;
     color:#0a0807;
     padding: 5px 12px;
 
@@ -11063,7 +11063,7 @@ color: #0a0807;
 .form-label-group checkbox {
     height: 35px;
     border-radius: 2rem;/*
-    border-color: #df050550;*/
+    border-color: #e4002b50;*/
     background-color:#7c7e85;
     padding: 1px 1px;
     margin: 20px;
@@ -11093,14 +11093,14 @@ color: #0a0807;
 
 }
 .bg-blue{
-    /*background-color: #df0505 !important;*/
-    background-image: linear-gradient(#df0505, transparent);
-    /*background-image:  linear-gradient(#df0505,#df050570,#df050540,transparent);*/
+    /*background-color: #e4002b !important;*/
+    background-image: linear-gradient(#e4002b, transparent);
+    /*background-image:  linear-gradient(#e4002b,#e4002b70,#e4002b40,transparent);*/
     z-index: 1;
 }
 @media (max-width : 995px){
     .bg-blue {
-        background-image: linear-gradient(#df0505, #df0505, #df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505,#df0505, transparent);
+        background-image: linear-gradient(#e4002b, #e4002b, #e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b,#e4002b, transparent);
     }
     .search-bar{
         width: 100%;
@@ -11123,7 +11123,7 @@ color: #0a0807;
     width:30%;
     float: left;
 
-    color: #df0505;
+    color: #e4002b;
     display: block;
 }
 
@@ -11154,26 +11154,26 @@ color: #0a0807;
     max-height: 300px;
     max-width: 300px;
     border-radius: 50%;
-    border: 2px solid #df0505;
+    border: 2px solid #e4002b;
 
     box-sizing: border-box;
 }
 .profile .num1 p{
     width: 100%;
     height: 100%;
-    color: #df0505;
+    color: #e4002b;
     text-align: center;
 }
 /*
 .profile .num2 button{
-    color: #df0505;
-    border-color: #df0505;
+    color: #e4002b;
+    border-color: #e4002b;
 }
 
 profile .num2 button:hover {
     color: #ffffff;
-    background-color: #df0505;
-    border-color: #df0505;
+    background-color: #e4002b;
+    border-color: #e4002b;
 }
 
 profile .num2 button:focus{
@@ -11185,7 +11185,7 @@ profile .num2 button:focus{
     padding-top: calc(var(--input-padding-y) / 3);
     padding-bottom: calc(var(--input-padding-y) / 3);
     font-size: 14px;
-    color: #df0505;
+    color: #e4002b;
 }*/
 
 
@@ -11216,7 +11216,7 @@ profile .num2 button:focus{
 }
 #private{
     grid-column:1;
-    background: #df0505;
+    background: #e4002b;
     height: 100px;
     text-align: center;
     padding :10%;
@@ -11251,7 +11251,7 @@ profile .num2 button:focus{
     text-align: center;
     padding :10%;
     border-radius:5px;
-    color: #df0505;
+    color: #e4002b;
 }
 
 .details{
@@ -11307,7 +11307,7 @@ profile .num2 button:focus{
 }
 
 .details .card-header{
-    border: 1px solid #df0505;
+    border: 1px solid #e4002b;
     background-color: rgba(0,0,0,.03);
 }
 .details .btn-primary {
@@ -11318,7 +11318,7 @@ profile .num2 button:focus{
 
 
 .footer{
-    background: #df0505;
+    background: #e4002b;
     color:white;
     margin-top: 150px;
 }
@@ -11384,7 +11384,7 @@ profile .num2 button:focus{
 
 }
 .table1 th{
-    background-color: #df0505;
+    background-color: #e4002b;
     color:#ffffff;
     padding: 20px;
     /*border-left: 1px solid white;*/
@@ -11434,7 +11434,7 @@ profile .num2 button:focus{
     margin-left: 5px;
     font-size:1.8rem;
     transform: translateY(-10%);
-    color:#df0505;
+    color:#e4002b;
 
 }
 
@@ -11475,7 +11475,7 @@ position: relative;
     border-radius: .5rem;
 }/*
 .post a , .post a span{
-    color: #df0505;
+    color: #e4002b;
     text-align: center;
     width: auto;
 }*/
@@ -11488,7 +11488,7 @@ position: relative;
 
     font-size: 32px;
     font-weight: bold;
-    color: #df0505;
+    color: #e4002b;
     font-family:  Museo-Sans-500,Helvetica Neue,Helvetica,Arial,sans-serif;
 
 }
@@ -11510,7 +11510,7 @@ position: relative;
     width:100%;
     top: 0;
     height: 20px;
-    background-image: linear-gradient(#df0505, transparent);
+    background-image: linear-gradient(#e4002b, transparent);
 }*/
 .hero .inner{
 
@@ -11614,7 +11614,7 @@ position: relative;
 
 }
 .main1 h1 i{
-    color: #df0505;
+    color: #e4002b;
 
 
 }
@@ -11623,8 +11623,9 @@ position: relative;
     padding-top: 0;
 }
 .main-content{
-    width: 100%;
+    width: 90%;
     display: flex;
+    margin: auto;
 
 }
 .main2{
@@ -11634,7 +11635,7 @@ position: relative;
 }
 .main3{
     width:  25%;
-    background-color: #df0505;
+    background-color: #e4002b;
     background: url("https://www.adweek.com/wp-content/uploads/2017/06/case-studies1.jpg");
     background-size: cover;
     background-position: 0% 0%;
@@ -11649,85 +11650,182 @@ position: relative;
 
 }
 
-/*search bar*/
-.search-bar {
+
+/*search-bar-new*/
+
+
+.search-form-container {
+    position: relative;
+    z-index: 1;
     margin: auto;
-    width: 50%;
+    width: 95%;
+
+    background-color: rgba(0,0,0,0.5);
+    padding: 16px 18px;
+    box-sizing: border-box;
+    border-radius: 2rem;
+    padding-bottom: 30px;
 }
-
-.search-bar table{
-    width: 100%;
-
-}
-
-.search-bar td{
-    padding: 0;
+.form {
     margin: 0;
-    width: 25%;
+}
+.search-bar-section{
+    position: relative;
+    font-family: "Museo-Sans-300","Helvetica Neue",Helvetica,Arial,sans-serif;
+    width:100%;
+    margin:0;
+    padding: 0px 0px;
+    display:flex;
+
+}
+.search-bar-section h1 {
+
+    color: #fff;
+    font-weight: normal;
+    font-size:25px;
+
+
+    margin-top: 0;
+    padding: 5px 10px;
+}
+.search-bar-nav {
+    position: relative;
+    width:28%;/*
+    margin:auto;
+    margin-right: 15%;
+    margin-bottom:0;
+    padding: 0px 10px;*/
+    text-align: center;
+    color:#fff;
+    transform: translateY(5px);
+}
+.search-bar-nav:hover{
+    opacity:0.8;
+}
+.search-bar-nav-remove{
+    display: none;
+}
+
+#buy-label  {
+
+    width:30%;
+    margin:2%;
+    padding: 10px 30%;
+    background: #e4002b;
+    border-radius: 5px 5px 0 0;
+    color:#fff;
+    box-sizing: content-box;
+
 
 }
 
-.search-bar input{
-    margin: 0;
-    width: 100%;
-    border: none;
-    border-left: 2px solid #df0505;
+#rent-label  {
 
-    height: 45px;
+    width:30%;
+    margin:2%;
+    padding: 10px 30%;
+    background: #91969c;
+    border-radius: 5px 5px 0 0;
+    color:#fff;
+    box-sizing: content-box;
 
-    padding: 5px 5px;
-    font-size: 1rem;
+
+
+}
+
+#share-label  {
+
+    width:30%;
+    margin:2%;
+    padding: 10px 30%;
+    background: #91969c;
+    border-radius: 5px 5px 0 0;
+    color:#fff;
+    box-sizing: content-box;
+
+
+}
+#location{
+    width:85%;
+    padding:15px 2%;
+    border:none;
+    border-left: 3px solid #e4002b;
+    font-size: 1.1rem;
     font-weight: 400;
+    outline:none;
 
-    color: #0a0807;
-    background-color: #fff;
+}
+#submit{
+    width:15%;
+    border:none;
     border-radius: 0rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    line-height: 1.5px;
-    outline:none;
+}
+
+.search-bar-section select{
+    margin-top:5px;
+    width:25%;
+
+    border-radius: 0 0 5px 5px;
+    padding: 15px 20px;
+    background:#91969c;
+    color:#fff;
+}
+
+.search-bar-section select:hover{
+    opacity:0.8;
+}
+.search-bar-section  .option{
+    padding: 50px 10px;
+}
+
+
+@media (max-width : 750px){
+    .search-form-container {
+        width: 100%;
+        padding: 50px 5px;
+    }
+    #buy-label,#rent-label,#share-label{
+        padding: 10px 20%;
+    }
+
+    #submit {
+        width: 20%;
+    }
 
 
 }
-.search-bar button{
-    height: 45px;
-    outline:none;
-}
 
-.search-bar select{
-    margin: 0;
-    width: 100%;
-    background-color: #ffffff;
-    border: 0.5px solid #7c7e85;
-    border-bottom: none;
-    height: 45px;
-    outline:none;
-}
-.search-bar select:hover {
-    background-color: #7c7e85;
-    color: #0a0807;
-}
 
-@media (max-width : 995px){
-
-    .search-bar{
+@media only screen and (max-width: 400px){
+    .search-form-container {
         width: 100%;
     }
-    .search-bar td{
-        width: 0;
+    .search-bar-section {
+
+        width:100%;
+
+        padding: 2px 0px;
+
+    }
+    .search-bar-nav {
+        margin:0px;
+        width:100%;
+
+    }
+    #buy-label, #rent-label  ,  #share-label   {
+
+        width:50%;
+    }
+
+    #submit {
+        width: 30%;
     }
 
 }
 
-@media (max-width: 405px) {
-    .search-bar {
-        font-size: 14px;
-    }
 
-    .search-bar button {
-        padding: 5px;
-    }
 
-}
+
 
 body {
     overflow-x: hidden;

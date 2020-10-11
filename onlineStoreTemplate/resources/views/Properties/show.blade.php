@@ -2,7 +2,8 @@
 
 @section('content')
 
-
+    <div class="main-content">
+        <div class="main2">
     <div class="container  ">
         <div class="post p-4 m-3">
 
@@ -37,8 +38,12 @@
                     <hr>
 
                     <div class="post-details p-2" >
-                    <p class="price">Price: @if($property->showPrice == 1) $ {{$property->price}}  @else <h4>Contact the agent for
-                        price</h4> @endif </p>
+
+                        @if($property->showPrice == 1)  <p class="price">Price: $ {{$property->price}} </p>
+
+                        @else
+                            <p style="color: #df0505">Contact the agent for price</p>
+                        @endif
                     <p>{{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i></p>
                     <BR>
                     <p>Description: {{ $property->description }}</p>
@@ -53,13 +58,13 @@
                 @else
                 <div class="p-5">
                     <h3>Contact Info:</h3>
-                    <p>{{ $property->contactInfo }}</p>
+                    <p>Admin note:{{ $property->contactInfo }}</p>
                     <hr>
                     <form>
                         Contact the owner about this property of code <strong>{{ $property->id }}</strong>:
                         <div class="form-label-group">
                             <label class="form-label-group" for="message">Message:</label>
-                            <textarea name="message" class="form-control"></textarea>
+                            <textarea name="message" class="form-control"> Hi, I'm interested in this property</textarea>
                         </div>
                         <input type="submit" value="Send" class="btn-primary1">
 
@@ -79,5 +84,11 @@
 
         </div>
     </div>
+        </div>
+        <div class="main3">
+
+        </div>
+    </div>
+
 
 @endsection

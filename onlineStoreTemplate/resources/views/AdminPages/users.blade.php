@@ -39,9 +39,9 @@
                             <td>  {{ $user->phoneNumber }}</td>
                             <td>{{ $user->email }} </td>
                             @if($user->email_verified_at == NULL)
-                                <td class="text-danger">False</td>
+                                <td class="text-danger">No</td>
                             @else
-                                <td class="text-success">True</td>
+                                <td class="text-success">Yes</td>
                             @endif
                             <td>{{ $user->created_at }}</td>
 
