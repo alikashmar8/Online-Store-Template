@@ -68,8 +68,9 @@ class SearchController extends Controller
         $type = "properties";
         $categories = Category::all();
         $types = PropertyType::all();
+        $category = $request->category;
 
 
-        return view('Properties.index', compact('searched', 'properties', 'type', 'categories', 'minPrice', 'maxPrice', 'bedroomsNumber', 'types'));
+        return view('Properties.index', compact('searched', 'properties', 'type', 'categories', 'minPrice', 'maxPrice', 'bedroomsNumber', 'types', 'category'));
     }
 }

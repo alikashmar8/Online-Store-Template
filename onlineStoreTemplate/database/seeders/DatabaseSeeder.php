@@ -309,7 +309,7 @@ class CountryCodesSeeder extends Seeder
 
         $categories = array(
             array('id' => '1', 'title' => 'Buy'),
-            array('id' => '2', 'title' => 'Sell'),
+            array('id' => '2', 'title' => 'Rent'),
             array('id' => '3', 'title' => 'Share'),
         );
 

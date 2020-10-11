@@ -19,75 +19,86 @@
                         </div>
 
                         <div class="search-bar-section">
-                            <div class="search-bar-nav ">
 
-                                <label for="1" id="buy-label"> Buy</label>
-                                <input type="radio" class="search-bar-nav-remove" name="category" value="1" id="1"   onclick="buy_clicked();" checked >
+                            @foreach($categories as $category)
+                                <div class="search-bar-nav ">
 
-                            </div>
-                            <div class="search-bar-nav ">
+                                    <label for="{{ $category->id }}"
+                                           id="{{  Str::lower($category->title) }}-label">{{ $category->title }}</label>
+                                    <input type="radio" class="search-bar-nav-remove" name="category"
+                                           value="{{$category->id}}" id="{{ $category->id }}"
+                                           onclick="{{  Str::lower($category->title) }}_clicked();"
+                                           @if($category->id == 1) checked @endif >
 
-                                <label for="2" id="rent-label"> Rent</label>
-                                <input type="radio" class="search-bar-nav-remove" name="category" value="2"  id="2" onclick="rent_clicked();"  >
+                                </div>
+                            @endforeach
+                            {{--                            <div class="search-bar-nav ">--}}
 
-                            </div>
-                            <div class="search-bar-nav ">
+                            {{--                                <label for="1" id="buy-label"> Buy</label>--}}
+                            {{--                                <input type="radio" class="search-bar-nav-remove" name="category" value="1" id="1"   onclick="buy_clicked();" checked >--}}
 
-                                <label for="3" id="share-label"> Share</label>
-                                <input type="radio" class="search-bar-nav-remove" name="category" value="3"  id="3" onclick="share_clicked();"  >
+                            {{--                            </div>--}}
+                            {{--                            <div class="search-bar-nav ">--}}
 
-                            </div>
+                            {{--                                <label for="2" id="rent-label"> Rent</label>--}}
+                            {{--                                <input type="radio" class="search-bar-nav-remove" name="category" value="2"  id="2" onclick="rent_clicked();"  >--}}
+
+                            {{--                            </div>--}}
+                            {{--                            <div class="search-bar-nav ">--}}
+
+                            {{--                                <label for="3" id="share-label"> Share</label>--}}
+                            {{--                                <input type="radio" class="search-bar-nav-remove" name="category" value="3"  id="3" onclick="share_clicked();"  >--}}
+
+                            {{--                            </div>--}}
 
                         </div>
 
                         <div class="search-bar-section">
-                            <input  id="location"  type="search" name="location"
-                                   hint="Search by location" placeholder="Search by location"  >
+                            <input id="location" type="search" name="location"
+                                   hint="Search by location" placeholder="Search by location">
 
 
-                            <button type="submit"  id="submit"  class="btn-primary1"   >Search
+                            <button type="submit" id="submit" class="btn-primary1">Search
                             </button>
                         </div>
 
                         <div class="search-bar-section">
+
                             <select name="type">
                                 <option class="option" name="type" value=-1>Property type</option>
-                                <option class="option"  name="type" value="1" id="1">Apartment & Unit</option>
-                                <option class="option" name="type" value="2" id="2">House</option>
+                                @foreach($types as $type)
+                                    <option class="option" name="type" value="{{ $type->id }}"
+                                            id="{{ $type->id }}">{{ $type->title }}</option>
 
-                                <option class="option"  name="type" value="3" id="3">Townhouse</option>
-                                <option class="option"  name="type" value="4" id="4">Villa</option>
-                                <option class="option" name="type" value="5" id="5">Land</option>
-                                <option class="option" name="type" value="6" id="6">Acreage</option>
-                                <option class="option" name="type" value="7" id="7">Rural</option>
-                                <option class="option" name="type" value="8" id="8">Block of Units</option>
-                                <option class="option" name="type" value="9" id="9">Retirement Living</option>
+                                @endforeach
                             </select>
-                            <select>
-                                <option class="option">Beds</option>
-                                <option class="option">1</option>
-                                <option class="option">2</option>
-                                <option class="option">3</option>
-                                <option class="option">4</option>
-                                <option class="option">5+</option>
+
+
+                            <select name="bedroomsNumber">
+                                <option class="option" value="-1">Beds</option>
+                                <option class="option" value="1">1</option>
+                                <option class="option" value="2">2</option>
+                                <option class="option" value="3">3</option>
+                                <option class="option" value="4">4</option>
+                                <option class="option" value="5">5+</option>
                             </select>
-                            <select id="min-price">
+                            <select id="min-price" name="minPrice">
 
                                 <option class="option" name="100" value="0">Min Price</option>
-                                <option class="option"  name="100" value="500000" >$500,000</option>
-                                <option class="option" name="100" value="750000" >$ 750,000</option>
-                                <option class="option" name="100" value="1000000" >$ 1,000,000</option>
-                                <option class="option" name="100" value="1500000" >$ 1,500,000</option>
-                                <option class="option" name="100" value="2000000" >$ 2,000,000</option>
+                                <option class="option" name="100" value="500000">$500,000</option>
+                                <option class="option" name="100" value="750000">$ 750,000</option>
+                                <option class="option" name="100" value="1000000">$ 1,000,000</option>
+                                <option class="option" name="100" value="1500000">$ 1,500,000</option>
+                                <option class="option" name="100" value="2000000">$ 2,000,000</option>
 
                             </select>
-                            <select id="max-price">
-                                <option class='option' name="100" value="1000000000" >Max Price</option>
-                                <option class='option' name="100" value="2000000" >$ 2,000,000</option>
-                                <option class='option' name="100" value="5000000" >$ 5,000,000</option>
-                                <option class='option' name="100" value="10000000" >$ 10,000,000</option>
-                                <option class='option' name="100" value="12000000" >$ 12,000,000</option>
-                                <option class='option' name="100" value="15000000" >$ 15,000,000</option>
+                            <select id="max-price" name="maxPrice">
+                                <option class='option' name="100" value="1000000000">Max Price</option>
+                                <option class='option' name="100" value="2000000">$ 2,000,000</option>
+                                <option class='option' name="100" value="5000000">$ 5,000,000</option>
+                                <option class='option' name="100" value="10000000">$ 10,000,000</option>
+                                <option class='option' name="100" value="12000000">$ 12,000,000</option>
+                                <option class='option' name="100" value="15000000">$ 15,000,000</option>
 
                             </select>
                         </div>
