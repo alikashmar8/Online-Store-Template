@@ -71,6 +71,7 @@ class PropertiesController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request);
         $this->validate($request, [
             'description' => 'required',
             'price' => 'required',
@@ -84,7 +85,16 @@ class PropertiesController extends Controller
         $property->longitude = $request->longitude;
         $property->latitude = $request->latitude;
         if (isset($request->showPrice)) $property->showPrice = $request->showPrice; else $property->showPrice = 0;
-        $property->bedroomsNumber = $request->bedroomsNumber;
+
+        if ($request->bedroomsNumber != -1) {
+            $property->bedroomsNumber = $request->bedroomsNumber;
+        }
+        if ($request->bathroomsNumber != -1) {
+            $property->bathroomsNumber = $request->bathroomsNumber;
+        }
+        if ($request->parkingNumber != -1) {
+            $property->parkingNumber = $request->parkingNumber;
+        }
         $property->accepted = 0;
         $property->userId = Auth::user()->id;
         $property->categoryId = $request->category;
@@ -188,6 +198,7 @@ class PropertiesController extends Controller
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
         }
+
         return view("Properties.index", compact('properties'));
     }
 

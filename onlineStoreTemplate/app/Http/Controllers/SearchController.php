@@ -57,7 +57,7 @@ class SearchController extends Controller
         $bedroomsNumber = -1;
         if ($request->bedroomsNumber != -1) {
             $bedroomsNumber = $request->bedroomsNumber;
-            $properties = $properties->where('bedroomsNumber', '=', $request->bedroomsNumber);
+            $properties = $properties->where('bedroomsNumber', '>=', $request->bedroomsNumber);
         }
         $properties = $properties->get();
 

@@ -27,9 +27,22 @@
                         {{ Form::checkbox('showPrice', 1, true) }}
                         {{ Form::label('showPrice','Show Price') }}
                     </div>
+                    {{--                    <div class="form-group form-label-group">--}}
+                    {{--                        {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}--}}
+                    {{--                        {{ Form::number('bedroomsNumber','',['class' => 'form-control','placeholder'=>'bedroomsNumber']) }}--}}
+                    {{--                    </div>--}}
                     <div class="form-group form-label-group">
                         {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}
-                        {{ Form::number('bedroomsNumber','',['class' => 'form-control','placeholder'=>'bedroomsNumber']) }}
+                        {{ Form::select('bedroomsNumber',array(-1=>'Bathrooms Number',0,1,2,3,4,5=>'5+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
+                    </div>
+
+                    <div class="form-group form-label-group">
+                        {{ Form::label('bathroomsNumber','Number Of Bathrooms:') }}
+                        {{ Form::select('bathroomsNumber',array(-1=>'Bathrooms Number',0,1,2,3,4=>'4+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
+                    </div>
+                    <div class="form-group form-label-group">
+                        {{ Form::label('parkingNumber','Number Of Parking:') }}
+                        {{ Form::select('parkingNumber',array(-1=>'Num of parking',0,1,2,3,4=>'4+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
                     </div>
                     <div class="form-group form-label-group">
                         {{ Form::label('type','Property Type:') }}

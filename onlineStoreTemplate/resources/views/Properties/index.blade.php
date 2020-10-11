@@ -394,9 +394,11 @@
 
         }
 
+        @if(isset($categories))
         @foreach($categories as $c)
         @if($category == $c->id) {{Str::lower($c->title)}}_clicked() @endif
         @endforeach
+        @endif
     </script>
 
 
