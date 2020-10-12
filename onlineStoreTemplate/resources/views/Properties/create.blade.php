@@ -18,31 +18,22 @@
             {{ Form::open(['action' => 'App\Http\Controllers\PropertiesController@store','method'=>'POST','enctype'=>'multipart/form-data']) }}
 
             <div class="row">
-                <div class="col-md-6" style="height:500px">
+                <div class="col-md-6" >
                     <div class="form-group form-label-group">
-                        {{ Form::label('price','Price:', 'required') }}
-                        {{ Form::number('price','',['class' => 'form-control','placeholder'=>'Price']) }}
+                        {{ Form::label('price','Price:') }}
+                        {{ Form::number('price','',['class' => 'form-control' ,'placeholder'=>'Price', 'required']) }}
                     </div>
                     <div class="form-group form-label-group special">
                         {{ Form::checkbox('showPrice', 1, true) }}
                         {{ Form::label('showPrice','Show Price') }}
                     </div>
-                    {{--                    <div class="form-group form-label-group">--}}
-                    {{--                        {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}--}}
-                    {{--                        {{ Form::number('bedroomsNumber','',['class' => 'form-control','placeholder'=>'bedroomsNumber']) }}--}}
-                    {{--                    </div>--}}
                     <div class="form-group form-label-group">
-                        {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}
-                        {{ Form::select('bedroomsNumber',array(-1=>'Bathrooms Number',0,1,2,3,4,5=>'5+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
-                    </div>
-
-                    <div class="form-group form-label-group">
-                        {{ Form::label('bathroomsNumber','Number Of Bathrooms:') }}
-                        {{ Form::select('bathroomsNumber',array(-1=>'Bathrooms Number',0,1,2,3,4=>'4+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
-                    </div>
-                    <div class="form-group form-label-group">
-                        {{ Form::label('parkingNumber','Number Of Parking:') }}
-                        {{ Form::select('parkingNumber',array(-1=>'Num of parking',0,1,2,3,4=>'4+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
+                        {{ Form::label('category','Listing Type:') }}
+                        <select name="category">
+                            @foreach(\App\Models\Category::all() as $type)
+                                <option value="{{$type->id}}">{{ $type->title }} </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group form-label-group">
                         {{ Form::label('type','Property Type:') }}
@@ -53,23 +44,55 @@
                         </select>
                     </div>
 
+                    {{--                    <div class="form-group form-label-group">--}}
+                    {{--                        {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}--}}
+                    {{--                        {{ Form::number('bedroomsNumber','',['class' => 'form-control','placeholder'=>'bedroomsNumber']) }}--}}
+                    {{--                    </div>--}}
+
                     <div class="form-group form-label-group">
-                        {{ Form::label('category','Listing Type:') }}
-                        <select name="category">
-                            @foreach(\App\Models\Category::all() as $type)
-                                <option value="{{$type->id}}">{{ $type->title }} </option>
-                            @endforeach
-                        </select>
+                        {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}
+                        {{ Form::select('bedroomsNumber',array(0=> 0,1,2,3,4,5=>'5+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
+                    </div>
+
+                    <div class="form-group form-label-group">
+                        {{ Form::label('bathroomsNumber','Number Of Bathrooms:') }}
+                        {{ Form::select('bathroomsNumber',array(0=> 0,1,2,3,4=>'4+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
                     </div>
                     <div class="form-group form-label-group">
+                        {{ Form::label('parkingNumber','Number Of Parkings:') }}
+                        {{ Form::select('parkingNumber',array(0=> 0,1,2,3,4=>'4+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
+                    </div>
+
+
+
+                    <div class="form-group form-label-group">
                         {{ Form::label('description','Description:') }}
-                        {{ Form::textarea('description','',['class' => 'form-control','placeholder'=>'Description']) }}
+                        {{ Form::textarea('description','',['class' => 'form-control','placeholder'=>'Description', 'required']) }}
                     </div>
                     <div class="form-group form-label-group">
                         {{ Form::label('images','Images:') }}
-                        <input type="file" name="images[]" multiple>
+                        <input type="file" name="images[]" id="file" accept=".png, .jpg, .mp4" multiple>
+                        <script>
+                            var uploadField = document.getElementById("file");
+
+                            uploadField.onchange = function() {
+                                var i=0;
+                                var space=0;
+                                for(i=0; i<this.files.length ; i++){
+                                    space+= this.files[i].size
+
+                                }
+                                if(space > 150000000){
+                                    alert("Files are too big!");
+                                    this.value = "";
+                                };
+                            };
+                        </script>
                     </div>
+
                 </div>
+
+
                 <div class="col-md-6" style="height:500px">
                     <div id="map" style="position: absolute; right: 0; left: 0; top: 0; bottom: 0;"></div>
                     <input type="text" name="longitude" id="longitude" />
@@ -77,8 +100,8 @@
                 </div>
             </div>
 
-            <div class="my-5 py-2">
-                {{ Form::submit('Add',['class'=>' btn-primary1']) }}
+            <div class=" ">
+                {{ Form::submit('Publish',['class'=>' btn-primary1']) }}
             </div>
             {{ Form::close() }}
         </div>

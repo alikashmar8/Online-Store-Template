@@ -11456,7 +11456,8 @@ profile .num2 button:focus{
 /*posts*/
 
 .post{
-    width:95%;
+    width:85%;
+    position: relative;
     margin: auto;
     background-color: #ffffff;
     color: #000000;
@@ -11473,6 +11474,7 @@ position: relative;
     border: 2px solid #7c7e85;
     max-height:500px ;
     border-radius: .5rem;
+
 }/*
 .post a , .post a span{
     color: #e4002b;
@@ -11492,7 +11494,18 @@ position: relative;
     font-family:  Museo-Sans-500,Helvetica Neue,Helvetica,Arial,sans-serif;
 
 }
+.new-prop{
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    z-index: 2;
+    border: none;
+    left: 19px;
+    width: 100px; !important;
 
+
+
+}
 
 /*hero section*/
 
@@ -11745,7 +11758,7 @@ position: relative;
 
 
 }
-#location{
+.location1{
     width:85%;
     padding:15px 2%;
     border:none;
@@ -11755,7 +11768,7 @@ position: relative;
     outline:none;
 
 }
-#submit{
+.submit{
     width:15%;
     border:none;
     border-radius: 0rem;
@@ -11788,7 +11801,7 @@ position: relative;
         padding: 10px 20%;
     }
 
-    #submit {
+    .submit {
         width: 20%;
     }
 
@@ -11817,7 +11830,7 @@ position: relative;
         width:50%;
     }
 
-    #submit {
+    .submit {
         width: 30%;
     }
 

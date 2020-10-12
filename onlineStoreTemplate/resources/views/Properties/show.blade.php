@@ -44,7 +44,11 @@
                         @else
                             <p style="color: #df0505">Contact the agent for price</p>
                         @endif
-                    <p>{{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i></p>
+                    <p   >
+                        {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                        {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                        {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                    </p>
                     <BR>
                     <p>Description: {{ $property->description }}</p>
                     <p>Placed On: {{ $property->created_at->toDateString() }}</p>
@@ -58,13 +62,19 @@
                 @else
                 <div class="p-5">
                     <h3>Contact Info:</h3>
-                    <p>Admin note:{{ $property->contactInfo }}</p>
+                    <p>Admin note: {{ $property->contactInfo }}</p>
                     <hr>
                     <form>
                         Contact the owner about this property of code <strong>{{ $property->id }}</strong>:
                         <div class="form-label-group">
                             <label class="form-label-group" for="message">Message:</label>
-                            <textarea name="message" class="form-control"> Hi, I'm interested in this property</textarea>
+                            <textarea name="message" class="form-control" style="height: 300px">
+Hi, I'm interested to view your property! What's the best time to inspect?
+Thanks
+
+Hi, How much is the last price for your property?
+Thanks
+                            </textarea>
                         </div>
                         <input type="submit" value="Send" class="btn-primary1">
 

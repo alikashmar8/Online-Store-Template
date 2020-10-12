@@ -122,7 +122,7 @@
                             <button type="submit" class=" btn-primary1">
                                 {{ __('Register') }}
                             </button>
-                        </div><BR>
+                        </div><BR/>
                     </div>
 
                 </form>
@@ -266,10 +266,10 @@
 
 
         function select_private() {
-            document.getElementById("private").style.background = "#c92208";
+            document.getElementById("private").style.background = "#e4002b";
             document.getElementById("private").style.color = "#ffffff";
             document.getElementById("agent").style.background = "#ffffff";
-            document.getElementById("agent").style.color = "#c92208";
+            document.getElementById("agent").style.color = "#e4002b";
             document.getElementById("d3").style.height = "590px";
 
             const t = new TimelineMax();
@@ -284,8 +284,8 @@
 
         function select_agent() {
             document.getElementById("private").style.background = "#ffffff";
-            document.getElementById("private").style.color = "#c92208";
-            document.getElementById("agent").style.background = "#c92208";
+            document.getElementById("private").style.color = "#e4002b";
+            document.getElementById("agent").style.background = "#e4002b";
             document.getElementById("agent").style.color = "#ffffff";
             document.getElementById("d3").style.height = "720px";
 

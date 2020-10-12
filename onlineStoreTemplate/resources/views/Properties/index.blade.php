@@ -25,7 +25,7 @@
                         @if($type == "properties")
                             <div class="inner">
 
-                                <div class="search-bar " style="width: 85%;">
+                                <div class="search-bar " >
                                     <div class="search-form-container">
                                         <form class="form " action="/search-properties" method="GET">
                                             <div class="search-bar-section">
@@ -69,11 +69,11 @@
                                             </div>
 
                                             <div class="search-bar-section">
-                                                <input id="location" type="search" name="location"
+                                                <input class="location1" type="search" name="location"
                                                        hint="Search by location" placeholder="Search by location">
 
 
-                                                <button type="submit" id="submit" class="btn-primary1">Search
+                                                <button type="submit" Class="submit btn-primary1">Search
                                                 </button>
                                             </div>
 
@@ -243,7 +243,12 @@
 
 
                     @foreach($properties as $property)
-                        <div class="post">
+                        <div class="post my-5">
+                            @if($property->updated_at /* < 7 days */  )
+                        <div class="new-prop">
+                            <img src="https://webside.xyz/MK/hackathon/imagaga123/images1/flag.svg" style="border: none">
+                        </div>
+                            @endif
                             <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
                                 <div class="carousel-inner">
                                     @foreach($property->images as $image)
@@ -282,11 +287,16 @@
                                 @else
                                     <p style="color: #df0505">
                                         Contact the agent for price
-                                    </p> @endif
+                                    </p>
+                                @endif
 
-                                <p style="color: #0a0807;padding-left: 0.5rem;">
-                                    {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>
-                                </p>
+
+                                    <p  style="color: #0a0807;padding-left: 0.5rem;" >
+                                        {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                        {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                        {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                    </p>
+
                                 <a class="special-link" style="color: #0a0807;padding-left: -0.5rem;"
                                    href="/properties/{{$property->id}}">View details</a>
                             </div>

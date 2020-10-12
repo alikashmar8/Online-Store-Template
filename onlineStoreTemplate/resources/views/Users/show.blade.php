@@ -29,6 +29,7 @@
                 <div class="num2">
 
                     <h2>{{$user->name}}</h2>
+                    <p> Company:  </p>
                     <p> Phone number: +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
                     <p>Email: {{$user->email}}</p>
                     <p>Bio: {{$user->bio}}</p>
@@ -50,6 +51,7 @@
                     <div class="num2">
 
                         <h2>{{$user->name}}</h2>
+                        <p> Company: </p>
                         <p> Phone number: +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
                         <p>Email: {{$user->email}}</p>
                         <p>Bio: {{$user->bio}}</p>

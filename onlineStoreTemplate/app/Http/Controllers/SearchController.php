@@ -15,6 +15,7 @@ class SearchController extends Controller
 {
     public function searchAgent(Request $request)
     {
+
         $searched = $request->name;
         $searchBy = $request->searchBy;
         $results = [];

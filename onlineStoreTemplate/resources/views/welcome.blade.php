@@ -54,11 +54,11 @@
                         </div>
 
                         <div class="search-bar-section">
-                            <input id="location" type="search" name="location"
+                            <input class="location1" type="search" name="location"
                                    hint="Search by location" placeholder="Search by location">
 
 
-                            <button type="submit" id="submit" class="btn-primary1">Search
+                            <button type="submit"   class="btn-primary1 submit">Search
                             </button>
                         </div>
 

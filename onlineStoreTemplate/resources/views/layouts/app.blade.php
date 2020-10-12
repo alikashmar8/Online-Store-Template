@@ -185,9 +185,9 @@
                             {{ Auth::user()->name }}
                         </a>
                     </li>
-                    <li class="nav-tabs m-3"></li>
+                    <!li class="  m-1"><!/li>
                     <li>
-                        <a class="btn btn-light text-warning" role="button" onclick="event.preventDefault();
+                        <a class="btn btn-light text-warning m-1" style="padding: 4px" role="button" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
 
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">

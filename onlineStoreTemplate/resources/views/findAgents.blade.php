@@ -1,31 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-6">
-            <ul class="list-group">
-                <li class="list-group-item"><h4>Here you can find best agents</h4></li>
-                <li class="list-group-item"><h5>Contact your agent now</h5></li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="row mt-5 pt-5">
-        <div class="d-flex flex-column m-auto ">
+    <div class="hero" style=" height: 500px; background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/agent.jpg);
+    " >
+
+        <div class="inner">
+
+
+
+
+
+    <div class="search-form-container">
+
             <form action="/search-agents" method="GET" class="form-inline my-2 my-lg-0">
-                <input type="hidden" name="type" value="agents">
-                <div class="form-label-group">
-                    <input class="form-control mr-sm-2" type="search" name="name" placeholder="Search">
-                    Search By:
+                <div class="search-bar-section">
+                    <h1>Search for an agent</h1>
+
+                </div>
+                <div class=" search-bar-section ">
+                    <input type="hidden" name="type" class="location1" value="agents">
+                    <input class="location1" type="search" name="name" placeholder="Search">
+                    <button class=" btn-primary1 submit" type="submit">Search</button>
+                </div>
+
+                <div class="search-bar-section ">
+
+                    <p style="margin: 20px;  color: white;">Search By:</p>
                     <select name="searchBy">
                         <option value="name">Agent Name</option>
                         <option value="companyName">Company Name</option>
                         <option value="location">Location</option>
                     </select>
-                    <button class="btn btn-primary1" type="submit">Search</button>
+
                 </div>
             </form>
+
+    </div>
+
+
         </div>
     </div>
+{{--add a list of agents here --}}
 
 @endsection
