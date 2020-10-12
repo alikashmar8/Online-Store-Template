@@ -243,21 +243,53 @@ class PropertiesController extends Controller
         $imags->delete();
     }
 
-    public function buyIndex()
+    public function buyIndex(Request $request)
     {
+
         $category = Category::where('title', '=', 'Buy')->first();
-        $properties = Property::where('categoryId', '=', $category->id)->where('accepted', '=', 1)->get();
+        $properties = Property::where('categoryId', '=', $category->id)->where('accepted', '=', 1);
+        if (isset($request->sort) && $request->sort != -1) {
+            switch ($request->sort) {
+                case 'priceHighToLow':
+                    $properties = $properties->orderBy('price', 'Desc');
+                    break;
+
+                case 'updated_at':
+                    $properties = $properties->orderBy('updated_at', 'Desc');
+                    break;
+                case 'priceLowToHigh':
+                    $properties = $properties->orderBy('price');
+                    break;
+            }
+        }
+        $properties = $properties->get();
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
         }
 
+
         return view("Properties.index", compact('properties'));
     }
 
-    public function rentIndex()
+    public function rentIndex(Request $request)
     {
 //        $category = Category::where('title', '=', 'Rent')->orWhere('title', '=', 'Share')->get();
-        $properties = Property::whereIn('categoryId', [2, 3])->where('accepted', '=', 1)->get();
+        $properties = Property::whereIn('categoryId', [2, 3])->where('accepted', '=', 1);
+        if (isset($request->sort) && $request->sort != -1) {
+            switch ($request->sort) {
+                case 'priceHighToLow':
+                    $properties = $properties->orderBy('price', 'Desc');
+                    break;
+
+                case 'updated_at':
+                    $properties = $properties->orderBy('updated_at', 'Desc');
+                    break;
+                case 'priceLowToHigh':
+                    $properties = $properties->orderBy('price');
+                    break;
+            }
+        }
+        $properties = $properties->get();
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
         }

@@ -70,6 +70,20 @@ class SearchController extends Controller
             $bedroomsNumber = $request->bedroomsNumber;
             $properties = $properties->where('bedroomsNumber', '>=', $request->bedroomsNumber);
         }
+        if (isset($request->sort) && $request->sort != -1) {
+            switch ($request->sort) {
+                case 'priceHighToLow':
+                    $properties = $properties->orderBy('price', 'Desc');
+                    break;
+
+                case 'updated_at':
+                    $properties = $properties->orderBy('updated_at', 'Desc');
+                    break;
+                case 'priceLowToHigh':
+                    $properties = $properties->orderBy('price');
+                    break;
+            }
+        }
         $properties = $properties->get();
 
         foreach ($properties as $property) {

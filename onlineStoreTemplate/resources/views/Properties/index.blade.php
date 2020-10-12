@@ -17,15 +17,37 @@
                 @if(count($properties)>0)
                     @if (Request::is('properties/rent'))
                         <h2>Properties for rent</h2>
+                        <form action="/properties/rent">
+                            <div class="row">
+                                Sort By:
+                                <select id="sort" name="sort">
+                                    <option value="-1">Sort By</option>
+                                    <option value="updated_at">Last Updated</option>
+                                    <option value="priceHighToLow">Price high to low</option>
+                                    <option value="priceLowToHigh">Price low to high</option>
+                                </select>
+                            </div>
+                        </form>
                     @endif
                     @if (Request::is('properties/buy'))
                         <h2>Properties for sale</h2>
+                        <form action="/properties/buy">
+                            <div class="row">
+                                Sort By:
+                                <select id="sort" name="sort">
+                                    <option value="-1">Sort By</option>
+                                    <option value="updated_at">Last Updated</option>
+                                    <option value="priceHighToLow">Price high to low</option>
+                                    <option value="priceLowToHigh">Price low to high</option>
+                                </select>
+                            </div>
+                        </form>
                     @endif
                     @if (isset($type))
                         @if($type == "properties")
                             <div class="inner">
 
-                                <div class="search-bar " >
+                                <div class="search-bar ">
                                     <div class="search-form-container">
                                         <form class="form " action="/search-properties" method="GET">
                                             <div class="search-bar-section">
@@ -126,110 +148,21 @@
 
                                                 </select>
                                             </div>
+                                            <div class="row">
+                                                Sort By:
+                                                <select id="sort" name="sort">
+                                                    <option value="-1">Sort By</option>
+                                                    <option value="updated_at">Last Updated</option>
+                                                    <option value="priceHighToLow">Price high to low</option>
+                                                    <option value="priceLowToHigh">Price low to high</option>
+                                                </select>
+                                            </div>
 
                                         </form>
 
 
                                     </div>
 
-                                    {{--                                    <div>--}}
-                                    {{--                                        <form class=" " action="/search-properties" method="GET">--}}
-
-                                    {{--                                            <div class="btn-group btn-group-toggle " data-toggle="buttons">--}}
-                                    {{--                                                <div class="bg-secondary p-2">Property Type:</div>--}}
-                                    {{--                                                <label class="btn btn-secondary active">--}}
-                                    {{--                                                    <input type="radio" name="type" value=-1 autocomplete="off" checked>--}}
-                                    {{--                                                    Any--}}
-                                    {{--                                                </label>--}}
-                                    {{--                                                @foreach($types as $category)--}}
-                                    {{--                                                    <label class="btn btn-secondary">--}}
-                                    {{--                                                        <input type="radio" name="type" value="{{ $category->id }}"--}}
-                                    {{--                                                               id="{{$category->id}}"--}}
-                                    {{--                                                               autocomplete="off"> {{ $category->title }}--}}
-                                    {{--                                                    </label>--}}
-                                    {{--                                                @endforeach--}}
-                                    {{--                                            </div>--}}
-
-                                    {{--                                            <div class="btn-group btn-group-toggle " data-toggle="buttons">--}}
-                                    {{--                                                <div class="bg-secondary p-2">Listing Type:</div>--}}
-                                    {{--                                                <label class="btn btn-secondary active">--}}
-                                    {{--                                                    <input type="radio" name="type" value=-1 autocomplete="off" checked>--}}
-                                    {{--                                                    Any--}}
-                                    {{--                                                </label>--}}
-                                    {{--                                                @foreach($categories as $category)--}}
-                                    {{--                                                    <label class="btn btn-secondary">--}}
-                                    {{--                                                        <input type="radio" name="type" value="{{ $category->id }}"--}}
-                                    {{--                                                               id="{{$category->id}}"--}}
-                                    {{--                                                               autocomplete="off"> {{ $category->title }}--}}
-                                    {{--                                                    </label>--}}
-                                    {{--                                                @endforeach--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                            <div class=" ">--}}
-                                    {{--                                                <table>--}}
-                                    {{--                                                    <tr>--}}
-                                    {{--                                                        <td colspan="3">--}}
-                                    {{--                                                            <input class=" " type="search" name="location"--}}
-                                    {{--                                                                   id="searchBar"--}}
-                                    {{--                                                                   hint="Search by location"--}}
-                                    {{--                                                                   placeholder="Search by location">--}}
-
-                                    {{--                                                        </td>--}}
-                                    {{--                                                        <td>--}}
-                                    {{--                                                            <button class="btn-primary1  " style=" border-radius: 0rem;"--}}
-                                    {{--                                                                    type="submit">--}}
-                                    {{--                                                                Search--}}
-                                    {{--                                                            </button>--}}
-                                    {{--                                                        </td>--}}
-
-                                    {{--                                                    </tr>--}}
-                                    {{--                                                    <tr>--}}
-                                    {{--                                                        <td>--}}
-                                    {{--                                                            <select name="maxPrice" id="maxPriceSelect"--}}
-                                    {{--                                                                    style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">--}}
-                                    {{--                                                                --}}{{--                                    Max Price one hundred million dollar--}}
-                                    {{--                                                                <option name=100" value="1000000000">Max Price</option>--}}
-                                    {{--                                                                <option name=100" value="2000000">$ 2,000,000</option>--}}
-                                    {{--                                                                <option name=100" value="1500000">$ 1,500,000</option>--}}
-                                    {{--                                                                <option name=100" value="1000000">$ 1,000,000</option>--}}
-                                    {{--                                                                <option name=100" value="500000">$ 500,000</option>--}}
-                                    {{--                                                                <option name=100" value="200000">$ 200,000</option>--}}
-                                    {{--                                                            </select>--}}
-                                    {{--                                                        </td>--}}
-                                    {{--                                                        <td>--}}
-                                    {{--                                                            <select id="minPriceSelect" name="minPrice"--}}
-                                    {{--                                                                    style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">--}}
-
-                                    {{--                                                                <option name=100" value="0">Min Price</option>--}}
-                                    {{--                                                                <option name=100" value="500">$ 500</option>--}}
-                                    {{--                                                                <option name=100" value="350">$ 350</option>--}}
-                                    {{--                                                                <option name=100" value="200">$ 200</option>--}}
-                                    {{--                                                                <option name=100" value="150">$ 150</option>--}}
-                                    {{--                                                                <option name=100" value="100">$ 100</option>--}}
-                                    {{--                                                                <option name=100" value="50">$ 50</option>--}}
-                                    {{--                                                            </select>--}}
-                                    {{--                                                        </td>--}}
-                                    {{--                                                        <td>--}}
-                                    {{--                                                            <select name="bedroomsNumber" id="bedroomsSelect"--}}
-                                    {{--                                                                    style="box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); ">--}}
-                                    {{--                                                                <option value=-1>Bedrooms</option>--}}
-                                    {{--                                                                <option>1</option>--}}
-                                    {{--                                                                <option>2</option>--}}
-                                    {{--                                                                <option>3</option>--}}
-                                    {{--                                                                <option>4</option>--}}
-                                    {{--                                                                <option>5</option>--}}
-                                    {{--                                                            </select>--}}
-                                    {{--                                                        </td>--}}
-                                    {{--                                                    </tr>--}}
-                                    {{--                                                </table>--}}
-
-
-
-
-
-                                    {{--                                            <br>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                        </form>--}}
-                                    {{--                                    </div>--}}
                                 </div>
 
 
@@ -242,40 +175,42 @@
                     @endif
 
 
+
+
                     @foreach($properties as $property)
-                            <div class="post my-5">
-                                @if($property->created_at > \Carbon\Carbon::now()->subDays(7))
-                                    <div class="new-prop">
-                                        <img src="https://webside.xyz/MK/hackathon/imagaga123/images1/flag.svg"
-                                             style="border: none">
-                                    </div>
-                                @endif
-                                <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
-                                    <div class="carousel-inner">
-                                        @foreach($property->images as $image)
-                                            <div class="carousel-item @if($loop->first) active @endif">
-                                                @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                    <video class="d-block w-100" alt="No Image" controls>
-                                                        <source
-                                                            src="{{url('/storage/properties_images/' . $image->url)}}"
-                                                            type="video/mp4">
+                        <div class="post my-5">
+                            @if($property->created_at > \Carbon\Carbon::now()->subDays(7))
+                                <div class="new-prop">
+                                    <img src="https://webside.xyz/MK/hackathon/imagaga123/images1/flag.svg"
+                                         style="border: none">
+                                </div>
+                            @endif
+                            <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
+                                <div class="carousel-inner">
+                                    @foreach($property->images as $image)
+                                        <div class="carousel-item @if($loop->first) active @endif">
+                                            @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
+                                                <video class="d-block w-100" alt="No Image" controls>
+                                                    <source
+                                                        src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                        type="video/mp4">
 
-                                                    </video>
-                                                @else
-                                                    <img class="d-block w-100"
-                                                         src="{{url('/storage/properties_images/' . $image->url)}}"
-                                                         alt="No Image">
-                                                @endif
-                                            </div>
-                                        @endforeach
+                                                </video>
+                                            @else
+                                                <img class="d-block w-100"
+                                                     src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                     alt="No Image">
+                                            @endif
+                                        </div>
+                                    @endforeach
 
-                                    </div>
-                                    <a class="carousel-control-prev" href="#carouselEx" role="button"
-                                       data-slide="prev">
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselEx" role="button"
+                                   data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true">
                                 <i class="fa fa-chevron-left" style="color: #df0505" aria-hidden="true"></i>
                             </span>
-                                        <span class="sr-only">Previous</span>
+                                    <span class="sr-only">Previous</span>
                                 </a>
                                 <a class="carousel-control-next" href="#carouselEx" role="button"
                                    data-slide="next">
@@ -301,11 +236,11 @@
                                 @endif
 
 
-                                    <p  style="color: #0a0807;padding-left: 0.5rem;" >
-                                        {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                        {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                        {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                    </p>
+                                <p style="color: #0a0807;padding-left: 0.5rem;">
+                                    {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                    {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                    {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                </p>
 
                                 <a class="special-link" style="color: #0a0807;padding-left: -0.5rem;"
                                    href="/properties/{{$property->id}}">View details</a>
@@ -332,17 +267,25 @@
 
         </div>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript"></script>
     <script>
         {{--$("#{{ $maxPrice }}").addClass("selected");--}}
 
         {{--        $('#maxPriceSelect').val({{$maxPrice}})--}}
 
-        document.getElementById('location').value = '{{ $searched ?? '' }}';
+        {{--document.getElementById('location').value = '{{ $searched ?? '' }}';--}}
 
-        var select = document.getElementById('max-price');
-        var option;
+
+        @if(isset($categories))
+        @foreach($categories as $c)
+        @if($category == $c->id) {{Str::lower($c->title)}}_clicked();
+            @endif
+            @endforeach
+            @endif
 
             @if ( isset( $maxPrice ) )
+        var select = document.getElementById('max-price');
+        var option;
         for (var i = 0; i < select.options.length; i++) {
             option = select.options[i];
 
@@ -353,9 +296,10 @@
             @endif
 
 
+
+            @if (isset($minPrice))
         var minSelect = document.getElementById('min-price');
         var opt;
-            @if (isset($minPrice))
         for (var x = 0; x < minSelect.options.length; x++) {
 
             opt = minSelect.options[x];
@@ -414,11 +358,16 @@
 
         }
 
-        @if(isset($categories))
-        @foreach($categories as $c)
-        @if($category == $c->id) {{Str::lower($c->title)}}_clicked() @endif
-        @endforeach
-        @endif
+
+        var e = document.getElementById("sort");
+
+        $(document).ready(function () {
+            $("#sort").on("change", function () {
+                this.form.submit();
+            });
+
+        });
+
     </script>
 
 
