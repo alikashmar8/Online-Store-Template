@@ -1,11 +1,11 @@
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
 
-@section('content')
-    <div class="m-5 p-0">
+{{--@section('content')--}}
+<div class="m-5 p-0">
 
     @if(count($results) > 0)
         <H3>Results for '{{ $searched }}':</H3>
-        <h4>{{ count($results) }} results found !</h4>
+        <h4>{{ count($results ?? '') }} agents available !</h4>
         @if($type == 'agents')
             @foreach($results as $agent)
                 <li class="list-group-item m-3" style="box-shadow: border-radius: .25rem;
@@ -29,10 +29,10 @@
 
                 @endforeach
             @else
-                {{ $results }}
+            {{ $results ?? '' }}
             @endif
         @else
         <h3 class="post">No results found for : '{{ $searched }}' !</h3>
     @endif
     </div>
-@endsection
+{{--@endsection--}}

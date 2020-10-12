@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Company;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -26,8 +28,40 @@ Route::get('/evaluate', function () {
 Route::get('/insurance', function () {
     return view('insurance');
 });
-Route::get('/findAgents', function () {
-    return view('findAgents');
+Route::get('/findAgents', function (Request $request) {
+    if (isset($request->name)) {
+        $searched = $request->name;
+        $searchBy = $request->searchBy;
+        $results = [];
+        if ($searchBy == 'name') {
+            $results = User::where('role', '=', 1)->where('name', 'like', '%' . $searched . '%')->get();
+            foreach ($results as $user) {
+                $user->company = Company::where('AgentId', $user->id)->first();
+            }
+        }
+        if ($searchBy == 'companyName') {
+            $companies = Company::where('name', 'like', '%' . $searched . '%')->get();
+            foreach ($companies as $company) {
+                $user = User::findOrFail($company->AgentId);
+                $user->company = $company;
+                $results[$user->id] = $user;
+            }
+        }
+
+//        if ($type == 'location'){
+//
+//          }
+        $type = $request->type;
+
+    } else {
+        $searched = '';
+        $results = User::where('role', '=', 1)->get();
+        foreach ($results as $user) {
+            $user->company = Company::where('AgentId', $user->id)->first();
+        }
+        $type = 'agents';
+    }
+    return view('findAgents', compact('searched', 'results', 'type'));
 });
 
 //All users route

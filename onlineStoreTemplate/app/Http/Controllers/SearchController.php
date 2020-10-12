@@ -16,30 +16,37 @@ class SearchController extends Controller
     public function searchAgent(Request $request)
     {
 
-        $searched = $request->name;
-        $searchBy = $request->searchBy;
-        $results = [];
-        if ($searchBy == 'name') {
-            $results = User::where('role', '=', 1)->where('name', 'like', '%' . $searched . '%')->get();
-            foreach ($results as $user) {
-                $user->company = Company::where('AgentId', $user->id)->first();
+        if (isset($request->name)) {
+            $searched = $request->name;
+            $searchBy = $request->searchBy;
+            $results = [];
+            if ($searchBy == 'name') {
+                $results = User::where('role', '=', 1)->where('name', 'like', '%' . $searched . '%')->get();
+                foreach ($results as $user) {
+                    $user->company = Company::where('AgentId', $user->id)->first();
+                }
             }
-        }
-        if ($searchBy == 'companyName') {
-            $companies = Company::where('name', 'like', '%' . $searched . '%')->get();
-            foreach ($companies as $company) {
-                $user = User::findOrFail($company->AgentId);
-                $user->company = $company;
-                $results[$user->id] = $user;
+            if ($searchBy == 'companyName') {
+                $companies = Company::where('name', 'like', '%' . $searched . '%')->get();
+                foreach ($companies as $company) {
+                    $user = User::findOrFail($company->AgentId);
+                    $user->company = $company;
+                    $results[$user->id] = $user;
+                }
             }
-        }
 
 //        if ($type == 'location'){
 //
 //        }
-        $type = $request->type;
+            $type = $request->type;
 
 
+        } else {
+            $searched = '';
+            $results = User::where('role', 1)->get();
+            $type = 'agents';
+            dd($results);
+        }
         return view('searchResults', compact('searched', 'results', 'type'));
 
     }

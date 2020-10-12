@@ -3,28 +3,25 @@
 @section('content')
 
     <div class="hero" style=" height: 500px; background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/agent.jpg);
-    " >
+    ">
 
         <div class="inner">
 
 
+            <div class="search-form-container">
 
+                <form action="/findAgents" method="GET" class="form-inline my-2 my-lg-0">
+                    <div class="search-bar-section">
+                        <h1>Search for an agent</h1>
 
+                    </div>
+                    <div class=" search-bar-section ">
+                        <input type="hidden" name="type" class="location1" value="agents">
+                        <input class="location1" type="search" name="name" placeholder="Search">
+                        <button class=" btn-primary1 submit" type="submit">Search</button>
+                    </div>
 
-    <div class="search-form-container">
-
-            <form action="/search-agents" method="GET" class="form-inline my-2 my-lg-0">
-                <div class="search-bar-section">
-                    <h1>Search for an agent</h1>
-
-                </div>
-                <div class=" search-bar-section ">
-                    <input type="hidden" name="type" class="location1" value="agents">
-                    <input class="location1" type="search" name="name" placeholder="Search">
-                    <button class=" btn-primary1 submit" type="submit">Search</button>
-                </div>
-
-                <div class="search-bar-section ">
+                    <div class="search-bar-section ">
 
                     <p style="margin: 20px;  color: white;">Search By:</p>
                     <select name="searchBy">
@@ -41,6 +38,7 @@
 
         </div>
     </div>
-{{--add a list of agents here --}}
 
+{{--add a list of agents here --}}
+    @include('searchResults')
 @endsection
