@@ -29,6 +29,10 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
+        if ($user->role == 1) {
+            $user->company = Company::where('AgentId', $user->id)->first();
+        }
+
         return view('Users.show', compact('user'));
     }
 
@@ -87,6 +91,8 @@ class UsersController extends Controller
         $country = CountryCode::where('iso', '=', $request['phoneNumberCode'])->get();
         $code = $country[0]->phonecode;
 
+        $user = User::findOrFail($id);
+
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:190'],
             'bio' => ['nullable', 'string', 'max:190'],
@@ -96,7 +102,9 @@ class UsersController extends Controller
             $validatedData = $request->validate([
                 'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
             ]);
+            $user->email = $request->email;
         }
+
         if ($request->phoneNumber != Auth::user()->phoneNumber || $code != Auth::user()->phoneNumberCode) {
             $validatedData = $request->validate([
                 'phoneNumber' => ['unique:users', 'phone:phoneNumberCode'],
@@ -106,18 +114,15 @@ class UsersController extends Controller
 
 
 //        dd($request);
-        $user = User::findOrFail($id);
         $user->phoneNumber = $request['phoneNumber'];
         $user->phoneNumberCode = $code;
         $user->name = $request->name;
         $user->bio = $request->bio;
-//        if ($user->bio != null) {
-//            $bio = $request->bio;
-//        }
-//        if ($request['bio'] != null) {
-//            $bio = $request['bio'];
-//        }
+
         if ($request['profileImg'] != null) {
+            if ($user->profileImg != 'profileImage.png') {
+                Storage::delete('public/user_profile_images/' . $user->profileImg);
+            }
             $image = $request['profileImg'];
             // Get filename with the extension
             $filenameWithExt = $image->getClientOriginalName();
@@ -130,6 +135,8 @@ class UsersController extends Controller
             // Upload Image
             $user->profileImg = $fileNameToStore;
             $path = $image->storeAs('public/user_profile_images', $fileNameToStore);
+        } else {
+            $user->profileImg = 'profileImage.png';
         }
 
 

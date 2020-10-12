@@ -29,7 +29,10 @@
                 <div class="num2">
 
                     <h2>{{$user->name}}</h2>
-                    <p> Company:  </p>
+                    @if($user->role == 1)
+                        <p> Company: {{$user->company->name}}</p>
+                        <p> Licence Number: {{$user->company->liceneceNumber}}</p>
+                    @endif
                     <p> Phone number: +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
                     <p>Email: {{$user->email}}</p>
                     <p>Bio: {{$user->bio}}</p>
@@ -51,7 +54,10 @@
                     <div class="num2">
 
                         <h2>{{$user->name}}</h2>
-                        <p> Company: </p>
+                        @if($user->role == 1)
+                            <p> Company: {{$user->company->name}}</p>
+                            <p> Licence Number: {{$user->company->licenseNumber}}</p>
+                        @endif
                         <p> Phone number: +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
                         <p>Email: {{$user->email}}</p>
                         <p>Bio: {{$user->bio}}</p>
@@ -139,7 +145,7 @@
                     <div class="form-group form-label-group">
                         <label for="bio" class="col-form-label">Bio:</label>
                         <textarea type="text" class="form-control  @error('bio') is-invalid @enderror" name="bio"
-                                  value="{{ $user->bio }}" maxlength="180"></textarea>
+                                  maxlength="180">{{ $user->bio }}</textarea>
                     </div>
 
                     @error('bio')

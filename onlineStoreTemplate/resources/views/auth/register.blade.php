@@ -24,7 +24,7 @@
                 <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                     @csrf
 
-                    <input id="role" type="hidden" name="role" value=2>
+{{--                    <input id="role" type="hidden" name="role" value=2>--}}
 
 
                     <div class="form-label-group">
@@ -122,7 +122,8 @@
                             <button type="submit" class=" btn-primary1">
                                 {{ __('Register') }}
                             </button>
-                        </div><BR/>
+                        </div>
+                        <BR/>
                     </div>
 
                 </form>
@@ -245,7 +246,8 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <button type="submit" class=" btn-primary1">
+                            <button type="submit" class=" btn-primary1"
+                                    onclick="event.preventDefault(); document.getElementById('agentForm').submit();">
                                 {{ __('Register') }}
                             </button>
                         </div>

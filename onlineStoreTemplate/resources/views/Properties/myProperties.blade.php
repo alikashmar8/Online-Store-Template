@@ -41,9 +41,18 @@
 
                                             <div class="carousel-item @if($loop->first) active @endif">
                                                 <div style="width: 100%; height: 100%;">
-                                                    <img style="height: 100px; width: 200px;"
-                                                         src="{{url('/storage/properties_images/' . $image->url)}}"
-                                                         alt="No Image">
+                                                    @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
+                                                        <video class="d-block w-100" alt="No Image" controls>
+                                                            <source
+                                                                src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                                type="video/mp4">
+
+                                                        </video>
+                                                    @else
+                                                        <img class="d-block w-100"
+                                                             src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                             alt="No Image">
+                                                    @endif
                                                 </div>
                                             </div>
                                         @endforeach

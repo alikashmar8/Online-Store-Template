@@ -21,6 +21,9 @@ class SearchController extends Controller
         $results = [];
         if ($searchBy == 'name') {
             $results = User::where('role', '=', 1)->where('name', 'like', '%' . $searched . '%')->get();
+            foreach ($results as $user) {
+                $user->company = Company::where('AgentId', $user->id)->first();
+            }
         }
         if ($searchBy == 'companyName') {
             $companies = Company::where('name', 'like', '%' . $searched . '%')->get();

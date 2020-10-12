@@ -7,7 +7,7 @@
         <h1>Edit Property:</h1>
         <div class="alert alert-warning">Editing your property will need admin confirmation to get listed again!</div>
 
-            {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@update',$property->id],'method'=>'PUT']) }}
+            {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@update',$property->id],'method'=>'PUT','files' => true]) }}
             <div class=" creat_app">
                 <div class="" style="height:500px">
                     <div class=" form-group form-label-group special ">
@@ -22,29 +22,67 @@
                         @endif
                         {{ Form::label('showPrice','Show Price') }}
                     </div>
-                    <div class="form-group form-label-group special">
+                    <div class="form-group form-label-group">
                         {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}
-                        {{ Form::number('bedroomsNumber',$property->bedroomsNumber,['class' => 'form-control','placeholder'=>'bedroomsNumber']) }}
+                        {{ Form::select('bedroomsNumber',array(0=> 0,1,2,3,4,5=>'5+'),$property->bedroomsNumber,['class' => 'form-control']) }}
                     </div>
-                    <div class="form-group form-label-group special">
-                        {{ Form::label('type','Type:') }}
-                        <select name="type">
-                            <option value="0" @if($property->type == 0) selected @endif>Sell</option>
-                            <option value="1" @if($property->type == 1) selected @endif>Rent</option>
+
+                    <div class="form-group form-label-group">
+                        {{ Form::label('bathroomsNumber','Number Of Bathrooms:') }}
+                        {{ Form::select('bathroomsNumber',array(0=> 0,1,2,3,4=>'4+'),$property->bathroomsNumber,['class' => 'form-control']) }}
+                    </div>
+                    <div class="form-group form-label-group">
+                        {{ Form::label('parkingNumber','Number Of Parking:') }}
+                        {{ Form::select('parkingNumber',array(0=> 0,1,2,3,4=>'4+'),$property->parkingNumber,['class' => 'form-control']) }}
+                    </div>
+                    <div class="form-group form-label-group">
+                        {{ Form::label('category','Listing Type:') }}
+                        <select name="category">
+                            @foreach(\App\Models\Category::all() as $type)
+                                <option value="{{$type->id}}"
+                                        @if($type->id == $property->categoryId) selected @endIf >{{ $type->title }}</option>
+                            @endforeach
                         </select>
-                        {{--                        {{ Form::select('type', array(0 => 'Sell', 1 => 'Rent'), 0) }}--}}
+                    </div>
+                    <div class="form-group form-label-group">
+                        {{ Form::label('type','Property Type:') }}
+                        <select name="type">
+                            @foreach(\App\Models\PropertyType::all() as $type)
+                                <option value="{{$type->id}}"
+                                        @if($type->id == $property->typeId) selected @endIf>{{ $type->title }} </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group form-label-group special">
                         {{ Form::label('description','Description:') }}
                         {{ Form::textarea('description',$property->description,['class' => 'form-control','placeholder'=>'Description']) }}
                     </div>
                     <div class="form-group form-label-group special">
-                        <input type="checkbox" onclick="imgs2()"> Change images
+                        <input type="checkbox" name="changeImages" onclick="imgs2()"> Change images
                     </div>
 
                     <div class="form-group form-label-group special" id="imgs" style="display: none">
                         {{ Form::label('images','Images:') }}
-                        <input type="file" name="images[]" multiple readonly>
+                        <div class="form-group form-label-group">
+                            <input type="file" name="images[]" id="file" accept=".png, .jpg, .mp4" multiple>
+                            <script>
+                                var uploadField = document.getElementById("file");
+
+                                uploadField.onchange = function () {
+                                    var i = 0;
+                                    var space = 0;
+                                    for (i = 0; i < this.files.length; i++) {
+                                        space += this.files[i].size
+
+                                    }
+                                    if (space > 150000000) {
+                                        alert("Files are too big!");
+                                        this.value = "";
+                                    }
+                                    ;
+                                };
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>

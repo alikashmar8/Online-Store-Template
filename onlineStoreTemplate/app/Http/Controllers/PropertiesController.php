@@ -44,9 +44,10 @@ class PropertiesController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function accept(Request $request){
+    public function accept(Request $request)
+    {
 //        dd($request['id']);
-        $property =  Property::findOrFail($request['id']);
+        $property = Property::findOrFail($request['id']);
         $property->accepted = 1;
         $property->contactInfo = $request['contactInfo'];
         $property->save();
@@ -160,7 +161,53 @@ class PropertiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+//        dd($request);
+        $this->validate($request, [
+            'description' => 'required',
+            'price' => 'required',
+        ]);
+        $property = Property::findOrFail($id);
+        $property->price = $request->price;
+        $property->description = $request->description;
+        if (isset($request->showPrice)) $property->showPrice = $request->showPrice; else $property->showPrice = 0;
+
+        if ($request->bedroomsNumber != -1) {
+            $property->bedroomsNumber = $request->bedroomsNumber;
+        }
+        if ($request->bathroomsNumber != -1) {
+            $property->bathroomsNumber = $request->bathroomsNumber;
+        }
+        if ($request->parkingNumber != -1) {
+            $property->parkingNumber = $request->parkingNumber;
+        }
+        $property->accepted = 0;
+        $property->categoryId = $request->category;
+        $property->typeId = $request->type;
+        $property->contactInfo = null;
+
+        $property->save();
+        // Handle File Upload
+        if (count($request->images) > 0) {
+            $this->deleteImages($id);
+            foreach ($request->images as $image) {
+                // Get filename with the extension
+                $filenameWithExt = $image->getClientOriginalName();
+                // Get just filename
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                // Get just ext
+                $extension = $image->getClientOriginalExtension();
+                // Filename to store
+                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                // Upload Image
+                $path = $image->storeAs('public/properties_images', $fileNameToStore);
+
+                $image = new PropertyImage;
+                $image->propertyId = $property->id;
+                $image->url = $fileNameToStore;
+                $image->save();
+            }
+        }
+        return redirect('/');
     }
 
     /**
@@ -171,24 +218,29 @@ class PropertiesController extends Controller
      */
     public function destroy($id)
     {
-        $property = Property::find($id);
-        $imags = PropertyImage::where('propertyId', '=', $property->id);
+        $property = Property::findOrFail($id);
+
+        $this->deleteImages($property->id);
+
+        $property->delete();
+
+        if (Auth::user()->role == 0) {
+            return redirect('/acceptProperties');
+        } else {
+            return redirect('/myProperties');
+        }
+    }
+
+    public function deleteImages($id)
+    {
+        $imags = PropertyImage::where('propertyId', '=', $id);
         $images = $imags->get();
         foreach ($images as $image) {
             Storage::delete('public/properties_image/' . $image->url);
             $path = public_path() . '\storage\properties_images\\' . $image->url;
             unlink($path);
         }
-
-        if (Auth::user()->role == 0) {
-            $imags->delete();
-            $property->delete();
-            return redirect('/acceptProperties');
-        } else {
-            $imags->delete();
-            $property->delete();
-            return redirect('/myProperties');
-        }
+        $imags->delete();
     }
 
     public function buyIndex()
@@ -204,15 +256,16 @@ class PropertiesController extends Controller
 
     public function rentIndex()
     {
-        $category = Category::where('title', '=', 'Rent')->first();
-        $properties = Property::where('categoryId', '=', $category->id)->where('accepted', '=', 1)->get();
+//        $category = Category::where('title', '=', 'Rent')->orWhere('title', '=', 'Share')->get();
+        $properties = Property::whereIn('categoryId', [2, 3])->where('accepted', '=', 1)->get();
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
         }
         return view("Properties.index", compact('properties'));
     }
 
-    public function viewNotAcceptedProperties(){
+    public function viewNotAcceptedProperties()
+    {
         if (Auth::user()->role == 0) {
             $notAcceptedProperties = Property::where('accepted', '=', 0)->get();
             foreach ($notAcceptedProperties as $property) {
@@ -223,25 +276,27 @@ class PropertiesController extends Controller
         }
     }
 
-    public function allAcceptedProperties(){
+    public function allAcceptedProperties()
+    {
         $properties = Property::where('accepted', '=', 1)->get();
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
             $property->agent = User::find($property->userId);
         }
-        return view('AdminPages.allProperties',compact('properties'));
+        return view('AdminPages.allProperties', compact('properties'));
     }
 
-    public function myProperties(){
+    public function myProperties()
+    {
 
-        $properties = Property::where('userId','=',Auth::id())->get();
+        $properties = Property::where('userId', '=', Auth::id())->get();
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
         }
         return view("Properties.myProperties", compact('properties'));
     }
 
-    public function acceptProperty($request,$id)
+    public function acceptProperty($request, $id)
     {
         dd($request);
     }

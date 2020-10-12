@@ -243,29 +243,39 @@
 
 
                     @foreach($properties as $property)
-                        <div class="post my-5">
-                            @if($property->updated_at /* < 7 days */  )
-                        <div class="new-prop">
-                            <img src="https://webside.xyz/MK/hackathon/imagaga123/images1/flag.svg" style="border: none">
-                        </div>
-                            @endif
-                            <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
-                                <div class="carousel-inner">
-                                    @foreach($property->images as $image)
-                                        <div class="carousel-item @if($loop->first) active @endif">
-                                            <img class="d-block w-100"
-                                                 src="{{url('/storage/properties_images/' . $image->url)}}"
-                                                 alt="No Image">
-                                        </div>
-                                    @endforeach
+                            <div class="post my-5">
+                                @if($property->created_at > \Carbon\Carbon::now()->subDays(7))
+                                    <div class="new-prop">
+                                        <img src="https://webside.xyz/MK/hackathon/imagaga123/images1/flag.svg"
+                                             style="border: none">
+                                    </div>
+                                @endif
+                                <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        @foreach($property->images as $image)
+                                            <div class="carousel-item @if($loop->first) active @endif">
+                                                @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
+                                                    <video class="d-block w-100" alt="No Image" controls>
+                                                        <source
+                                                            src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                            type="video/mp4">
 
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselEx" role="button"
-                                   data-slide="prev">
+                                                    </video>
+                                                @else
+                                                    <img class="d-block w-100"
+                                                         src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                         alt="No Image">
+                                                @endif
+                                            </div>
+                                        @endforeach
+
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselEx" role="button"
+                                       data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true">
                                 <i class="fa fa-chevron-left" style="color: #df0505" aria-hidden="true"></i>
                             </span>
-                                    <span class="sr-only">Previous</span>
+                                        <span class="sr-only">Previous</span>
                                 </a>
                                 <a class="carousel-control-next" href="#carouselEx" role="button"
                                    data-slide="next">
