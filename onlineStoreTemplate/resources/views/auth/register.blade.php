@@ -24,7 +24,7 @@
                 <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                     @csrf
 
-{{--                    <input id="role" type="hidden" name="role" value=2>--}}
+                    <input id="role" type="hidden" name="role" value=2>
 
 
                     <div class="form-label-group">

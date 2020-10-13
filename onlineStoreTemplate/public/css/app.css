@@ -11628,9 +11628,19 @@ position: relative;
 }
 .main1 h1 i{
     color: #e4002b;
+    transition: transform 1s;
+
+}
+.main1 h1 i:hover {
+
+  text-shadow: 0 0  15px #7c7e85;
+    transform: scale(1.2);
+
 
 
 }
+
+
 .main1 p{
     padding: 50px;
     padding-top: 0;
@@ -11803,6 +11813,11 @@ position: relative;
 
     .submit {
         width: 20%;
+    }
+    .search-bar-section select{
+        display: inline-block;
+        width: 150px;
+        padding: 0;
     }
 
 

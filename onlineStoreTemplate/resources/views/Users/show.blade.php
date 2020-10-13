@@ -114,6 +114,39 @@
                                value="{{ $user->email }}" required>
                     </div>
 
+                    {{--for agent only--}}
+                    @if($user->role == 1)
+
+
+                        <div class="form-label-group">
+                            <label for="license">License Number*</label>
+                            <input id="license" type="number" class="form-control @error('license') is-invalid @enderror"
+                                   name="license" value="{{ old('license') }}" required autocomplete="license" autofocus>
+                            @error('license')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+
+
+                        </div>
+
+                        <div class="form-label-group">
+
+                            <label for="comp_name">Company Name*</label>
+                            <input id="comp_name" type="text" class="form-control @error('comp_name') is-invalid @enderror"
+                                   name="comp_name" value="{{ old('comp_name') }}" required autocomplete="comp_name"
+                                   autofocus>
+                            @error('comp_name')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+
+                        </div>
+
+                    @endif
+
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

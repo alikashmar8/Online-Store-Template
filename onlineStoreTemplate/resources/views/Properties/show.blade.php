@@ -83,12 +83,12 @@
                                         <strong>{{ $property->id }}</strong>:
                                         <div class="form-label-group">
                                             <label class="form-label-group" for="message">Message:</label>
-                                            <textarea name="message" class="form-control" style="height: 300px">`
-                                                Hi, I'm interested to view your property! What's the best time to inspect?
-                                                Thanks
+                                            <textarea name="message" class="form-control" style="height: 300px">
+Hi, I'm interested to view your property! What's the best time to inspect?
+Thanks
 
-                                                Hi, How much is the last price for your property?
-                                                Thanks
+Hi, How much is the last price for your property?
+Thanks
                                         </textarea>
                                         </div>
                                         <input type="submit" value="Send" class="btn-primary1">
@@ -101,10 +101,32 @@
                         <br><br>
 
                         {{--      maps   --}}
-                        <div class="container p-5 my-5"
-                             style="height:300px; background-image: url(https://sunny95.com/wp-content/blogs.dir/16/files/2017/08/Columbus-and-Oakwood.jpg); background-size: cover;">
+                        <p id="lat" style="display: none">{{ $property->latitude }}</p>
+                        <p id="lng" style="display: none">{{ $property->longitude }}</p>
 
-                        </div>
+                        <h3>Location</h3>
+                        <br/>
+
+                        <div id="map" style="height: 400px;  width: 100%;"></div>
+
+                        <script>
+                            var lat1 =document.getElementById('lat').innerHTML
+                            var lng1 =document.getElementById('lng').innerHTML
+
+                            function initMap() {
+
+                                var location = {lat:  parseFloat(lat1), lng:  parseFloat(lng1) };
+
+                                var map = new google.maps.Map(
+                                    document.getElementById('map'), {zoom: 15, center: location});
+
+                                var marker = new google.maps.Marker({position: location, map: map   /* , icon:'pinkball.png'*/});
+                            }
+                        </script>
+
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initMap"></script>
+
+
                     </div>
 
 

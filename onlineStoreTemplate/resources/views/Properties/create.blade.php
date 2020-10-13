@@ -69,6 +69,8 @@
                         {{ Form::label('description','Description:') }}
                         {{ Form::textarea('description','',['class' => 'form-control','placeholder'=>'Description', 'required']) }}
                     </div>
+
+
                     <div class="form-group form-label-group">
                         {{ Form::label('images','Images:') }}
                         <input type="file" name="images[]" id="file" accept=".png, .jpg, .mp4" multiple>
@@ -95,9 +97,65 @@
 
                 <div class="col-md-6" style="height:500px">
                     <div id="map" style="position: absolute; right: 0; left: 0; top: 0; bottom: 0;"></div>
-                    <input type="text" name="longitude" id="longitude" />
-                    <input type="text" name="latitude" id="latitude" />
+                    <!input type="text" name="longitude" id="longitude" />
+                    <!input type="text" name="latitude" id="latitude" />
                 </div>
+
+                <div {{--maps--}}  >
+                    <script
+                        src="https://maps.googleapis.com/maps/api/js?AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initAutocomplete&libraries=places&v=weekly"
+                        defer
+                    ></script>
+
+
+
+                    <input type="text" placeholder="Enter Location" name="address" onFocus="initializeAutocomplete()" id="locality" ><br>
+
+                    <input type="text" name="city" id="city" placeholder="City" value="" ><br>
+                    <input type="text" name="latitude" id="latitude" placeholder="Latitude" value="" ><br>
+                    <input type="text" name="longitude" id="longitude" placeholder="Longitude" value="" ><br>
+                    <input type="text" name="place_id" id="location_id" placeholder="Location Ids" value="" ><br>
+
+
+
+
+
+                    <script type="text/javascript">
+                        function initializeAutocomplete(){
+                            var input = document.getElementById('locality');
+                            // var options = {
+                            //   types: ['(regions)'],
+                            //   componentRestrictions: {country: "IN"}
+                            // };
+                            var options = {}
+
+                            var autocomplete = new google.maps.places.Autocomplete(input, options);
+
+                            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                                var place = autocomplete.getPlace();
+                                var lat = place.geometry.location.lat();
+                                var lng = place.geometry.location.lng();
+                                var placeId = place.place_id;
+                                // to set city name, using the locality param
+                                var componentForm = {
+                                    locality: 'short_name',
+                                };
+                                for (var i = 0; i < place.address_components.length; i++) {
+                                    var addressType = place.address_components[i].types[0];
+                                    if (componentForm[addressType]) {
+                                        var val = place.address_components[i][componentForm[addressType]];
+                                        document.getElementById("city").value = val;
+                                    }
+                                }
+                                document.getElementById("latitude").value = lat;
+                                document.getElementById("longitude").value = lng;
+                                document.getElementById("location_id").value = placeId;
+                            });
+                        }
+                    </script>
+
+                </div>
+
             </div>
 
             <div class=" ">

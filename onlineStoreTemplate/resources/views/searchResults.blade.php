@@ -1,7 +1,7 @@
 {{--@extends('layouts.app')--}}
 
 {{--@section('content')--}}
-<div class="m-5 p-0">
+<div class="container p-0">
 
     @if(count($results) > 0)
         <H3>Results for '{{ $searched }}':</H3>

@@ -119,7 +119,7 @@
                     <i class="fas fa-laptop-house"></i>
                 </h1>
                 <p>
-                    Get an online access to buy, sell, and rent prop
+                    Get an online access to buy, sell, and rent property
 
                 </p>
             </div>
@@ -144,31 +144,32 @@
             <div class="main2">
                 <div class="container p-4">
                     <h1>
-                        Welcome Text
+                        Welcome to Oz Property Market
                     </h1>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                        <BR/>Want to sell your property without wasting $$$ on agents?
+                        <BR/>Oz Property Market the Agent will enable you to do just that. Simply sign up, list your property and connect with buyers directly yourself. With our one-off fixed price packages, you can customise and pay for the package that you want!
+                        <BR/>Get listed on the sites you need to be on, including <a href="http://realestate.com.au/" target="_blank"  class="special-link" style="color: #e4002b">realestate.com.au</a> & <a href="http://domain.com.au/" target="_blank" class="special-link" style="color: #e4002b"> domain.com.au</a>. There are no hidden charges, management fees or additional costs. Save on agent’s commission by selling your own property!
 
                     </p>
                 </div>
+                <BR/> <BR/> <BR/>
                 <div class="container p-4">
                     <h1>
-                        about us
+                        About Oz Property Market
                     </h1>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                        <BR/>Oz Property Market the Agent lists you on all the property websites you need to be on,<a href="http://realestate.com.au/" target="_blank"  class="special-link" style="color: #e4002b">realestate.com.au</a>, <a href="http://domain.com.au/" target="_blank" class="special-link" style="color: #e4002b"> domain.com.au</a>, <a href="http://realcommercial.com.au/" target="_blank" class="special-link" style="color: #e4002b"> realcommercial.com.au</a>  & many more. Best part is it all comes with no hidden costs or commissions.
+                        <BR/>At Oz Property Market we believe that ownership is associated with freedom of choice. It’s your property – so you choose. You retain complete control over your listing, enabling you to accurately represent it how you desire, lend a personal touch to your property description and adjust your price according to what you want. What’s more, with our all inclusive and straight to the point packages you decide for yourself which services you need and pay only for those services.
+                        <BR/>Our selection of packages aims to give you the most essential tools for the best and quickest outcome for your property. Most importantly, we have the means to ensure your property is listed on Australia’s highest-traffic and most-trusted real estate listing websites. These sites are not otherwise directly accessible for property owners acting without an agent, making OPM the route to getting listed without paying the commission fee’s. Other services include “For Sale boards”, marketing brochures, property market reports and professional advice for property-owners.
+                        <BR/>And perhaps most significantly, we offer you these services completely commission-free. That’s the way it should be. By retaining ultimate control over and responsibility for your property listing, you’ve essentially become your own real estate agent! With 88% of property buyers and renters turning to the internet for research purposes, our internet-focused publicity strategy offers maximum visibility at minimum cost. So grab your real estate agent toolbox from Oz Property Market the Agent and get to work.
 
                     </p>
                 </div>
-                <div class="container p-4">
-                    <h1>
-                        contact us
-                    </h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-                    </p>
-                </div>
+
             </div>
             <div class="main3">
 
