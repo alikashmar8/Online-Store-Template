@@ -68,6 +68,7 @@ Route::get('/findAgents', function (Request $request) {
 Route::get('/', '\App\Http\Controllers\PropertiesController@index')->name('index');
 Route::get('/properties/buy', '\App\Http\Controllers\PropertiesController@buyIndex');
 Route::get('/properties/rent', '\App\Http\Controllers\PropertiesController@rentIndex');
+Route::get('/submitEvaluation', '\App\Http\Controllers\EmailsController@submitEvaluationForm');
 
 //Admin Routes
 Route::post('/accept', '\App\Http\Controllers\PropertiesController@accept')->middleware('auth');
@@ -76,20 +77,20 @@ Route::get('/acceptedProperties', '\App\Http\Controllers\PropertiesController@al
 Route::get('/users', '\App\Http\Controllers\UsersController@index')->middleware('auth');
 Route::get('/agents', '\App\Http\Controllers\UsersController@agentsIndex')->middleware('auth');
 
-Route::resource('users', '\App\Http\Controllers\UsersController', ['except' => ['index', 'store', 'create', 'show', 'edit', 'destroy']])->middleware('auth');
+Route::resource('users', '\App\Http\Controllers\UsersController', ['except' => ['index', 'store', 'create', 'show', 'edit', 'destroy']])->middleware(['auth', 'verified']);
 Route::get('/users/{id}', '\App\Http\Controllers\UsersController@show')->middleware('auth');
 Route::delete('/users/destroy/{id}', '\App\Http\Controllers\UsersController@destroy')->middleware('auth');
 
 //Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@edit')->middleware('auth');
-Route::get('/properties/myProperties', '\App\Http\Controllers\PropertiesController@myProperties');
-Route::resource('properties', '\App\Http\Controllers\PropertiesController', ['except' => ['show']])->middleware('auth');
+Route::get('/properties/myProperties', '\App\Http\Controllers\PropertiesController@myProperties')->middleware(['auth', 'verified']);
+Route::resource('properties', '\App\Http\Controllers\PropertiesController', ['except' => ['show']])->middleware(['auth', 'verified']);
 Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@show');
 Route::get('/search-agents', '\App\Http\Controllers\SearchController@searchAgent');
 Route::get('/search-properties', '\App\Http\Controllers\SearchController@searchProperties');
 
 //Auth routes
 //Route::get('registerAgent', '\App\Http\Controllers\UsersController@registerAgent')->middleware('guest');
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

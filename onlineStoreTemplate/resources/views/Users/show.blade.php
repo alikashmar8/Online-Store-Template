@@ -60,9 +60,26 @@
                         @endif
                         <p> Phone number: +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
                         <p>Email: {{$user->email}}</p>
+                        @if(!\Illuminate\Support\Facades\Auth::user()->hasVerifiedEmail())
+                            @if (session('resent'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ __('A fresh verification link has been sent to your email address.') }}
+                                </div>
+                            @endif
+                            <p class="alert alert-danger">Email Not Verified Yet !</p>
+                            {{ __('If you did not receive the email') }},
+                            <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                                @csrf
+                                <button type="submit"
+                                        class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>
+                                .
+                            </form>
+                        @endif
                         <p>Bio: {{$user->bio}}</p>
 
-                        <button class="btn-primary1" data-toggle="modal" data-target="#exampleModal">Edit Profile
+                        <button class="btn-primary1" data-toggle="modal" data-target="#exampleModal"
+                                @if(!\Illuminate\Support\Facades\Auth::user()->hasVerifiedEmail())disabled @endIf>Edit
+                            Profile
                         </button>
                     </div>
                 </div>
@@ -92,7 +109,7 @@
                     process
                 </div>
                 {{--                <form action="/users/edit" method="post" id="editForm">--}}
-                {{ Form::open(['action' => ['App\Http\Controllers\UsersController@update',$user->id],'method'=>'PUT']) }}
+                {{ Form::open(['action' => ['App\Http\Controllers\UsersController@update',$user->id],'method'=>'PUT','files' => true]) }}
 
                 {{ csrf_field() }}
                 <div class="modal-body">

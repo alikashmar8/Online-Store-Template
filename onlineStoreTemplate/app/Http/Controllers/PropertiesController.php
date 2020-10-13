@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewPropertyMail;
+use App\Mail\PropertyUpdated;
 use App\Models\Category;
 use App\Models\Property;
 use App\Models\PropertyImage;
@@ -11,6 +13,7 @@ use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class PropertiesController extends Controller
@@ -122,6 +125,7 @@ class PropertiesController extends Controller
                 $image->save();
             }
         }
+        Mail::to('ozpropertmarket@gmail.com')->send(new NewPropertyMail());
         return redirect('/');
     }
 
@@ -207,6 +211,7 @@ class PropertiesController extends Controller
                 $image->save();
             }
         }
+        Mail::to('ozpropertymarket@gmail.com')->send(new PropertyUpdated());
         return redirect('/');
     }
 
@@ -328,8 +333,8 @@ class PropertiesController extends Controller
         return view("Properties.myProperties", compact('properties'));
     }
 
-    public function acceptProperty($request, $id)
-    {
-        dd($request);
-    }
+//    public function acceptProperty($request, $id)
+//    {
+//        dd($request);
+//    }
 }
