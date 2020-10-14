@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class NewPropertyMail extends Mailable
+class PropertyAcceptedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,6 +28,6 @@ class NewPropertyMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.newProperty');
+        return $this->markdown('emails.propertyAccepted');
     }
 }

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactForPropertyMail;
 use App\Mail\EvaluateFormMail;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class EmailsController extends Controller
@@ -29,9 +31,24 @@ class EmailsController extends Controller
             'bedroomsNumber' => $request->num_bed,
             'owner' => $request->owner,
         );
-        Mail::to('ozpropertymarket@gmail.com')->send( new EvaluateFormMail($data));
+        Mail::to('ozpropertymarket@gmail.com')->send(new EvaluateFormMail($data));
 
         return redirect('/');
+    }
+
+    public function contactForProperty(Request $request)
+    {
+//        dd($request);
+        $data = array(
+            'propertyId' => $request->id,
+            'message' => $request->message,
+            'userId' => Auth::user()->id,
+            'userName' => Auth::user()->name,
+            'userEmail' => Auth::user()->email,
+        );
+        Mail::to('ozpropertymarket@gmail.com')->send(new ContactForPropertyMail($data));
+
+        return redirect("/");
     }
 
 }

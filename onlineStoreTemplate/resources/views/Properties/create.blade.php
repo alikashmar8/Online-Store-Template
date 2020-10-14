@@ -105,20 +105,18 @@
 
                     {{ Form::label('locationDescription','Location:') }}
 
-                    <input type="text" placeholder="Enter Location" {{--name="address"--}} name="locationDescription" onFocus="initializeAutocomplete()" id="locality" >
+                    <input type="text" placeholder="Enter Location" {{--name="address"--}} name="locationDescription"
+                           onFocus="initializeAutocomplete()" id="locality">
                     <br/>
 
-                    <input type="text" name="city" id="city" placeholder="City" value="" ><br>
-                    <input type="text" name="latitude" id="latitude" placeholder="Latitude" value="" ><br>
-                    <input type="text" name="longitude" id="longitude" placeholder="Longitude" value="" ><br>
-                    <input type="text" name="place_id" id="location_id" placeholder="Location Ids" value="" ><br>
-
-
-
+                    <input type="text" name="city" id="city" placeholder="City" value=""><br>
+                    <input type="text" name="latitude" id="latitude" placeholder="Latitude" value=""><br>
+                    <input type="text" name="longitude" id="longitude" placeholder="Longitude" value=""><br>
+                    <input type="text" name="place_id" id="location_id" placeholder="LocationId" value=""><br>
 
 
                     <script type="text/javascript">
-                        function initializeAutocomplete(){
+                        function initializeAutocomplete() {
                             var input = document.getElementById('locality');
                             // var options = {
                             //   types: ['(regions)'],

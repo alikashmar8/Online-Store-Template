@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\NewPropertyMail;
+use App\Mail\PropertyAcceptedMail;
 use App\Mail\PropertyUpdated;
 use App\Models\Category;
 use App\Models\Property;
@@ -28,7 +29,7 @@ class PropertiesController extends Controller
         if (Auth::guest() || (!Auth::guest() && Auth::user()->role != 0)) {
             $categories = Category::all();
             $types = PropertyType::all();
-            $properties = Property::all()->where('accepted', '=', 1)->take(6) ;
+            $properties = Property::where('accepted', '=', 1)->orderBy('updated_at')->take(6)->get();;
             /*$properties = Property::all();where('accepted', '=', 1);*/
             /*
             $properties->images = PropertyImage::all()->where('propertyId' , $properties->id)->take(1);
@@ -66,6 +67,8 @@ class PropertiesController extends Controller
         $property->accepted = 1;
         $property->contactInfo = $request['contactInfo'];
         $property->save();
+        $user = User::findOrFail($property->userId);
+        Mail::to($user->email)->send(new PropertyAcceptedMail());
         return redirect('/acceptProperties');
     }
 
@@ -205,24 +208,26 @@ class PropertiesController extends Controller
 
         $property->save();
         // Handle File Upload
-        if (count($request->images) > 0) {
-            $this->deleteImages($id);
-            foreach ($request->images as $image) {
-                // Get filename with the extension
-                $filenameWithExt = $image->getClientOriginalName();
-                // Get just filename
-                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                // Get just ext
-                $extension = $image->getClientOriginalExtension();
-                // Filename to store
-                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-                // Upload Image
-                $path = $image->storeAs('public/properties_images', $fileNameToStore);
+        if (isset($request->images)) {
+            if (count($request->images) > 0) {
+                $this->deleteImages($id);
+                foreach ($request->images as $image) {
+                    // Get filename with the extension
+                    $filenameWithExt = $image->getClientOriginalName();
+                    // Get just filename
+                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                    // Get just ext
+                    $extension = $image->getClientOriginalExtension();
+                    // Filename to store
+                    $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                    // Upload Image
+                    $path = $image->storeAs('public/properties_images', $fileNameToStore);
 
-                $image = new PropertyImage;
-                $image->propertyId = $property->id;
-                $image->url = $fileNameToStore;
-                $image->save();
+                    $image = new PropertyImage;
+                    $image->propertyId = $property->id;
+                    $image->url = $fileNameToStore;
+                    $image->save();
+                }
             }
         }
         Mail::to('ozpropertymarket@gmail.com')->send(new PropertyUpdated());
@@ -246,7 +251,7 @@ class PropertiesController extends Controller
         if (Auth::user()->role == 0) {
             return redirect('/acceptProperties');
         } else {
-            return redirect('/myProperties');
+            return redirect('properties/myProperties');
         }
     }
 

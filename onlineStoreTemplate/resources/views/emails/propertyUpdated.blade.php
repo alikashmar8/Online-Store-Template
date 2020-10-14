@@ -2,8 +2,8 @@
     # Notice!
 
     A property was updated
-    URL::to('/');
-    @component('mail::button', ['url' => env('APP_URL').'/acceptProperties'])
+
+    @component('mail::button', ['url' => URL::to('/acceptProperties')])
         Check It
     @endcomponent
 

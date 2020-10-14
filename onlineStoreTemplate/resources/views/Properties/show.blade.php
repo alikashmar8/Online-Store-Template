@@ -51,16 +51,18 @@
                                 <p class="price">{{ $property->locationDescription }} </p>
 
 
-                                @if($property->showPrice == 1)  <p class="price">  $ {{$property->price}} </p>
+                                @if($property->showPrice == 1)  <p class="price"> $ {{$property->price}} </p>
 
                                 @else
                                     <p style="color: #df0505">Contact the agent for price</p>
                                 @endif
+                                <p>Property
+                                    Type: {{ \App\Models\PropertyType::findOrFail($property->typeId)->title }}</p>
+
                                 <p>
                                     {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
                                     {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
                                     {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;
-                                    ,  {{$property->typeId }}&nbsp;&nbsp;
                                 </p>
                                 <div class="row"></div>
                                 <p style="white-space: pre-line">
@@ -82,12 +84,15 @@
                                 <hr>
                                 @if($property->userId != \Illuminate\Support\Facades\Auth::id())
 
-                                    <form>
-                                        Contact the owner about this property of code
-                                        <strong>{{ $property->id }}</strong>:
+                                    <form action="/contactForProperty" method="get">
+                                        @csrf
+                                        Contact the owner about this property:
+
+                                        <input type="hidden" value="{{ $property->id }}" name="id">
                                         <div class="form-label-group">
                                             <label class="form-label-group" for="message">Message:</label>
-                                            <textarea name="message" class="form-control" style="height: 300px">
+                                            <textarea name="message" class="form-control" style="height: 300px"
+                                                      required>
 Hi, I'm interested to view your property! What's the best time to inspect?
 Thanks
 

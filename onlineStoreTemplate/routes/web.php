@@ -75,6 +75,7 @@ Route::get('/', '\App\Http\Controllers\PropertiesController@index')->name('index
 Route::get('/properties/buy', '\App\Http\Controllers\PropertiesController@buyIndex');
 Route::get('/properties/rent', '\App\Http\Controllers\PropertiesController@rentIndex');
 Route::get('/submitEvaluation', '\App\Http\Controllers\EmailsController@submitEvaluationForm');
+Route::get('/contactForProperty', '\App\Http\Controllers\EmailsController@contactForProperty');
 
 //Admin Routes
 Route::post('/accept', '\App\Http\Controllers\PropertiesController@accept')->middleware('auth');
