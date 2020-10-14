@@ -9,6 +9,8 @@
     <!-- Fonts -->
     <!link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind&family=Pacifico&family=Sansita+Swashed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Roboto&display=swap" rel="stylesheet">
+
     {{--    Scripts--}}
     <script src="{{ asset('js/app.js') }}" defer></script>
 

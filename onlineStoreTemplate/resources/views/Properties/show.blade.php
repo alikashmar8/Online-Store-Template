@@ -48,7 +48,10 @@
 
                             <div class="post-details p-2">
 
-                                @if($property->showPrice == 1)  <p class="price">Price: $ {{$property->price}} </p>
+                                <p class="price">{{ $property->locationDescription }} </p>
+
+
+                                @if($property->showPrice == 1)  <p class="price">  $ {{$property->price}} </p>
 
                                 @else
                                     <p style="color: #df0505">Contact the agent for price</p>
@@ -56,7 +59,8 @@
                                 <p>
                                     {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
                                     {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                    {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                    {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;
+                                    ,  {{$property->typeId }}&nbsp;&nbsp;
                                 </p>
                                 <div class="row"></div>
                                 <p style="white-space: pre-line">
@@ -74,7 +78,7 @@
                         @else
                             <div class="p-5">
                                 <h3>Contact Info:</h3>
-                                <p> {{ $property->contactInfo }}</p>
+                                <p style="white-space: pre-line"> {{ $property->contactInfo }}</p>
                                 <hr>
                                 @if($property->userId != \Illuminate\Support\Facades\Auth::id())
 

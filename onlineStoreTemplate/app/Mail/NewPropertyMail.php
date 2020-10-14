@@ -28,6 +28,6 @@ class NewPropertyMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.newProperty');
+        return $this->markdown(['html' => 'emails.newProperty']);
     }
 }

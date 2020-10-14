@@ -9,7 +9,7 @@
 
             {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@update',$property->id],'method'=>'PUT','files' => true]) }}
             <div class=" creat_app">
-                <div class="" style="height:500px">
+                <div class=" ">
                     <div class=" form-group form-label-group special ">
                         {{ Form::label('price','Price:') }}
                         {{ Form::number('price',$property->price,['class' => 'form-control','placeholder'=>'Price']) }}

@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="search-bar-section">
-
+                            <div style="width: 100%">
                             <select name="type">
                                 <option class="option" name="type" value=-1>Property type</option>
                                 @foreach($types as $type)
@@ -101,6 +101,7 @@
                                 <option class='option' name="100" value="15000000">$ 15,000,000</option>
 
                             </select>
+                            </div>
                         </div>
 
                     </form>
@@ -139,12 +140,17 @@
                     Track your property to monitor local sales
                 </p>
             </div>
+
         </div>
+
+        @include('layouts.slider')
+
         <div class="main-content">
+
             <div class="main2">
                 <div class="container p-4">
                     <h1>
-                        Welcome to Oz Property Market
+                        Welcome to OZ Property Market
                     </h1>
                     <p>
 

@@ -100,6 +100,7 @@
                                             </div>
 
                                             <div class="search-bar-section">
+                                            <div>
 
                                                 <select name="type">
                                                     <option class="option" name="type" value=-1>Property type</option>
@@ -147,6 +148,7 @@
                                                     </option>
 
                                                 </select>
+                                            </div>
                                             </div>
                                             <div class="row">
                                                 Sort By:
@@ -224,13 +226,15 @@
 
                             <div class="post-details">
 
+                                <p class="price">{{ $property->locationDescription }} </p>
+
                                 @if($property->showPrice == 1)
                                     <p class="price">
                                         <i class="fa fa-usd" aria-hidden="true"></i>
                                         {{$property->price}}
                                     </p>
                                 @else
-                                    <p style="color: #df0505">
+                                    <p class="price">
                                         Contact the agent for price
                                     </p>
                                 @endif

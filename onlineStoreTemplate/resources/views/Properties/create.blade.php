@@ -95,21 +95,18 @@
                 </div>
 
 
-                <div class="col-md-6" style="height:500px">
-                    <div id="map" style="position: absolute; right: 0; left: 0; top: 0; bottom: 0;"></div>
-                    <!input type="text" name="longitude" id="longitude" />
-                    <!input type="text" name="latitude" id="latitude" />
-                </div>
 
-                <div {{--maps--}}  >
+                <div {{--maps--}} class="col-md-6" style="height:300px">
                     <script
                         src="https://maps.googleapis.com/maps/api/js?AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initAutocomplete&libraries=places&v=weekly"
                         defer
                     ></script>
 
 
+                    {{ Form::label('locationDescription','Location:') }}
 
-                    <input type="text" placeholder="Enter Location" name="address" onFocus="initializeAutocomplete()" id="locality" ><br>
+                    <input type="text" placeholder="Enter Location" {{--name="address"--}} name="locationDescription" onFocus="initializeAutocomplete()" id="locality" >
+                    <br/>
 
                     <input type="text" name="city" id="city" placeholder="City" value="" ><br>
                     <input type="text" name="latitude" id="latitude" placeholder="Latitude" value="" ><br>
@@ -165,27 +162,6 @@
         </div>
     </div>
 
-    <script>
-        var map = L.map('map').setView([-29.5, 135], 4);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        var popup = L.popup();
-
-        function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent("Your property location")
-                .openOn(map);
-            document.getElementById('longitude').value = e.latlng.lng;
-            document.getElementById('latitude').value = e.latlng.lat;
-
-
-        }
-
-        map.on('click', onMapClick);
-    </script>
 
 @endsection

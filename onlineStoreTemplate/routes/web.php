@@ -16,6 +16,12 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/terms_and_conditions', function () {
+    return view('terms');
+});
+Route::get('/privacy_policy', function () {
+    return view('privacy');
+});
 
 Route::get('/tips', function () {
     return view('tips');

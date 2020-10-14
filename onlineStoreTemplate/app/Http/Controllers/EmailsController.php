@@ -29,7 +29,7 @@ class EmailsController extends Controller
             'bedroomsNumber' => $request->num_bed,
             'owner' => $request->owner,
         );
-        Mail::to('ozpropertymarket@gmail.com')->send(new EvaluateFormMail($data));
+        Mail::to('ozpropertymarket@gmail.com')->send( new EvaluateFormMail($data));
 
         return redirect('/');
     }

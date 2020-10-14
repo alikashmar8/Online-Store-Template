@@ -90,13 +90,24 @@
                 <label for="description">Description</label>
 
 
-                <input id="description" type="text" class="form-control @error('description') is-invalid @enderror"
-                       name="description" value="{{ old('description') }}" required autocomplete="description" autofocus>
+                <textarea id="description" oninput="fun()" type="text" class="form-control @error('description') is-invalid @enderror"
+                          name="description" value="{{ old('description') }}" required autocomplete="description" autofocus></textarea>
                 @error('description')
                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                 @enderror
+
+                {{--<p  style="display: none"></p>
+
+                <script>
+                    function fun (){
+
+                        var i=document.getElementById("txt").value;
+                        i = i.replace(/(\r\n|\n|\r)/gm, '<br />');
+                        document.getElementById("description").innerHTML = i;
+                    }
+                </script>*/--}}
 
 
             </div>
@@ -120,14 +131,14 @@
 
                         <div class="custom-control custom-checkbox mb-3">
                             <input type="checkbox" class="custom-control-input" name="owner"
-                                   id="owner">
+                                   id="owner" onclick="validate()">
                             <label class="custom-control-label"
                                    for="owner">&nbsp;&nbsp;&nbsp;&nbsp; I am the owner of this property </label>
                         </div>
 
                         <div class="custom-control custom-checkbox mb-3">
                             <input type="checkbox" class="custom-control-input" name="check2"
-                                   id="check2">
+                                   id="check2" onclick="validate()">
                             <label class="custom-control-label"
                                    for="check2">&nbsp;&nbsp;&nbsp;&nbsp; Note that the price will be given based on
                                 research, area, and landsize </label>
@@ -136,7 +147,7 @@
 
                         <div class="form-group row mb-0">
                 <div class="col-md-6 ">
-                    <button type="submit" class=" btn-primary1">
+                    <button type="submit" class=" btn-primary1" id="myBtn" disabled>
                         Send
                     </button>
                 </div>
@@ -144,4 +155,15 @@
         </form>
 
     </div>
+                <script type=text/javascript>
+                    function validate(){
+                        if (owner.checked == 1 && check2.checked == 1 ){
+                            document.getElementById("myBtn").disabled = false;
+                        }
+                        else{
+                            document.getElementById("myBtn").disabled = true;
+                        }
+                    }
+                </script>
+
 @endsection

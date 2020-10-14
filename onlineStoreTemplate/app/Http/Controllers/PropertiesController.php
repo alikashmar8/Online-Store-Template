@@ -28,7 +28,19 @@ class PropertiesController extends Controller
         if (Auth::guest() || (!Auth::guest() && Auth::user()->role != 0)) {
             $categories = Category::all();
             $types = PropertyType::all();
-            return view('welcome', compact('categories', 'types'));
+            $properties = Property::all()->where('accepted', '=', 1)->take(6) ;
+            /*$properties = Property::all();where('accepted', '=', 1);*/
+            /*
+            $properties->images = PropertyImage::all()->where('propertyId' , $properties->id)->take(1);
+            */
+            foreach ($properties as $property) {
+                $property->images = PropertyImage::all()->where('propertyId', $property->id)->take(1);
+            }
+
+
+
+            return view('welcome') -> with('properties' , $properties) -> with( 'categories' , $categories ) -> with( 'types' , $types);
+
         } else {
             if (!Auth::guest()) {
                 if (Auth::user()->role == 0) {
@@ -88,6 +100,8 @@ class PropertiesController extends Controller
         $property->description = $request->description;
         $property->longitude = $request->longitude;
         $property->latitude = $request->latitude;
+        $property->locationDescription = $request ->locationDescription;
+
         if (isset($request->showPrice)) $property->showPrice = $request->showPrice; else $property->showPrice = 0;
 
         if ($request->bedroomsNumber != -1) {
@@ -125,7 +139,7 @@ class PropertiesController extends Controller
                 $image->save();
             }
         }
-        Mail::to('ozpropertmarket@gmail.com')->send(new NewPropertyMail());
+        Mail::to('ozpropertymarket@gmail.com')->send(new NewPropertyMail());
         return redirect('/');
     }
 

@@ -35,10 +35,12 @@
                     @endif
                     <p> Phone number: +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
                     <p>Email: {{$user->email}}</p>
-                    <p>Bio: {{$user->bio}}</p>
+                    <p style="white-space: pre-line">Bio: {{$user->bio}}</p>
 
-                    <button class="btn-primary1">Edit Profile</button>
-
+                    <button class="btn-primary1" data-toggle="modal" data-target="#exampleModal"
+                            @if(!\Illuminate\Support\Facades\Auth::user()->hasVerifiedEmail())disabled @endIf>Edit
+                        Profile
+                    </button>
                 </div>
             </div>
         @else
@@ -63,19 +65,20 @@
                         @if(!\Illuminate\Support\Facades\Auth::user()->hasVerifiedEmail())
                             @if (session('resent'))
                                 <div class="alert alert-success" role="alert">
-                                    {{ __('A fresh verification link has been sent to your email address.') }}
+                                    {{ __('A new verification link has been sent to your email address.') }}
                                 </div>
                             @endif
-                            <p class="alert alert-danger">Email Not Verified Yet !</p>
-                            {{ __('If you did not receive the email') }},
+                            <p class="alert alert-danger">Your email is not verified yet !</p>
+
                             <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                                 @csrf
                                 <button type="submit"
-                                        class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>
+                                        class="btn special-link p-0  m-2  " style="color: #e4002b">{{ __('click here to request another varification email') }}</button>
                                 .
                             </form>
                         @endif
-                        <p>Bio: {{$user->bio}}</p>
+                        <BR/>
+                        <p style="white-space: pre-line">Bio: {{$user->bio}}</p>
 
                         <button class="btn-primary1" data-toggle="modal" data-target="#exampleModal"
                                 @if(!\Illuminate\Support\Facades\Auth::user()->hasVerifiedEmail())disabled @endIf>Edit
@@ -194,8 +197,12 @@
 
                     <div class="form-group form-label-group">
                         <label for="bio" class="col-form-label">Bio:</label>
-                        <textarea type="text" class="form-control  @error('bio') is-invalid @enderror" name="bio"
-                                  maxlength="180">{{ $user->bio }}</textarea>
+                        <textarea   type="text" class="form-control  @error('bio') is-invalid @enderror" name="bio"
+                                  maxlength="180" >{{ $user->bio }}</textarea>
+
+
+
+
                     </div>
 
                     @error('bio')

@@ -34,8 +34,8 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: 'Hind', sans-serif !important;
-  --font-family-monospace: 'Hind', sans-serif;/*SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-sans-serif: 'Roboto', sans-serif !important;
+  --font-family-monospace: 'Roboto', sans-serif;/*SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 */}
 
 *,
@@ -66,7 +66,7 @@ section {
 
 body {
   margin: 0;
-  font-family: 'Hind', sans-serif !important;
+  font-family: 'Roboto', sans-serif !important;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -11488,10 +11488,11 @@ position: relative;
 }
 .post-details .price {
 
-    font-size: 32px;
-    font-weight: bold;
-    color: #e4002b;
-    font-family:  Museo-Sans-500,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 25px;
+    font-weight: 550;
+    color: #7c7e85;
+    font-family:  'Old Standard TT', serif;
+
 
 }
 .new-prop{
@@ -11786,7 +11787,7 @@ position: relative;
 
 .search-bar-section select{
     margin-top:5px;
-    width:25%;
+    width:24%;
 
     border-radius: 0 0 5px 5px;
     padding: 15px 20px;
