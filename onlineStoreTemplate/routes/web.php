@@ -16,6 +16,12 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Mail\NewPropertyMail;
+Route::get('/em', function () {
+    return new NewPropertyMail;
+});
+
+
 Route::get('/terms_and_conditions', function () {
     return view('terms');
 });

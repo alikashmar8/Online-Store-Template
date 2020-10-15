@@ -42,11 +42,14 @@ class EmailsController extends Controller
         $data = array(
             'propertyId' => $request->id,
             'message' => $request->message,
+
             'userId' => Auth::user()->id,
             'userName' => Auth::user()->name,
             'userEmail' => Auth::user()->email,
+
         );
-        Mail::to('ozpropertymarket@gmail.com')->send(new ContactForPropertyMail($data));
+        $mail = $request->email1;
+        Mail::to( $mail)->send(new ContactForPropertyMail($data));
 
         return redirect("/");
     }

@@ -99,7 +99,7 @@
 
                                 @foreach($properties as $p)
 
-                                    <div class="item" style="width: 500px">
+                                    <div class="item" style=" ">
                                         <div class="shadow-effect">
                                             @foreach($p->images as $image)
                                                 <a
@@ -129,6 +129,7 @@
                                                     For Lease/Share
                                                 </p>
                                             @endif
+                                            {{--
                                             @if($p->showPrice == 1)
                                                 <p class="price">
                                                     <i class="fa fa-usd" aria-hidden="true"></i>
@@ -139,6 +140,7 @@
                                                     Contact the agent
                                                 </p>
                                             @endif
+                                            --}}
                                         </div>
                                     </div>
 

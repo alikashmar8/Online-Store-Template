@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\NewPropertyMail;
 use App\Mail\PropertyAcceptedMail;
+use App\Mail\PropertyCreated;
 use App\Mail\PropertyUpdated;
 use App\Models\Category;
 use App\Models\Property;
@@ -142,7 +143,10 @@ class PropertiesController extends Controller
                 $image->save();
             }
         }
+        $mail = Auth::user()->email;
         Mail::to('ozpropertymarket@gmail.com')->send(new NewPropertyMail());
+        Mail::to($mail)->send(new PropertyCreated());
+
         return redirect('/');
     }
 
@@ -156,6 +160,8 @@ class PropertiesController extends Controller
     {
         $property = Property::findOrFail($id);
         $property->agent = User::findOrFail($property->userId);
+
+
         $property->images = PropertyImage::where('propertyId', $property->id)->get();
 
         return view("Properties.show")->with('property', $property);

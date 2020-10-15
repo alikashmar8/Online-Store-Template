@@ -79,26 +79,29 @@
                             </div>
                         @else
                             <div class="p-5">
-                                <h3>Contact Info:</h3>
+                                <h4>Admin Notes:</h4>
                                 <p style="white-space: pre-line"> {{ $property->contactInfo }}</p>
+                                <BR/>
                                 <hr>
                                 @if($property->userId != \Illuminate\Support\Facades\Auth::id())
 
                                     <form action="/contactForProperty" method="get">
                                         @csrf
-                                        Contact the owner about this property:
+                                        <h4>Contact the owner about this property:</h4>
 
                                         <input type="hidden" value="{{ $property->id }}" name="id">
+                                        <input type="hidden" value="{{ $property->agent->email }}"  name="email1">
                                         <div class="form-label-group">
                                             <label class="form-label-group" for="message">Message:</label>
                                             <textarea name="message" class="form-control" style="height: 300px"
                                                       required>
-Hi, I'm interested to view your property! What's the best time to inspect?
+Hi, I am interested to view your property! What is the best time to inspect?
 Thanks
 
 Hi, How much is the last price for your property?
 Thanks
                                         </textarea>
+
                                         </div>
                                         <input type="submit" value="Send" class="btn-primary1">
 

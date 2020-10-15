@@ -18,8 +18,8 @@
                     @if (Request::is('properties/rent'))
                         <h2>Properties for rent</h2>
                         <form action="/properties/rent">
-                            <div class="row">
-                                Sort By:
+                            <div class="search-bar-section">
+
                                 <select id="sort" name="sort">
                                     <option value="-1">Sort By</option>
                                     <option value="updated_at">Last Updated</option>
@@ -32,8 +32,8 @@
                     @if (Request::is('properties/buy'))
                         <h2>Properties for sale</h2>
                         <form action="/properties/buy">
-                            <div class="row">
-                                Sort By:
+                            <div class="search-bar-section">
+
                                 <select id="sort" name="sort">
                                     <option value="-1">Sort By</option>
                                     <option value="updated_at">Last Updated</option>
@@ -100,58 +100,58 @@
                                             </div>
 
                                             <div class="search-bar-section">
-                                            <div>
+                                                <div>
 
-                                                <select name="type">
-                                                    <option class="option" name="type" value=-1>Property type</option>
-                                                    @foreach($types as $type)
-                                                        <option class="option" name="type" value="{{ $type->id }}"
-                                                                id="{{ $type->id }}">{{ $type->title }}</option>
+                                                    <select name="type">
+                                                        <option class="option" name="type" value=-1>Property type</option>
+                                                        @foreach($types as $type)
+                                                            <option class="option" name="type" value="{{ $type->id }}"
+                                                                    id="{{ $type->id }}">{{ $type->title }}</option>
 
-                                                    @endforeach
-                                                </select>
+                                                        @endforeach
+                                                    </select>
 
 
-                                                <select name="bedroomsNumber" id="bedroomsSelect">
-                                                    <option class="option" value="-1">Beds</option>
-                                                    <option class="option" value="1">1</option>
-                                                    <option class="option" value="2">2</option>
-                                                    <option class="option" value="3">3</option>
-                                                    <option class="option" value="4">4</option>
-                                                    <option class="option" value="5">5+</option>
-                                                </select>
-                                                <select id="min-price" name="minPrice">
+                                                    <select name="bedroomsNumber" id="bedroomsSelect">
+                                                        <option class="option" value="-1">Beds</option>
+                                                        <option class="option" value="1">1</option>
+                                                        <option class="option" value="2">2</option>
+                                                        <option class="option" value="3">3</option>
+                                                        <option class="option" value="4">4</option>
+                                                        <option class="option" value="5">5+</option>
+                                                    </select>
+                                                    <select id="min-price" name="minPrice">
 
-                                                    <option class="option" name="100" value="0">Min Price</option>
-                                                    <option class="option" name="100" value="500000">$500,000</option>
-                                                    <option class="option" name="100" value="750000">$ 750,000</option>
-                                                    <option class="option" name="100" value="1000000">$ 1,000,000
-                                                    </option>
-                                                    <option class="option" name="100" value="1500000">$ 1,500,000
-                                                    </option>
-                                                    <option class="option" name="100" value="2000000">$ 2,000,000
-                                                    </option>
+                                                        <option class="option" name="100" value="0">Min Price</option>
+                                                        <option class="option" name="100" value="500000">$500,000</option>
+                                                        <option class="option" name="100" value="750000">$ 750,000</option>
+                                                        <option class="option" name="100" value="1000000">$ 1,000,000
+                                                        </option>
+                                                        <option class="option" name="100" value="1500000">$ 1,500,000
+                                                        </option>
+                                                        <option class="option" name="100" value="2000000">$ 2,000,000
+                                                        </option>
 
-                                                </select>
-                                                <select id="max-price" name="maxPrice">
-                                                    <option class='option' name="100" value="1000000000">Max Price
-                                                    </option>
-                                                    <option class='option' name="100" value="2000000">$ 2,000,000
-                                                    </option>
-                                                    <option class='option' name="100" value="5000000">$ 5,000,000
-                                                    </option>
-                                                    <option class='option' name="100" value="10000000">$ 10,000,000
-                                                    </option>
-                                                    <option class='option' name="100" value="12000000">$ 12,000,000
-                                                    </option>
-                                                    <option class='option' name="100" value="15000000">$ 15,000,000
-                                                    </option>
+                                                    </select>
+                                                    <select id="max-price" name="maxPrice">
+                                                        <option class='option' name="100" value="1000000000">Max Price
+                                                        </option>
+                                                        <option class='option' name="100" value="2000000">$ 2,000,000
+                                                        </option>
+                                                        <option class='option' name="100" value="5000000">$ 5,000,000
+                                                        </option>
+                                                        <option class='option' name="100" value="10000000">$ 10,000,000
+                                                        </option>
+                                                        <option class='option' name="100" value="12000000">$ 12,000,000
+                                                        </option>
+                                                        <option class='option' name="100" value="15000000">$ 15,000,000
+                                                        </option>
 
-                                                </select>
+                                                    </select>
+                                                </div>
                                             </div>
-                                            </div>
-                                            <div class="row">
-                                                Sort By:
+                                            <div class="search-bar-section">
+
                                                 <select id="sort" name="sort">
                                                     <option value="-1">Sort By</option>
                                                     <option value="updated_at">Last Updated</option>
@@ -274,71 +274,52 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript"></script>
     <script>
         {{--$("#{{ $maxPrice }}").addClass("selected");--}}
-
         {{--        $('#maxPriceSelect').val({{$maxPrice}})--}}
-
         {{--document.getElementById('location').value = '{{ $searched ?? '' }}';--}}
-
-
         @if(isset($categories))
         @foreach($categories as $c)
         @if($category == $c->id) {{Str::lower($c->title)}}_clicked();
-            @endif
-            @endforeach
-            @endif
-
-            @if ( isset( $maxPrice ) )
+        @endif
+        @endforeach
+        @endif
+        @if ( isset( $maxPrice ) )
         var select = document.getElementById('max-price');
         var option;
         for (var i = 0; i < select.options.length; i++) {
             option = select.options[i];
-
             if (option.value == "{{$maxPrice}}") {
                 option.setAttribute('selected', true);
             }
         }
-            @endif
-
-
-
-            @if (isset($minPrice))
+        @endif
+        @if (isset($minPrice))
         var minSelect = document.getElementById('min-price');
         var opt;
         for (var x = 0; x < minSelect.options.length; x++) {
-
             opt = minSelect.options[x];
             if (opt.value == "{{$minPrice}}") {
                 opt.setAttribute('selected', true);
             }
         }
-            @endif
-
-            @if (isset(  $bedroomsNumber  ))
+        @endif
+        @if (isset(  $bedroomsNumber  ))
         var bedroomsSelect = document.getElementById('bedroomsSelect');
         var num;
-
         for (var i = 0; i < bedroomsSelect.options.length; i++) {
-
             num = bedroomsSelect.options[i];
             if (num.value == "{{ $bedroomsNumber }}") {
                 num.setAttribute('selected', true);
             }
         }
-
         @endif
-
         function buy_clicked() {
             document.getElementById("buy-label").style.background = "#e4002b";
             document.getElementById("rent-label").style.background = "#91969c";
             document.getElementById("share-label").style.background = "#91969c";
             document.getElementById(1).checked = true;
-
-
             document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='500000'>$500,000</option><option class='option' name='100' value='750000'>$ 750,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option><option class='option' name='100' value='1500000'>$ 1,500,000</option><option class='option' name='100' value='2000000'>$ 2,000,000</option>";
             document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='2000000'>$ 2,000,000</option><option class='option' name='100' value='5000000'>$ 5,000,000</option><option class='option' name='100' value='10000000'>$ 10,000,000</option><option class='option' name='100' value='12000000'>$ 12,000,000</option><option class='option' name='100' value='15000000'>$ 15,000,000</option>";
-
         }
-
         function rent_clicked() {
             document.getElementById("buy-label").style.background = "#91969c";
             document.getElementById("rent-label").style.background = "#e4002b";
@@ -346,35 +327,22 @@
             document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='100'>$100</option><option class='option' name='100' value='250'>$ 250</option><option class='option' name='100' value='500'>$ 500</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option>";
             document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='750'>$ 750</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option><option class='option' name='100' value='3000'>$ 3,000</option><option class='option' name='100' value='5000'>$ 5,000</option>";
             document.getElementById(2).checked = true;
-
-
         }
-
         function share_clicked() {
             document.getElementById("buy-label").style.background = "#91969c";
-
             document.getElementById("rent-label").style.background = "#91969c";
             document.getElementById("share-label").style.background = "#e4002b";
             document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='100'>$100</option><option class='option' name='100' value='250'>$ 250</option><option class='option' name='100' value='500'>$ 500</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option>";
             document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='750'>$ 750</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option><option class='option' name='100' value='3000'>$ 3,000</option><option class='option' name='100' value='5000'>$ 5,000</option>";
             document.getElementById(3).checked = true;
-
-
         }
-
-
         var e = document.getElementById("sort");
-
         $(document).ready(function () {
             $("#sort").on("change", function () {
                 this.form.submit();
             });
-
         });
-
     </script>
 
 
 @endsection
-
-

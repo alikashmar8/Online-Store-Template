@@ -1,7 +1,7 @@
 @component('mail::message')
-    # A user is trying to contact your for a property:
+    # A user is contacting your regarding your property:
 
-    User ID: {{ $data['userId'] }}
+
 
     User Name: {{ $data['userName'] }}
 
