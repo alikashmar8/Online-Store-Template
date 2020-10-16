@@ -54,7 +54,7 @@
                                 @if($property->showPrice == 1)  <p class="price"> $ {{$property->price}} </p>
 
                                 @else
-                                    <p style="color: #df0505">Contact the agent for price</p>
+                                    <p class="price">Contact the agent for the price</p>
                                 @endif
                                 <p>Property
                                     Type: {{ \App\Models\PropertyType::findOrFail($property->typeId)->title }}</p>

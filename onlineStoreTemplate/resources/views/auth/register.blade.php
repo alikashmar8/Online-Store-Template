@@ -117,8 +117,8 @@
                                required autocomplete="new-password">
                     </div>
                     <br>
-                    <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
+                    <div class="form-group  mb-0">
+                        <div class="col-md-6  ">
                             <button type="submit" class=" btn-primary1">
                                 {{ __('Register') }}
                             </button>
@@ -244,8 +244,8 @@
                     </div>
 
 
-                    <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
+                    <div class="form-group  mb-0">
+                        <div class="col-md-6 ">
                             <button type="submit" class=" btn-primary1"
                                     onclick="event.preventDefault(); document.getElementById('agentForm').submit();">
                                 {{ __('Register') }}
