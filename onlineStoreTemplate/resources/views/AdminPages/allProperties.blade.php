@@ -35,16 +35,31 @@
                                  class="carousel slide carousel-fade"
                                  data-ride="carousel">
                                 <div class="carousel-inner">
-                                    @foreach($property->images as $image)
+                                    @if(count($property->images)>0)
+                                        @foreach($property->images as $image)
 
-                                        <div class="carousel-item @if($loop->first) active @endif">
-                                            <div style="width: 100%; height: 100%;">
-                                                <img style="height: 100px; width: 200px;"
-                                                     src="{{url('/storage/properties_images/' . $image->url)}}"
-                                                     alt="No Image">
+                                            <div class="carousel-item @if($loop->first) active @endif">
+                                                <div style="width: 100%; height: 100%;">
+                                                    @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
+                                                        <video style="height: 100px; width: 200px;" controls>
+                                                            <source
+                                                                src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                                type="video/mp4">
+
+                                                        </video>
+                                                    @else
+                                                        <img style="height: 100px; width: 200px;"
+                                                             src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                             alt="No Image">
+                                                    @endif
+                                                </div>
                                             </div>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
+                                    @else
+                                        <img style="height: 100px; width: 200px;"
+                                             src="{{url('/storage/properties_images/unavailable.jpg')}}"
+                                             alt="No Image">
+                                    @endif
 
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleFade-{{$property->id}}"
@@ -72,14 +87,14 @@
                             <td class="text-success">Yes</td>
                         @endif
                         <td><a href="/users/{{ $property->userId }}">{{ $property->agent->name }}</a></td>
-                        @if($property->type == 0)
-                            <td>Sell</td>
-                        @else
-                            <td>Rent</td>
-                        @endif
+                        <td>{{ \App\Models\Category::findOrFail($property->categoryId)->title }}</td>
+
                         <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
-                        <td><button class="btn btn-danger no-sort delete" data-toggle="modal" data-target="#deleteModal">Delete</button>
-{{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();"--}}
+                        <td>
+                            <button class="btn btn-danger no-sort delete" data-toggle="modal"
+                                    data-target="#deleteModal">Delete
+                            </button>
+                            {{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();"--}}
 
                         </td>
                         {{--                        form to trigger delete property--}}

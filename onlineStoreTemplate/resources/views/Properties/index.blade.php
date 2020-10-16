@@ -189,7 +189,8 @@
                             @endif
                             <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
                                 <div class="carousel-inner">
-                                    @foreach($property->images as $image)
+                                    @if(count($property->images)>0)
+                                        @foreach($property->images as $image)
                                         <div class="carousel-item @if($loop->first) active @endif">
                                             @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
                                                 <video class="d-block w-100" alt="No Image" controls>
@@ -204,7 +205,12 @@
                                                      alt="No Image">
                                             @endif
                                         </div>
-                                    @endforeach
+                                        @endforeach
+                                    @else
+                                        <img class="d-block w-100"
+                                             src="{{url('/storage/properties_images/unavailable.jpg')}}"
+                                             alt="No Image">
+                                    @endif
 
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselEx" role="button"

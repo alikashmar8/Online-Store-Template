@@ -101,23 +101,33 @@
 
                                     <div class="item" style=" ">
                                         <div class="shadow-effect">
-                                            @foreach($p->images as $image)
+                                            @if(count($p->images)>0)
+                                                @foreach($p->images as $image)
+                                                    <a
+                                                        href="/properties/{{$p->id}}">
+                                                        @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
+                                                            <video class="d-block w-100" alt="No Image" autoplay muted
+                                                                   controls>
+                                                                <source
+                                                                    src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                                    type="video/mp4">
+
+                                                            </video>
+                                                        @else
+                                                            <img class="d-block w-100"
+                                                                 src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                                 alt="No Image">
+                                                        @endif                                                </a>
+                                                @endforeach
+                                            @else
+
                                                 <a
                                                     href="/properties/{{$p->id}}">
-                                                    @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                        <video class="d-block w-100" alt="No Image" autoplay muted
-                                                               controls>
-                                                            <source
-                                                                src="{{url('/storage/properties_images/' . $image->url)}}"
-                                                                type="video/mp4">
-
-                                                        </video>
-                                                    @else
-                                                        <img class="d-block w-100"
-                                                             src="{{url('/storage/properties_images/' . $image->url)}}"
-                                                             alt="No Image">
-                                                    @endif                                                </a>
-                                            @endforeach
+                                                    <img class="d-block w-100"
+                                                         src="{{url('/storage/properties_images/unavailable.jpg')}}"
+                                                         alt="No Image">
+                                                </a>
+                                            @endif
                                             <p class="price">{{ $p->locationDescription }}</p>
                                         </div>
                                         <div class="testimonial-name">
