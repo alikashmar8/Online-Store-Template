@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -90,6 +91,10 @@ class CategoriesController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
+        $properties = Property::where('categoryId', '=', $id)->get();
+        foreach ($properties as $property) {
+            app('App\Http\Controllers\PropertiesController')->delete($property->id);
+        }
         return redirect('/categories');
     }
 }

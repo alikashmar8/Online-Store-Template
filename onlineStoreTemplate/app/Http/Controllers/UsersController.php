@@ -55,7 +55,7 @@ class UsersController extends Controller
         }
         $properties = Property::where('userId', '=', $user->id)->get();
         foreach ($properties as $property) {
-            app('\App\Http\Controllers\PropertiesController')->destroy($property->id);
+            app('\App\Http\Controllers\PropertiesController')->delete($property->id);
         }
         if ($user->role == 1) {
             $company = Company::where('agentId', '=', $user->id);
@@ -68,6 +68,7 @@ class UsersController extends Controller
             return redirect('/');
         }
     }
+
 
     public function edit(Request $request)
     {

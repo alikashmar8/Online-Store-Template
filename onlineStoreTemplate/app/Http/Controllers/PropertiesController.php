@@ -248,17 +248,21 @@ class PropertiesController extends Controller
      */
     public function destroy($id)
     {
-        $property = Property::findOrFail($id);
-
-        $this->deleteImages($property->id);
-
-        $property->delete();
-
+        $this->delete($id);
         if (Auth::user()->role == 0) {
             return redirect('/acceptProperties');
         } else {
             return redirect('properties/myProperties');
         }
+    }
+
+    public function delete($id)
+    {
+        $property = Property::findOrFail($id);
+
+        $this->deleteImages($property->id);
+
+        $property->delete();
     }
 
     public function deleteImages($id)
