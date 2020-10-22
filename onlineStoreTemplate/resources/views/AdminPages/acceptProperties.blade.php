@@ -90,7 +90,14 @@
                             <td class="text-success">Yes</td>
                         @endif
                         <td><a href="/users/{{ $property->userId }}">{{ $property->agent->name }}</a></td>
-                        <td>{{ \App\Models\Category::findOrFail($property->categoryId)->title }}</td>
+
+                        <td>@if( $property->categoryId == 1)
+                                Sell
+                            @else
+                                {{ \App\Models\Category::findOrFail($property->categoryId)->title }}
+                            @endif
+
+                        </td>
 
                         <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
                         <td>
@@ -144,7 +151,7 @@
                         <input type="text" class="form-control" name="id" id="id" readonly>
                     </div>
                     <div class="form-label-group">
-                        <label for="message-text" class="col-form-label">Please add your contact info:</label>
+                        <label for="message-text" class="col-form-label">Please add admin notes:</label>
                         <textarea class=" " name='contactInfo' id="message-text" required></textarea>
                     </div>
                 </div>

@@ -148,7 +148,7 @@
                         <div class="form-group row mb-0">
                 <div class="col-md-6 ">
                     <button type="submit" class=" btn-primary1" id="myBtn" disabled>
-                        Send
+                        &nbsp;&nbsp;Send&nbsp;&nbsp;
                     </button>
                 </div>
             </div>

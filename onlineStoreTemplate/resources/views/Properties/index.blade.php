@@ -4,7 +4,7 @@
     <div class="hero" style=" background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/buy.jpg);
     ">
 
-        <div class="inner">
+        <div class="inner" style="color: #0a0807; text-shadow:0px 0px 10px #e4002b">
             <h1>Get Your Future Home</h1>
         </div>
     </div>
@@ -20,7 +20,7 @@
                         <form action="/properties/rent">
                             <div class="search-bar-section">
 
-                                <select id="sort" name="sort">
+                                <select id="sort" name="sort" style=" background-color:#e4002b;">
                                     <option value="-1">Sort By</option>
                                     <option value="updated_at">Last Updated</option>
                                     <option value="priceHighToLow">Price high to low</option>
@@ -34,7 +34,7 @@
                         <form action="/properties/buy">
                             <div class="search-bar-section">
 
-                                <select id="sort" name="sort">
+                                <select id="sort" name="sort"  style=" background-color:#e4002b;">
                                     <option value="-1">Sort By</option>
                                     <option value="updated_at">Last Updated</option>
                                     <option value="priceHighToLow">Price high to low</option>
@@ -152,7 +152,7 @@
                                             </div>
                                             <div class="search-bar-section">
 
-                                                <select id="sort" name="sort">
+                                                <select id="sort" name="sort"  style=" background-color:#e4002b;">
                                                     <option value="-1">Sort By</option>
                                                     <option value="updated_at">Last Updated</option>
                                                     <option value="priceHighToLow">Price high to low</option>
@@ -229,32 +229,34 @@
                                 </a>
                             </div>
 
+                            <a style="text-decoration: none" href="/properties/{{$property->id}}">
+                                <div class="post-details">
 
-                            <div class="post-details">
+                                    <p class="price">{{ $property->locationDescription }} </p>
 
-                                <p class="price">{{ $property->locationDescription }} </p>
+                                    @if($property->showPrice == 1)
+                                        <p class="price">
+                                            <i class="fa fa-usd" aria-hidden="true"></i>
+                                            {{$property->price}}
+                                        </p>
+                                    @else
+                                        <p class="price">
+                                            Contact the agent for price
+                                        </p>
+                                    @endif
 
-                                @if($property->showPrice == 1)
-                                    <p class="price">
-                                        <i class="fa fa-usd" aria-hidden="true"></i>
-                                        {{$property->price}}
+
+                                    <p style="color: #0a0807;padding-left: 0.5rem;">
+                                        {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                        {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                        {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                        | {{ \App\Models\PropertyType::findOrFail($property->typeId)->title }}
                                     </p>
-                                @else
-                                    <p class="price">
-                                        Contact the agent for price
-                                    </p>
-                                @endif
 
-
-                                <p style="color: #0a0807;padding-left: 0.5rem;">
-                                    {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                    {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                    {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                </p>
-
-                                <a class="special-link" style="color: #0a0807;padding-left: -0.5rem;"
-                                   href="/properties/{{$property->id}}">View details</a>
-                            </div>
+                                    {{--<a class="special-link" style="color: #0a0807;padding-left: -0.5rem;"
+                                       href="/properties/{{$property->id}}">View details</a>--}}
+                                </div>
+                            </a>
                         </div>
 
                     @endforeach

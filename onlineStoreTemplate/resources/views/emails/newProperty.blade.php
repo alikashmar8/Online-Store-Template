@@ -15,10 +15,10 @@
     @endcomponent
 
     Thank you,<br>
-
-        <h2>OZ Property Market</h2>
         <hr>
-            <p ><small >© 2020 Real Estate, all Rights Reserved. Developed by ... </small></p>
+        <h2>OZ Property Market</h2>
+
+            <p ><small >© 2020 Real Estate, all Rights Reserved. Developed by <a href="https://webside.xyz/" target="_blank" style="color: #e4002b">WebSide</a> </small></p>
 
     </div>
 </body>

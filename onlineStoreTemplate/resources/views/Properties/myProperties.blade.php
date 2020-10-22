@@ -78,13 +78,18 @@
                             </td>
                             <td> {{ $property->bedroomsNumber }} </td>
 
-                            <td>{{ $property->price }} $</td>
+                            <td> $ {{ $property->price }} </td>
 
                             @if($property->showPrice == 0)
                                 <td class="text-danger">No</td> @else
                                 <td class="text-success">Yes</td> @endif
 
-                            <td>{{ \App\Models\Category::where('id','=',$property->categoryId)->first()->title }}</td>
+                            <td>@if( $property->categoryId == 1)
+                                    Sell
+                                @else
+                                     {{\App\Models\Category::where('id','=',$property->categoryId)->first()->title}}
+                                @endif
+                            </td>
 
                             @if($property->accepted == 0)
                                 <td class="text-warning">Waiting for confirmation</td> @else

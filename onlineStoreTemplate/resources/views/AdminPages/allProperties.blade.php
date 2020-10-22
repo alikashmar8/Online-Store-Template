@@ -87,7 +87,14 @@
                             <td class="text-success">Yes</td>
                         @endif
                         <td><a href="/users/{{ $property->userId }}">{{ $property->agent->name }}</a></td>
-                        <td>{{ \App\Models\Category::findOrFail($property->categoryId)->title }}</td>
+                        <td>
+                            @if( $property->categoryId == 1)
+                                Sell
+                            @else
+                                {{ \App\Models\Category::findOrFail($property->categoryId)->title }}
+                            @endif
+
+                        </td>
 
                         <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
                         <td>

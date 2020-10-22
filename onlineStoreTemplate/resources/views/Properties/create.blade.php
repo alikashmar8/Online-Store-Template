@@ -12,7 +12,7 @@
     <div class="container creat_app">
 
 
-        <h2>Place New Appartment</h2>
+        <h2>Place New Property</h2>
         <div>
 
             {{ Form::open(['action' => 'App\Http\Controllers\PropertiesController@store','method'=>'POST','enctype'=>'multipart/form-data']) }}
@@ -92,28 +92,32 @@
                         </script>
                     </div>
 
-                </div>
 
 
 
-                <div {{--maps--}} class="col-md-6" style="height:300px">
+
+                <div {{--maps class="col-md-6" style="height:300px"--}}>
                     <script
-                        src="https://maps.googleapis.com/maps/api/js?AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initAutocomplete&libraries=places&v=weekly"
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initAutocomplete&libraries=places&v=weekly"
                         defer
                     ></script>
 
-
+                    <div class="form-group form-label-group">
                     {{ Form::label('locationDescription','Location:') }}
 
                     <input type="text" placeholder="Enter Location" {{--name="address"--}} name="locationDescription"
-                           onFocus="initializeAutocomplete()" id="locality">
+                           onFocus="initializeAutocomplete()" id="locality" required>
+                    </div>
                     <br/>
+
+                    <div  style="display: none" >
 
                     <input type="text" name="city" id="city" placeholder="City" value=""><br>
                     <input type="text" name="latitude" id="latitude" placeholder="Latitude" value=""><br>
                     <input type="text" name="longitude" id="longitude" placeholder="Longitude" value=""><br>
                     <input type="text" name="place_id" id="location_id" placeholder="LocationId" value=""><br>
 
+                    </div>
 
                     <script type="text/javascript">
                         function initializeAutocomplete() {
@@ -150,7 +154,7 @@
                     </script>
 
                 </div>
-
+                </div>
             </div>
 
             <div class=" ">

@@ -48,6 +48,7 @@
                         </a>
                     </div>
                     <div class="my-2">
+
                         <div class="p-5">
                             <h3>Details:</h3>
                             <hr>
@@ -57,49 +58,91 @@
                                 <p class="price">{{ $property->locationDescription }} </p>
 
 
+                                <p style="font-size: 22px">
+                                    {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                    {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                    {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;
+                                    | {{ \App\Models\PropertyType::findOrFail($property->typeId)->title }}
+                                </p>
+
                                 @if($property->showPrice == 1)  <p class="price"> $ {{$property->price}} </p>
 
                                 @else
                                     <p class="price">Contact the agent for the price</p>
                                 @endif
-                                <p>Property
-                                    Type: {{ \App\Models\PropertyType::findOrFail($property->typeId)->title }}</p>
 
-                                <p>
-                                    {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                    {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                    {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;
-                                </p>
+
                                 <div class="row"></div>
                                 <p style="white-space: pre-line">
-                                    Description:
+                                    <a style="font-size:25px; font-weight: 600;  ">Description:</a>
                                     {{ $property->description }}
                                 </p>
-                                <p>Placed On: {{ $property->created_at->toDateString() }}</p>
+                                <p><a style="font-size:25px; font-weight: 600;  ">Placed On:</a>
+                                    {{ $property->created_at->toDateString() }}</p>
                             </div>
                         </div>
-                        <br><br>
+
+                        <br/><br/>
+                        <div class="p-5">
+                            {{--      maps   --}}
+                            <p id="lat" style="display: none">{{ $property->latitude }}</p>
+                            <p id="lng" style="display: none">{{ $property->longitude }}</p>
+
+                            <h3>Location</h3>
+                            <br/>
+
+                            <div id="map" style="height: 400px;  width: 100%;"></div>
+
+                            <script>
+                                var lat1 =document.getElementById('lat').innerHTML
+                                var lng1 =document.getElementById('lng').innerHTML
+
+                                function initMap() {
+
+                                    var location = {lat:  parseFloat(lat1), lng:  parseFloat(lng1) };
+
+                                    var map = new google.maps.Map(
+                                        document.getElementById('map'), {zoom: 15, center: location});
+
+                                    var marker = new google.maps.Marker({position: location, map: map   /* , icon:'pinkball.png'*/});
+                                }
+                            </script>
+
+                            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initMap"></script>
+
+
+                        </div>
+
+                        <br/><br/>
+
+
+
                         @if(\Illuminate\Support\Facades\Auth::guest())
                             <div class="p-5">
                                 <h3>Login to get the contact information</h3>
                             </div>
                         @else
+
+
                             <div class="p-5">
+                                <hr>
+
                                 <h4>Admin Notes:</h4>
-                                <p style="white-space: pre-line"> {{ $property->contactInfo }}</p>
+                                <p style="white-space: pre-line; border: none; border-left: 3px solid #e4002b; background-color: #e4002b50; padding: 20px; color: white"> {{ $property->contactInfo }}
+                                </p>
                                 <BR/>
                                 <hr>
                                 @if($property->userId != \Illuminate\Support\Facades\Auth::id())
 
                                     <form action="/contactForProperty" method="get">
                                         @csrf
-                                        <h4>Contact the owner about this property:</h4>
+                                        <h4>Contact the owner about this property:</h4><br/>
 
                                         <input type="hidden" value="{{ $property->id }}" name="id">
                                         <input type="hidden" value="{{ $property->agent->email }}"  name="email1">
                                         <div class="form-label-group">
-                                            <label class="form-label-group" for="message">Message:</label>
-                                            <textarea name="message" class="form-control" style="height: 300px"
+                                            <label class="form-label-group" for="message"  >Message:</label>
+                                            <textarea name="message" class="form-control" style="height: 300px ; margin-top: 10px;"
                                                       required>
 Hi, I am interested to view your property! What is the best time to inspect?
 Thanks
@@ -118,31 +161,6 @@ Thanks
 
                         <br><br>
 
-                        {{--      maps   --}}
-                        <p id="lat" style="display: none">{{ $property->latitude }}</p>
-                        <p id="lng" style="display: none">{{ $property->longitude }}</p>
-
-                        <h3>Location</h3>
-                        <br/>
-
-                        <div id="map" style="height: 400px;  width: 100%;"></div>
-
-                        <script>
-                            var lat1 =document.getElementById('lat').innerHTML
-                            var lng1 =document.getElementById('lng').innerHTML
-
-                            function initMap() {
-
-                                var location = {lat:  parseFloat(lat1), lng:  parseFloat(lng1) };
-
-                                var map = new google.maps.Map(
-                                    document.getElementById('map'), {zoom: 15, center: location});
-
-                                var marker = new google.maps.Marker({position: location, map: map   /* , icon:'pinkball.png'*/});
-                            }
-                        </script>
-
-                        <script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initMap"></script>
 
 
                     </div>

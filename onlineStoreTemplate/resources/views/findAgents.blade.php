@@ -27,7 +27,9 @@
                     <select name="searchBy">
                         <option value="name">Agent Name</option>
                         <option value="companyName">Company Name</option>
+                        {{--
                         <option value="location">Location</option>
+                        --}}
                     </select>
 
                 </div>

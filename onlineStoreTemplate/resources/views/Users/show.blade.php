@@ -30,12 +30,14 @@
 
                     <h2>{{$user->name}}</h2>
                     @if($user->role == 1)
-                        <p> Company: {{$user->company->name}}</p>
-                        <p> Licence Number: {{$user->company->liceneceNumber}}</p>
+                        <p> <a style="font-weight: bold">Company name:</a> {{$user->company->name}}</p>
+                        <p><a style="font-weight: bold"> Licence number:</a> {{$user->company->liceneceNumber}}</p>
                     @endif
-                    <p> Phone number: +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
-                    <p>Email: {{$user->email}}</p>
-                    <p style="white-space: pre-line">Bio: {{$user->bio}}</p>
+                    <p> <a style="font-weight: bold">Phone number:</a> +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
+                    <p><a style="font-weight: bold">Email:</a> {{$user->email}}</p>
+                    <br/>
+                    <p style="white-space: pre-line"><a style="font-weight: bold">Bio:</a> {{$user->bio}}</p>
+                    <br/>
 
                     <button class="btn-primary1" data-toggle="modal" data-target="#exampleModal"
                             @if(!\Illuminate\Support\Facades\Auth::user()->hasVerifiedEmail())disabled @endIf>Edit
@@ -57,11 +59,11 @@
 
                         <h2>{{$user->name}}</h2>
                         @if($user->role == 1)
-                            <p> Company: {{$user->company->name}}</p>
-                            <p> Licence Number: {{$user->company->licenseNumber}}</p>
+                            <p><a style="font-weight: bold"> Company name:</a> {{$user->company->name}}</p>
+                            <p><a style="font-weight: bold"> Licence number:</a> {{$user->company->licenseNumber}}</p>
                         @endif
-                        <p> Phone number: +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
-                        <p>Email: {{$user->email}}</p>
+                        <p> <a style="font-weight: bold">Phone number:</a> +{{$user->phoneNumberCode}}-{{$user->phoneNumber}}</p>
+                        <p><a style="font-weight: bold">Email: </a>{{$user->email}}</p>
                         @if(!\Illuminate\Support\Facades\Auth::user()->hasVerifiedEmail())
                             @if (session('resent'))
                                 <div class="alert alert-success" role="alert">
@@ -77,9 +79,11 @@
                                 .
                             </form>
                         @endif
-                        <BR/>
-                        <p style="white-space: pre-line">Bio: {{$user->bio}}</p>
 
+                        <br/>
+                        <p style="white-space: pre-line"><a style="font-weight: bold">Bio:</a> {{$user->bio}}</p>
+
+                        <br/>
                         <button class="btn-primary1" data-toggle="modal" data-target="#exampleModal"
                                 @if(!\Illuminate\Support\Facades\Auth::user()->hasVerifiedEmail())disabled @endIf>Edit
                             Profile
@@ -141,7 +145,7 @@
                         <div class="form-label-group">
                             <label for="license">License Number*</label>
                             <input id="license" type="number" class="form-control @error('license') is-invalid @enderror"
-                                   name="license" value="{{ old('license') }}" required autocomplete="license" autofocus>
+                                   name="license" value="{{$user->company->licenseNumber}}" required autocomplete="license" autofocus>
                             @error('license')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -155,7 +159,7 @@
 
                             <label for="comp_name">Company Name*</label>
                             <input id="comp_name" type="text" class="form-control @error('comp_name') is-invalid @enderror"
-                                   name="comp_name" value="{{ old('comp_name') }}" required autocomplete="comp_name"
+                                   name="comp_name" value="{{$user->company->name}}" required autocomplete="comp_name"
                                    autofocus>
                             @error('comp_name')
                             <span class="invalid-feedback" role="alert">

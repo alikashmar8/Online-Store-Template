@@ -11149,8 +11149,8 @@ color: #0a0807;
 .profile img{
     margin-left: 50%;
     transform: translate(-50%);
-    min-height: 150px;
-    min-width: 150px;
+    min-height: 250px;
+    min-width: 250px;
     max-height: 300px;
     max-width: 300px;
     border-radius: 50%;
@@ -11356,14 +11356,15 @@ profile .num2 button:focus{
 }
 
 .footer .copyright {
-    background-color: #7c7e85;
+    background-color: #0a0807;
     color: #ffffff;
 }
 .footer .copyright p{
-    border-top:1px solid rgba(255,255,255,.1);
+    border:none;
     color: #ffffff;
     padding: 0px;
     padding-right: 20px;
+    margin: 0;
 }
 
 
@@ -11489,7 +11490,7 @@ position: relative;
 }
 .post-details .price {
 
-    font-size: 25px;
+    font-size: 29px;
     font-weight: 550;
     color: #df0505;
     font-family:  'Lora', serif;
@@ -11634,6 +11635,7 @@ position: relative;
 .main1 h1 i{
     color: #e4002b;
     transition: transform 1s;
+    font-size: 80px;
 
 }
 .main1 h1 i:hover {

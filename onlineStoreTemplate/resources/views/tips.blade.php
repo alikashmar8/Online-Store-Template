@@ -14,7 +14,7 @@
                         <div class="form-label-group">
                               <H1>TIPS</H1>
                                 <p>Search for FAQ..</p>
-                            <input type="text" id="myInput" class="form-control mr-sm-2" onkeyup="myFunction()" title="Type in a name">
+                            <input type="text" id="myInput" class="form-control mr-sm-2" onkeyup="myFunction()" title="Type in a name" placeholder="">
                         </div>
                 </div>
             </div>
