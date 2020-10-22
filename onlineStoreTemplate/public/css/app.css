@@ -11094,7 +11094,9 @@ color: #0a0807;
 }
 .bg-blue{
     /*background-color: #e4002b !important;*/
-    background-image: linear-gradient(#e4002b, transparent);
+    /*background-image: linear-gradient(#e4002b, transparent);*/
+    background-image: linear-gradient(#e4002b, #e4002b, transparent);
+
     /*background-image:  linear-gradient(#e4002b,#e4002b70,#e4002b40,transparent);*/
     z-index: 1;
 }

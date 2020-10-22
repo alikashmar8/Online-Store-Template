@@ -11,6 +11,11 @@
     </div>
     <br><BR>
         <div class="container bg-white p-5" style="overflow-x: scroll;">
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
             @if(count($properties)>0)
                 <table class="table1" id="myDataTable">
                     <thead class="">

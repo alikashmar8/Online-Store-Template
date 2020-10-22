@@ -4,15 +4,21 @@
     <div class="container">
         <div class="p-2"></div>
         <div class="post p-4 m-5">
-        <h1>Edit Property:</h1>
-        <div class="alert alert-warning">Editing your property will need admin confirmation to get listed again!</div>
+            <h1>Edit Property:</h1>
+            <div class="alert alert-warning">Editing your property will need admin confirmation to get listed again!
+            </div>
 
             {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@update',$property->id],'method'=>'PUT','files' => true]) }}
             <div class=" creat_app">
                 <div class=" ">
                     <div class=" form-group form-label-group special ">
                         {{ Form::label('price','Price:') }}
-                        {{ Form::number('price',$property->price,['class' => 'form-control','placeholder'=>'Price']) }}
+                        {{ Form::number('price',$property->price,['min' => '0','class' => 'form-control','placeholder'=>'Price']) }}
+                        @error('price')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
                     <div class=" form-group form-label-group special ">
                         @if($property->showPrice == 0)
@@ -56,6 +62,11 @@
                     <div class="form-group form-label-group special">
                         {{ Form::label('description','Description:') }}
                         {{ Form::textarea('description',$property->description,['class' => 'form-control','placeholder'=>'Description']) }}
+                        @error('description')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
                     <div class="form-group form-label-group special">
                         <input type="checkbox" name="changeImages" onclick="imgs2()"> Change images
@@ -82,6 +93,11 @@
                                     ;
                                 };
                             </script>
+                            @error('images')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                     </div>
                 </div>

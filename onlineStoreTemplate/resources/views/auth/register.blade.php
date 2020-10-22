@@ -151,10 +151,12 @@
 
 
                     <div class="form-label-group">
-                        <label for="license">License Number*</label>
-                        <input id="license" type="number" class="form-control @error('license') is-invalid @enderror"
-                               name="license" value="{{ old('license') }}" required autocomplete="license" autofocus>
-                        @error('license')
+                        <label for="licenseNumber">License Number*</label>
+                        <input id="licenseNumber" type="number"
+                               class="form-control @error('licenseNumber') is-invalid @enderror"
+                               name="licenseNumber" value="{{ old('licenseNumber') }}" required
+                               autocomplete="licenseNumber" autofocus>
+                        @error('licenseNumber')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

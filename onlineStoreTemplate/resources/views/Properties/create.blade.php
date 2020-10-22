@@ -18,11 +18,17 @@
             {{ Form::open(['action' => 'App\Http\Controllers\PropertiesController@store','method'=>'POST','enctype'=>'multipart/form-data']) }}
 
             <div class="row">
-                <div class="col-md-6" >
+                <div class="col-md-6">
                     <div class="form-group form-label-group">
                         {{ Form::label('price','Price:') }}
-                        {{ Form::number('price','',['class' => 'form-control' ,'placeholder'=>'Price', 'required']) }}
+                        {{ Form::number('price','',['min' => '0','class' => 'form-control' ,'placeholder'=>'Price', 'required']) }}
+                        @error('price')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
+
                     <div class="form-group form-label-group special">
                         {{ Form::checkbox('showPrice', 1, true) }}
                         {{ Form::label('showPrice','Show Price') }}
@@ -64,10 +70,14 @@
                     </div>
 
 
-
                     <div class="form-group form-label-group">
                         {{ Form::label('description','Description:') }}
                         {{ Form::textarea('description','',['class' => 'form-control','placeholder'=>'Description', 'required']) }}
+                        @error('description')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
 
@@ -77,29 +87,32 @@
                         <script>
                             var uploadField = document.getElementById("file");
 
-                            uploadField.onchange = function() {
+                            uploadField.onchange = function () {
                                 var i=0;
                                 var space=0;
-                                for(i=0; i<this.files.length ; i++){
-                                    space+= this.files[i].size
+                                for (i = 0; i < this.files.length; i++) {
+                                    space += this.files[i].size
 
                                 }
-                                if(space > 150000000){
+                                if (space > 150000000) {
                                     alert("Files are too big!");
                                     this.value = "";
-                                };
+                                }
+                                ;
                             };
                         </script>
+                        @error('images')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
 
 
-
-
-
-                <div {{--maps class="col-md-6" style="height:300px"--}}>
-                    <script
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initAutocomplete&libraries=places&v=weekly"
-                        defer
+                    <div {{--maps class="col-md-6" style="height:300px"--}}>
+                        <script
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initAutocomplete&libraries=places&v=weekly"
+                            defer
                     ></script>
 
                     <div class="form-group form-label-group">

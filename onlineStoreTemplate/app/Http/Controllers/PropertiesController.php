@@ -70,7 +70,7 @@ class PropertiesController extends Controller
         $property->save();
         $user = User::findOrFail($property->userId);
         Mail::to($user->email)->send(new PropertyAcceptedMail());
-        return redirect('/acceptProperties');
+        return redirect('/acceptProperties')->with('message', 'Property Accepted');
     }
 
     /**
@@ -96,6 +96,7 @@ class PropertiesController extends Controller
             'description' => 'required',
             'price' => 'required',
             'type' => 'required',
+            'locationDescription' => 'required',
             'longitude' => 'required',
             'latitude' => 'required',
         ]);
@@ -147,7 +148,7 @@ class PropertiesController extends Controller
         Mail::to('ozpropertymarket@gmail.com')->send(new NewPropertyMail());
         Mail::to($mail)->send(new PropertyCreated());
 
-        return redirect('/');
+        return redirect('/properties/myProperties')->with('message', 'Property Created Successfully!');
     }
 
     /**
@@ -237,7 +238,7 @@ class PropertiesController extends Controller
             }
         }
         Mail::to('ozpropertymarket@gmail.com')->send(new PropertyUpdated());
-        return redirect('/');
+        return redirect('/properties/' . $property->id)->with('message', 'Property Updated!');
     }
 
     /**
@@ -250,9 +251,9 @@ class PropertiesController extends Controller
     {
         $this->delete($id);
         if (Auth::user()->role == 0) {
-            return redirect('/acceptProperties');
+            return redirect('/acceptProperties')->with('message', 'Property Deleted!');;
         } else {
-            return redirect('properties/myProperties');
+            return redirect('properties/myProperties')->with('message', 'Property Deleted!');;
         }
     }
 
@@ -362,8 +363,4 @@ class PropertiesController extends Controller
         return view("Properties.myProperties", compact('properties'));
     }
 
-//    public function acceptProperty($request, $id)
-//    {
-//        dd($request);
-//    }
 }

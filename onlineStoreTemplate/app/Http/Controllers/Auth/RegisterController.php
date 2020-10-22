@@ -50,7 +50,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -58,22 +58,35 @@ class RegisterController extends Controller
         $var = ltrim($data['phoneNumber'], '0');
         $data['phoneNumber'] = $var;
 
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:190'],
-            'bio' => ['nullable', 'string', 'max:190'],
-            'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
+        if ($data['role'] == 1) {
+            return Validator::make($data, [
+                'name' => ['required', 'string', 'max:190'],
+                'bio' => ['nullable', 'string', 'max:190'],
+                'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
 //            'phoneNumber' => ['required', 'string', 'max:25','unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phoneNumber' => ['unique:users', 'phone:phoneNumberCode'],
-            'phoneNumberCode' => 'required_with:phoneNumber',
-
-        ]);
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'phoneNumber' => ['unique:users', 'phone:phoneNumberCode'],
+                'phoneNumberCode' => 'required_with:phoneNumber',
+                'profileImg' => 'max:500000',
+                'licenseNumber' => ['required', 'unique:companies']
+            ]);
+        } else {
+            return Validator::make($data, [
+                'name' => ['required', 'string', 'max:190'],
+                'bio' => ['nullable', 'string', 'max:190'],
+                'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'phoneNumber' => ['unique:users', 'phone:phoneNumberCode'],
+                'phoneNumberCode' => 'required_with:phoneNumber',
+                'profileImg' => 'max:500000',
+            ]);
+        }
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\Models\User
      */
     protected function create(array $data)
@@ -97,7 +110,7 @@ class RegisterController extends Controller
             $path = $image->storeAs('public/user_profile_images', $fileNameToStore);
         }
 
-        if(isset($data['bio'])){
+        if (isset($data['bio'])) {
             $bio = $data['bio'];
         }
         $user = User::create([
@@ -114,7 +127,7 @@ class RegisterController extends Controller
         if ($data['role'] == 1) {
             $company = new Company;
             $company->name = $data['comp_name'];
-            $company->licenseNumber = $data['license'];
+            $company->licenseNumber = $data['licenseNumber'];
             $company->AgentId = $user->id;
             $company->save();
         }

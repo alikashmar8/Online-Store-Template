@@ -49,6 +49,11 @@
             @if(\Illuminate\Support\Facades\Auth::id() == $user->id)
                 {{--                user viewing his profile                --}}
                 <div class=" profile">
+                    @if(session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
                     <div class="num1">
                         <img class=" img-thumbnail"
                              src="{{url('/storage/user_profile_images/' . $user->profileImg)}}"

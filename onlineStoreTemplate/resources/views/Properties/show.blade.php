@@ -5,16 +5,21 @@
     <div class="main-content">
         <div class="main2">
             <div class="container  ">
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
                 <div class="post p-4 m-3">
 
                     <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
                         <div class="carousel-inner">
                             @if(count($property->images)>0)
                                 @foreach($property->images as $image)
-                                <div class="carousel-item @if($loop->first) active @endif">
-                                    @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                        <video class="d-block w-100" autoplay controls>
-                                            <source src="{{url('/storage/properties_images/' . $image->url)}}"
+                                    <div class="carousel-item @if($loop->first) active @endif">
+                                        @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
+                                            <video class="d-block w-100" autoplay controls>
+                                                <source src="{{url('/storage/properties_images/' . $image->url)}}"
                                                     type="video/mp4">
 
                                         </video>

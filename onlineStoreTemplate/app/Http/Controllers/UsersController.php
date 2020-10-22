@@ -63,7 +63,7 @@ class UsersController extends Controller
         }
         $user->delete();
         if (Auth::user()->role == 0) {
-            return redirect('/users');
+            return redirect('/users')->with('message', 'User Deleted !');;
         } else {
             return redirect('/');
         }
@@ -146,7 +146,7 @@ class UsersController extends Controller
             $user->email_verified_at = null;
         }
         $user->save();
-        return redirect('users/' . $user->id);
+        return redirect('users/' . $user->id)->with('message', 'Profile Updated !');
     }
 
 }

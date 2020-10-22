@@ -8,21 +8,26 @@
     <BR>
         <h1 style=" text-align: center">Clients</h1>
 
-    <BR><BR>
+        <BR><BR>
 
-            @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
-        {{--        admin area--}}
-                <div class="container bg-white">
+                @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
+                    {{--        admin area--}}
+                    <div class="container bg-white">
+                        @if(session()->has('message'))
+                            <div class="alert alert-success">
+                                {{ session()->get('message') }}
+                            </div>
+                        @endif
 
-                    @if(count($users)>0)
-                        <table class="table1" id="myDataTable">
-                            <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Phone Number</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Confirmed</th>
+                        @if(count($users)>0)
+                            <table class="table1" id="myDataTable">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Phone Number</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Confirmed</th>
                                 <th scope="col">Created At</th>
                                 <th scope="col">Delete</th>
 

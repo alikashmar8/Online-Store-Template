@@ -4,24 +4,29 @@
 
     <div class="hero" style="height: 120px;  background-image: linear-gradient(#df0505, #f5f5f5);
 
-    " >
+    ">
         <div class="inner">
 
         </div>
     </div>
     <h1 style=" text-align: center">Accept Properties</h1>
-        <BR><BR>
-    <div class="container bg-white" style="overflow-x: scroll;">
-        @if(count($notAcceptedProperties)>0)
-            <table class="table1" id="myDataTable">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Images</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Showing Price</th>
-                    <th scope="col">Agent Details</th>
-                    <th scope="col">Type</th>
+    <BR><BR>
+            <div class="container bg-white" style="overflow-x: scroll;">
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+                @if(count($notAcceptedProperties)>0)
+                    <table class="table1" id="myDataTable">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Images</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Showing Price</th>
+                            <th scope="col">Agent Details</th>
+                            <th scope="col">Type</th>
                     <th scope="col">Details</th>
                     <th scope="col">Delete</th>
                     <th scope="col">Accept</th>
