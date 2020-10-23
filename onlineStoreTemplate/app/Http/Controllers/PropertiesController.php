@@ -363,4 +363,19 @@ class PropertiesController extends Controller
         return view("Properties.myProperties", compact('properties'));
     }
 
+    public function showProperty(Request $request)
+    {
+        $property = Property::findOrFail($request->id);
+        $property->accepted = 1;
+        $property->save();
+        return redirect('/properties/' . $property->id);
+    }
+
+    public function hideProperty(Request $request)
+    {
+        $property = Property::findOrFail($request->id);
+        $property->accepted = 0;
+        $property->save();
+        return redirect('/properties/' . $property->id);
+    }
 }
