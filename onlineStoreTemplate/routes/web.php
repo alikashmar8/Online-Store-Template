@@ -98,12 +98,11 @@ Route::delete('/users/destroy/{id}', '\App\Http\Controllers\UsersController@dest
 Route::get('/properties/myProperties', '\App\Http\Controllers\PropertiesController@myProperties')->middleware(['auth', 'verified']);
 Route::resource('properties', '\App\Http\Controllers\PropertiesController', ['except' => ['show']])->middleware(['auth', 'verified']);
 Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@show');
+Route::get('/userShowProperty', '\App\Http\Controllers\PropertiesController@showProperty');
+Route::get('/userHideProperty', '\App\Http\Controllers\PropertiesController@hideProperty');
 Route::get('/search-agents', '\App\Http\Controllers\SearchController@searchAgent');
 Route::get('/search-properties', '\App\Http\Controllers\SearchController@searchProperties');
 
-//Auth routes
-//Route::get('registerAgent', '\App\Http\Controllers\UsersController@registerAgent')->middleware('guest');
 Auth::routes(['verify' => true]);
-
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

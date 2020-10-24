@@ -10,6 +10,42 @@
                         {{ session()->get('message') }}
                     </div>
                 @endif
+                @if(!\Illuminate\Support\Facades\Auth::guest())
+                    @if(\Illuminate\Support\Facades\Auth::user()->id == $property->userId)
+                        {{--                        Owner section--}}
+                        <div class="row">
+                            <div class="col-md-10">
+                                @if($property->accepted == 0)
+                                    @if($property->contactInfo != null)
+                                        <div class="alert">
+                                            Your property is hidden currently, press show button to make it visible
+                                            again !
+                                        </div>
+                                    @else
+                                        <div class="alert alert-danger">
+                                            Your property is not accepted yet! Kindly wait admin confirmation.
+                                        </div>
+                                    @endif
+                                @else
+                                    <div class="alert"> Your property is currently listed on our site successfully.
+                                        Press 'hide' button to hide it temporarily.
+                                    </div>
+                                @endif
+                            </div>
+                            <div>
+                                @if($property->contactInfo != null)
+                                    @if($property->accepted == 0)
+                                        <a class="btn btn-success"
+                                           href="/userShowProperty?id={{$property->id}}">Show</a>
+                                    @else
+                                        <a class="btn btn-danger" href="/userHideProperty?id={{$property->id}}">Hide</a>
+                                    @endif
+
+                                @endif
+                            </div>
+                        </div>
+                    @endif
+                @endif
                 <div class="post p-4 m-3">
 
                     <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
@@ -19,16 +55,17 @@
                                     <div class="carousel-item @if($loop->first) active @endif">
                                         @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
                                             <video class="d-block w-100" autoplay controls>
-                                                <source src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                <source
+                                                    src="{{url('/storage/properties_images/' . $image->url)}}"
                                                     type="video/mp4">
 
-                                        </video>
-                                    @else
-                                        <img class="d-block w-100"
-                                             src="{{url('/storage/properties_images/' . $image->url)}}"
-                                             alt="No Image">
-                                    @endif
-                                </div>
+                                            </video>
+                                        @else
+                                            <img class="d-block w-100"
+                                                 src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                 alt="No Image">
+                                        @endif
+                                    </div>
                                 @endforeach
                             @else
                                 <img class="d-block w-100"
@@ -64,13 +101,17 @@
 
 
                                 <p style="font-size: 22px">
-                                    {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                    {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                    {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;
+                                    {{$property->bedroomsNumber}} <i class="fa fa-bed"
+                                                                     aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                    {{$property->bathroomsNumber}} <i class="fa fa-bath"
+                                                                      aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                    {{$property->parkingNumber}} <i class="fa fa-car"
+                                                                    aria-hidden="true"></i>&nbsp;
                                     | {{ \App\Models\PropertyType::findOrFail($property->typeId)->title }}
                                 </p>
 
-                                @if($property->showPrice == 1)  <p class="price"> $ {{$property->price}} </p>
+                                @if($property->showPrice == 1)  <p class="price">
+                                    $ {{$property->price}} </p>
 
                                 @else
                                     <p class="price">Contact the agent for the price</p>
@@ -99,27 +140,30 @@
                             <div id="map" style="height: 400px;  width: 100%;"></div>
 
                             <script>
-                                var lat1 =document.getElementById('lat').innerHTML
-                                var lng1 =document.getElementById('lng').innerHTML
+                                var lat1 = document.getElementById('lat').innerHTML
+                                var lng1 = document.getElementById('lng').innerHTML
 
                                 function initMap() {
 
-                                    var location = {lat:  parseFloat(lat1), lng:  parseFloat(lng1) };
+                                    var location = {lat: parseFloat(lat1), lng: parseFloat(lng1)};
 
                                     var map = new google.maps.Map(
                                         document.getElementById('map'), {zoom: 15, center: location});
 
-                                    var marker = new google.maps.Marker({position: location, map: map   /* , icon:'pinkball.png'*/});
+                                    var marker = new google.maps.Marker({
+                                        position: location,
+                                        map: map   /* , icon:'pinkball.png'*/
+                                    });
                                 }
                             </script>
 
-                            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initMap"></script>
+                            <script async defer
+                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initMap"></script>
 
 
                         </div>
 
                         <br/><br/>
-
 
 
                         @if(\Illuminate\Support\Facades\Auth::guest())
@@ -144,10 +188,12 @@
                                         <h4>Contact the owner about this property:</h4><br/>
 
                                         <input type="hidden" value="{{ $property->id }}" name="id">
-                                        <input type="hidden" value="{{ $property->agent->email }}"  name="email1">
+                                        <input type="hidden" value="{{ $property->agent->email }}"
+                                               name="email1">
                                         <div class="form-label-group">
-                                            <label class="form-label-group" for="message"  >Message:</label>
-                                            <textarea name="message" class="form-control" style="height: 300px ; margin-top: 10px;"
+                                            <label class="form-label-group" for="message">Message:</label>
+                                            <textarea name="message" class="form-control"
+                                                      style="height: 300px ; margin-top: 10px;"
                                                       required>
 Hi, I am interested to view your property! What is the best time to inspect?
 Thanks
@@ -165,7 +211,6 @@ Thanks
                         @endif
 
                         <br><br>
-
 
 
                     </div>
