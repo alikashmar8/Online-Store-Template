@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'OzPropertyMarket'),
+    'name' => env('APP_NAME', 'Oz Property Market'),
 
     /*
     |--------------------------------------------------------------------------

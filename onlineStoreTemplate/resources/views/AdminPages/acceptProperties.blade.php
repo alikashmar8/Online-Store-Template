@@ -11,9 +11,10 @@
     </div>
     <h1 style=" text-align: center">Accept Properties</h1>
     <BR><BR>
+
             <div class="container bg-white" style="overflow-x: scroll;">
                 @if(session()->has('message'))
-                    <div class="alert alert-success">
+                    <div class="m-5 alert alert-success">
                         {{ session()->get('message') }}
                     </div>
                 @endif

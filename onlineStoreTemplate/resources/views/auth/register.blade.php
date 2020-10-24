@@ -248,8 +248,7 @@
 
                     <div class="form-group  mb-0">
                         <div class="col-md-6 ">
-                            <button type="submit" class=" btn-primary1"
-                                    onclick="event.preventDefault(); document.getElementById('agentForm').submit();">
+                            <button type="submit" class=" btn-primary1">
                                 {{ __('Register') }}
                             </button>
                         </div>
@@ -274,7 +273,7 @@
             document.getElementById("private").style.color = "#ffffff";
             document.getElementById("agent").style.background = "#ffffff";
             document.getElementById("agent").style.color = "#e4002b";
-            document.getElementById("d3").style.height = "590px";
+            document.getElementById("d3").style.height = "650px";
 
             const t = new TimelineMax();
             t.fromTo(loc, 1.5, {height: "0%;"}, {height: "100%"})
@@ -291,7 +290,7 @@
             document.getElementById("private").style.color = "#e4002b";
             document.getElementById("agent").style.background = "#e4002b";
             document.getElementById("agent").style.color = "#ffffff";
-            document.getElementById("d3").style.height = "720px";
+            document.getElementById("d3").style.height = "800px";
 
             const t = new TimelineMax();
             t.fromTo(loc, 1, {height: "100%;"}, {height: "0%"})

@@ -181,7 +181,7 @@
 
                     @foreach($properties as $property)
                         <div class="post my-5">
-                            @if($property->created_at > \Carbon\Carbon::now()->subDays(7))
+                            @if($property->created_at > \Carbon\Carbon::now()->subDays(14))
                                 <div class="new-prop">
                                     <img src="https://webside.xyz/MK/hackathon/imagaga123/images1/flag.svg"
                                          style="border: none">
