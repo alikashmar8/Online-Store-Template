@@ -345,7 +345,7 @@ class PropertiesController extends Controller
 
     public function allAcceptedProperties()
     {
-        $properties = Property::where('accepted', '=', 1)->get();
+        $properties = Property::where('contactInfo', '!=', null)->get();
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
             $property->agent = User::find($property->userId);

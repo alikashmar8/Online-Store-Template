@@ -19,6 +19,7 @@
                     </div>
                 @endif
                 @if(count($notAcceptedProperties)>0)
+
                     <table class="table1" id="myDataTable">
                         <thead class="thead-dark">
                         <tr>
@@ -35,6 +36,7 @@
                 </thead>
                 <tbody class="bg-white">
                 @foreach($notAcceptedProperties as $property)
+                    @if($property->contactInfo == null)
                     <tr>
                         <td>{{ $property->id }}</td>
                         <td style="height: 80px; width: 200px;">
@@ -126,6 +128,7 @@
                         {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$property->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$property->id]) }} {{ Form::close() }}
 
                     </tr>
+                    @endif
                 @endforeach
                 </tbody>
             </table>

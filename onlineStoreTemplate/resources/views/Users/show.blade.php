@@ -79,8 +79,10 @@
 
                             <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                                 @csrf
-                                <button type="submit"
-                                        class="btn special-link p-0  m-2  " style="color: #e4002b">{{ __('click here to request another varification email') }}</button>
+                                Before proceeding, please check your email for a verification link.
+                                If you did not receive a varification email, click here to
+                                            <button type="submit"
+                                                    class="btn special-link p-1  m-2  " style="color: #e4002b">{{ __('request another one') }}</button>
                                 .
                             </form>
                         @endif

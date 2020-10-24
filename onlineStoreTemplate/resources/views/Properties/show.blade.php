@@ -13,40 +13,42 @@
                 @if(!\Illuminate\Support\Facades\Auth::guest())
                     @if(\Illuminate\Support\Facades\Auth::user()->id == $property->userId)
                         {{--                        Owner section--}}
-                        <div class="row">
-                            <div class="col-md-10">
+                        <div class=" ">
+
                                 @if($property->accepted == 0)
                                     @if($property->contactInfo != null)
-                                        <div class="alert">
-                                            Your property is hidden currently, press show button to make it visible
-                                            again !
+                                        <div class="alert alert-danger">
+                                            Your property is hidden currently, press show to make it visible!
+                                            <a class="btn btn-success "  href="/userShowProperty?id={{$property->id}}">Show</a>
                                         </div>
+
                                     @else
                                         <div class="alert alert-danger">
                                             Your property is not accepted yet! Kindly wait admin confirmation.
                                         </div>
+
                                     @endif
                                 @else
-                                    <div class="alert"> Your property is currently listed on our site successfully.
+                                    <div class="alert alert-info"> Your property listed successfully.
                                         Press 'hide' button to hide it temporarily.
+                                        <a class="btn btn-danger " href="/userHideProperty?id={{$property->id}}">Hide</a>
                                     </div>
+
                                 @endif
-                            </div>
-                            <div>
+
                                 @if($property->contactInfo != null)
                                     @if($property->accepted == 0)
-                                        <a class="btn btn-success"
-                                           href="/userShowProperty?id={{$property->id}}">Show</a>
+
                                     @else
-                                        <a class="btn btn-danger" href="/userHideProperty?id={{$property->id}}">Hide</a>
+
                                     @endif
 
                                 @endif
-                            </div>
+
                         </div>
                     @endif
                 @endif
-                <div class="post p-4 m-3">
+                <div class="post ">
 
                     <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
                         <div class="carousel-inner">
@@ -89,13 +91,13 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    <div class="my-2">
+                    <div class="dkn">
 
-                        <div class="p-5">
+                        <div class="">
                             <h3>Details:</h3>
                             <hr>
 
-                            <div class="post-details p-2">
+                            <div class="post-details ">
 
                                 <p class="price">{{ $property->locationDescription }} </p>
 
@@ -129,7 +131,7 @@
                         </div>
 
                         <br/><br/>
-                        <div class="p-5">
+                        <div class="">
                             {{--      maps   --}}
                             <p id="lat" style="display: none">{{ $property->latitude }}</p>
                             <p id="lng" style="display: none">{{ $property->longitude }}</p>
@@ -167,13 +169,13 @@
 
 
                         @if(\Illuminate\Support\Facades\Auth::guest())
-                            <div class="p-5">
+                            <div class="">
                                 <h3>Login to get the contact information</h3>
                             </div>
                         @else
 
 
-                            <div class="p-5">
+                            <div class="">
                                 <hr>
 
                                 <h4>Admin Notes:</h4>

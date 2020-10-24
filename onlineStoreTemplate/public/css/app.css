@@ -73,7 +73,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #f8fafc;
-    
+
     overflow-x: hidden;
 }
 
@@ -11134,6 +11134,7 @@ color: #0a0807;
     width:60%;
     float: left;
     display: block;
+    margin: 25px;
 
 
 }
@@ -11144,6 +11145,7 @@ color: #0a0807;
     }
     .profile .num2{
         width:100%;
+        margin: 1px;
 
     }
 
@@ -11154,8 +11156,8 @@ color: #0a0807;
     transform: translate(-50%);
     min-height: 250px;
     min-width: 250px;
-    max-height: 300px;
-    max-width: 300px;
+    max-height: 270px;
+    max-width: 270px;
     border-radius: 50%;
     border: 2px solid #e4002b;
 
@@ -11467,7 +11469,7 @@ width: 100%;
     margin: auto;
     background-color: #ffffff;
     color: #000000;
-    padding: 20px;
+    padding: 1.5rem !important;
     border-radius: .25rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
 
@@ -11475,6 +11477,9 @@ width: 100%;
 .post-slider{
 position: relative;
 }*/
+.post .dkn{
+    padding: 50px;
+}
 .post img{
     width: 100%;
     border: 2px solid #7c7e85;
@@ -11487,9 +11492,10 @@ position: relative;
     text-align: center;
     width: auto;
 }*/
+
 .post-details {
     font-size: 22px;
-    padding: 50px;
+    padding: 2px;
 
 }
 .post-details .price {
@@ -11511,6 +11517,18 @@ position: relative;
     width: 100px; !important;
 
 
+
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .post{
+        padding: 0;
+    }
+    .post .dkn{
+        padding: 10px;
+    }
 
 }
 

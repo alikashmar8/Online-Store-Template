@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 |
 */
 use App\Mail\NewPropertyMail;
+
 Route::get('/em', function () {
     return new NewPropertyMail;
 });
@@ -106,3 +107,4 @@ Route::get('/search-properties', '\App\Http\Controllers\SearchController@searchP
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

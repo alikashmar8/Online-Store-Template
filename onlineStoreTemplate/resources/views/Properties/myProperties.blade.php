@@ -97,8 +97,14 @@
                             </td>
 
                             @if($property->accepted == 0)
-                                <td class="text-warning">Waiting for confirmation</td> @else
-                                <td class="text-success">Listed</td> @endif
+                                @if($property->contactInfo != null)
+                                    <td class="text-danger">Hidden </td>
+                                @else
+                                    <td class="text-warning">Waiting for confirmation</td>
+                                @endif
+                            @else
+                                <td class="text-success">Listed</td>
+                            @endif
 
                             <td><a class="btn btn-success" href="/properties/{{$property->id}}">Show</a></td>
 

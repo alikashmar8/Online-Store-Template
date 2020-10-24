@@ -28,6 +28,7 @@
                     <th scope="col">Showing Price</th>
                     <th scope="col">Agent Details</th>
                     <th scope="col">Type</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Details</th>
                     <th scope="col">Delete</th>
                 </tr>
@@ -101,6 +102,17 @@
                             @endif
 
                         </td>
+
+                        {{-- status --}}
+                        @if($property->accepted == 0)
+                            @if($property->contactInfo != null)
+                                <td class="text-danger">Hidden </td>
+                            @else
+                                <td class="text-warning">Waiting for confirmation</td>
+                            @endif
+                        @else
+                            <td class="text-success">Listed</td>
+                        @endif
 
                         <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
                         <td>
