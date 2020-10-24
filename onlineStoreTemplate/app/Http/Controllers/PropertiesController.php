@@ -251,9 +251,9 @@ class PropertiesController extends Controller
     {
         $this->delete($id);
         if (Auth::user()->role == 0) {
-            return redirect('/acceptProperties')->with('message', 'Property Deleted!');;
+            return redirect('/acceptProperties')->with('message', 'Property Deleted!');
         } else {
-            return redirect('properties/myProperties')->with('message', 'Property Deleted!');;
+            return redirect('properties/myProperties')->with('message', 'Property Deleted!');
         }
     }
 
