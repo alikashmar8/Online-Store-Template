@@ -36,17 +36,29 @@
                                 <div class="  form-label-group">
                                     {{ Form::label('locationDescription','Location:') }}
 
-                                    <input type="text" placeholder="Enter Location" {{--name="address"--}} name="locationDescription"
+                                    <input type="text" placeholder="Enter Location"
+                                           {{--name="address"--}} name="locationDescription"
                                            onFocus="initializeAutocomplete()" id="locality" required>
+                                    <i class='far fa-question-circle' data-toggle="tooltip" data-placement="top"
+                                       title="Choose location from suggested options"></i>
+
+
                                 </div>
+                                @error('latitude')
+                                <span class="alert-danger" role="alert">
+                                                <strong>Please use a valid location from the options</strong>
+                                            </span>
+                                @enderror
                                 <br/>
 
-                                <div  style="display: none" >
+                                <div style="display: none">
 
                                     <input type="text" name="city" id="city" placeholder="City" value=""><br>
-                                    <input type="text" name="latitude" id="latitude" placeholder="Latitude" value=""><br>
+                                    <input type="text" name="latitude" id="latitude" placeholder="Latitude"
+                                           value=""><br>
                                     <input type="text" name="longitude" id="longitude" placeholder="Longitude" value=""><br>
-                                    <input type="text" name="place_id" id="location_id" placeholder="LocationId" value=""><br>
+                                    <input type="text" name="place_id" id="location_id" placeholder="LocationId"
+                                           value=""><br>
 
                                 </div>
 
@@ -90,7 +102,7 @@
                                 {{ Form::label('price','Price:') }}
                                 {{ Form::number('price','',['min' => '0','class' => ' ' ,'placeholder'=>'Price', 'required']) }}
                                 @error('price')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="alert-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                 @enderror
@@ -141,7 +153,7 @@
                                 {{ Form::label('description','Description:') }}
                                 {{ Form::textarea('description','',['class' => '','placeholder'=>'Description', 'required' ]) }}
                                 @error('description')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="alert-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                 @enderror
@@ -149,19 +161,21 @@
 
 
 
-
-
-
-
                             <div class="  form-label-group">
                                 {{ Form::label('images','Images:') }}
                                 <input type="file" name="images[]" id="file" accept=".png, .jpg, .mp4" multiple>
+                                <i class='far fa-question-circle' data-toggle="tooltip" data-placement="top"
+                                   title="Supported file types are (mp4/jpg/png)"></i>
+                                <br>
+                                <small class="ml-3">Total max size = 100M</small>
+
+
                                 <script>
                                     var uploadField = document.getElementById("file");
 
                                     uploadField.onchange = function () {
-                                        var i=0;
-                                        var space=0;
+                                        var i = 0;
+                                        var space = 0;
                                         for (i = 0; i < this.files.length; i++) {
                                             space += this.files[i].size
 
@@ -174,7 +188,7 @@
                                     };
                                 </script>
                                 @error('images')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="alert-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                 @enderror

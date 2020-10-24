@@ -91,14 +91,16 @@ class PropertiesController extends Controller
      */
     public function store(Request $request)
     {
+
 //        dd($request);
         $this->validate($request, [
-            'description' => 'required',
-            'price' => 'required',
-            'type' => 'required',
-            'locationDescription' => 'required',
-            'longitude' => 'required',
             'latitude' => 'required',
+            'locationDescription' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'type' => 'required',
+            'longitude' => 'required',
+
         ]);
         $property = new Property();
         $property->price = $request->price;

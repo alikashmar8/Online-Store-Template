@@ -181,7 +181,6 @@
                 ]
             });
 
-            console.log(table);
 
 
             table.on('click', '.delete', function () {
@@ -190,13 +189,11 @@
                     $tr = $tr.prev('.parent');
                 }
                 var data = table.row($tr).data();
-                console.log(data);
                 $('#deleteId').val(data[0]);
             });
 
             function deleteProperty() {
                 event.preventDefault();
-                console.log($('#deleteId').val())
                 document.getElementById('delete-form-' + $('#deleteId').val()).submit();
             }
 

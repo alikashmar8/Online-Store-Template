@@ -55,6 +55,8 @@ class SearchController extends Controller
     {
 //        dd($request);
         $properties = Property::where('accepted', '=', 1);
+        $properties = $properties->where('locationDescription', 'like', '%' . $request->location . '%');
+
         if ($request->type != -1) {
             $properties = $properties->where('typeId', '=', $request->type);
         }
@@ -84,6 +86,8 @@ class SearchController extends Controller
                     break;
             }
         }
+
+
         $properties = $properties->get();
 
         foreach ($properties as $property) {
