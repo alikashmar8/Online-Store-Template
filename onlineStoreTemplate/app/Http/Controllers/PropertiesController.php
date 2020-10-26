@@ -283,8 +283,9 @@ class PropertiesController extends Controller
     public function buyIndex(Request $request)
     {
 
-        $category = Category::where('title', '=', 'Buy')->first();
-        $properties = Property::where('categoryId', '=', $category->id)->where('accepted', '=', 1);
+        //$category = Category::where('title', '=', 'Buy')->first();
+        //$properties = Property::where('categoryId', $category->id)->where('accepted', '=', 1);
+        $properties = Property::whereIn('categoryId', [1])->where('accepted', '=', 1);
         if (isset($request->sort) && $request->sort != -1) {
             switch ($request->sort) {
                 case 'priceHighToLow':

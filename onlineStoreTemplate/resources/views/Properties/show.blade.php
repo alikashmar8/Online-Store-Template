@@ -179,7 +179,7 @@
                                 <hr>
 
                                 <h4>Admin Notes:</h4>
-                                <p style="white-space: pre-line; border: none; border-left: 3px solid #e4002b; background-color: #e4002b50; padding: 20px; color: white"> {{ $property->contactInfo }}
+                                <p style="white-space: pre-line; border: none; border-left: 3px solid #e4002b;   padding: 20px; color: #0a0807"> {{ $property->contactInfo }}
                                 </p>
                                 <BR/>
                                 <hr>

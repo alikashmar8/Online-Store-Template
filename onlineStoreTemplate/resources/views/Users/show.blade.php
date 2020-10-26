@@ -186,7 +186,7 @@
                     <div class="form-group form-label-group">
                         <div class="form-label-group">
                             <label for="phoneNumber">Phone Number*</label>
-                            <select id="phoneNumberCode" name="phoneNumberCode" class="form-control">
+                            <select id="phoneNumberCode" name="phoneNumberCode" class="form-control" style="display: none">
                                 @foreach(\App\Models\CountryCode::orderBy('nicename')->get() as $countryCode)
                                     <option value="{{$countryCode->iso}}"
                                             @if($countryCode->phonecode == $user->phoneNumberCode) selected @endif>

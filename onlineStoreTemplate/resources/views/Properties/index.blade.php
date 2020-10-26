@@ -12,7 +12,7 @@
     <div class="main-content">
 
         <div class="main2">
-            <div class="m-1">
+            <div class="m-5">
 
                 @if(count($properties)>0)
                     @if (Request::is('properties/rent'))
