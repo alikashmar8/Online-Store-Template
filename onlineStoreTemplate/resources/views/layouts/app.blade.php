@@ -121,7 +121,7 @@
             <ul class="nav navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a href="#" class="special-link">Commercial</a>
+                    <a href="/commercial" class="special-link">Commercial</a>
                 </li>
 
 
@@ -160,7 +160,7 @@
             <ul class="nav navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a href="#" class="special-link">Commercial</a>
+                    <a href="/commercial" class="special-link">Commercial</a>
                 </li>
 
                 @endif

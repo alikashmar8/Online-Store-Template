@@ -30,7 +30,7 @@ class PropertiesController extends Controller
         if (Auth::guest() || (!Auth::guest() && Auth::user()->role != 0)) {
             $categories = Category::all();
             $types = PropertyType::all();
-            $properties = Property::where('accepted', '=', 1)->orderBy('updated_at')->take(6)->get();;
+            $properties = Property::where('accepted', '=', 1)->orderBy('updated_at')->take(6)->get();
             /*$properties = Property::all();where('accepted', '=', 1);*/
             /*
             $properties->images = PropertyImage::all()->where('propertyId' , $properties->id)->take(1);
