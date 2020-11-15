@@ -13,11 +13,15 @@
 
         <div class="main2">
             <div class="m-5">
-                <div class="row float-right">
-                    <a class="btn-primary1 " href="/createCommercial" >
-                        Add New Commercial Property
-                    </a>
-
+                <div class="row " style="width: 100%">
+                    @if(!(\Illuminate\Support\Facades\Auth::guest() ))
+                        <a class="btn-primary1 float-left" href="/myCommercial" >
+                            My Commercial Properties
+                        </a>
+                        <a class="btn-primary1 float-right " href="/createCommercial" >
+                            Add New Commercial Property
+                        </a>
+                    @endif
                 </div>
                 <div class="row">
                     @if(count($coms) > 0)
@@ -73,7 +77,7 @@
                                     </a>
                                 </div>
 
-                                <a style="text-decoration: none" href="#">
+                                <a style="text-decoration: none" href="/commercial/{{$com->id}}">
                                     <div class="post-details">
 
                                         <p class="price">{{ $com->location}} </p>

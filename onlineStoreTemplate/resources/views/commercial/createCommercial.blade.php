@@ -54,9 +54,9 @@
                                     <div style="display: block">
 
                                         <input type="text" name="city" id="city" placeholder="City" value=""><br>
-                                        <input type="text" name="latitude" id="latitude" placeholder="Latitude"
+                                        <input type="text" name="lan" id="latitude" placeholder="Latitude"
                                                value=""><br>
-                                        <input type="text" name="longitude" id="longitude" placeholder="Longitude" value=""><br>
+                                        <input type="text" name="lang" id="longitude" placeholder="Longitude" value=""><br>
                                         <input type="text" name="place_id" id="location_id" placeholder="LocationId"
                                                value="" ><br>
 
@@ -117,7 +117,7 @@
                                     <label for="category">Listing Type:</label>
 
                                     <select name="category">
-                                        <option value="1" >Buy</option>
+                                        <option value="1" >Sell</option>
                                         <option value="2">Lease</option>
                                         <option value="3" >Invest</option>
                                     </select>
