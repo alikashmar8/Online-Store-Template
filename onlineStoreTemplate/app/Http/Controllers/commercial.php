@@ -182,13 +182,29 @@ class commercialController extends Controller
 
     public function destroy($id)
     {
-        $this->delete($id);
+
+
+        $com = commercial::findOrFail($id);
+        $i = $com->accepted;
+        $com->delete();
         if (Auth::user()->role == 0) {
-            return redirect('/acceptCommercials')->with('message', 'Property Deleted!');
+            if ($i == 0)
+                return redirect('/acceptCommercials')->with('message', 'Property Deleted!');
+            else
+                return redirect('/allCommercials')->with('message', 'Property Deleted!');
         } else {
             return redirect('/myCommercial')->with('message', 'Property Deleted!');
         }
     }
+    public function allCommercials(){
+        $coms = commercial::where('accepted', '=', 1)->get();
+        foreach ($coms as $com) {
+            //$com->images = PropertyImage::where('comId', $com->id)->get();
+            $com->agent = User::find($com->userId);
+        }
+        return view('AdminPages.allCommercials', compact('coms'));
+    }
+
 
 
 }

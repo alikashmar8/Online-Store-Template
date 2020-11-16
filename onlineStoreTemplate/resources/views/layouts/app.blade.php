@@ -78,6 +78,9 @@
                             <a class="special-link" href="/acceptedProperties">All Properties</a>
                         </li>
                         <li class="nav-item">
+                            <a class="special-link" href="/allCommercials">All Commercials</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/users" class="special-link">All Users</a>
                         </li>
                         <li class="nav-item">

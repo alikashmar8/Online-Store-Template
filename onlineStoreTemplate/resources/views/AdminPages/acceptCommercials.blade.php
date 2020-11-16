@@ -113,8 +113,8 @@
 
                                     <td><a class="btn btn-info no-sort" href="/commercial/{{$com->id}}">Show</a></td>
                                     <td>
-                                        <button class="btn btn-danger no-sort delete" data-toggle="modal"
-                                                data-target="#deleteModal">Delete
+                                        <button class="btn btn-danger no-sort delete" {{-- data-toggle="modal"
+                                                data-target="#deleteModal"--}}> <a style="color: white" href=" /destroyCom/{{$com->id}}">Delete</a>
                                         </button>
                                         {{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$com->id}}').submit();"--}}
 
@@ -129,7 +129,7 @@
                                     {{--                        <a class="btn btn-success no-sort" onclick="event.preventDefault(); document.getElementById('accept-form-{{$com->id}}').submit();">Accept</a>--}}
                                     {{--                    //form to trigger accept property--}}
                                     {{--                        form to trigger delete property--}}
-                                    {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$com->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$com->id]) }} {{ Form::close() }}
+                                    {{ Form::open(['action' => ['App\Http\Controllers\commercialController@destroy',$com->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$com->id]) }} {{ Form::close() }}
 
                                 </tr>
                             @endif
