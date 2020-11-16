@@ -118,3 +118,8 @@ Route::get('/commercial/{id}', '\App\Http\Controllers\commercialController@show'
 Route::get('/myCommercial', [App\Http\Controllers\commercialController::class, 'myCommercial']) ;
 Route::get('/commercial/{id}/edit', '\App\Http\Controllers\commercialController@edit');
 Route::post('updateCommercial' , '\App\Http\Controllers\commercialController@update')->name('updateCommercial');
+
+//Admin Commercials
+
+Route::get('/acceptCommercials', '\App\Http\Controllers\commercialController@viewNotAccepted')->middleware('auth');
+Route::post('/acceptCom', '\App\Http\Controllers\commercialController@accept')->middleware('auth');

@@ -198,16 +198,23 @@
         </div>
                     <div class="row container py-0" style="margin: auto">
 
+                        <div class="col-md-1 ">  </div>
+
+                        <div class="col-md-5 bg-white p-2 my-3">
+                            <h2>Properies waiting for confirmation = {{ count($notAcceptedProperties) }}</h2>
+                            <a href="/acceptProperties">Check Now</a>
+                        </div>
+
                         <div class="col-md-1">  </div>
 
-                        <div class="col-md-5 bg-white p-2 m-0">
-                            <h2>Apartments waiting for confirmation = {{ count($notAcceptedProperties) }}</h2>
-                            <a href="/acceptProperties">Check Now</a>
+                        <div class="col-md-5 bg-white p-2 my-3">
+                            <h2>Commercials waiting for confirmation = {{ count($notAcceptedCommercials) }}</h2>
+                            <a href="/acceptCommercials">Check Now</a>
                         </div>
 
                         <div class="col-md-1"></div>
 
-                        <div class="col-md-5 bg-white p-2 m-0">
+                        <div class="col-md-5 bg-white p-2  my-3">
                             <h2>New User Last 24 Hrs: {{ count($recentUsers) }}</h2>
                             <a href="/users">See Users</a>
 

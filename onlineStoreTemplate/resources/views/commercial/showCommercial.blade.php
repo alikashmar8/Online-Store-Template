@@ -167,7 +167,7 @@
                                 <hr>
 
                                 <h4>Admin Notes:</h4>
-                                <p style="white-space: pre-line; border: none; border-left: 3px solid #e4002b;   padding: 20px; color: #0a0807"> {{ $com->extra3 }}
+                                <p style="white-space: pre-line; border: none; border-left: 3px solid #e4002b;   padding: 20px; color: #0a0807"> {{ $com->extra1 }}
                                 </p>
                                 <BR/>
                                 <hr>

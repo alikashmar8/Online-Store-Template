@@ -119,7 +119,7 @@
                                         data-target="#deleteModal">Delete
                                 </button>
                                 {{--                        form to trigger delete property--}}
-                                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$com->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$com->id]) }}
+                                {{ Form::open(['action' => ['App\Http\Controllers\commercialController@destroy',$com->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$com->id]) }}
                                 <input type="hidden" value="1"> {{ Form::close() }}
 
 

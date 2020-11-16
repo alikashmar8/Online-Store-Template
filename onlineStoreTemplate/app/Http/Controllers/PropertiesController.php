@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use App\Models\commercial;
 
 class PropertiesController extends Controller
 {
@@ -48,7 +49,8 @@ class PropertiesController extends Controller
                 if (Auth::user()->role == 0) {
                     $notAcceptedProperties = Property::where('accepted', '=', 0)->get();
                     $recentUsers = User::where('created_at', '>=', new DateTime('today'))->get();
-                    return view("welcome", compact('notAcceptedProperties', 'recentUsers'));
+                    $notAcceptedCommercials = commercial::where('accepted', '=', 0)->get();
+                    return view("welcome", compact('notAcceptedProperties', 'recentUsers', 'notAcceptedCommercials'));
                 }
             }
         }

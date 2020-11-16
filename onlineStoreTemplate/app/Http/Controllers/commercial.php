@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Mail\NewPropertyMail;
+use App\Mail\PropertyAcceptedMail;
 use App\Mail\PropertyCreated;
 use App\Mail\PropertyUpdated;
 use App\Models\commercial;
@@ -116,7 +117,7 @@ class commercialController extends Controller
     {
 
         $id = $request->id;
-        $com = Property::findOrFail($id);
+        $com = commercial::findOrFail($id);
         $com->price = $request->price;
         $com->description = $request->description;
         if (isset($request->showPrice)) $com->showPrice = 1; else $com->showPrice = 0;
@@ -156,5 +157,38 @@ class commercialController extends Controller
         Mail::to('ozpropertymarket@gmail.com')->send(new PropertyUpdated());*/
         return redirect('/commercial/' . $com->id)->with('message', 'Commercial Property Updated!');
     }
+
+    public function viewNotAccepted(){
+        if (Auth::user()->role == 0) {
+            $notAccepted  = commercial::where('accepted', '=', 0)->get();
+            foreach ($notAccepted as $com) {
+                //$com->images = PropertyImage::where('comId', $com->id)->get();
+                $com->agent = User::find($com->userId);
+            }
+            return view("AdminPages.acceptCommercials", compact('notAccepted'));
+        }
+    }
+    public function accept(Request $request)
+    {
+//        dd($request['id']);
+        $com = commercial::findOrFail($request['id']);
+        $com->accepted = 1;
+        $com->extra1 = $request['extra1'];
+        $com->save();
+        $user = User::findOrFail($com->userId);
+        //Mail::to($user->email)->send(new PropertyAcceptedMail());
+        return redirect('/acceptCommercials')->with('message', 'Property Accepted');
+    }
+
+    public function destroy($id)
+    {
+        $this->delete($id);
+        if (Auth::user()->role == 0) {
+            return redirect('/acceptCommercials')->with('message', 'Property Deleted!');
+        } else {
+            return redirect('/myCommercial')->with('message', 'Property Deleted!');
+        }
+    }
+
 
 }

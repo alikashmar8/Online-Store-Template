@@ -18,6 +18,15 @@ class commercialController extends Controller
     {
         return view('commercial.createCommercial');
     }
+    public function destroy($id)
+    {
+        $this->delete($id);
+        if (Auth::user()->role == 0) {
+            return redirect('/acceptCommercials')->with('message', 'Property Deleted!');
+        } else {
+            return redirect('/myCommercial')->with('message', 'Property Deleted!');
+        }
+    }
 
 
     public function store(Request $request)
