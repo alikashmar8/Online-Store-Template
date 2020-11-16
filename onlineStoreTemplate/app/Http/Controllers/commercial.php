@@ -8,6 +8,7 @@ use App\Mail\PropertyAcceptedMail;
 use App\Mail\PropertyCreated;
 use App\Mail\PropertyUpdated;
 use App\Models\commercial;
+use App\Models\CommercialImage;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\User;
@@ -22,7 +23,10 @@ class commercialController extends Controller
     public function index()
     {
         $coms = commercial::all();
-        return view('commercial.indexcommercial')->with('coms' , $coms);
+        foreach ($coms as $com) {
+            $com->images = CommercialImage::all()->where('commercialId', $com->id)->take(1);
+        }
+        return view('commercial.indexcommercial')->with('coms', $coms);
     }
     public function create()
     {
@@ -73,10 +77,10 @@ class commercialController extends Controller
                 // Filename to store
                 $fileNameToStore = $filename . '_' . time() . '.' . $extension;
                 // Upload Image
-                $path = $image->storeAs('public/properties_images', $fileNameToStore);
+                $path = $image->storeAs('public/commercials_images', $fileNameToStore);
 
-                $image = new PropertyImage;
-                $image->propertyId = $com->id;
+                $image = new CommercialImage();
+                $image->commercialId = $com->id;
                 $image->url = $fileNameToStore;
                 $image->save();
             }

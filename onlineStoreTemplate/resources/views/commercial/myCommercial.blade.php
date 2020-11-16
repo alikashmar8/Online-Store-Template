@@ -115,8 +115,9 @@
                             <td><a href="/commercial/{{$com->id}}/edit" class="btn btn-secondary">Edit</a></td>
 
                             <td>
-                                <button class="btn btn-danger no-sort delete" {{--data-toggle="modal"
-                                        data-target="#deleteModal"--}}><a style="color: white" href=" /destroyCom/{{$com->id}}">Delete</a>
+                                <button class="btn btn-danger no-sort delete" data-toggle="modal"
+                                        data-target="#deleteModal"><a
+                                        style="color: white" {{--href=" /destroyCom/{{$com->id}}"--}}>Delete</a>
                                 </button>
                                 {{--                        form to trigger delete property--}}
 
@@ -200,6 +201,7 @@
 
             function deleteProperty() {
                 event.preventDefault();
+                console.log($('#deleteId').val());
                 document.getElementById('delete-form-' + $('#deleteId').val()).submit();
             }
 

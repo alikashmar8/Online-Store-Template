@@ -36,20 +36,20 @@
                                 @endif
                                 <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
                                     <div class="carousel-inner">
-                                        {{--count($com->images)> 0--}}
-                                        @if($com->extra3>0)
+                                        {{--> 0--}}
+                                        @if(count($com->images)>0)
                                             @foreach($com->images as $image)
                                                 <div class="carousel-item @if($loop->first) active @endif">
                                                     @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
                                                         <video class="d-block w-100" alt="No Image" controls>
                                                             <source
-                                                                src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                                src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                                 type="video/mp4">
 
                                                         </video>
                                                     @else
                                                         <img class="d-block w-100"
-                                                             src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                             src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                              alt="No Image">
                                                     @endif
                                                 </div>

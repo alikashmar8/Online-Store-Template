@@ -123,5 +123,5 @@ Route::post('updateCommercial' , '\App\Http\Controllers\commercialController@upd
 
 Route::get('/acceptCommercials', '\App\Http\Controllers\commercialController@viewNotAccepted')->middleware('auth');
 Route::post('/acceptCom', '\App\Http\Controllers\commercialController@accept')->middleware('auth');
-Route::get('/destroyCom/{id}', '\App\Http\Controllers\commercialController@destroy')->middleware('auth');
+Route::delete('/destroyCom/{id}', '\App\Http\Controllers\commercialController@destroy')->middleware('auth');
 Route::get('/allCommercials', '\App\Http\Controllers\commercialController@allCommercials')->middleware('auth');
