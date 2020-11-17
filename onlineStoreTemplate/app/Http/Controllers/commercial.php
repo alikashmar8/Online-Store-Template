@@ -9,6 +9,7 @@ use App\Mail\PropertyCreated;
 use App\Mail\PropertyUpdated;
 use App\Models\commercial;
 use App\Models\CommercialImage;
+use App\Models\commTypes;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\User;
@@ -22,11 +23,12 @@ class commercialController extends Controller
 {
     public function index()
     {
-        $coms = commercial::all();
-        foreach ($coms as $com) {
-            $com->images = CommercialImage::all()->where('commercialId', $com->id)->take(1);
+        $commercials = commercial::all();
+        foreach ($commercials as $com) {
+            $com->images = CommercialImage::where('commercialId', $com->id)->get();
         }
-        return view('commercial.indexcommercial')->with('coms', $coms);
+        $types = commTypes::all();
+        return view('commercial.indexcommercial', compact('commercials', 'types'));
     }
     public function create()
     {

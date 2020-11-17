@@ -16,7 +16,7 @@
                     {{ session()->get('message') }}
                 </div>
             @endif
-            @if(count($coms)>0)
+            @if(count($commercials)>0)
                 <table class="table1" id="myDataTable">
                     <thead class="">
                     <tr>
@@ -33,7 +33,7 @@
                     </tr>
                     </thead>
                     <tbody class="">
-                    @foreach($coms as $com)
+                    @foreach($commercials as $com)
                         <tr>
                             <td style="visibility: hidden;" hidden>{{ $com->id }}</td>
                             {{--                            <td>#</td>--}}
@@ -119,9 +119,8 @@
                                         data-target="#deleteModal"><a
                                         style="color: white" {{--href=" /destroyCom/{{$com->id}}"--}}>Delete</a>
                                 </button>
+
                                 {{--                        form to trigger delete property--}}
-
-
                                 {{ Form::open(['action' => ['App\Http\Controllers\commercialController@destroy',$com->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$com->id]) }}
                                 <input type="hidden" value="1"> {{ Form::close() }}
 

@@ -18,7 +18,7 @@
                         </div>
                     @endif
 
-                    @if(count($coms)>0)
+                    @if(count($commercials)>0)
                         <table class="table1" id="myDataTable" >
                             <thead class="thead-dark">
                             <tr>
@@ -34,7 +34,7 @@
                             </tr>
                             </thead>
                             <tbody class="bg-white">
-                            @foreach($coms as $com)
+                            @foreach($commercials as $com)
                                 <tr>
                                     <td>{{ $com->id }}</td>
                                     <td style="height: 80px; width: 200px;">

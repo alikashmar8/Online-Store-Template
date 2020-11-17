@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\commercial;
+use App\Models\CommercialImage;
+use App\Models\commTypes;
 use App\Models\Company;
 use App\Models\Property;
 use App\Models\PropertyImage;
@@ -101,5 +104,34 @@ class SearchController extends Controller
 
 
         return view('Properties.index', compact('searched', 'properties', 'type', 'categories', 'minPrice', 'maxPrice', 'bedroomsNumber', 'types', 'category'));
+    }
+
+    public function searchCommercials(Request $request)
+    {
+        $commercials = commercial::where('accepted', '=', 1);
+        $commercials = $commercials->where('location', 'like', '%' . $request->location . '%');
+
+        if ($request->type != -1) {
+            $commercials = $commercials->where('typeId', '=', $request->type);
+        }
+//        if ($request->category != -1) {
+//            $commercials = $commercials->where('categoryId', '=', $request->category);
+//        }
+        $commercials = $commercials->where('price', '>', $request->minPrice)->where('price', '<', $request->maxPrice);
+
+
+        $commercials = $commercials->get();
+
+        foreach ($commercials as $commercial) {
+            $commercial->images = CommercialImage::where('commercialId', $commercial->id)->get();
+        }
+        $searched = $request->location;
+        $types = commTypes::all();
+        $minPrice = $request->minPrice;
+        $maxPrice = $request->maxPrice;
+
+
+        return view('commercial.indexCommercial', compact('searched', 'commercials', 'types', 'minPrice', 'maxPrice'));
+
     }
 }

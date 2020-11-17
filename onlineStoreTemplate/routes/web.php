@@ -110,14 +110,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Commercial pages
 //Route::get('/commercial', '\App\Http\Controllers\commercialController@index');
-Route::get('/commercial', [App\Http\Controllers\commercialController::class, 'index']) ;
+Route::get('/commercial', [App\Http\Controllers\commercialController::class, 'index']);
 Route::get('/createCommercial', [App\Http\Controllers\commercialController::class, 'create'])->middleware(['auth', 'verified']);
 
-Route::post('storeCommercial' , '\App\Http\Controllers\commercialController@store')->name('storeCommercial');
+Route::post('storeCommercial', '\App\Http\Controllers\commercialController@store')->name('storeCommercial');
 Route::get('/commercial/{id}', '\App\Http\Controllers\commercialController@show');
-Route::get('/myCommercial', [App\Http\Controllers\commercialController::class, 'myCommercial']) ;
+Route::get('/myCommercial', [App\Http\Controllers\commercialController::class, 'myCommercial']);
 Route::get('/commercial/{id}/edit', '\App\Http\Controllers\commercialController@edit');
-Route::post('updateCommercial' , '\App\Http\Controllers\commercialController@update')->name('updateCommercial');
+Route::post('updateCommercial', '\App\Http\Controllers\commercialController@update')->name('updateCommercial');
+
+Route::get('/search-commercials', '\App\Http\Controllers\SearchController@searchCommercials');
 
 //Admin Commercials
 
