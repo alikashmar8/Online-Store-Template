@@ -127,3 +127,7 @@ Route::get('/acceptCommercials', '\App\Http\Controllers\commercialController@vie
 Route::post('/acceptCom', '\App\Http\Controllers\commercialController@accept')->middleware('auth');
 Route::delete('/destroyCom/{id}', '\App\Http\Controllers\commercialController@destroy')->middleware('auth');
 Route::get('/allCommercials', '\App\Http\Controllers\commercialController@allCommercials')->middleware('auth');
+
+
+Route::get('/userShowCommercial', '\App\Http\Controllers\commercialController@showCommercial');
+Route::get('/userHideCommercial', '\App\Http\Controllers\commercialController@hideCommercial');

@@ -112,12 +112,13 @@ class SearchController extends Controller
         $commercials = $commercials->where('location', 'like', '%' . $request->location . '%');
 
         if ($request->type != -1) {
-            $commercials = $commercials->where('typeId', '=', $request->type);
+            $commercials = $commercials->where('type', '=', $request->type);
         }
-//        if ($request->category != -1) {
-//            $commercials = $commercials->where('categoryId', '=', $request->category);
-//        }
+        if ($request->category != -1) {
+            $commercials = $commercials->where('category', '=', $request->category);
+        }
         $commercials = $commercials->where('price', '>', $request->minPrice)->where('price', '<', $request->maxPrice);
+        $commercials = $commercials->where('floor', '>', $request->minFloor)->where('floor', '<', $request->maxFloor);
 
 
         $commercials = $commercials->get();
@@ -130,8 +131,12 @@ class SearchController extends Controller
         $minPrice = $request->minPrice;
         $maxPrice = $request->maxPrice;
 
+        $minFloor = $request->minFloor;
+        $maxFloor = $request->maxFloor;
 
-        return view('commercial.indexCommercial', compact('searched', 'commercials', 'types', 'minPrice', 'maxPrice'));
+        $category = $request->category;
+
+        return view('commercial.indexCommercial', compact('searched', 'commercials', 'types', 'minPrice', 'maxPrice', 'minFloor', 'maxFloor' , 'category'));
 
     }
 }

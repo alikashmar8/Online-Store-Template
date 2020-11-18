@@ -20,7 +20,7 @@
                                 @if($com->extra1 != null)
                                     <div class="alert alert-danger">
                                         Your property is hidden currently, press show to make it visible!
-                                        <a class="btn btn-success "  href="/userShowProperty?id={{$com->id}}">Show</a>
+                                        <a class="btn btn-success "  href="/userShowCommercial?id={{$com->id}}">Show</a>
                                     </div>
 
                                 @else
@@ -32,7 +32,7 @@
                             @else
                                 <div class="alert alert-info"> Your property listed successfully.
                                     Press 'hide' button to hide it temporarily.
-                                    <a class="btn btn-danger " href="/userHideProperty?id={{$com->id}}">Hide</a>
+                                    <a class="btn btn-danger " href="/userHideCommercial?id={{$com->id}}">Hide</a>
                                 </div>
 
                             @endif
@@ -42,7 +42,7 @@
                     @endif
                 @endif
                 <div class="post ">
-                    {{--
+
                     <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
                         <div class="carousel-inner">
                             @if(count($com->images)>0)
@@ -51,20 +51,20 @@
                                         @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
                                             <video class="d-block w-100" autoplay controls>
                                                 <source
-                                                    src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                    src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                     type="video/mp4">
 
                                             </video>
                                         @else
                                             <img class="d-block w-100"
-                                                 src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                 src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                  alt="No Image">
                                         @endif
                                     </div>
                                 @endforeach
                             @else
                                 <img class="d-block w-100"
-                                     src="{{url('/storage/properties_images/unavailable.jpg')}}"
+                                     src="{{url('/storage/commercials_images/unavailable.jpg')}}"
                                      alt="No Image">
                             @endif
 
@@ -83,7 +83,7 @@
                     </span>
                             <span class="sr-only">Next</span>
                         </a>
-                    </div>--}}
+                    </div>
                     <div class="dkn">
 
                         <div class="">

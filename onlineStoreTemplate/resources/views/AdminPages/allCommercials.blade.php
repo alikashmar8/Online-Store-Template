@@ -18,7 +18,7 @@
                         </div>
                     @endif
 
-                    @if(count($commercials)>0)
+                    @if(count($coms)>0)
                         <table class="table1" id="myDataTable" >
                             <thead class="thead-dark">
                             <tr>
@@ -34,11 +34,11 @@
                             </tr>
                             </thead>
                             <tbody class="bg-white">
-                            @foreach($commercials as $com)
+                            @foreach($coms as $com)
                                 <tr>
                                     <td>{{ $com->id }}</td>
                                     <td style="height: 80px; width: 200px;">
-                                        Images{{--
+
                                         <div id="carouselExampleFade-{{$com->id}}"
                                              class="carousel slide carousel-fade"
                                              data-ride="carousel">
@@ -51,13 +51,13 @@
                                                                 @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
                                                                     <video style="height: 100px; width: 200px;" controls>
                                                                         <source
-                                                                            src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                                            src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                                             type="video/mp4">
 
                                                                     </video>
                                                                 @else
                                                                     <img style="height: 100px; width: 200px;"
-                                                                         src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                                         src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                                          alt="No Image">
                                                                 @endif
                                                             </div>
@@ -65,7 +65,7 @@
                                                     @endforeach
                                                 @else
                                                     <img style="height: 100px; width: 200px;"
-                                                         src="{{url('/storage/properties_images/unavailable.jpg')}}"
+                                                         src="{{url('/storage/commercials_images/unavailable.jpg')}}"
                                                          alt="No Image">
                                                 @endif
 
@@ -86,7 +86,7 @@
                                     </span>
                                                 <span class="sr-only">Next</span>
                                             </a>
-                                        </div>--}}
+                                        </div>
                                     </td>
                                     <td>$ {{ $com->price }} </td>
                                     @if($com->showPrice == 0)

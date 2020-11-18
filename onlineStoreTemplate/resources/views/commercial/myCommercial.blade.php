@@ -16,7 +16,7 @@
                     {{ session()->get('message') }}
                 </div>
             @endif
-            @if(count($commercials)>0)
+            @if(count($coms)>0)
                 <table class="table1" id="myDataTable">
                     <thead class="">
                     <tr>
@@ -33,13 +33,12 @@
                     </tr>
                     </thead>
                     <tbody class="">
-                    @foreach($commercials as $com)
+                    @foreach($coms as $com)
                         <tr>
                             <td style="visibility: hidden;" hidden>{{ $com->id }}</td>
                             {{--                            <td>#</td>--}}
                             <td style="height: 80px; width: 200px;">
-                                images
-                                {{--
+
                                 <div id="carouselExampleFade-{{$com->id}}"
                                      class="carousel slide carousel-fade"
                                      data-ride="carousel">
@@ -49,15 +48,17 @@
                                             <div class="carousel-item @if($loop->first) active @endif">
                                                 <div style="width: 100%; height: 100%;">
                                                     @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                        <video class="d-block w-100" alt="No Image" controls>
+                                                        <video style="height: 100px; width: 200px;"
+                                                               class="d-block w-100" alt="No Image" controls>
                                                             <source
-                                                                src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                                src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                                 type="video/mp4">
 
                                                         </video>
                                                     @else
                                                         <img class="d-block w-100"
-                                                             src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                             style="height: 100px; width: 200px;"
+                                                             src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                              alt="No Image">
                                                     @endif
                                                 </div>
@@ -81,7 +82,8 @@
                                     </span>
                                         <span class="sr-only">Next</span>
                                     </a>
-                                </div>--}}
+                                </div>
+
                             </td>
                             <td> {{ $com->floor }} </td>
 

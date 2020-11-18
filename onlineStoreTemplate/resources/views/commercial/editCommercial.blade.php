@@ -75,7 +75,7 @@
                             </div><BR/>
 
 
-                            {{--<div class="form-group form-label-group special">
+                            <div class="form-group form-label-group special">
                                 <input type="checkbox" name="changeImages" onclick="imgs2()"> Change images
                             </div>
 
@@ -110,7 +110,7 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                 @enderror
-                            </div><BR/>--}}
+                            </div><BR/>
 
 
                         </div>

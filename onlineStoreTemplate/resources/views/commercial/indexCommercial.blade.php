@@ -1,94 +1,166 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero" style=" background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/buy.jpg);
+    <div class="hero" style="height: 600px; background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/buy.jpg);
     ">
 
         <div class="inner" style="color: #0a0807; text-shadow:0px 0px 10px #e4002b">
-            <h1>OZ Commercials</h1>
+
+            <div class="  " style=" ">
+                <div class=" ">
+                    <div class="search-bar ">
+                        <div class="search-form-container">
+                            <form class="form" action="/search-commercials" method="GET">
+                                <div class="search-bar-section">
+                                    <h1>Search for a commercial property</h1>
+                                </div>
+
+                                <div class="search-bar-section">
+
+
+                                    <div class="search-bar-nav ">
+
+                                            <label for="buy"
+                                                   id="buy-label">Buy</label>
+                                            <input type="radio" class="search-bar-nav-remove" name="category"
+                                                   value="1" id="buy"
+                                                   onclick="buy_clicked();" checked  >
+                                    </div>
+                                    <div class="search-bar-nav ">
+                                            <label for="rent"
+                                                   id="rent-label">Lease</label>
+                                            <input type="radio" class="search-bar-nav-remove" name="category"
+                                                   value="2" id="rent"
+                                                   onclick="rent_clicked();">
+                                    </div>
+                                    <div class="search-bar-nav ">
+                                            <label for="share"
+                                                   id="share-label">Invest</label>
+                                            <input type="radio" class="search-bar-nav-remove" name="category"
+                                                   value="3" id="share"
+                                                   onclick="share_clicked();"  >
+
+                                    </div>
+                                    <input type="hidden" name="category" id="categ" value="-1">
+
+
+
+                                </div>
+
+                                <div class="search-bar-section">
+
+                                    <input class="location1" type="search" placeholder="Filter by Location"
+                                           name="location"
+                                           onFocus="initializeAutocomplete()" id="locality">
+
+
+                                    <button type="submit" Class="submit btn-primary1">Search
+                                    </button>
+                                </div>
+
+                                <div class="search-bar-section" style="text-align: left">
+                                    <div>
+
+                                        <select name="type">
+                                            <option class="option" name="type" value=-1>Commercial Property type
+                                            </option>
+                                            @foreach($types as $type)
+                                                <option class="option" name="type" value="{{ $type->id }}"
+                                                        id="{{ $type->id }}">{{ $type->title }}</option>
+                                            @endforeach
+                                        </select>
+
+                                        <select id="min-price" name="minPrice">
+
+                                            <option class="option" name="100" value="0">Min Price</option>
+                                            <option class="option" name="100" value="500000">$500,000</option>
+                                            <option class="option" name="100" value="750000">$ 750,000</option>
+                                            <option class="option" name="100" value="1000000">$ 1,000,000
+                                            </option>
+                                            <option class="option" name="100" value="1500000">$ 1,500,000
+                                            </option>
+                                            <option class="option" name="100" value="2000000">$ 2,000,000
+                                            </option>
+
+                                        </select>
+                                        <select id="max-price" name="maxPrice">
+                                            <option class='option' name="100" value="1000000000">Max Price
+                                            </option>
+                                            <option class='option' name="100" value="2000000">$ 2,000,000
+                                            </option>
+                                            <option class='option' name="100" value="5000000">$ 5,000,000
+                                            </option>
+                                            <option class='option' name="100" value="10000000">$ 10,000,000
+                                            </option>
+                                            <option class='option' name="100" value="12000000">$ 12,000,000
+                                            </option>
+                                            <option class='option' name="100" value="15000000">$ 15,000,000
+                                            </option>
+
+                                        </select>
+                                        {{--floor--}}
+
+                                        <select id="min-floor" name="minFloor">
+                                            <option class='option' name="100" value="0">Min Floor
+                                            </option>
+                                            <option class='option' name="100" value="50"> 50 m²
+                                            </option>
+                                            <option class='option' name="100" value="100"> 100 m²
+                                            </option>
+                                            <option class='option' name="100" value="200"> 200 m²
+                                            </option>
+                                            <option class='option' name="100" value="500"> 500 m²
+                                            </option>
+                                            <option class='option' name="100" value="1000"> 1,000 m²
+                                            </option>
+
+                                        </select>
+
+                                        <select id="max-floor" name="maxFloor">
+                                            <option class='option' name="100" value="1000000000">Max Floor
+                                            </option>
+                                            <option class='option' name="100" value="2000"> 2,000 m²
+                                            </option>
+                                            <option class='option' name="100" value="5000"> 5,000 m²
+                                            </option>
+                                            <option class='option' name="100" value="10000"> 10,000 m²
+                                            </option>
+                                            <option class='option' name="100" value="15000"> 15,000 m²
+                                            </option>
+                                            <option class='option' name="100" value="20000"> 20,000 m²
+                                            </option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div><br/>
+
+                        <div class="container justify-content-center" style="background-color: transparent">
+                        @if(!(\Illuminate\Support\Facades\Auth::guest() ))
+                            <a class="btn-primary1 float-left" style="margin: 5px" href="/myCommercial">
+                                My Commercial Properties
+                            </a>
+                            <a class="btn-primary1 new-com "  style="margin: 5px"  href="/createCommercial">
+                                Add New Commercial Property
+                            </a>
+                        @endif
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+
+
     </div>
 
     <div class="main-content">
 
         <div class="main2">
             <div class="m-5">
-                <div class="row " style="width: 100%">
-                    <div class="inner">
-                        <div class="search-bar ">
-                            <div class="search-form-container">
-                                <form class="form" action="/search-commercials" method="GET">
-                                    <div class="search-bar-section">
-                                        <h1>Search for a commercial property</h1>
-                                    </div>
 
-                                    <div class="search-bar-section">
-
-                                        <input class="location1" type="search" placeholder="Filter by Location"
-                                               name="location"
-                                               onFocus="initializeAutocomplete()" id="locality">
-
-
-                                        <button type="submit" Class="submit btn-primary1">Search
-                                        </button>
-                                    </div>
-
-                                    <div class="search-bar-section">
-                                        <div>
-
-                                            <select name="type">
-                                                <option class="option" name="type" value=-1>Commercial Property type
-                                                </option>
-                                                @foreach($types as $type)
-                                                    <option class="option" name="type" value="{{ $type->id }}"
-                                                            id="{{ $type->id }}">{{ $type->title }}</option>
-                                                @endforeach
-                                            </select>
-
-                                            <select id="min-price" name="minPrice">
-
-                                                <option class="option" name="100" value="0">Min Price</option>
-                                                <option class="option" name="100" value="500000">$500,000</option>
-                                                <option class="option" name="100" value="750000">$ 750,000</option>
-                                                <option class="option" name="100" value="1000000">$ 1,000,000
-                                                </option>
-                                                <option class="option" name="100" value="1500000">$ 1,500,000
-                                                </option>
-                                                <option class="option" name="100" value="2000000">$ 2,000,000
-                                                </option>
-
-                                            </select>
-                                            <select id="max-price" name="maxPrice">
-                                                <option class='option' name="100" value="1000000000">Max Price
-                                                </option>
-                                                <option class='option' name="100" value="2000000">$ 2,000,000
-                                                </option>
-                                                <option class='option' name="100" value="5000000">$ 5,000,000
-                                                </option>
-                                                <option class='option' name="100" value="10000000">$ 10,000,000
-                                                </option>
-                                                <option class='option' name="100" value="12000000">$ 12,000,000
-                                                </option>
-                                                <option class='option' name="100" value="15000000">$ 15,000,000
-                                                </option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    @if(!(\Illuminate\Support\Facades\Auth::guest() ))
-                        <a class="btn-primary1 float-left" href="/myCommercial">
-                            My Commercial Properties
-                        </a>
-                        <a class="btn-primary1 float-right " href="/createCommercial">
-                            Add New Commercial Property
-                        </a>
-                    @endif
-                </div>
                 <div class="row">
                     @if(count($commercials) > 0)
                         @foreach($commercials as $com)
@@ -122,7 +194,7 @@
                                             @endforeach
                                         @else
                                             <img class="d-block w-100"
-                                                 src="{{url('/storage/properties_images/unavailable.jpg')}}"
+                                                 src="{{url('/storage/commercials_images/unavailable.jpg')}}"
                                                  alt="No Image">
                                         @endif
 
@@ -174,6 +246,9 @@
                             </div>
 
                         @endforeach
+
+                    @else
+                        <p> no commercials yet</p>
                     @endif
                 </div>
             </div>
@@ -212,7 +287,83 @@
         }
         @endif
 
+        @if (isset($minFloor))
+            var minSelect = document.getElementById('min-floor');
+            var opt;
+            for (var x = 0; x < minSelect.options.length; x++) {
+                opt = minSelect.options[x];
+                if (opt.value == "{{$minFloor}}") {
+                    opt.setAttribute('selected', true);
+                }
+            }
+        @endif
+
+        @if (isset($maxFloor))
+            var minSelect = document.getElementById('max-floor');
+            var opt;
+            for (var x = 0; x < minSelect.options.length; x++) {
+                opt = minSelect.options[x];
+                if (opt.value == "{{$maxFloor}}") {
+                    opt.setAttribute('selected', true);
+                }
+            }
+        @endif
+
+
+
     </script>
+
+    {{--search bar script--}}
+
+    <script>
+        @if (isset($category))
+            document.getElementById("categ").value = {{$category}};
+            @if($category == 1)
+                buy_clicked();
+            @elseif ($category == 2)
+                rent_clicked();
+            @else
+                share_clicked();
+            @endif
+
+        @endif
+
+        function buy_clicked(){
+            document.getElementById("buy-label").style.background="#e4002b";
+            document.getElementById("rent-label").style.background="#91969c";
+            document.getElementById("share-label").style.background="#91969c";
+
+            document.getElementById("min-price").style.display = "inline-block" ;
+            document.getElementById("max-price").style.display = "inline-block" ;
+
+
+            document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='500000'>$500,000</option><option class='option' name='100' value='750000'>$ 750,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option><option class='option' name='100' value='1500000'>$ 1,500,000</option><option class='option' name='100' value='2000000'>$ 2,000,000</option>";
+            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='2000000'>$ 2,000,000</option><option class='option' name='100' value='5000000'>$ 5,000,000</option><option class='option' name='100' value='10000000'>$ 10,000,000</option><option class='option' name='100' value='12000000'>$ 12,000,000</option><option class='option' name='100' value='15000000'>$ 15,000,000</option>";
+            document.getElementById("categ").value = 1;
+        }
+        function rent_clicked(){
+            document.getElementById("buy-label").style.background="#91969c";
+            document.getElementById("rent-label").style.background="#e4002b";
+            document.getElementById("share-label").style.background="#91969c";
+
+            document.getElementById("min-price").style.display = "inline-block" ;
+            document.getElementById("max-price").style.display = "inline-block" ;
+            document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='100'>$100</option><option class='option' name='100' value='250'>$ 250</option><option class='option' name='100' value='500'>$ 500</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option>";
+            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='750'>$ 750</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option><option class='option' name='100' value='3000'>$ 3,000</option><option class='option' name='100' value='5000'>$ 5,000</option>";
+            document.getElementById("categ").value = 2;
+
+        }
+        function share_clicked(){
+            document.getElementById("buy-label").style.background="#91969c";
+
+            document.getElementById("rent-label").style.background="#91969c";
+            document.getElementById("share-label").style.background="#e4002b";
+            document.getElementById("min-price").style.display = "none" ;
+            document.getElementById("max-price").style.display = "none" ;
+            document.getElementById("categ").value = 3;
+        }
+    </script>
+
     {{--scripts for google locations--}}
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initAutocomplete&libraries=places&v=weekly"

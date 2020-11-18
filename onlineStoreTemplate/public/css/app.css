@@ -11844,6 +11844,11 @@ position: relative;
     padding: 50px 10px;
 }
 
+.new-com{
+
+    float: right !important;
+}
+
 
 @media (max-width : 750px){
     .search-form-container {
@@ -11866,7 +11871,12 @@ position: relative;
 
 
 }
+@media only screen and (max-width: 550px){
+    .new-com{
 
+        float: left !important;
+    }
+}
 
 @media only screen and (max-width: 450px){
     .search-form-container {

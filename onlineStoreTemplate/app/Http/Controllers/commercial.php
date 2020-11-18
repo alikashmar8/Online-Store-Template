@@ -16,6 +16,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use function GuzzleHttp\Promise\all;
 
 
@@ -23,7 +24,7 @@ class commercialController extends Controller
 {
     public function index()
     {
-        $commercials = commercial::all();
+        $commercials = commercial::where('accepted' , '=' , 1)->get();
         foreach ($commercials as $com) {
             $com->images = CommercialImage::where('commercialId', $com->id)->get();
         }
@@ -100,7 +101,7 @@ class commercialController extends Controller
         $com->agent = User::findOrFail($com->userId);
 
 
-        //$property->images = PropertyImage::where('propertyId', $property->id)->get();
+        $com->images = CommercialImage::where('commercialId', $com->id)->get();
 
         return view("commercial.showCommercial")->with('com', $com);
     }
@@ -108,10 +109,10 @@ class commercialController extends Controller
     public function myCommercial()
     {
         $coms = commercial::where('userId', '=', Auth::id())->get();
-        /*foreach ($coms as $com) {
-            $com->images = PropertyImage::where('propertyId', $com->id)->get();
+        foreach ($coms as $com) {
+            $com->images = CommercialImage::where('commercialId', $com->id)->get();
         }
-        return view("commercial.myCommercial", compact('$coms'));*/
+        //return view("commercial.myCommercial", compact('$coms'));
         return view("commercial.myCommercial")->with('coms', $coms);
     }
     public function edit($id)
@@ -137,7 +138,7 @@ class commercialController extends Controller
 
         $com->save();
         // Handle File Upload
-        /*
+
         if (isset($request->images)) {
             if (count($request->images) > 0) {
                 $this->deleteImages($id);
@@ -151,16 +152,16 @@ class commercialController extends Controller
                     // Filename to store
                     $fileNameToStore = $filename . '_' . time() . '.' . $extension;
                     // Upload Image
-                    $path = $image->storeAs('public/properties_images', $fileNameToStore);
+                    $path = $image->storeAs('public/commercials_images', $fileNameToStore);
 
-                    $image = new PropertyImage;
-                    $image->propertyId = $property->id;
+                    $image = new CommercialImage();
+                    $image->commercialId = $com->id;
                     $image->url = $fileNameToStore;
                     $image->save();
                 }
             }
         }
-        Mail::to('ozpropertymarket@gmail.com')->send(new PropertyUpdated());*/
+        //Mail::to('ozpropertymarket@gmail.com')->send(new PropertyUpdated());
         return redirect('/commercial/' . $com->id)->with('message', 'Commercial Property Updated!');
     }
 
@@ -168,7 +169,7 @@ class commercialController extends Controller
         if (Auth::user()->role == 0) {
             $notAccepted  = commercial::where('accepted', '=', 0)->get();
             foreach ($notAccepted as $com) {
-                //$com->images = PropertyImage::where('comId', $com->id)->get();
+                $com->images = CommercialImage::where('commercialId', $com->id)->get();
                 $com->agent = User::find($com->userId);
             }
             return view("AdminPages.acceptCommercials", compact('notAccepted'));
@@ -193,6 +194,7 @@ class commercialController extends Controller
         $com = commercial::findOrFail($id);
         $i = $com->accepted;
         $com->delete();
+        $this->deleteImages($com->id);
         if (Auth::user()->role == 0) {
             if ($i == 0)
                 return redirect('/acceptCommercials')->with('message', 'Property Deleted!');
@@ -205,12 +207,40 @@ class commercialController extends Controller
     public function allCommercials(){
         $coms = commercial::where('accepted', '=', 1)->get();
         foreach ($coms as $com) {
-            //$com->images = PropertyImage::where('comId', $com->id)->get();
+            $com->images =  CommercialImage::where('commercialId', $com->id)->get();
             $com->agent = User::find($com->userId);
         }
         return view('AdminPages.allCommercials', compact('coms'));
     }
 
+    public function deleteImages($id)
+    {
+        $imags = CommercialImage::where('commercialId', '=', $id);
+        $images = $imags->get();
+        foreach ($images as $image) {
+
+            $path = public_path() . '\storage\commercials_images\\' . $image->url;
+            unlink($path);
+            Storage::delete('public/commercials_images/' . $image->url);
+        }
+        $imags->delete();
+    }
+
+    public function showCommercial(Request $request)
+    {
+        $com = commercial::findOrFail($request->id);
+        $com->accepted = 1;
+        $com->save();
+        return redirect('/commercial/' . $com->id);
+    }
+
+    public function hideCommercial(Request $request)
+    {
+        $com = commercial::findOrFail($request->id);
+        $com->accepted = 0;
+        $com->save();
+        return redirect('/commercial/' . $com->id);
+    }
 
 
 }
