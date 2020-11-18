@@ -108,7 +108,7 @@
                                     {{-- status --}}
                                     @if($com->accepted == 0)
                                         @if($com->extra1 != null)
-                                            <td class="text-danger">Hidden </td>
+                                            <td class="text-danger">Hidden</td>
                                         @else
                                             <td class="text-warning">Waiting for confirmation</td>
                                         @endif
@@ -118,23 +118,25 @@
 
                                     <td><a class="btn btn-info no-sort" href="/commercial/{{$com->id}}">Show</a></td>
                                     <td>
-                                        <button class="btn btn-danger no-sort delete" {{--data-toggle="modal"
-                                                data-target="#deleteModal"--}}><a style="color: white" href=" /destroyCom/{{$com->id}}">Delete</a>
+                                        <button class="btn btn-danger no-sort delete" data-toggle="modal"
+                                                data-target="#deleteModal">
+                                            Delete
+                                            {{--                                            <a style="color: white" href=" /destroyCom/{{$com->id}}">Delete</a>--}}
                                         </button>
                                         {{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$com->id}}').submit();"--}}
 
                                     </td>
                                     {{--                        form to trigger delete property--}}
-                                    {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$com->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$com->id]) }} {{ Form::close() }}
+                                    {{ Form::open(['action' => ['App\Http\Controllers\commercialController@destroy',$com->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$com->id]) }} {{ Form::close() }}
 
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
 
-                    @else
-                        <h1>No accepted properties to show !</h1>
-                    @endif
+                        @else
+                            <h1>No accepted properties to show !</h1>
+                        @endif
 
                 </div>
 
@@ -182,20 +184,20 @@
                         ]
                     });
 
-                    table.on('click','.delete', function () {
+                    table.on('click', '.delete', function () {
                         $tr = $(this).closest('tr');
-                        if($($tr).hasClass('child')) {
+                        if ($($tr).hasClass('child')) {
                             $tr = $tr.prev('.parent');
                         }
                         var data = table.row($tr).data();
-                        console.log(data);
+                        // console.log(data);
                         $('#deleteId').val(data[0]);
                     });
 
                     function deleteProperty() {
                         event.preventDefault();
                         console.log($('#deleteId').val())
-                        document.getElementById('delete-form-'+$('#deleteId').val()).submit();
+                        document.getElementById('delete-form-' + $('#deleteId').val()).submit();
                     }
                 </script>
 

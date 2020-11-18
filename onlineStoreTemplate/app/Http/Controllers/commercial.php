@@ -193,8 +193,8 @@ class commercialController extends Controller
 
         $com = commercial::findOrFail($id);
         $i = $com->accepted;
-        $com->delete();
         $this->deleteImages($com->id);
+        $com->delete();
         if (Auth::user()->role == 0) {
             if ($i == 0)
                 return redirect('/acceptCommercials')->with('message', 'Property Deleted!');

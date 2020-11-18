@@ -118,8 +118,9 @@
 
                             <td>
                                 <button class="btn btn-danger no-sort delete" data-toggle="modal"
-                                        data-target="#deleteModal"><a
-                                        style="color: white" {{--href=" /destroyCom/{{$com->id}}"--}}>Delete</a>
+                                        data-target="#deleteModal">Delete
+                                    {{--                                    <a--}}
+                                    {{--                                        style="color: white" --}}{{--href=" /destroyCom/{{$com->id}}"--}}{{-->Delete</a>--}}
                                 </button>
 
                                 {{--                        form to trigger delete property--}}

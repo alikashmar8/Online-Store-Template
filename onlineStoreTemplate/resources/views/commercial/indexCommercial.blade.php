@@ -133,11 +133,21 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="search-bar-section">
+
+                                    <select id="sort" name="sort" style=" background-color:#e4002b;">
+                                        <option value="-1">Sort By</option>
+                                        <option value="updated_at">Last Updated</option>
+                                        <option value="priceHighToLow">Price high to low</option>
+                                        <option value="priceLowToHigh">Price low to high</option>
+                                    </select>
+                                </div>
                             </form>
-                        </div><br/>
+                        </div>
+                        <br/>
 
                         <div class="container justify-content-center" style="background-color: transparent">
-                        @if(!(\Illuminate\Support\Facades\Auth::guest() ))
+                            @if(!(\Illuminate\Support\Facades\Auth::guest() ))
                             <a class="btn-primary1 float-left" style="margin: 5px" href="/myCommercial">
                                 My Commercial Properties
                             </a>
@@ -263,7 +273,7 @@
         </div>
 
     </div>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript"></script>
     <script>
             @if ( isset( $maxPrice ) )
         var select = document.getElementById('max-price');
@@ -299,17 +309,21 @@
         @endif
 
         @if (isset($maxFloor))
-            var minSelect = document.getElementById('max-floor');
-            var opt;
-            for (var x = 0; x < minSelect.options.length; x++) {
-                opt = minSelect.options[x];
-                if (opt.value == "{{$maxFloor}}") {
-                    opt.setAttribute('selected', true);
-                }
+        var minSelect = document.getElementById('max-floor');
+        var opt;
+        for (var x = 0; x < minSelect.options.length; x++) {
+            opt = minSelect.options[x];
+            if (opt.value == "{{$maxFloor}}") {
+                opt.setAttribute('selected', true);
             }
+        }
         @endif
 
-
+        $(document).ready(function () {
+            $("#sort").on("change", function () {
+                this.form.submit();
+            });
+        });
 
     </script>
 
@@ -317,9 +331,9 @@
 
     <script>
         @if (isset($category))
-            document.getElementById("categ").value = {{$category}};
-            @if($category == 1)
-                buy_clicked();
+        document.getElementById("categ").value = {{$category}};
+        @if($category == 1)
+        buy_clicked();
             @elseif ($category == 2)
                 rent_clicked();
             @else

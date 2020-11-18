@@ -121,6 +121,21 @@ class SearchController extends Controller
         $commercials = $commercials->where('floor', '>', $request->minFloor)->where('floor', '<', $request->maxFloor);
 
 
+        if (isset($request->sort) && $request->sort != -1) {
+            switch ($request->sort) {
+                case 'priceHighToLow':
+                    $commercials = $commercials->orderBy('price', 'Desc');
+                    break;
+
+                case 'updated_at':
+                    $commercials = $commercials->orderBy('updated_at', 'Desc');
+                    break;
+                case 'priceLowToHigh':
+                    $commercials = $commercials->orderBy('price');
+                    break;
+            }
+        }
+
         $commercials = $commercials->get();
 
         foreach ($commercials as $commercial) {

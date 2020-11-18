@@ -113,8 +113,9 @@
 
                                     <td><a class="btn btn-info no-sort" href="/commercial/{{$com->id}}">Show</a></td>
                                     <td>
-                                        <button class="btn btn-danger no-sort delete" {{-- data-toggle="modal"
-                                                data-target="#deleteModal"--}}> <a style="color: white" href=" /destroyCom/{{$com->id}}">Delete</a>
+                                        <button class="btn btn-danger no-sort delete" data-toggle="modal"
+                                                data-target="#deleteModal">Delete
+                                            {{--                                            <a style="color: white" href=" /destroyCom/{{$com->id}}">Delete</a>--}}
                                         </button>
                                         {{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$com->id}}').submit();"--}}
 
