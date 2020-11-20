@@ -258,7 +258,7 @@
                         @endforeach
 
                     @else
-                        <p> no commercials yet</p>
+                        <p>No commercials yet</p>
                     @endif
                 </div>
             </div>

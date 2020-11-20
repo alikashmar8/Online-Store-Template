@@ -41,8 +41,7 @@ class PropertiesController extends Controller
             }
 
 
-
-            return view('welcome') -> with('properties' , $properties) -> with( 'categories' , $categories ) -> with( 'types' , $types);
+            return view('welcome')->with('properties', $properties)->with('categories', $categories)->with('types', $types);
 
         } else {
             if (!Auth::guest()) {
@@ -109,7 +108,7 @@ class PropertiesController extends Controller
         $property->description = $request->description;
         $property->longitude = $request->longitude;
         $property->latitude = $request->latitude;
-        $property->locationDescription = $request ->locationDescription;
+        $property->locationDescription = $request->locationDescription;
 
         if (isset($request->showPrice)) $property->showPrice = $request->showPrice; else $property->showPrice = 0;
 
@@ -306,9 +305,11 @@ class PropertiesController extends Controller
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
         }
+        $categories = Category::all();
+        $types = PropertyType::all();
 
 
-        return view("Properties.index", compact('properties'));
+        return view("Properties.index", compact('properties', 'categories', 'types'));
     }
 
     public function rentIndex(Request $request)
@@ -333,7 +334,11 @@ class PropertiesController extends Controller
         foreach ($properties as $property) {
             $property->images = PropertyImage::where('propertyId', $property->id)->get();
         }
-        return view("Properties.index", compact('properties'));
+        $categories = Category::all();
+        $types = PropertyType::all();
+
+
+        return view("Properties.index", compact('properties', 'categories', 'types'));
     }
 
     public function viewNotAcceptedProperties()
