@@ -50,14 +50,14 @@
                                             <div class="carousel-item @if($loop->first) active @endif">
                                                 <div style="width: 100%; height: 100%;">
                                                     @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                        <video style="height: 100px; width: 200px;" controls>
+                                                        <video style="height: 125px; width: 200px;object-fit: cover;" atl="No Video" controls>
                                                             <source
                                                                 src="{{url('/storage/properties_images/' . $image->url)}}"
                                                                 type="video/mp4">
 
                                                         </video>
                                                     @else
-                                                        <img style="height: 100px; width: 200px;"
+                                                        <img style="height: 125px; width: 200px;object-fit: cover;" alt="No Image"
                                                              src="{{url('/storage/properties_images/' . $image->url)}}"
                                                              alt="No Image">
                                                     @endif

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/log.jpg);
+    <div class="hero" style=" background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/log.jpg);
     " >
 
         <div class="inner">

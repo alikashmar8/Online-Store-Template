@@ -40,15 +40,15 @@ class commercialController extends Controller
     {
         //return redirect('/commercial')->with('message', 'Commercial Property Created Successfully!');
 
-        /*$this->validate($request, [
-            'lat' => 'required',
+        $this->validate($request, [
+            'lan' => 'required',
             'location' => 'required',
             'price' => 'required',
             'description' => 'required',
             'type' => 'required',
-            'long' => 'required',
+            'lang' => 'required',
 
-        ]);*/
+        ]);
         $com = new commercial();
         $com->price = $request->price;
         $com->description = $request->description;

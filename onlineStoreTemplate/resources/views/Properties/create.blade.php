@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/sell.jpg);
+    <div class="hero" style=" background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/sell.jpg);
     " >
 
         <div class="inner">
@@ -167,7 +167,7 @@
                                 <i class='far fa-question-circle' data-toggle="tooltip" data-placement="top"
                                    title="Supported file types are (mp4/jpg/png)"></i>
                                 <br>
-                                <small class="ml-3">Total max size = 100M</small>
+                                <small class="ml-3">Total max storage size = 100M <br/> Recommended photos size: 800*500</small>
 
 
                                 <script>

@@ -106,7 +106,7 @@
                                                     <a
                                                         href="/properties/{{$p->id}}">
                                                         @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                            <video class="d-block w-100" alt="No Image" autoplay muted
+                                                            <video class="d-block w-100" alt="No Image"  style="height: 200px; width: 200px;object-fit: cover;" autoplay muted
                                                                    controls>
                                                                 <source
                                                                     src="{{url('/storage/properties_images/' . $image->url)}}"
@@ -114,7 +114,7 @@
 
                                                             </video>
                                                         @else
-                                                            <img class="d-block w-100"
+                                                            <img class="d-block w-100" style="height: 200px; width: 200px;object-fit: cover;"
                                                                  src="{{url('/storage/properties_images/' . $image->url)}}"
                                                                  alt="No Image">
                                                         @endif                                                </a>

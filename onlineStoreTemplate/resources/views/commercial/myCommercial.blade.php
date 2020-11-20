@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/insight.jpg); background-position: 50% 30%;
+    <div class="hero" style=" background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/insight.jpg); background-position: 50% 30%;
     ">
 
         <div class="inner">
@@ -46,9 +46,9 @@
                                         @foreach($com->images as $image)
 
                                             <div class="carousel-item @if($loop->first) active @endif">
-                                                <div style="width: 100%; height: 100%;">
+                                                <div style="width: 100%; height: 100%;object-fit: cover;">
                                                     @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                        <video style="height: 100px; width: 200px;"
+                                                        <video style="height: 125px; width: 200px;object-fit: cover;"
                                                                class="d-block w-100" alt="No Image" controls>
                                                             <source
                                                                 src="{{url('/storage/commercials_images/' . $image->url)}}"
@@ -57,7 +57,7 @@
                                                         </video>
                                                     @else
                                                         <img class="d-block w-100"
-                                                             style="height: 100px; width: 200px;"
+                                                             style="height: 125px; width: 200px;object-fit: cover;"
                                                              src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                              alt="No Image">
                                                     @endif

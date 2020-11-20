@@ -11154,11 +11154,14 @@ color: #0a0807;
 .profile img{
     margin-left: 50%;
     transform: translate(-50%);
-    min-height: 250px;
+    /*min-height: 250px;
     min-width: 250px;
     max-height: 270px;
-    max-width: 270px;
+    max-width: 270px;*/
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
+    object-fit: cover;
     border: 2px solid #e4002b;
 
     box-sizing: border-box;

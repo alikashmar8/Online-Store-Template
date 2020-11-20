@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/sell.jpg);
+    <div class="hero" style=" background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/sell.jpg);
     " >
 
         <div class="inner">
@@ -44,14 +44,14 @@
 
 
                                     </div>
-                                    @error('latitude')
+                                    @error('lan')
                                     <span class="alert-danger" role="alert">
                                                     <strong>Please use a valid location from the options</strong>
                                                 </span>
                                     @enderror
                                     <br/>
 
-                                    <div style="display: block">
+                                    <div style="display: none">
 
                                         <input type="text" name="city" id="city" placeholder="City" value=""><br>
                                         <input type="text" name="lan" id="latitude" placeholder="Latitude"
@@ -163,7 +163,7 @@
                                     <i class='far fa-question-circle' data-toggle="tooltip" data-placement="top"
                                        title="Supported file types are (mp4/jpg/png)"></i>
                                     <br>
-                                    <small class="ml-3">Total max size = 100M</small>
+                                    <small class="ml-3">Total max size = 100M  <br/> Recommended photos size: 800*500</small>
 
 
                                     <script>

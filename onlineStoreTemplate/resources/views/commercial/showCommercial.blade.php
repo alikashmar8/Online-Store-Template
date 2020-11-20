@@ -49,14 +49,14 @@
                                 @foreach($com->images as $image)
                                     <div class="carousel-item @if($loop->first) active @endif">
                                         @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                            <video class="d-block w-100" autoplay controls>
+                                            <video class="d-block w-100"  style="height: 50vw; width: 800px;object-fit: contain;" autoplay controls>
                                                 <source
                                                     src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                     type="video/mp4">
 
                                             </video>
                                         @else
-                                            <img class="d-block w-100"
+                                            <img class="d-block w-100"  style="height: 50vw; width: 800px;object-fit: contain;"
                                                  src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                  alt="No Image">
                                         @endif

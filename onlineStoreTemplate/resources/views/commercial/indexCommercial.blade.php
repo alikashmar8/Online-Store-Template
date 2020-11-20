@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero" style="height: 600px; background-image: url(https://webside.xyz/MK/hackathon/imagaga123/images1/buy.jpg);
+    <div class="hero" style="height: 600px; background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/buy.jpg);
     ">
 
         <div class="inner" style="color: #0a0807; text-shadow:0px 0px 10px #e4002b">
@@ -178,7 +178,7 @@
                             <div class="post my-5">
                                 @if($com->created_at > \Carbon\Carbon::now()->subDays(14))
                                     <div class="new-prop">
-                                        <img src="https://webside.xyz/MK/hackathon/imagaga123/images1/flag.svg"
+                                        <img src="https://webside.com.au/MK/hackathon/imagaga123/images1/flag.svg"
                                              style="border: none">
                                     </div>
                                 @endif
@@ -189,21 +189,21 @@
                                             @foreach($com->images as $image)
                                                 <div class="carousel-item @if($loop->first) active @endif">
                                                     @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                        <video class="d-block w-100" alt="No Image" controls>
+                                                        <video style="height: 50vw;  width: 800px;object-fit: cover;" alt="No Image"  controls>
                                                             <source
                                                                 src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                                 type="video/mp4">
 
                                                         </video>
                                                     @else
-                                                        <img class="d-block w-100"
+                                                        <img class="d-block w-100" style="height: 50vw; width: 800px;object-fit: cover;"
                                                              src="{{url('/storage/commercials_images/' . $image->url)}}"
                                                              alt="No Image">
                                                     @endif
                                                 </div>
                                             @endforeach
                                         @else
-                                            <img class="d-block w-100"
+                                            <img class="d-block w-100" style="height: 125px; width: 200px;object-fit: cover;"
                                                  src="{{url('/storage/commercials_images/unavailable.jpg')}}"
                                                  alt="No Image">
                                         @endif
