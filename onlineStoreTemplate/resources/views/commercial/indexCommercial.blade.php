@@ -71,31 +71,21 @@
                                         </select>
 
                                         <select id="min-price" name="minPrice">
-
-                                            <option class="option" name="100" value="0">Min Price</option>
-                                            <option class="option" name="100" value="500000">$500,000</option>
-                                            <option class="option" name="100" value="750000">$ 750,000</option>
-                                            <option class="option" name="100" value="1000000">$ 1,000,000
-                                            </option>
-                                            <option class="option" name="100" value="1500000">$ 1,500,000
-                                            </option>
-                                            <option class="option" name="100" value="2000000">$ 2,000,000
-                                            </option>
+                                            <option class='option' name='100' value='0'>Min Price</option>
+                                            <option class='option' name='100' value='100000'>$100,000</option>
+                                            <option class='option' name='100' value='150000'>$ 150,000</option>
+                                            <option class='option' name='100' value='200000'>$ 200,000</option>
+                                            <option class='option' name='100' value='500000'>$ 500,000</option>
+                                            <option class='option' name='100' value='1000000'>$ 1,000,000</option>
 
                                         </select>
-                                        <select id="max-price" name="maxPrice">
-                                            <option class='option' name="100" value="1000000000">Max Price
-                                            </option>
-                                            <option class='option' name="100" value="2000000">$ 2,000,000
-                                            </option>
-                                            <option class='option' name="100" value="5000000">$ 5,000,000
-                                            </option>
-                                            <option class='option' name="100" value="10000000">$ 10,000,000
-                                            </option>
-                                            <option class='option' name="100" value="12000000">$ 12,000,000
-                                            </option>
-                                            <option class='option' name="100" value="15000000">$ 15,000,000
-                                            </option>
+                                        <select id="max-price" name="maxPrice" >
+                                            <option class='option' name='100' value='1000000000'>Max Price</option>
+                                            <option class='option' name='100' value='200000'>$ 200,000</option>
+                                            <option class='option' name='100' value='500000'>$ 500,000</option>
+                                            <option class='option' name='100' value='1000000'>$ 1,000,000</option>
+                                            <option class='option' name='100' value='2500000'>$ 2,500,000</option>
+                                            <option class='option' name='100' value='5000000'>$ 5,000,000</option>
 
                                         </select>
                                         {{--floor--}}
@@ -187,7 +177,7 @@
                                         {{--> 0--}}
                                         @if(count($com->images)>0)
                                             @foreach($com->images as $image)
-                                                <div class="carousel-item @if($loop->first) active @endif">
+                                                <div class="carousel-item @if($loop->first) active @endif" >
                                                     @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
                                                         <video style="height: 50vw;  width: 800px;object-fit: cover;" alt="No Image"  controls>
                                                             <source
@@ -351,8 +341,9 @@
             document.getElementById("max-price").style.display = "inline-block" ;
 
 
-            document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='500000'>$500,000</option><option class='option' name='100' value='750000'>$ 750,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option><option class='option' name='100' value='1500000'>$ 1,500,000</option><option class='option' name='100' value='2000000'>$ 2,000,000</option>";
-            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='2000000'>$ 2,000,000</option><option class='option' name='100' value='5000000'>$ 5,000,000</option><option class='option' name='100' value='10000000'>$ 10,000,000</option><option class='option' name='100' value='12000000'>$ 12,000,000</option><option class='option' name='100' value='15000000'>$ 15,000,000</option>";
+            /*document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='100000'>$100,000</option><option class='option' name='100' value='150000'>$ 150,000</option><option class='option' name='100' value='200000'>$ 200,000</option><option class='option' name='100' value='500000'>$ 500,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option>";
+            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='200000'>$ 200,000</option><option class='option' name='100' value='500000'>$ 500,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option><option class='option' name='100' value='2500000'>$ 2,500,000</option><option class='option' name='100' value='5000000'>$ 5,000,000</option>";
+            */
             document.getElementById("categ").value = 1;
         }
         function rent_clicked(){
@@ -362,8 +353,9 @@
 
             document.getElementById("min-price").style.display = "inline-block" ;
             document.getElementById("max-price").style.display = "inline-block" ;
-            document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='100'>$100</option><option class='option' name='100' value='250'>$ 250</option><option class='option' name='100' value='500'>$ 500</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option>";
-            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='750'>$ 750</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option><option class='option' name='100' value='3000'>$ 3,000</option><option class='option' name='100' value='5000'>$ 5,000</option>";
+            /*document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='5000'>$ 5,000</option><option class='option' name='100' value='10000'>$ 10,000</option><option class='option' name='100' value='20000'>$ 20,000</option><option class='option' name='100' value='50000'>$ 50,000</option><option class='option' name='100' value='100000'>$ 100,000</option>";
+            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='50000'>$ 50,000</option><option class='option' name='100' value='100000'>$ 100,000</option><option class='option' name='100' value='200000'>$ 200,000</option><option class='option' name='100' value='300000'>$ 300,000</option><option class='option' name='100' value='500000'>$ 500,000</option>";
+            */
             document.getElementById("categ").value = 2;
 
         }

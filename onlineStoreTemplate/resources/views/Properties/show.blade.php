@@ -54,9 +54,9 @@
                         <div class="carousel-inner">
                             @if(count($property->images)>0)
                                 @foreach($property->images as $image)
-                                    <div class="carousel-item @if($loop->first) active @endif">
+                                    <div class="carousel-item @if($loop->first) active @endif" style="position: relative; z-index :1;top :0;left :0;width :100%;height :50vw;overflow :hidden;display: flex;">
                                         @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                            <video class="d-block w-100"  style="height: 50vw; width: 800px;object-fit: contain;" autoplay controls>
+                                            <video class="d-block w-100"  style="height:  100%; width: 800px;object-fit: cover;" autoplay controls>
                                                 <source
                                                     src="{{url('/storage/properties_images/' . $image->url)}}"
                                                     type="video/mp4">
