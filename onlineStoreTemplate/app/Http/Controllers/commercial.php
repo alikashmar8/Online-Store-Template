@@ -7,6 +7,10 @@ use App\Mail\NewPropertyMail;
 use App\Mail\PropertyAcceptedMail;
 use App\Mail\PropertyCreated;
 use App\Mail\PropertyUpdated;
+use App\Mail\newCommercial;
+use App\Mail\CommercialUpdate;
+use App\Mail\CommecialAccepted;
+
 use App\Models\commercial;
 use App\Models\CommercialImage;
 use App\Models\commTypes;
@@ -88,11 +92,11 @@ class commercialController extends Controller
                 $image->save();
             }
         }
-        //$mail = Auth::user()->email;
-        //Mail::to('ozpropertymarket@gmail.com')->send(new NewPropertyMail());
-        //Mail::to($mail)->send(new PropertyCreated());
+        $mail = Auth::user()->email;
+        Mail::to('ozpropertymarket@gmail.com')->send(new NewCommercial());
+        Mail::to($mail)->send(new PropertyCreated());
 
-        return redirect('/commercial')->with('message', 'Commercial Property Created Successfully!');
+        return redirect('/myCommercial')->with('message', 'Commercial Property Created Successfully!');
     }
 
     public function show($id)
@@ -161,7 +165,7 @@ class commercialController extends Controller
                 }
             }
         }
-        //Mail::to('ozpropertymarket@gmail.com')->send(new PropertyUpdated());
+        Mail::to('ozpropertymarket@gmail.com')->send(new CommercialUpdate());
         return redirect('/commercial/' . $com->id)->with('message', 'Commercial Property Updated!');
     }
 
@@ -183,7 +187,7 @@ class commercialController extends Controller
         $com->extra1 = $request['extra1'];
         $com->save();
         $user = User::findOrFail($com->userId);
-        //Mail::to($user->email)->send(new PropertyAcceptedMail());
+        Mail::to($user->email)->send(new CommecialAccepted());
         return redirect('/acceptCommercials')->with('message', 'Property Accepted');
     }
 

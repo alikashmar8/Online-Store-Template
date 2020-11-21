@@ -6,14 +6,13 @@
 </div>
 <bR/>
 <div style="width: 85%; background: #fff; color: #0a0807;text-align: left;   margin: auto; padding: 20px">
-    <h1>Your new listing on OZ Property Market </h1>
+    <h1> Hello From Oz Property Market, </h1>
 
-    <p>Hello, <br/>
-        Thank you for adding a new listing to OZ Property Market Platform. Your listing needs to be approved by the admin before displaying it.
-        We will inform you once it is successfully listed.
-    </p>
+    <p>Congratulations! <br/> We would like to inform you that your listed property has been accepted and listed on our website. <br/> Please click the link below to view your listing.</p>
 
-
+    @component('mail::button', ['url' => URL::to('/myCommercial')])
+        Browse Properties
+    @endcomponent
 
     Thank you,<br>
     <hr>
