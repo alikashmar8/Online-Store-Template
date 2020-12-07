@@ -19,6 +19,7 @@
 
 
                 <h2>Place New Property</h2>
+               <a class="special-link" href="/packages">Packages</a>
 
                 <div class="p-5">
 

@@ -38,6 +38,7 @@ Route::get('/evaluate', function () {
     return view('evaluate');
 });
 
+
 Route::get('/insurance', function () {
     return view('insurance');
 });
@@ -131,3 +132,11 @@ Route::get('/allCommercials', '\App\Http\Controllers\commercialController@allCom
 
 Route::get('/userShowCommercial', '\App\Http\Controllers\commercialController@showCommercial');
 Route::get('/userHideCommercial', '\App\Http\Controllers\commercialController@hideCommercial');
+
+//packages
+Route::get('/packages', function () {
+    return view('Packages.packages');
+});
+Route::get('/pricing', function () {
+    return view('Packages.pricing');
+});
