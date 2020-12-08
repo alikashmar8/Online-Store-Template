@@ -7,6 +7,7 @@ use App\Mail\PropertyAcceptedMail;
 use App\Mail\PropertyCreated;
 use App\Mail\PropertyUpdated;
 use App\Models\Category;
+use App\Models\Packages;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\PropertyType;
@@ -388,4 +389,12 @@ class PropertiesController extends Controller
         $property->save();
         return redirect('/properties/' . $property->id);
     }
+
+    public function package($id)
+    {
+        $pack = Packages::findOrFail($id);
+
+        return view('Packages.order', compact('pack'));
+    }
+
 }

@@ -38,6 +38,8 @@ class CountryCodesSeeder extends Seeder
         DB::table('country_codes')->delete();
         DB::table('property_types')->delete();
         DB::table('categories')->delete();
+        DB::table('comm_types')->delete();
+        DB::table('packages')->delete();
 
         $countries = array(
             array('id' => '1', 'iso' => 'AF', 'name' => 'AFGHANISTAN', 'nicename' => 'Afghanistan', 'iso3' => 'AFG', 'numcode' => '4', 'phonecode' => '93'),
@@ -313,9 +315,39 @@ class CountryCodesSeeder extends Seeder
             array('id' => '3', 'title' => 'Share'),
         );
 
+        $comm_type = array(
+            array('id' => '1', 'title' => 'Offices' ),
+            array('id' => '2', 'title' => 'Retail' ),
+            array('id' => '3', 'title' => 'Industrial/Warehouse' ),
+            array('id' => '4', 'title' => 'Showrooms/Bulky Goods' ),
+            array('id' => '5', 'title' => 'Land/Development' ),
+            array('id' => '6', 'title' => 'Hotel/Leisure' ),
+            array('id' => '7', 'title' => 'Medical/Consulting' ),
+            array('id' => '8', 'title' => 'Commercial Farming' ),
+
+        );
+        $package = array(
+            array('id' => '1', 'title' => 'Basic Residential Sale Package', 'price' => '490' ),
+            array('id' => '2', 'title' => 'Gold Residential Sale Package', 'price' => '590' ),
+            array('id' => '3', 'title' => 'Platinum Residential Sale Package', 'price' => '690' ),
+            array('id' => '4', 'title' => 'Professional Residential Sale Package', 'price' => '1490' ),
+            array('id' => '5', 'title' => 'Ultimate Residential Sale Package', 'price' => '2490' ),
+            array('id' => '6', 'title' => 'Standard Residential Rental Packages', 'price' => '149' ),
+            array('id' => '7', 'title' => 'Professional Residential Rental Packages', 'price' => '199' ),
+            array('id' => '8', 'title' => 'Gold Commercial Sale Packages', 'price' => '390' ),
+            array('id' => '9', 'title' => 'Professional Commercial Sale Packages', 'price' => '790' ),
+            array('id' => '10', 'title' => 'Gold Commercial Rental Package', 'price' => '199' ),
+            array('id' => '11', 'title' => 'Professional Commercial Rental Package', 'price' => '399' ),
+            array('id' => '12', 'title' => 'Business Sale Package', 'price' => '490' ),
+            array('id' => '13', 'title' => 'Photo Sign Package', 'price' => '950' ),
+
+        );
+
         DB::table('categories')->insert($categories);
         DB::table('country_codes')->insert($countries);
         DB::table('property_types')->insert($types);
+        DB::table('comm_types')->insert($comm_type);
+        DB::table('packages')->insert($package);
 
     }
 }

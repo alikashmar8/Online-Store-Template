@@ -140,3 +140,7 @@ Route::get('/packages', function () {
 Route::get('/pricing', function () {
     return view('Packages.pricing');
 });
+Route::get('/order/{id}', function () {
+    return view('Packages.order');
+});
+Route::get('/order/{id}', '\App\Http\Controllers\PropertiesController@package');
