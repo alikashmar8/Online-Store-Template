@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\CountryCode;
+use App\Models\Payment;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\User;
@@ -32,8 +33,9 @@ class UsersController extends Controller
         if ($user->role == 1) {
             $user->company = Company::where('AgentId', $user->id)->first();
         }
+        $membership = Payment::where('user_id', '=', $id)->get();
 
-        return view('Users.show', compact('user'));
+        return view('Users.show', compact('user' , 'membership'));
     }
 
     public function registerAgent()

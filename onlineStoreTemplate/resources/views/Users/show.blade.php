@@ -97,6 +97,29 @@
                         </button>
                     </div>
                 </div>
+                <div class="profile">
+                    <div class="container">
+                        MemeberShip(s):<br/>
+                        @if(count($membership) >0)
+                            @foreach($membership as $mem)
+                                <ul class="accordion">
+                                    <li>
+                                        {{$mem -> package}}
+                                    </li>
+                                </ul>
+                            @endforeach
+                        @endif
+                        <br/>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="/packages" class="btn-primary1"> Register in new package</a>
+                                </td>
+                                <td> <a href="/userPayments" class="btn-primary1"> Payment History </a> </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             @else
                 {{--                ristricted area--}}
                 <script type="text/javascript">
