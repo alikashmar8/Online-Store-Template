@@ -43,7 +43,7 @@
                                 <tr >
                                     <td colspan="2">
 
-                                        <input type="radio" name="payment_method" value="paypal" id="paypal">
+                                        <input type="radio" name="payment_method" value="paypal" id="paypal" checked>
                                         <label for="paypal">Paypal</label><br>
                                         <input type="radio" name="payment_method" value="stripe" id="stripe">
                                         <label for="stripe">Stripe</label><br>
