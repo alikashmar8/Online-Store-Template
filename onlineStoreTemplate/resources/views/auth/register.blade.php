@@ -70,11 +70,12 @@
 
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
-                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control" style="display: none;">
+                        <select id="phoneNumberCode" name="phoneNumberCode" style="cursor:no-drop;"
+                                class="form-control mx-3 mb-2">
 
                             @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
-                                <option value="{{$countryCode->iso}}"
-                                        @if($countryCode->phonecode == 61) selected @endif>
+                                <option value="{{$countryCode->iso}}" style="display:none;"
+                                        @if($countryCode->iso == 'AU') selected @else disabled @endif>
                                     +{{ $countryCode->phonecode }} - {{ $countryCode->iso }}</option>
                             @endforeach
 
@@ -198,10 +199,11 @@
 
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
-                        <select id="phoneNumberCode" name="phoneNumberCode" class="form-control" style="display: none;">
+                        <select id="phoneNumberCode" name="phoneNumberCode" style="cursor:no-drop;"
+                                class="form-control mx-3 mb-2" readonly="readonly">
                             @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
-                                <option value="{{$countryCode->iso}}"
-                                        @if($countryCode->phonecode == 61) selected @endif>
+                                <option value="{{$countryCode->iso}}" style="display:none;"
+                                        @if($countryCode->iso == 'AU') selected @else disabled @endif>
                                     +{{ $countryCode->phonecode }} - {{ $countryCode->iso }}</option>
                             @endforeach
 
