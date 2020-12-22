@@ -39,8 +39,9 @@ class CreateHistoriesTable extends Migration
             $table->string("post_contactInfo")->nullable();
             $table->double('post_longitude')->nullable();
             $table->double('post_latitude')->nullable();
-
-            $table->string('date')->nullable();
+            $table->integer('isCreated')->nullable();
+            $table->integer('isUpdated')->nullable();
+            $table->integer('isDeleted')->nullable();
             $table->timestamps();
         });
     }

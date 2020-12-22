@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\CountryCode;
+use App\Models\History;
 use App\Models\Payment;
 use App\Models\Property;
 use App\Models\PropertyImage;
@@ -63,7 +64,22 @@ class UsersController extends Controller
             $company = Company::where('agentId', '=', $user->id);
             $company->delete();
         }
+
+        $history = new History;
+        $history->userId = $user->id;
+        $history->user_name = $user->name;
+        $history->user_email = $user->email;
+        $history->user_role = $user->role;
+        $history->user_phoneNumber = $user->phoneNumber;
+        $history->user_phoneNumberCode = $user->phoneNumberCode;
+        $history->user_bio = $user->bio;
+        $history->isCreated = 0;
+        $history->isUpdated = 0;
+        $history->isDeleted = 1;
+        $history->save();
+
         $user->delete();
+
         if (Auth::user()->role == 0) {
             return redirect('/users')->with('message', 'User Deleted !');;
         } else {
@@ -74,7 +90,6 @@ class UsersController extends Controller
 
     public function edit(Request $request)
     {
-        dd($request);
         return view('Users.edit');
     }
 
@@ -89,8 +104,6 @@ class UsersController extends Controller
     {
         $var = ltrim($request['phoneNumber'], '0');
         $request['phoneNumber'] = $var;
-//        dd($request);
-
         $country = CountryCode::where('iso', '=', $request['phoneNumberCode'])->get();
         $code = $country[0]->phonecode;
 
@@ -143,10 +156,23 @@ class UsersController extends Controller
         }
 
 
-
         if ($request->email != Auth::user()->email) {
             $user->email_verified_at = null;
         }
+
+        $history = new History;
+        $history->userId = $user->id;
+        $history->user_name = $user->name;
+        $history->user_email = $user->email;
+        $history->user_role = $user->role;
+        $history->user_phoneNumber = $user->phoneNumber;
+        $history->user_phoneNumberCode = $user->phoneNumberCode;
+        $history->user_bio = $user->bio;
+        $history->isCreated = 0;
+        $history->isUpdated = 1;
+        $history->isDeleted = 0;
+        $history->save();
+
         $user->save();
         return redirect('users/' . $user->id)->with('message', 'Profile Updated !');
     }

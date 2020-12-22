@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Company;
 use App\Models\CountryCode;
+use App\Models\History;
 use App\Models\PropertyImage;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -131,6 +132,20 @@ class RegisterController extends Controller
             $company->AgentId = $user->id;
             $company->save();
         }
+
+        $history = new History;
+        $history->userId = $user->id;
+        $history->user_name = $user->name;
+        $history->user_email = $user->email;
+        $history->user_role = $user->role;
+        $history->user_phoneNumber = $user->phoneNumber;
+        $history->user_phoneNumberCode = $user->phoneNumberCode;
+        $history->user_bio = $user->bio;
+        $history->isCreated = 1;
+        $history->isUpdated = 0;
+        $history->isDeleted = 0;
+        $history->save();
+
         return $user;
     }
 }

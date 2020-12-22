@@ -7,6 +7,7 @@ use App\Mail\PropertyAcceptedMail;
 use App\Mail\PropertyCreated;
 use App\Mail\PropertyUpdated;
 use App\Models\Category;
+use App\Models\History;
 use App\Models\Packages;
 use App\Models\Property;
 use App\Models\PropertyImage;
@@ -15,7 +16,6 @@ use App\Models\User;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use App\Models\commercial;
@@ -148,6 +148,29 @@ class PropertiesController extends Controller
                 $image->save();
             }
         }
+
+        $history = new History;
+        $history->propertyId = $property->id;
+        $history->post_description = $property->description;
+        $history->post_price = $property->price;
+        $history->post_roomsNumber = $property->roomsNumber;
+        $history->post_bathroomsNumber = $property->bathroomsNumber;
+        $history->post_parkingNumber = $property->parkingNumber;
+        $history->post_bedroomsNumber = $property->bedroomsNumber;
+        $history->post_accepted = $property->accepted;
+        $history->post_userId = $property->userId;
+        $history->post_category = Category::findOrFail($property->categoryId)->title;
+        $history->post_type = PropertyType::findOrFail($property->typeId)->title;
+        $history->post_locationDescription = $property->locationDescription;
+        $history->post_contactInfo = $property->contactInfo;
+        $history->post_longitude = $property->longitude;
+        $history->post_latitude = $property->latitude;
+        $history->isCreated = 1;
+        $history->isUpdated = 0;
+        $history->isDeleted = 0;
+        $history->save();
+
+
         $mail = Auth::user()->email;
         Mail::to('ozpropertymarket@gmail.com')->send(new NewPropertyMail());
         Mail::to($mail)->send(new PropertyCreated());
@@ -241,6 +264,27 @@ class PropertiesController extends Controller
                 }
             }
         }
+
+        $history = new History;
+        $history->propertyId = $property->id;
+        $history->post_description = $property->description;
+        $history->post_price = $property->price;
+        $history->post_roomsNumber = $property->roomsNumber;
+        $history->post_bathroomsNumber = $property->bathroomsNumber;
+        $history->post_parkingNumber = $property->parkingNumber;
+        $history->post_bedroomsNumber = $property->bedroomsNumber;
+        $history->post_accepted = $property->accepted;
+        $history->post_userId = $property->userId;
+        $history->post_category = Category::findOrFail($property->categoryId)->title;
+        $history->post_type = PropertyType::findOrFail($property->typeId)->title;
+        $history->post_locationDescription = $property->locationDescription;
+        $history->post_contactInfo = $property->contactInfo;
+        $history->post_longitude = $property->longitude;
+        $history->post_latitude = $property->latitude;
+        $history->isCreated = 0;
+        $history->isUpdated = 1;
+        $history->isDeleted = 0;
+        $history->save();
         Mail::to('ozpropertymarket@gmail.com')->send(new PropertyUpdated());
         return redirect('/properties/' . $property->id)->with('message', 'Property Updated!');
     }
@@ -264,6 +308,27 @@ class PropertiesController extends Controller
     public function delete($id)
     {
         $property = Property::findOrFail($id);
+
+        $history = new History;
+        $history->propertyId = $property->id;
+        $history->post_description = $property->description;
+        $history->post_price = $property->price;
+        $history->post_roomsNumber = $property->roomsNumber;
+        $history->post_bathroomsNumber = $property->bathroomsNumber;
+        $history->post_parkingNumber = $property->parkingNumber;
+        $history->post_bedroomsNumber = $property->bedroomsNumber;
+        $history->post_accepted = $property->accepted;
+        $history->post_userId = $property->userId;
+        $history->post_category = Category::findOrFail($property->categoryId)->title;
+        $history->post_type = PropertyType::findOrFail($property->typeId)->title;
+        $history->post_locationDescription = $property->locationDescription;
+        $history->post_contactInfo = $property->contactInfo;
+        $history->post_longitude = $property->longitude;
+        $history->post_latitude = $property->latitude;
+        $history->isCreated = 0;
+        $history->isUpdated = 0;
+        $history->isDeleted = 1;
+        $history->save();
 
         $this->deleteImages($property->id);
 
