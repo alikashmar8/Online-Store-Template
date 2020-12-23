@@ -89,7 +89,9 @@
                         <li class="nav-item">
                             <a href="/adminPayments" class="special-link">Payments</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="/histories" class="special-link">Histories</a>
+                        </li>
                     @else
                         {{--                        user menu options--}}
                         <li class="nav-item">

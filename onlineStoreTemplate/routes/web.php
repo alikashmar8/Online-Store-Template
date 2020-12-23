@@ -129,6 +129,14 @@ Route::post('/acceptCom', '\App\Http\Controllers\commercialController@accept')->
 Route::delete('/destroyCom/{id}', '\App\Http\Controllers\commercialController@destroy')->middleware('auth');
 Route::get('/allCommercials', '\App\Http\Controllers\commercialController@allCommercials')->middleware('auth');
 
+Route::get('/histories/properties', '\App\Http\Controllers\HistoriesController@propertiesIndex');
+Route::get('/histories/properties/{id}', '\App\Http\Controllers\HistoriesController@propertyShow');
+
+
+Route::get('/histories/commercials', '\App\Http\Controllers\HistoriesController@commercialsIndex');
+Route::get('/histories/users', '\App\Http\Controllers\HistoriesController@usersIndex');
+Route::resource('/histories', '\App\Http\Controllers\HistoriesController')->middleware('auth');
+
 
 Route::get('/userShowCommercial', '\App\Http\Controllers\commercialController@showCommercial');
 Route::get('/userHideCommercial', '\App\Http\Controllers\commercialController@hideCommercial');
