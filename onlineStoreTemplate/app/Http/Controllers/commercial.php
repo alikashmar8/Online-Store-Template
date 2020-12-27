@@ -11,11 +11,14 @@ use App\Mail\newCommercial;
 use App\Mail\CommercialUpdate;
 use App\Mail\CommecialAccepted;
 
+use App\Models\Category;
 use App\Models\commercial;
 use App\Models\CommercialImage;
 use App\Models\commTypes;
+use App\Models\History;
 use App\Models\Property;
 use App\Models\PropertyImage;
+use App\Models\PropertyType;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -92,6 +95,32 @@ class commercialController extends Controller
                 $image->save();
             }
         }
+
+
+        $history = new History;
+        $history->commercialId = $com->id;
+        $history->post_description = $com->description;
+        $history->post_price = $com->price;
+        $history->post_roomsNumber = $com->roomsNumber;
+        $history->commercial_floor = $com->floor;
+        $history->post_bathroomsNumber = $com->bathroomsNumber;
+        $history->post_parkingNumber = $com->parkingNumber;
+        $history->post_bedroomsNumber = $com->bedroomsNumber;
+        $history->post_accepted = $com->accepted;
+        $history->post_userId = $com->userId;
+        $history->post_category = Category::findOrFail($com->category)->title;
+        $history->post_type = commTypes::findOrFail($com->type)->title;
+//        $history->post_category = $com->category;
+//        $history->post_type = $com->type;
+        $history->post_locationDescription = $com->location;
+        $history->post_contactInfo = $com->extra1;
+        $history->post_longitude = $com->lang;
+        $history->post_latitude = $com->lan;
+        $history->isCreated = 1;
+        $history->isUpdated = 0;
+        $history->isDeleted = 0;
+        $history->save();
+
         $mail = Auth::user()->email;
         Mail::to('ozpropertymarket@gmail.com')->send(new NewCommercial());
         Mail::to($mail)->send(new PropertyCreated());
@@ -165,6 +194,32 @@ class commercialController extends Controller
                 }
             }
         }
+
+
+        $history = new History;
+        $history->commercialId = $com->id;
+        $history->post_description = $com->description;
+        $history->post_price = $com->price;
+        $history->post_roomsNumber = $com->roomsNumber;
+        $history->commercial_floor = $com->floor;
+        $history->post_bathroomsNumber = $com->bathroomsNumber;
+        $history->post_parkingNumber = $com->parkingNumber;
+        $history->post_bedroomsNumber = $com->bedroomsNumber;
+        $history->post_accepted = $com->accepted;
+        $history->post_userId = $com->userId;
+        $history->post_category = Category::findOrFail($com->category)->title;
+        $history->post_type = commTypes::findOrFail($com->type)->title;
+//        $history->post_category =
+//        $history->post_type = ;
+        $history->post_locationDescription = $com->location;
+        $history->post_contactInfo = $com->extra1;
+        $history->post_longitude = $com->lang;
+        $history->post_latitude = $com->lan;
+        $history->isCreated = 0;
+        $history->isUpdated = 1;
+        $history->isDeleted = 0;
+        $history->save();
+
         Mail::to('ozpropertymarket@gmail.com')->send(new CommercialUpdate());
         return redirect('/commercial/' . $com->id)->with('message', 'Commercial Property Updated!');
     }
@@ -186,6 +241,31 @@ class commercialController extends Controller
         $com->accepted = 1;
         $com->extra1 = $request['extra1'];
         $com->save();
+
+        $history = new History;
+        $history->commercialId = $com->id;
+        $history->post_description = $com->description;
+        $history->post_price = $com->price;
+        $history->post_roomsNumber = $com->roomsNumber;
+        $history->commercial_floor = $com->floor;
+        $history->post_bathroomsNumber = $com->bathroomsNumber;
+        $history->post_parkingNumber = $com->parkingNumber;
+        $history->post_bedroomsNumber = $com->bedroomsNumber;
+        $history->post_accepted = $com->accepted;
+        $history->post_userId = $com->userId;
+        $history->post_category = Category::findOrFail($com->category)->title;
+        $history->post_type = commTypes::findOrFail($com->type)->title;
+//        $history->post_category = $com->category;
+//        $history->post_type = $com->type;
+        $history->post_locationDescription = $com->location;
+        $history->post_contactInfo = $com->extra1;
+        $history->post_longitude = $com->lang;
+        $history->post_latitude = $com->lan;
+        $history->isCreated = 0;
+        $history->isUpdated = 1;
+        $history->isDeleted = 0;
+        $history->save();
+
         $user = User::findOrFail($com->userId);
         Mail::to($user->email)->send(new CommecialAccepted());
         return redirect('/acceptCommercials')->with('message', 'Property Accepted');
@@ -198,6 +278,32 @@ class commercialController extends Controller
         $com = commercial::findOrFail($id);
         $i = $com->accepted;
         $this->deleteImages($com->id);
+
+        $history = new History;
+        $history->commercialId = $com->id;
+        $history->post_description = $com->description;
+        $history->post_price = $com->price;
+        $history->post_roomsNumber = $com->roomsNumber;
+        $history->commercial_floor = $com->floor;
+        $history->post_bathroomsNumber = $com->bathroomsNumber;
+        $history->post_parkingNumber = $com->parkingNumber;
+        $history->post_bedroomsNumber = $com->bedroomsNumber;
+        $history->post_accepted = $com->accepted;
+        $history->post_userId = $com->userId;
+        $history->post_category = Category::findOrFail($com->category)->title;
+        $history->post_type = commTypes::findOrFail($com->type)->title;
+//        $history->post_category = $com->category;
+//        $history->post_type = $com->type;
+        $history->post_locationDescription = $com->location;
+        $history->post_contactInfo = $com->extra1;
+        $history->post_longitude = $com->lang;
+        $history->post_latitude = $com->lan;
+        $history->isCreated = 0;
+        $history->isUpdated = 0;
+        $history->isDeleted = 1;
+        $history->save();
+
+
         $com->delete();
         if (Auth::user()->role == 0) {
             if ($i == 0)

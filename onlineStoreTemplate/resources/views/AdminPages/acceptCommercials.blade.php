@@ -128,8 +128,8 @@
                                     </td>
 
                                     {{--                        <a class="btn btn-success no-sort" onclick="event.preventDefault(); document.getElementById('accept-form-{{$com->id}}').submit();">Accept</a>--}}
-                                    {{--                    //form to trigger accept property--}}
-                                    {{--                        form to trigger delete property--}}
+                                    {{--                    //form to trigger accept user--}}
+                                    {{--                        form to trigger delete user--}}
                                     {{ Form::open(['action' => ['App\Http\Controllers\commercialController@destroy',$com->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$com->id]) }} {{ Form::close() }}
 
                                 </tr>
@@ -138,8 +138,8 @@
                         </tbody>
                     </table>
 
-                @else
-                    <h1>No properties to show !</h1>
+                    @else
+                        <h1>No properties to show !</h1>
                 @endif
 
             </div>

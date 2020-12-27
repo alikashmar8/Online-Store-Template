@@ -19,7 +19,7 @@
                         <div class="search-form-container">
                             <form class="form " action="/search-properties" method="GET">
                                 <div class="search-bar-section">
-                                    <h1>Search for a property</h1>
+                                    <h1>Search for a user</h1>
 
                                 </div>
 
@@ -182,28 +182,28 @@
 
 
 
-                    @foreach($properties as $property)
-                        <div class="post my-5">
-                            @if($property->created_at > \Carbon\Carbon::now()->subDays(14))
-                                <div class="new-prop">
-                                    <img src="https://webside.com.au/MK/hackathon/imagaga123/images1/flag.svg"
-                                         style="border: none">
-                                </div>
-                            @endif
-                            <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
-                                <div class="carousel-inner">
-                                    @if(count($property->images)>0)
-                                        @foreach($property->images as $image)
-                                            <div class="carousel-item @if($loop->first) active @endif">
-                                                @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                    <video class="d-block w-100"
-                                                           style="height: 50vw; width: 800px;object-fit: cover;"
-                                                           alt="No Image" controls>
-                                                        <source
-                                                            src="{{url('/storage/properties_images/' . $image->url)}}"
-                                                            type="video/mp4">
+                        @foreach($properties as $user)
+                            <div class="post my-5">
+                                @if($user->created_at > \Carbon\Carbon::now()->subDays(14))
+                                    <div class="new-prop">
+                                        <img src="https://webside.com.au/MK/hackathon/imagaga123/images1/flag.svg"
+                                             style="border: none">
+                                    </div>
+                                @endif
+                                <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        @if(count($user->images)>0)
+                                            @foreach($user->images as $image)
+                                                <div class="carousel-item @if($loop->first) active @endif">
+                                                    @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
+                                                        <video class="d-block w-100"
+                                                               style="height: 50vw; width: 800px;object-fit: cover;"
+                                                               alt="No Image" controls>
+                                                            <source
+                                                                src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                                type="video/mp4">
 
-                                                    </video>
+                                                        </video>
                                                 @else
                                                     <img class="d-block w-100"
                                                          style="height: 50vw; width: 800px;object-fit: cover;"
@@ -226,46 +226,46 @@
                             </span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#carouselEx" role="button"
-                                   data-slide="next">
+                                    <a class="carousel-control-next" href="#carouselEx" role="button"
+                                       data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true">
                                 <i class="fa fa-chevron-right" style="color: #df0505" aria-hidden="true"></i>
                             </span>
-                                    <span class="sr-only">Next</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+
+                                <a style="text-decoration: none" href="/properties/{{$user->id}}">
+                                    <div class="post-details">
+
+                                        <p class="price">{{ $user->locationDescription }} </p>
+
+                                        @if($user->showPrice == 1)
+                                            <p class="price">
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                                {{$user->price}}
+                                            </p>
+                                        @else
+                                            <p class="price">
+                                                Contact the agent for price
+                                            </p>
+                                        @endif
+
+
+                                        <p style="color: #0a0807;padding-left: 0.5rem;">
+                                            {{$user->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                            {{$user->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                            {{$user->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                            | {{ \App\Models\PropertyType::findOrFail($user->typeId)->title }}
+                                        </p>
+
+                                        {{--<a class="special-link" style="color: #0a0807;padding-left: -0.5rem;"
+                                           href="/properties/{{$user->id}}">View details</a>--}}
+                                    </div>
                                 </a>
                             </div>
 
-                            <a style="text-decoration: none" href="/properties/{{$property->id}}">
-                                <div class="post-details">
-
-                                    <p class="price">{{ $property->locationDescription }} </p>
-
-                                    @if($property->showPrice == 1)
-                                        <p class="price">
-                                            <i class="fa fa-usd" aria-hidden="true"></i>
-                                            {{$property->price}}
-                                        </p>
-                                    @else
-                                        <p class="price">
-                                            Contact the agent for price
-                                        </p>
-                                    @endif
-
-
-                                    <p style="color: #0a0807;padding-left: 0.5rem;">
-                                        {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                        {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                        {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                        | {{ \App\Models\PropertyType::findOrFail($property->typeId)->title }}
-                                    </p>
-
-                                    {{--<a class="special-link" style="color: #0a0807;padding-left: -0.5rem;"
-                                       href="/properties/{{$property->id}}">View details</a>--}}
-                                </div>
-                            </a>
-                        </div>
-
-                    @endforeach
+                        @endforeach
                 @else
                     @if (Request::is('properties/rent'))
                         <h3 class="bg-white p-3">No properties for rent</h3>

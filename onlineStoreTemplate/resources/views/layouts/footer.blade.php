@@ -3,8 +3,9 @@
         <div class="row p-4">
             <div class="col-lg-5 col-xs-12 about-company">
 
-                <h2> <a href="/" style="color: black ; text-decoration: none" >OZ Property Market</a></h2><br/>
-                <p class="pr-5  ">Oz Property Market is your best agent to sell, rent, or share your property without wasting money and time. </p>
+                <h2><a href="/" style="color: black ; text-decoration: none">OZ Property Market</a></h2><br/>
+                <p class="pr-5  ">Oz Property Market is your best agent to sell, rent, or share your user without
+                    wasting money and time. </p>
                 <p><a href="#">
                         <i class="fa fa-facebook-square mr-1"></i>
                     </a>

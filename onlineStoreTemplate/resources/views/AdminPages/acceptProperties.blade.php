@@ -29,113 +29,115 @@
                             <th scope="col">Showing Price</th>
                             <th scope="col">Agent Details</th>
                             <th scope="col">Type</th>
-                    <th scope="col">Details</th>
-                    <th scope="col">Delete</th>
-                    <th scope="col">Accept</th>
-                </tr>
-                </thead>
-                <tbody class="bg-white">
-                @foreach($notAcceptedProperties as $property)
-                    @if($property->contactInfo == null)
-                    <tr>
-                        <td>{{ $property->id }}</td>
-                        <td style="height: 80px; width: 200px;">
-                            <div id="carouselExampleFade-{{$property->id}}"
-                                 class="carousel slide carousel-fade"
-                                 data-ride="carousel">
-                                <div class="carousel-inner">
-                                    @if(count($property->images)>0)
-                                        @foreach($property->images as $image)
+                            <th scope="col">Details</th>
+                            <th scope="col">Delete</th>
+                            <th scope="col">Accept</th>
+                        </tr>
+                        </thead>
+                        <tbody class="bg-white">
+                        @foreach($notAcceptedProperties as $user)
+                            @if($user->contactInfo == null)
+                                <tr>
+                                    <td>{{ $user->id }}</td>
+                                    <td style="height: 80px; width: 200px;">
+                                        <div id="carouselExampleFade-{{$user->id}}"
+                                             class="carousel slide carousel-fade"
+                                             data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                @if(count($user->images)>0)
+                                                    @foreach($user->images as $image)
 
-                                            <div class="carousel-item @if($loop->first) active @endif">
-                                                <div style="width: 100%; height: 100%;">
-                                                    @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                        <video style="height: 125px; width: 200px;object-fit: cover;" atl="No Video" controls>
-                                                            <source
-                                                                src="{{url('/storage/properties_images/' . $image->url)}}"
-                                                                type="video/mp4">
+                                                        <div class="carousel-item @if($loop->first) active @endif">
+                                                            <div style="width: 100%; height: 100%;">
+                                                                @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
+                                                                    <video
+                                                                        style="height: 125px; width: 200px;object-fit: cover;"
+                                                                        atl="No Video" controls>
+                                                                        <source
+                                                                            src="{{url('/storage/properties_images/' . $image->url)}}"
+                                                                            type="video/mp4">
 
-                                                        </video>
+                                                                    </video>
                                                     @else
                                                         <img style="height: 125px; width: 200px;object-fit: cover;" alt="No Image"
                                                              src="{{url('/storage/properties_images/' . $image->url)}}"
                                                              alt="No Image">
                                                     @endif
 
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    @else
-                                        <img style="height: 100px; width: 200px;"
-                                             src="{{url('/storage/properties_images/unavailable.jpg')}}"
-                                             alt="No Image">
-                                    @endif
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                @else
+                                                    <img style="height: 100px; width: 200px;"
+                                                         src="{{url('/storage/properties_images/unavailable.jpg')}}"
+                                                         alt="No Image">
+                                                @endif
 
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselExampleFade-{{$property->id}}"
-                                   role="button"
-                                   data-slide="prev">
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleFade-{{$user->id}}"
+                                               role="button"
+                                               data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true">
 
                                         <i class="fa fa-chevron-left" style="color: #df0505" aria-hidden="true"></i>
                                     </span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleFade-{{$property->id}}"
-                                   role="button"
-                                   data-slide="next">
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleFade-{{$user->id}}"
+                                               role="button"
+                                               data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true">
                                         <i class="fa fa-chevron-right" style="color: #df0505" aria-hidden="true"></i>
                                     </span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </td>
-                        <td>{{ $property->price }} $</td>
-                        @if($property->showPrice == 0)
-                            <td class="text-danger">No</td>
-                        @else
-                            <td class="text-success">Yes</td>
-                        @endif
-                        <td><a href="/users/{{ $property->userId }}">{{ $property->agent->name }}</a></td>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>{{ $user->price }} $</td>
+                                    @if($user->showPrice == 0)
+                                        <td class="text-danger">No</td>
+                                    @else
+                                        <td class="text-success">Yes</td>
+                                    @endif
+                                    <td><a href="/users/{{ $user->userId }}">{{ $user->agent->name }}</a></td>
 
-                        <td>@if( $property->categoryId == 1)
-                                Sell
-                            @else
-                                {{ \App\Models\Category::findOrFail($property->categoryId)->title }}
+                                    <td>@if( $user->categoryId == 1)
+                                            Sell
+                                        @else
+                                            {{ \App\Models\Category::findOrFail($user->categoryId)->title }}
+                                        @endif
+
+                                    </td>
+
+                                    <td><a class="btn btn-info no-sort" href="/properties/{{$user->id}}">Show</a></td>
+                                    <td>
+                                        <button class="btn btn-danger no-sort delete" data-toggle="modal"
+                                                data-target="#deleteModal">Delete
+                                        </button>
+                                        {{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$user->id}}').submit();"--}}
+
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-success accept" data-toggle="modal"
+                                                data-target="#exampleModal">Accept
+                                            {{--                                    data-whatever={{ $user->id }}--}}
+                                        </button>
+                                    </td>
+
+                                    {{--                        <a class="btn btn-success no-sort" onclick="event.preventDefault(); document.getElementById('accept-form-{{$user->id}}').submit();">Accept</a>--}}
+                                    {{--                    //form to trigger accept user--}}
+                                    {{--                        form to trigger delete user--}}
+                                    {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$user->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$user->id]) }} {{ Form::close() }}
+
+                                </tr>
                             @endif
+                        @endforeach
+                        </tbody>
+                    </table>
 
-                        </td>
-
-                        <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
-                        <td>
-                            <button class="btn btn-danger no-sort delete" data-toggle="modal"
-                                    data-target="#deleteModal">Delete
-                            </button>
-                            {{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();"--}}
-
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success accept" data-toggle="modal"
-                                    data-target="#exampleModal">Accept
-                                {{--                                    data-whatever={{ $property->id }}--}}
-                            </button>
-                        </td>
-
-                        {{--                        <a class="btn btn-success no-sort" onclick="event.preventDefault(); document.getElementById('accept-form-{{$property->id}}').submit();">Accept</a>--}}
-                        {{--                    //form to trigger accept property--}}
-                        {{--                        form to trigger delete property--}}
-                        {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$property->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$property->id]) }} {{ Form::close() }}
-
-                    </tr>
-                    @endif
-                @endforeach
-                </tbody>
-            </table>
-
-        @else
-            <h1>No properties to show !</h1>
-        @endif
+                @else
+                    <h1>No properties to show !</h1>
+                @endif
 
     </div>
 
@@ -151,7 +153,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-{{--                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@acceptProperty',$property->id],'method'=>'put' ]) }}--}}
+                {{--                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@acceptProperty',$user->id],'method'=>'put' ]) }}--}}
                 <form action="/accept" method="post" id="acceptForm" >
                     {{ csrf_field() }}
                 <div class="modal-body">
@@ -188,7 +190,7 @@
                     </button>
                 </div>
                 <input type="hidden" name="deleteId" id="deleteId">
-                {{--                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@acceptProperty',$property->id],'method'=>'put' ]) }}--}}
+                {{--                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@acceptProperty',$user->id],'method'=>'put' ]) }}--}}
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <input type="submit" class="btn btn-danger" value="Delete" onclick="deleteProperty()">

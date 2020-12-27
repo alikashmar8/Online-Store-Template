@@ -92,21 +92,35 @@ class HistoriesController extends Controller
 
     public function commercialsIndex()
     {
-        $commercials = History::where('commercialId', '!=', null)->groupBy('commercialId')->get();
+        $commercials = History::whereNotNull('commercialId')->distinct()->select('commercialId')->get();
         return view('Histories.commercialsIndex', compact('commercials'));
     }
 
     public function usersIndex()
     {
-        $users = History::where('userId', '!=', null)->groupBy('userId')->get();
+        $users = History::whereNotNull('userId')->distinct()->select('userId')->get();
         return view('Histories.usersIndex', compact('users'));
     }
 
     public function propertyShow($id)
     {
-        $properties = History::where('propertyId', '=', $id)->orderBy('created_at')->get();
+        $histories = History::where('propertyId', '=', $id)->orderBy('created_at')->get();
         $type = "property";
-        return view("Histories.show", compact('properties', 'type'));
+        return view("Histories.show", compact('histories', 'type'));
+    }
+
+    public function commercialShow($id)
+    {
+        $histories = History::where('commercialId', '=', $id)->orderBy('created_at')->get();
+        $type = "commercial";
+        return view("Histories.show", compact('histories', 'type'));
+    }
+
+    public function userShow($id)
+    {
+        $histories = History::where('userId', '=', $id)->orderBy('created_at')->get();
+        $type = "user";
+        return view("Histories.show", compact('histories', 'type'));
     }
 
 

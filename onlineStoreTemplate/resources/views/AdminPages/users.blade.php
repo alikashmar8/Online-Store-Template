@@ -52,7 +52,7 @@
 
                             <td><button class="btn btn-danger no-sort delete" data-toggle="modal"  data-target="#deleteModal">Delete</button>
 
-                            {{--                        form to trigger delete property--}}
+                            {{--                        form to trigger delete user--}}
                             {{ Form::open(['action' => ['\App\Http\Controllers\UsersController@destroy',$user->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$user->id]) }} {{ Form::close() }}
 
 
@@ -81,7 +81,7 @@
                         <h6>All properties and information added by this user will be delete also</h6>
                     </div>
                     <input type="hidden" name="deleteId" id="deleteId">
-                    {{--                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@acceptProperty',$property->id],'method'=>'put' ]) }}--}}
+                    {{--                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@acceptProperty',$user->id],'method'=>'put' ]) }}--}}
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <input type="submit" class="btn btn-danger" value="Delete" onclick="deleteProperty()">

@@ -33,28 +33,30 @@
                     </tr>
                     </thead>
                     <tbody class="">
-                    @foreach($properties as $property)
+                    @foreach($properties as $user)
                         <tr>
-                            <td style="visibility: hidden;" hidden>{{ $property->id }}</td>
+                            <td style="visibility: hidden;" hidden>{{ $user->id }}</td>
                             {{--                            <td>#</td>--}}
                             <td style="height: 80px; width: 200px;">
-                                <div id="carouselExampleFade-{{$property->id}}"
+                                <div id="carouselExampleFade-{{$user->id}}"
                                      class="carousel slide carousel-fade"
                                      data-ride="carousel">
                                     <div class="carousel-inner">
-                                        @foreach($property->images as $image)
+                                        @foreach($user->images as $image)
 
                                             <div class="carousel-item @if($loop->first) active @endif">
                                                 <div style="width: 100%; height: 100%;">
                                                     @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                        <video style="height: 125px; width: 200px;object-fit: cover;" alt="No Video" controls>
+                                                        <video style="height: 125px; width: 200px;object-fit: cover;"
+                                                               alt="No Video" controls>
                                                             <source
                                                                 src="{{url('/storage/properties_images/' . $image->url)}}"
                                                                 type="video/mp4">
 
                                                         </video>
                                                     @else
-                                                        <img class="d-block w-100" style="height: 125px; width: 200px;object-fit: cover;"
+                                                        <img class="d-block w-100"
+                                                             style="height: 125px; width: 200px;object-fit: cover;"
                                                              src="{{url('/storage/properties_images/' . $image->url)}}"
                                                              alt="No Image">
                                                     @endif
@@ -63,7 +65,7 @@
                                         @endforeach
 
                                     </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleFade-{{$property->id}}"
+                                    <a class="carousel-control-prev" href="#carouselExampleFade-{{$user->id}}"
                                        role="button"
                                        data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true">
@@ -71,7 +73,7 @@
                                     </span>
                                         <span class="sr-only">Previous</span>
                                     </a>
-                                    <a class="carousel-control-next" href="#carouselExampleFade-{{$property->id}}"
+                                    <a class="carousel-control-next" href="#carouselExampleFade-{{$user->id}}"
                                        role="button"
                                        data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true">
@@ -81,24 +83,24 @@
                                     </a>
                                 </div>
                             </td>
-                            <td> {{ $property->bedroomsNumber }} </td>
+                            <td> {{ $user->bedroomsNumber }} </td>
 
-                            <td> $ {{ $property->price }} </td>
+                            <td> $ {{ $user->price }} </td>
 
-                            @if($property->showPrice == 0)
+                            @if($user->showPrice == 0)
                                 <td class="text-danger">No</td> @else
                                 <td class="text-success">Yes</td> @endif
 
-                            <td>@if( $property->categoryId == 1)
+                            <td>@if( $user->categoryId == 1)
                                     Sell
                                 @else
-                                     {{\App\Models\Category::where('id','=',$property->categoryId)->first()->title}}
+                                    {{\App\Models\Category::where('id','=',$user->categoryId)->first()->title}}
                                 @endif
                             </td>
 
-                            @if($property->accepted == 0)
-                                @if($property->contactInfo != null)
-                                    <td class="text-danger">Hidden </td>
+                            @if($user->accepted == 0)
+                                @if($user->contactInfo != null)
+                                    <td class="text-danger">Hidden</td>
                                 @else
                                     <td class="text-warning">Waiting for confirmation</td>
                                 @endif
@@ -106,16 +108,16 @@
                                 <td class="text-success">Listed</td>
                             @endif
 
-                            <td><a class="btn btn-success" href="/properties/{{$property->id}}">Show</a></td>
+                            <td><a class="btn btn-success" href="/properties/{{$user->id}}">Show</a></td>
 
-                            <td><a href="/properties/{{$property->id}}/edit" class="btn btn-secondary">Edit</a></td>
+                            <td><a href="/properties/{{$user->id}}/edit" class="btn btn-secondary">Edit</a></td>
 
                             <td>
                                 <button class="btn btn-danger no-sort delete" data-toggle="modal"
                                         data-target="#deleteModal">Delete
                                 </button>
-                                {{--                        form to trigger delete property--}}
-                                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$property->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$property->id]) }}
+                                {{--                        form to trigger delete user--}}
+                                {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$user->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$user->id]) }}
                                 <input type="hidden" value="1"> {{ Form::close() }}
 
 

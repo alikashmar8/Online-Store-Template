@@ -134,7 +134,12 @@ Route::get('/histories/properties/{id}', '\App\Http\Controllers\HistoriesControl
 
 
 Route::get('/histories/commercials', '\App\Http\Controllers\HistoriesController@commercialsIndex');
+Route::get('/histories/commercials/{id}', '\App\Http\Controllers\HistoriesController@commercialShow');
+
+
 Route::get('/histories/users', '\App\Http\Controllers\HistoriesController@usersIndex');
+Route::get('/histories/users/{id}', '\App\Http\Controllers\HistoriesController@userShow');
+
 Route::resource('/histories', '\App\Http\Controllers\HistoriesController')->middleware('auth');
 
 

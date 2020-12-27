@@ -123,7 +123,7 @@
                                     {{--                                        style="color: white" --}}{{--href=" /destroyCom/{{$com->id}}"--}}{{-->Delete</a>--}}
                                 </button>
 
-                                {{--                        form to trigger delete property--}}
+                                {{--                        form to trigger delete user--}}
                                 {{ Form::open(['action' => ['App\Http\Controllers\commercialController@destroy',$com->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$com->id]) }}
                                 <input type="hidden" value="1"> {{ Form::close() }}
 

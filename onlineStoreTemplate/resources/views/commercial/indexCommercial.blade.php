@@ -12,7 +12,7 @@
                         <div class="search-form-container">
                             <form class="form" action="/search-commercials" method="GET">
                                 <div class="search-bar-section">
-                                    <h1>Search for a commercial property</h1>
+                                    <h1>Search for a commercial user</h1>
                                 </div>
 
                                 <div class="search-bar-section">
@@ -20,9 +20,9 @@
 
                                     <div class="search-bar-nav ">
 
-                                            <label for="buy"
-                                                   id="buy-label">Buy</label>
-                                            <input type="radio" class="search-bar-nav-remove" name="category"
+                                        <label for="buy"
+                                               id="buy-label">Buy</label>
+                                        <input type="radio" class="search-bar-nav-remove" name="category"
                                                    value="1" id="buy"
                                                    onclick="buy_clicked();" checked  >
                                     </div>
@@ -240,7 +240,7 @@
                                         </p>
 
                                         {{--<a class="special-link" style="color: #0a0807;padding-left: -0.5rem;"
-                                           href="/properties/{{$property->id}}">View details</a>--}}
+                                           href="/properties/{{$user->id}}">View details</a>--}}
                                     </div>
                                 </a>
                             </div>

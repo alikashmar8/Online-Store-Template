@@ -133,7 +133,7 @@
                             <input type="checkbox" class="custom-control-input" name="owner"
                                    id="owner" onclick="validate()">
                             <label class="custom-control-label"
-                                   for="owner">&nbsp;&nbsp;&nbsp;&nbsp; I am the owner of this property </label>
+                                   for="owner">&nbsp;&nbsp;&nbsp;&nbsp; I am the owner of this user </label>
                         </div>
 
                         <div class="custom-control custom-checkbox mb-3">

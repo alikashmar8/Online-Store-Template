@@ -5,15 +5,15 @@
         <div class="p-2"></div>
         <div class="post p-4 m-5">
             <h1>Edit Property:</h1>
-            <div class="alert alert-warning">Editing your property will need admin confirmation to get listed again!
+            <div class="alert alert-warning">Editing your user will need admin confirmation to get listed again!
             </div>
 
-            {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@update',$property->id],'method'=>'PUT','files' => true]) }}
+            {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@update',$user->id],'method'=>'PUT','files' => true]) }}
             <div class=" creat_app">
                 <div class=" ">
                     <div class=" form-group form-label-group special ">
                         {{ Form::label('price','Price:') }}
-                        {{ Form::number('price',$property->price,['min' => '0','class' => 'form-control','placeholder'=>'Price']) }}
+                        {{ Form::number('price',$user->price,['min' => '0','class' => 'form-control','placeholder'=>'Price']) }}
                         @error('price')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -21,7 +21,7 @@
                         @enderror
                     </div>
                     <div class=" form-group form-label-group special ">
-                        @if($property->showPrice == 0)
+                        @if($user->showPrice == 0)
                             {{ Form::checkbox('showPrice',0, false) }}
                         @else
                             {{ Form::checkbox('showPrice',1, true) }}
@@ -30,23 +30,23 @@
                     </div>
                     <div class="form-group form-label-group">
                         {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}
-                        {{ Form::select('bedroomsNumber',array(0=> 0,1,2,3,4,5=>'5+'),$property->bedroomsNumber,['class' => 'form-control']) }}
+                        {{ Form::select('bedroomsNumber',array(0=> 0,1,2,3,4,5=>'5+'),$user->bedroomsNumber,['class' => 'form-control']) }}
                     </div>
 
                     <div class="form-group form-label-group">
                         {{ Form::label('bathroomsNumber','Number Of Bathrooms:') }}
-                        {{ Form::select('bathroomsNumber',array(0=> 0,1,2,3,4=>'4+'),$property->bathroomsNumber,['class' => 'form-control']) }}
+                        {{ Form::select('bathroomsNumber',array(0=> 0,1,2,3,4=>'4+'),$user->bathroomsNumber,['class' => 'form-control']) }}
                     </div>
                     <div class="form-group form-label-group">
                         {{ Form::label('parkingNumber','Number Of Parking:') }}
-                        {{ Form::select('parkingNumber',array(0=> 0,1,2,3,4=>'4+'),$property->parkingNumber,['class' => 'form-control']) }}
+                        {{ Form::select('parkingNumber',array(0=> 0,1,2,3,4=>'4+'),$user->parkingNumber,['class' => 'form-control']) }}
                     </div>
                     <div class="form-group form-label-group">
                         {{ Form::label('category','Listing Type:') }}
                         <select name="category">
                             @foreach(\App\Models\Category::all() as $type)
                                 <option value="{{$type->id}}"
-                                        @if($type->id == $property->categoryId) selected @endIf >{{ $type->title }}</option>
+                                        @if($type->id == $user->categoryId) selected @endIf >{{ $type->title }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -55,13 +55,13 @@
                         <select name="type">
                             @foreach(\App\Models\PropertyType::all() as $type)
                                 <option value="{{$type->id}}"
-                                        @if($type->id == $property->typeId) selected @endIf>{{ $type->title }} </option>
+                                        @if($type->id == $user->typeId) selected @endIf>{{ $type->title }} </option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group form-label-group special">
                         {{ Form::label('description','Description:') }}
-                        {{ Form::textarea('description',$property->description,['class' => 'form-control','placeholder'=>'Description']) }}
+                        {{ Form::textarea('description',$user->description,['class' => 'form-control','placeholder'=>'Description']) }}
                         @error('description')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

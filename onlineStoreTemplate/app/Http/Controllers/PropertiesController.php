@@ -70,6 +70,28 @@ class PropertiesController extends Controller
         $property->accepted = 1;
         $property->contactInfo = $request['contactInfo'];
         $property->save();
+
+        $history = new History;
+        $history->propertyId = $property->id;
+        $history->post_description = $property->description;
+        $history->post_price = $property->price;
+        $history->post_roomsNumber = $property->roomsNumber;
+        $history->post_bathroomsNumber = $property->bathroomsNumber;
+        $history->post_parkingNumber = $property->parkingNumber;
+        $history->post_bedroomsNumber = $property->bedroomsNumber;
+        $history->post_accepted = $property->accepted;
+        $history->post_userId = $property->userId;
+        $history->post_category = Category::findOrFail($property->categoryId)->title;
+        $history->post_type = PropertyType::findOrFail($property->typeId)->title;
+        $history->post_locationDescription = $property->locationDescription;
+        $history->post_contactInfo = $property->contactInfo;
+        $history->post_longitude = $property->longitude;
+        $history->post_latitude = $property->latitude;
+        $history->isCreated = 0;
+        $history->isUpdated = 1;
+        $history->isDeleted = 0;
+        $history->save();
+
         $user = User::findOrFail($property->userId);
         Mail::to($user->email)->send(new PropertyAcceptedMail());
         return redirect('/acceptProperties')->with('message', 'Property Accepted');

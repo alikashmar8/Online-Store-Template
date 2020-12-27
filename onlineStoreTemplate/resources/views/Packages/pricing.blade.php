@@ -151,24 +151,32 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <span style="color:black;">X</span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <span style="color:black;">X</span></p>
                 </td>
             </tr>
             <tr>
                 <td style="width:90.55pt;border:solid windowtext 1.0pt;border-top:  none;background:#DBE5F1;padding:0cm 5.4pt 0cm 5.4pt;height:63.0pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">Unlimited wording for your property description</span></strong></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <strong><span
+                                style="font-size:16px;color:#e4002b;">Unlimited wording for your user description</span></strong>
+                    </p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:63.0pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <span style="color:black;">X</span></p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:63.0pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <span style="color:black;">X</span></p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:63.0pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <span style="color:black;">X</span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:63.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
@@ -929,23 +937,33 @@
             </tr>
             <tr>
                 <td style="width:216.7pt;border:solid windowtext 1.0pt;border-top:  none;background:#CCCCFF;padding:0cm 1.5pt 0cm 1.5pt;height:30.5pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">Buyer phone connection service</span></strong></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <strong><span
+                                style="font-size:16px;color:#e4002b;">Buyer phone connection service</span></strong></p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
                 </td>
             </tr>
             <tr>
                 <td style="width:216.7pt;border:solid windowtext 1.0pt;border-top:  none;background:#CCCCFF;padding:0cm 1.5pt 0cm 1.5pt;height:30.5pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">Add up to 33 photos of your property</span></strong></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <strong><span
+                                style="font-size:16px;color:#e4002b;">Add up to 33 photos of your user</span></strong>
+                    </p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
                 </td>
             </tr>
             <tr>
                 <td style="width:216.7pt;border:solid windowtext 1.0pt;border-top:  none;background:#CCCCFF;padding:0cm 1.5pt 0cm 1.5pt;height:15.25pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">Expert advice &amp; phone support</span></strong></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
+                        <strong><span
+                                style="font-size:16px;color:#e4002b;">Expert advice &amp; phone support</span></strong>
+                    </p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>

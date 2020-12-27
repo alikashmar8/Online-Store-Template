@@ -5,9 +5,8 @@
         <div class="p-2"></div>
         <div class="post p-4 m-5">
             <h1>Edit Commertcial Property:</h1>
-            <div class="alert alert-warning">Editing your property will need admin confirmation to get listed again!
+            <div class="alert alert-warning">Editing your user will need admin confirmation to get listed again!
             </div>
-
 
 
             {{-- Form::open(['action' => ['App\Http\Controllers\PropertiesController@update',$com->id],'method'=>'PUT','files' => true]) --}}

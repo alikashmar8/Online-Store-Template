@@ -26,7 +26,7 @@ class CreateCommercialsTable extends Migration
             $table->text('location')->nullable();
             $table->double('lang')->nullable();
             $table->double('lan')->nullable();
-            $table->text('extra1')->nullable();
+            $table->text('extra1')->nullable();//contact info
             $table->text('extra2')->nullable();
             $table->integer('extra3')->nullable();
             $table->timestamps();

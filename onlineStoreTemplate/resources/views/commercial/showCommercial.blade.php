@@ -19,18 +19,18 @@
                                 {{--contactInfo != null --}}
                                 @if($com->extra1 != null)
                                     <div class="alert alert-danger">
-                                        Your property is hidden currently, press show to make it visible!
-                                        <a class="btn btn-success "  href="/userShowCommercial?id={{$com->id}}">Show</a>
+                                        Your user is hidden currently, press show to make it visible!
+                                        <a class="btn btn-success " href="/userShowCommercial?id={{$com->id}}">Show</a>
                                     </div>
 
                                 @else
                                     <div class="alert alert-danger">
-                                        Your property is not accepted yet! Kindly wait admin confirmation.
+                                        Your user is not accepted yet! Kindly wait admin confirmation.
                                     </div>
 
                                 @endif
                             @else
-                                <div class="alert alert-info"> Your property listed successfully.
+                                <div class="alert alert-info"> Your user listed successfully.
                                     Press 'hide' button to hide it temporarily.
                                     <a class="btn btn-danger " href="/userHideCommercial?id={{$com->id}}">Hide</a>
                                 </div>
@@ -175,7 +175,7 @@
 
                                     <form action="/contactForProperty" method="get">
                                         @csrf
-                                        <h4>Contact the owner about this property:</h4><br/>
+                                        <h4>Contact the owner about this user:</h4><br/>
 
                                         <input type="hidden" value="{{ $com->id }}" name="id">
                                         <input type="hidden" value="{{ $com->agent->email }}"
@@ -185,10 +185,10 @@
                                             <textarea name="message" class="form-control"
                                                       style="height: 300px ; margin-top: 10px;"
                                                       required>
-Hi, I am interested to view your property! What is the best time to inspect?
+Hi, I am interested to view your user! What is the best time to inspect?
 Thanks
 
-Hi, How much is the last price for your property?
+Hi, How much is the last price for your user?
 Thanks
                                         </textarea>
 

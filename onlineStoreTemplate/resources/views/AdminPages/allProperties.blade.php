@@ -34,21 +34,22 @@
                 </tr>
                 </thead>
                 <tbody class="bg-white">
-                @foreach($properties as $property)
+                @foreach($properties as $user)
                     <tr>
-                        <td>{{ $property->id }}</td>
+                        <td>{{ $user->id }}</td>
                         <td style="height: 80px; width: 200px;">
-                            <div id="carouselExampleFade-{{$property->id}}"
+                            <div id="carouselExampleFade-{{$user->id}}"
                                  class="carousel slide carousel-fade"
                                  data-ride="carousel">
                                 <div class="carousel-inner">
-                                    @if(count($property->images)>0)
-                                        @foreach($property->images as $image)
+                                    @if(count($user->images)>0)
+                                        @foreach($user->images as $image)
 
                                             <div class="carousel-item @if($loop->first) active @endif">
                                                 <div style="width: 100%; height: 100%;">
                                                     @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                                        <video style="height: 125px; width: 200px;object-fit: cover;" controls>
+                                                        <video style="height: 125px; width: 200px;object-fit: cover;"
+                                                               controls>
                                                             <source
                                                                 src="{{url('/storage/properties_images/' . $image->url)}}"
                                                                 type="video/mp4">
@@ -69,7 +70,7 @@
                                     @endif
 
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselExampleFade-{{$property->id}}"
+                                <a class="carousel-control-prev" href="#carouselExampleFade-{{$user->id}}"
                                    role="button"
                                    data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true">
@@ -77,7 +78,7 @@
                                     </span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#carouselExampleFade-{{$property->id}}"
+                                <a class="carousel-control-next" href="#carouselExampleFade-{{$user->id}}"
                                    role="button"
                                    data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true">
@@ -87,26 +88,26 @@
                                 </a>
                             </div>
                         </td>
-                        <td>{{ $property->price }} $</td>
-                        @if($property->showPrice == 0)
+                        <td>{{ $user->price }} $</td>
+                        @if($user->showPrice == 0)
                             <td class="text-danger">No</td>
                         @else
                             <td class="text-success">Yes</td>
                         @endif
-                        <td><a href="/users/{{ $property->userId }}">{{ $property->agent->name }}</a></td>
+                        <td><a href="/users/{{ $user->userId }}">{{ $user->agent->name }}</a></td>
                         <td>
-                            @if( $property->categoryId == 1)
+                            @if( $user->categoryId == 1)
                                 Sell
                             @else
-                                {{ \App\Models\Category::findOrFail($property->categoryId)->title }}
+                                {{ \App\Models\Category::findOrFail($user->categoryId)->title }}
                             @endif
 
                         </td>
 
                         {{-- status --}}
-                        @if($property->accepted == 0)
-                            @if($property->contactInfo != null)
-                                <td class="text-danger">Hidden </td>
+                        @if($user->accepted == 0)
+                            @if($user->contactInfo != null)
+                                <td class="text-danger">Hidden</td>
                             @else
                                 <td class="text-warning">Waiting for confirmation</td>
                             @endif
@@ -114,16 +115,16 @@
                             <td class="text-success">Listed</td>
                         @endif
 
-                        <td><a class="btn btn-info no-sort" href="/properties/{{$property->id}}">Show</a></td>
+                        <td><a class="btn btn-info no-sort" href="/properties/{{$user->id}}">Show</a></td>
                         <td>
                             <button class="btn btn-danger no-sort delete" data-toggle="modal"
                                     data-target="#deleteModal">Delete
                             </button>
-                            {{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$property->id}}').submit();"--}}
+                            {{--                               onclick="event.preventDefault(); document.getElementById('delete-form-{{$user->id}}').submit();"--}}
 
                         </td>
-                        {{--                        form to trigger delete property--}}
-                        {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$property->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$property->id]) }} {{ Form::close() }}
+                        {{--                        form to trigger delete user--}}
+                        {{ Form::open(['action' => ['App\Http\Controllers\PropertiesController@destroy',$user->id],'method'=>'DELETE' , 'class'=>'hidden','id'=>'delete-form-'.$user->id]) }} {{ Form::close() }}
 
                     </tr>
                 @endforeach
