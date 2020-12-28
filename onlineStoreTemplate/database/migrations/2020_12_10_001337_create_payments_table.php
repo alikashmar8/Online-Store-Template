@@ -19,6 +19,7 @@ class CreatePaymentsTable extends Migration
             $table->string('payment_method')->nullable();
             $table->string('package')->nullable();
             $table->double('amount');
+            $table->string('status');
 
             $table->timestamps();
         });

@@ -161,3 +161,13 @@ Route::post('storePayment', '\App\Http\Controllers\PaymentController@store')->na
 
 Route::get('/userPayments', '\App\Http\Controllers\PaymentController@index')->middleware(['auth', 'verified']);
 Route::get('/adminPayments', '\App\Http\Controllers\PaymentController@index')->middleware(['auth', 'verified']);
+
+Route::get('/Stripe/{amount}/{id}', '\App\Http\Controllers\PaymentController@Stripe')->middleware(['auth', 'verified']);
+Route::post('checkout','\App\Http\Controllers\PaymentController@afterStripe')->name('checkout-credit-card');
+//Route::get('checkout','\App\Http\Controllers\PaymentController@Stripe');
+
+
+Route::get('/paypal', function () {
+    return view('Packages.paypal');
+});
+

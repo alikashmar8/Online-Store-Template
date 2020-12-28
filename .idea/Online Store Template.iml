@@ -121,6 +121,9 @@
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/stripe/stripe-php" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/paypal/rest-api-sdk-php" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/srmklive/paypal" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -7,6 +7,10 @@ use App\Models\PropertyImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+
+
+
 class PaymentController extends Controller
 {
     public function index()
@@ -46,7 +50,8 @@ class PaymentController extends Controller
         $pay->payment_method = $request->payment_method;
         $pay->package = $request->package;
         $pay->amount = $request->amount;
-
+        $amount = $request->amount;
+        $pay->status = 'pending';
 
 
         $pay->save();
@@ -54,7 +59,51 @@ class PaymentController extends Controller
         //$mail = Auth::user()->email;
         //Mail::to('ozpropertymarket@gmail.com')->send(new NewPropertyMail());
         //Mail::to($mail)->send(new PropertyCreated());
+        if ($request->payment_method == 'stripe'){
+            return redirect('/Stripe/' . $amount .'/'.$pay->id);
+        }
 
         return redirect('/users/'.$id)->with('message', 'You have registered successfully!');
     }
+
+    //Stripe
+    public function Stripe($amount, $id)
+    {
+        // Enter Your Stripe Secret
+        \Stripe\Stripe::setApiKey('sk_test_51HywjtC3KTL075dcARHpuSgf8trC3awdHpWBgHYmfInB7nbYTSYNnHBlLRaOPFOffMODwAvpkjZB1kzjuRrFumxv00H2p0JX7t');
+
+
+
+        //$amount = $request->amount ;
+        $amount *= 100;
+        $amount = (int) $amount;
+
+        $payment_intent = \Stripe\PaymentIntent::create([
+
+            'amount' => $amount,
+            'currency' => 'AUD',
+            'description' => 'Payment From OZ Property Market Provided by WebSide',
+            'payment_method_types' => ['card'],
+        ]);
+        $intent = $payment_intent->client_secret;
+
+        return view('Packages.stripe',compact('intent' , 'amount', 'id'));
+
+    }
+
+    public function afterStripe(Request $request)
+    {
+
+        $pay = Payment::findOrFail($request->payid);
+        $pay->status = 'paid';
+        $pay->save();
+        return redirect('/userPayments');
+
+
+    }
+
+    //paypal
+
+
+
 }

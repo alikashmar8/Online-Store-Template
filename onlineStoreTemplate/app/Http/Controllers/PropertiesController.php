@@ -214,7 +214,7 @@ class PropertiesController extends Controller
 
         $property->images = PropertyImage::where('propertyId', $property->id)->get();
 
-        return view("Properties.show")->with('property', $property);
+        return view("Properties.show")->with('user', $property);
     }
 
     /**
@@ -225,8 +225,8 @@ class PropertiesController extends Controller
      */
     public function edit($id)
     {
-        $property = Property::findOrFail($id);
-        return view('properties.edit', compact('property'));
+        $user = Property::findOrFail($id);
+        return view('properties.edit', compact('user'));
     }
 
     /**

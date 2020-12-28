@@ -24,7 +24,9 @@
                         <th scope="col">User</th>
                         <th scope="col">Payment Method</th>
                         <th scope="col">Package</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">Price<small>AUD</small></th>
+                        <th scope="col">Status</th>
+
                         <th scope="col">Date</th>
                         <th scope="col">Receipt</th>
 
@@ -38,6 +40,7 @@
                             <td> {{ $pay->payment_method }} </td>
                             <td>  {{ $pay->package }} </td>
                             <td> $ {{ $pay->amount }} </td>
+                            <td>  {{ $pay->status }} </td>
                             <td>  {{ $pay->created_at }} </td>
                             <td><a class="btn btn-success" href=""><i class="fas fa-download"></i></a></td>
 
