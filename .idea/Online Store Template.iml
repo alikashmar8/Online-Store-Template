@@ -124,6 +124,21 @@
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/stripe/stripe-php" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/paypal/rest-api-sdk-php" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/srmklive/paypal" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/php-http/discovery" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/moneyphp/money" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/clue/stream-filter" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/omnipay/common" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/omnipay/paypal" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/php-http/message" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/php-http/message-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/php-http/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/php-http/httplug" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/php-http/guzzle7-adapter" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/dompdf/dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/phenx/php-font-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/phenx/php-svg-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/barryvdh/laravel-dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/sabberworm/php-css-parser" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -40,12 +40,12 @@
 
                             <form action="{{ route('storePayment') }}" method="post">
                                 @csrf
-                                <tr >
+                                <tr style="display: none;">
                                     <td colspan="2">
 
-                                        <input type="radio" name="payment_method" value="paypal" id="paypal" checked>
+                                        <input type="radio" name="payment_method" value="paypal" id="paypal" >
                                         <label for="paypal">Paypal</label><br>
-                                        <input type="radio" name="payment_method" value="stripe" id="stripe">
+                                        <input type="radio" name="payment_method" value="stripe" id="stripe" checked>
                                         <label for="stripe">Stripe</label><br>
                                         <input type="radio" name="payment_method" value="Bank" id="Bank">
                                         <label for="Bank">Bank Account</label><br>
@@ -57,7 +57,7 @@
 
                                                 <input type="hidden" value="{{$pack->title}}" name="package">
 
-                                                <input type="hidden" value="{{$pack->price}}" name="amount">
+                                                <input type="hidden" value="" id="amount" name="amount">
                                                 <input type="submit" value="Pay now">
 
 
@@ -76,5 +76,6 @@
         x += x * 0.095;
         x = x.toFixed(2)
         document.getElementById('total').innerHTML =x;
+        document.getElementById('amount').value =x;
     </script>
 @endsection

@@ -118,6 +118,21 @@
       <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/stripe/stripe-php" />
       <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/paypal/rest-api-sdk-php" />
       <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/srmklive/paypal" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/moneyphp/money" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/clue/stream-filter" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/omnipay/common" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/omnipay/paypal" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/php-http/message" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/php-http/guzzle7-adapter" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/onlineStoreTemplate/vendor/sabberworm/php-css-parser" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

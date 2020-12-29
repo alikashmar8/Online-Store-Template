@@ -2,6 +2,7 @@
 
 use App\Models\Company;
 use App\Models\User;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -167,7 +168,23 @@ Route::post('checkout','\App\Http\Controllers\PaymentController@afterStripe')->n
 //Route::get('checkout','\App\Http\Controllers\PaymentController@Stripe');
 
 
-Route::get('/paypal', function () {
+//paypal
+/*Route::get('/paypal', function () {
     return view('Packages.paypal');
 });
+Route::get('payment', '\App\Http\Controllers\PaymentController@index');
+Route::post('charge', '\App\Http\Controllers\PaymentController@charge');
+Route::get('paymentsuccess', '\App\Http\Controllers\PaymentController@payment_success');
+Route::get('paymenterror', '\App\Http\Controllers\PaymentController@payment_error');*/
+
+
+//invoice
+use Barryvdh\DomPDF\Facade as PDF;
+Route::get('/invoice', function () {
+    $pdf = PDF::loadView('pdf.invoice');
+
+    return $pdf->download('invoice.pdf');
+});
+Route::get('/invoice/{id}', '\App\Http\Controllers\PaymentController@getInvoice')->middleware(['auth', 'verified']);
+
 

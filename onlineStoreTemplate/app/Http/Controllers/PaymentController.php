@@ -7,9 +7,7 @@ use App\Models\PropertyImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
-
-
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PaymentController extends Controller
 {
@@ -104,6 +102,13 @@ class PaymentController extends Controller
 
     //paypal
 
+    //invoice
+    public function getInvoice($id){
+        $pay = \App\Models\Payment::findOrFail($id);
+        $pdf = PDF::loadView('pdf.invoice' , compact('pay'));
 
+        return $pdf->download('invoice.pdf');
+
+    }
 
 }
