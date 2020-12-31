@@ -32,6 +32,28 @@
     <link href="/css/app.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    {{--    custom added new--}}
+
+<!-- Animate.css -->
+    <link rel="stylesheet" href="{{ URL::asset('css/animate.css') }}">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{{ URL::asset('css/icomoon.css') }}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="{{ URL::asset('css/superfish.css') }}">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="{{ URL::asset('css/flexslider.css') }}">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{ URL::asset('css/magnific-popup.css') }}">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datepicker.min.css') }}">
+    <!-- CS Select -->
+    <link rel="stylesheet" href="{{ URL::asset('css/cs-select.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/cs-skin-border.css') }}">
+
+    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
