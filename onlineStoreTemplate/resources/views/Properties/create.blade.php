@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="hero" style=" background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/sell.jpg);
-    " >
+    ">
 
         <div class="inner">
             <h1>Let's List It</h1>
@@ -15,11 +15,11 @@
 
         <div class="main2">
 
-           <div class="container creat_app ">
+            <div class="container creat_app ">
 
 
                 <h2>Place New Property</h2>
-               <a class="btn-primary1 " href="/packages">Packages</a>
+                <a class="btn-primary1 " href="/packages">Packages</a>
 
                 <div class="p-5">
 
@@ -34,15 +34,19 @@
                                     defer
                                 ></script>
 
-                                <div class="  form-label-group">
-                                    {{ Form::label('locationDescription','Location:') }}
-
-                                    <input type="text" placeholder="Enter Location"
-                                           {{--name="address"--}} name="locationDescription"
-                                           onFocus="initializeAutocomplete()" id="locality" required>
-                                    <i class='far fa-question-circle' data-toggle="tooltip" data-placement="top"
-                                       title="Choose location from suggested options"></i>
-
+                                <div class="form-label-group">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            {{ Form::label('locationDescription','Location:') }}
+                                        </div>
+                                        <div class="col-md-5">
+                                            <input type="text" placeholder="Enter Location"
+                                                   {{--name="address"--}} name="locationDescription"
+                                                   onFocus="initializeAutocomplete()" id="locality" required>
+                                            <i class='far fa-question-circle' data-toggle="tooltip" data-placement="top"
+                                               title="Choose location from suggested options"></i>
+                                        </div>
+                                    </div>
 
                                 </div>
                                 @error('latitude')
@@ -74,7 +78,7 @@
 
                                         var autocomplete = new google.maps.places.Autocomplete(input, options);
 
-                                        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                                        google.maps.event.addListener(autocomplete, 'place_changed', function () {
                                             var place = autocomplete.getPlace();
                                             var lat = place.geometry.location.lat();
                                             var lng = place.geometry.location.lng();
@@ -97,38 +101,66 @@
                                     }
                                 </script>
 
-                            </div >
+                            </div>
 
                             <div class="  form-label-group">
-                                {{ Form::label('price','Price:') }}
-                                {{ Form::number('price','',['min' => '0','class' => ' ' ,'placeholder'=>'Price', 'required']) }}
-                                @error('price')
-                                <span class="alert-danger" role="alert">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        {{ Form::label('price','Price:') }}
+                                    </div>
+                                    <div class="col-md-5">
+                                        {{ Form::number('price','',['min' => '0','class' => ' ' ,'placeholder'=>'Price', 'required']) }}
+                                        @error('price')
+                                        <span class="alert-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                @enderror
-                            </div><BR/>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <BR/>
 
                             <div class="  form-label-group special">
-                                {{ Form::checkbox('showPrice', 1, true) }}
-                                {{ Form::label('showPrice','Show Price') }}
-                            </div><BR/>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        {{ Form::label('showPrice','Show Price:') }}
+                                    </div>
+                                    <div class="col-md-5">
+                                        {{ Form::checkbox('showPrice', 1, true) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <BR/>
                             <div class="  form-label-group">
-                                {{ Form::label('category','Listing Type:') }}
-                                <select name="category">
-                                    @foreach(\App\Models\Category::all() as $type)
-                                        <option value="{{$type->id}}">{{ $type->title }} </option>
-                                    @endforeach
-                                </select>
-                            </div><BR/>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        {{ Form::label('category','Listing Type:') }}
+                                    </div>
+                                    <div class="col-md-5">
+                                        <select name="category">
+                                            @foreach(\App\Models\Category::all() as $type)
+                                                <option value="{{$type->id}}">{{ $type->title }} </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <BR/>
                             <div class="  form-label-group">
-                                {{ Form::label('type','Property Type:') }}
-                                <select name="type">
-                                    @foreach(\App\Models\PropertyType::all() as $type)
-                                        <option value="{{$type->id}}">{{ $type->title }} </option>
-                                    @endforeach
-                                </select>
-                            </div><BR/>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        {{ Form::label('type','Property Type:') }}
+                                    </div>
+                                    <div class="col-md-5">
+                                        <select name="type">
+                                            @foreach(\App\Models\PropertyType::all() as $type)
+                                                <option value="{{$type->id}}">{{ $type->title }} </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <BR/>
 
                             {{--                    <div class="  form-label-group">--}}
                             {{--                        {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}--}}
@@ -136,18 +168,39 @@
                             {{--                    </div>--}}
 
                             <div class="  form-label-group">
-                                {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}
-                                {{ Form::select('bedroomsNumber',array(0=> 0,1,2,3,4,5=>'5+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
-                            </div><BR/>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        {{ Form::label('bedroomsNumber','Number Of Bedrooms:') }}
+                                    </div>
+                                    <div class="col-md-5">
+                                        {{ Form::select('bedroomsNumber',array(0=> 0,1,2,3,4,5=>'5+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <BR/>
 
                             <div class="  form-label-group">
-                                {{ Form::label('bathroomsNumber','Number Of Bathrooms:') }}
-                                {{ Form::select('bathroomsNumber',array(0=> 0,1,2,3,4=>'4+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
-                            </div><BR/>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        {{ Form::label('bathroomsNumber','Number Of Bathrooms:') }}
+                                    </div>
+                                    <div class="col-md-5">
+                                        {{ Form::select('bathroomsNumber',array(0=> 0,1,2,3,4=>'4+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <BR/>
                             <div class="  form-label-group">
-                                {{ Form::label('parkingNumber','Number Of Parkings:') }}
-                                {{ Form::select('parkingNumber',array(0=> 0,1,2,3,4=>'4+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
-                            </div><BR/>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        {{ Form::label('parkingNumber','Number Of Parkings:') }}
+                                    </div>
+                                    <div class="col-md-5">
+                                        {{ Form::select('parkingNumber',array(0=> 0,1,2,3,4=>'4+'),['class' => 'form-control','placeholder'=>'bathroomsNumber']) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <BR/>
 
 
                             <div class="  form-label-group">
@@ -158,8 +211,8 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                 @enderror
-                            </div><BR/>
-
+                            </div>
+                            <BR/>
 
 
                             <div class="  form-label-group">
@@ -168,7 +221,8 @@
                                 <i class='far fa-question-circle' data-toggle="tooltip" data-placement="top"
                                    title="Supported file types are (mp4/jpg/png)"></i>
                                 <br>
-                                <small class="ml-3">Total max storage size = 100M <br/> Recommended photos size: 800*500</small>
+                                <small class="ml-3">Total max storage size = 100M <br/> Recommended photos size:
+                                    800*500</small>
 
 
                                 <script>
@@ -193,7 +247,8 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                 @enderror
-                            </div><BR/>
+                            </div>
+                            <BR/>
 
 
                         </div>

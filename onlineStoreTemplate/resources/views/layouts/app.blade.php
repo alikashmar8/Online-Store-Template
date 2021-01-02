@@ -39,7 +39,7 @@
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="{{ URL::asset('css/icomoon.css') }}">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
+{{--    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">--}}
     <!-- Superfish -->
     <link rel="stylesheet" href="{{ URL::asset('css/superfish.css') }}">
     <!-- Flexslider  -->
@@ -213,7 +213,11 @@
                 @else
 
                     <li class="nav-item">
-                        <a class="special-link" href="/users/{{ Auth::id() }}">
+                        <a class="special-link mr-3" href="/users/{{ Auth::id() }}">
+
+                            <img style="width: 20px; height: 20px;" class="rounded"
+                                 src="{{url('/storage/user_profile_images/' . Auth::user()->profileImg )}}"
+                            >
                             {{--                            id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre--}}
                             {{--                           data-toggle="dropdown" --}}
                             {{ Auth::user()->name }}

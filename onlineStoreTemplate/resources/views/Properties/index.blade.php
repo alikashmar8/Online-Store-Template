@@ -182,9 +182,9 @@
 
 
 
-                        @foreach($properties as $user)
+                        @foreach($properties as $property)
                             <div class="post my-5">
-                                @if($user->created_at > \Carbon\Carbon::now()->subDays(14))
+                                @if($property->created_at > \Carbon\Carbon::now()->subDays(14))
                                     <div class="new-prop">
                                         <img src="https://webside.com.au/MK/hackathon/imagaga123/images1/flag.svg"
                                              style="border: none">
@@ -192,8 +192,8 @@
                                 @endif
                                 <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
                                     <div class="carousel-inner">
-                                        @if(count($user->images)>0)
-                                            @foreach($user->images as $image)
+                                        @if(count($property->images)>0)
+                                            @foreach($property->images as $image)
                                                 <div class="carousel-item @if($loop->first) active @endif">
                                                     @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
                                                         <video class="d-block w-100"
@@ -235,15 +235,15 @@
                                     </a>
                                 </div>
 
-                                <a style="text-decoration: none" href="/properties/{{$user->id}}">
+                                <a style="text-decoration: none" href="/properties/{{$property->id}}">
                                     <div class="post-details">
 
-                                        <p class="price">{{ $user->locationDescription }} </p>
+                                        <p class="price">{{ $property->locationDescription }} </p>
 
-                                        @if($user->showPrice == 1)
+                                        @if($property->showPrice == 1)
                                             <p class="price">
                                                 <i class="fa fa-usd" aria-hidden="true"></i>
-                                                {{$user->price}}
+                                                {{$property->price}}
                                             </p>
                                         @else
                                             <p class="price">
@@ -253,14 +253,14 @@
 
 
                                         <p style="color: #0a0807;padding-left: 0.5rem;">
-                                            {{$user->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                            {{$user->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                            {{$user->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                                            | {{ \App\Models\PropertyType::findOrFail($user->typeId)->title }}
+                                            {{$property->bedroomsNumber}} <i class="fa fa-bed" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                            {{$property->bathroomsNumber}} <i class="fa fa-bath" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                            {{$property->parkingNumber}} <i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                            | {{ \App\Models\PropertyType::findOrFail($property->typeId)->title }}
                                         </p>
 
                                         {{--<a class="special-link" style="color: #0a0807;padding-left: -0.5rem;"
-                                           href="/properties/{{$user->id}}">View details</a>--}}
+                                           href="/properties/{{$property->id}}">View details</a>--}}
                                     </div>
                                 </a>
                             </div>
