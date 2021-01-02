@@ -43,7 +43,13 @@
                             <td>  {{ $pay->status }} </td>
                             <td>  {{ $pay->created_at }} </td>
 
-                            <td><a class="btn btn-success" href=""><i class="fas fa-download"></i></a></td>
+                            <td>@if($pay->status == "paid")
+                                    <a class="btn btn-success" href="/invoice/{{$pay->id}}"><i class="fas fa-download"></i></a>
+                                @else
+                                    <a class="btn btn-warning"  ><i class="fas fa-download"></i></a>
+                                @endif
+
+                            </td>
 
                         </tr>
                     @endforeach

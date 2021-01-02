@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'AEDT',
 
     /*
     |--------------------------------------------------------------------------
@@ -233,6 +233,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'PayPal' => Srmklive\PayPal\Facades\PayPal::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+
     ],
 
 ];

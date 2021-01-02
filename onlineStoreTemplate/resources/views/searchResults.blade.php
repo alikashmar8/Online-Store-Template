@@ -13,15 +13,15 @@
                     <div class="  profile">
                         <div class="num1">
 
-                            <img style="width: 10%; height: 10%;"
+                            <img style="width: 80%; height: 10%;"
                                  src="{{url('/storage/user_profile_images/' . $agent->profileImg)}}"
                                  alt="Profile Image">
                         </div>
                         <div class="num2">
                             <h4> {{$agent->name}}</h4>
-                            <p><a style="font-weight: bold"> Company name:</a> {{$agent->company->name}}</p>
-                            <p> <a style="font-weight: bold"> Licence Number:</a> {{$agent->company->licenseNumber}}</p>
-                            <p><a style="font-weight: bold"> Phone number:</a> +{{ $agent->phoneNumberCode }}-{{$agent->phoneNumber}}</p>
+                            <p><a style="font-weight: bold"> Company name:</a> {{--$agent->company->name--}}</p>
+                            <!--p> <a style="font-weight: bold"> Licence Number:</a> {{--$agent->company->licenseNumber--}}</p-->
+                            <p><a style="font-weight: bold"> Phone number:</a> +{{-- --$agent->phoneNumberCode --}}61-{{$agent->phoneNumber}}</p>
                             <p><a style="font-weight: bold"> Email:</a> {{$agent->email}}</p>
                         </div>
                     </div>
@@ -35,4 +35,7 @@
         <h3 class="post">No results found for : '{{ $searched }}' !</h3>
     @endif
     </div>
+
+
+
 {{--@endsection--}}
