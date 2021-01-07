@@ -20,6 +20,7 @@ class CreatePaymentsTable extends Migration
             $table->string('package')->nullable();
             $table->double('amount');
             $table->string('status');
+            $table->integer('used')->default(0);
 
             $table->timestamps();
         });

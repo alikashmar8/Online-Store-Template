@@ -26,7 +26,7 @@ class CreatePropertiesTable extends Migration
             $table->foreignId('userId')->constrained('users');
             $table->bigInteger('categoryId');
             $table->bigInteger('typeId');
-            $table->bigInteger('packageId');
+            $table->bigInteger('packageId')->nullable();
             $table->string("locationDescription")->nullable();
             $table->bigInteger('countryId')->nullable();
             $table->bigInteger('stateId')->nullable();

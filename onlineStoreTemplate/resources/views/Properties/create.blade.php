@@ -34,9 +34,10 @@
                                     </div>
                                     <div class="col-md-5">
                                         <select name="packageId">
-                                            @foreach($packages as $pack)
-                                                <option value="{{$pack->id}}">{{ $pack->title }} </option>
-                                            @endforeach
+                                            @for( $z=1 ; $z<count($aa); $z++)
+
+                                                <option value="{{$aa[$z]}}">{{ \App\Models\Packages::findOrFail( $aa[$z])->title }} </option>
+                                            @endfor
                                         </select>
                                     </div>
                                 </div>

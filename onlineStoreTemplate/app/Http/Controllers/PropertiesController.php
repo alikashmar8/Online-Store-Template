@@ -106,28 +106,34 @@ class PropertiesController extends Controller
     public function create()
     {
         $id = Auth::user()->id;
-        $packages = Payment::where('user_id' , '=', $id);
-        $sale = 0;
-        $rent = 0 ;
-        if ($packages == null ){
-            return redirect('/packages')->with('message', 'Please Register in a package!');;
+        $payment = Payment::find($id);
+        $packages = null;
+        $aa[] = null;
+        if ($payment != null ) {
+            $payment =  $payment  ->where('status' , '=','paid')->where('used' ,'=', 0)->get();
+            /*foreach ($payment as $pay) {
+                $pay->title = Packages::where('title', '=', $pay->package)->get();*/
 
-        }else{
-
-            foreach ($packages as $pack){
-                if($pack <6){
-                    $sale = 1;
-                }elseif($pack > 5 && $pack < 8){
-                    $rent = 1 ;
-
+            foreach ($payment as $pay){
+                $packages = Packages::where('title', '=', $pay->package)->first() ;
+                if ($packages->id < 6) {
+                    $aa[] += $packages->id ;
+                } elseif ($packages->id > 5 && $packages->id < 8) {
+                    $aa[] += $packages->id ;
                 }
-            }
-            if( $sale == 0 && $rent ==0 ){
-                return redirect('/packages')->with('message', 'Please Register in a package!');
-            }else{
-                return view('Properties.create' , compact('sale', 'rent', 'packages'));
-            }
 
+            }
+            if (  count($aa) == 1) {
+                return redirect('/packages')->with('message', 'Please Register in a Residential package!');;
+
+            } else {
+
+
+                return view('Properties.create', compact( 'aa'));
+
+            }
+        }else{
+            return redirect('/packages')->with('message', 'Please Register in a Residential  package!');
         }
 
 
@@ -217,6 +223,12 @@ class PropertiesController extends Controller
         $history->isUpdated = 0;
         $history->isDeleted = 0;
         $history->save();
+
+
+        $package = Packages::findOrFail($request->packageId)->first();
+        $payment = Payment::all()->where( 'user_id' , '=',  Auth::user()->id)->where('package','=', $package->title)->first();
+        $payment->used = 1;
+        $payment->save();
 
 
         $mail = Auth::user()->email;
