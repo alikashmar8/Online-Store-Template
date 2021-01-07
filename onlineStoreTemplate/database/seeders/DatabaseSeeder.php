@@ -327,19 +327,21 @@ class CountryCodesSeeder extends Seeder
 
         );
         $package = array(
-            array('id' => '1', 'title' => 'Basic Residential Sale Package', 'price' => '490' ),
+            array('id' => '1', 'title' => 'Basic Residential Sale Package', 'price' => '99' ),
             array('id' => '2', 'title' => 'Gold Residential Sale Package', 'price' => '590' ),
             array('id' => '3', 'title' => 'Platinum Residential Sale Package', 'price' => '690' ),
             array('id' => '4', 'title' => 'Professional Residential Sale Package', 'price' => '1490' ),
             array('id' => '5', 'title' => 'Ultimate Residential Sale Package', 'price' => '2490' ),
-            array('id' => '6', 'title' => 'Standard Residential Rental Packages', 'price' => '149' ),
+            array('id' => '6', 'title' => 'Standard Residential Rental Packages', 'price' => '69' ),
             array('id' => '7', 'title' => 'Professional Residential Rental Packages', 'price' => '199' ),
-            array('id' => '8', 'title' => 'Gold Commercial Sale Packages', 'price' => '390' ),
-            array('id' => '9', 'title' => 'Professional Commercial Sale Packages', 'price' => '790' ),
-            array('id' => '10', 'title' => 'Gold Commercial Rental Package', 'price' => '199' ),
-            array('id' => '11', 'title' => 'Professional Commercial Rental Package', 'price' => '399' ),
-            array('id' => '12', 'title' => 'Business Sale Package', 'price' => '490' ),
-            array('id' => '13', 'title' => 'Photo Sign Package', 'price' => '950' ),
+            array('id' => '8', 'title' => 'Basic Commercial Sale Packages', 'price' => '99' ),
+            array('id' => '9', 'title' => 'Gold Commercial Sale Packages', 'price' => '390' ),
+            array('id' => '10', 'title' => 'Professional Commercial Sale Packages', 'price' => '790' ),
+            array('id' => '11', 'title' => 'Basic Commercial Rental Package', 'price' => '69' ),
+            array('id' => '12', 'title' => 'Gold Commercial Rental Package', 'price' => '199' ),
+            array('id' => '13', 'title' => 'Professional Commercial Rental Package', 'price' => '399' ),
+            array('id' => '14', 'title' => 'Business Sale Package', 'price' => '490' ),
+            array('id' => '15', 'title' => 'Photo Sign Package', 'price' => '799' ),
 
         );
 

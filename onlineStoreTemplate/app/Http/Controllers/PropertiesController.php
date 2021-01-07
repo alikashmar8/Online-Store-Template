@@ -104,7 +104,32 @@ class PropertiesController extends Controller
      */
     public function create()
     {
-        return view('Properties.create');
+        $id = Auth::user()->id;
+        $packages = Packages::where('user_id' , '=', $id);
+        $sale = 0;
+        $rent = 0 ;
+        if ($packages == null ){
+            return redirect('/packages')->with('message', 'Please Register in a package!');;
+
+        }else{
+
+            foreach ($packages as $pack){
+                if($pack <6){
+                    $sale = 1;
+                }elseif($pack > 5 && $pack < 8){
+                    $rent = 1 ;
+
+                }
+            }
+            if( $sale == 0 && $rent ==0 ){
+                return redirect('/packages')->with('message', 'Please Register in a package!');
+            }else{
+                return view('Properties.create' , compact('sale', 'rent'));
+            }
+
+        }
+
+
     }
 
     /**

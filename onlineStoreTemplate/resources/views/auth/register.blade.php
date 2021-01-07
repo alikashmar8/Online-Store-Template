@@ -70,7 +70,7 @@
 
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
-                        <select id="phoneNumberCode" name="phoneNumberCode" style="cursor:no-drop;"
+                        <select id="phoneNumberCode" name="phoneNumberCode" style="cursor:no-drop; display: none"
                                 class="form-control mx-3 mb-2">
 
                             @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
@@ -199,7 +199,7 @@
 
                     <div class="form-label-group">
                         <label for="phoneNumber">Phone Number*</label>
-                        <select id="phoneNumberCode" name="phoneNumberCode" style="cursor:no-drop;"
+                        <select id="phoneNumberCode" name="phoneNumberCode" style="cursor:no-drop; display: none"
                                 class="form-control mx-3 mb-2" readonly="readonly">
                             @foreach(\App\Models\CountryCode::orderBy('phonecode')->get() as $countryCode)
                                 <option value="{{$countryCode->iso}}" style="display:none;"

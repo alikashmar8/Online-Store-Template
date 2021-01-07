@@ -190,12 +190,11 @@
 </head>
 
 <body>
-
 <div id="pricing-table" class="clear">
     <h1>Residential Sale Packages</h1>
     <center>
         <div class="plan">
-            <h3>Basic<span>$490</span></h3>
+            <h3>Basic<span>$99</span></h3>
             <a class="signup" href="/pricing#Residential_Sale">More Details</a>
             <ul>
                 <li><b></b> Property Brochures</li>
@@ -205,7 +204,7 @@
             </ul>
         </div>
         <div class="plan">
-            <h3>Gold<span>$590</span></h3>
+            <h3>Professional<span>$590</span></h3>
             <a class="signup" href="/pricing#Residential_Sale">More Details</a>
             <ul>
                 <li><b></b> Property Brochures</li>
@@ -215,23 +214,24 @@
             </ul>
         </div>
         <div class="plan">
-            <h3>Platinum<span>$690</span></h3>
+            <h3>Gold<span>$690</span></h3>
             <a class="signup" href="/pricing#Residential_Sale">More Details</a>
             <ul>
-                <li><b></b> Property Brochures</li>
+
+                <li><b></b>Manage and edit your Listing 24/7</li>
                 <li><b></b>Attach your own Floor Plan</li>
                 <li><b></b>Attach your video to your Listing</li>
-                <li><b></b>Open For Inspection Flags</li>
+                <li><b></b>Open for inspection flag</li>
             </ul>
         </div>
+
         <div class="plan" id="most-popular">
-            <h3>Professional<span>$1490</span></h3>
+            <h3>Platinum<span>$1490</span></h3>
             <a class="signup" href="/pricing#Residential_Sale">More Details</a>
             <ul>
-                <li><b></b> Property Brochures</li>
-                <li><b></b>Open For Inspection Flags</li>
-                <li><b></b>For Sale sign board</li>
-
+                <li><b></b>Manage and edit your Listing 24/7</li>
+                <li><b></b>Attach your video to your Listing</li>
+                <li><b></b>Open for inspection flag</li>
                 <li><b></b>'SOLD' sticker and zipped ties</li>
             </ul>
         </div>
@@ -252,12 +252,12 @@
 <div id="pricing-table" class="clear">
     <h1>Residential Rental Packages</h1>
     <div class="plan">
-        <h3>Standard<span>$149</span></h3>
+        <h3>Standard<span>$69</span></h3>
         <a class="signup" href="/pricing#Residential_Rent">More Details</a>
         <ul>
+            <li><b></b>Manage and edit your Listing 24/7</li>
             <li><b></b> 'For Lease' Board</li>
             <li><b></b>Fully Signed PDF Applications</li>
-            <li><b></b>SMS Alerts & Enquiry Forwarding</li>
             <li><b></b> Extended Customer Support</li>
         </ul>
     </div>
@@ -265,9 +265,10 @@
         <h3>Professional<span>$199</span></h3>
         <a class="signup" href="/pricing#Residential_Rent">More Details</a>
         <ul>
-            <li><b></b> 'For Lease' Board</li>
+            <li><b></b>Manage and edit your Listing 24/7</li>
+            <li><b></b> Extended customer support</li>
             <li><b></b>Fully Signed PDF Applications</li>
-            <li><b></b>SMS Alerts & Enquiry Forwarding</li>
+
             <li><b></b> Listing on domain.com.au</li>
         </ul>
     </div>
@@ -276,13 +277,22 @@
 <div id="pricing-table" class="clear">
     <h1>Commercial Sale Packages</h1>
     <div class="plan">
+        <h3>Basic<span>$99</span></h3>
+        <a class="signup" href="/pricing#Commercial_Sale">More Details</a>
+        <ul>
+            <li><b></b>Manage and edit your Listing 24/7</li>
+            <li><b></b> Printable Brochures</li>
+            <li><b></b> Extended customer support</li>
+        </ul>
+    </div>
+    <div class="plan">
         <h3>Gold<span>$390</span></h3>
         <a class="signup" href="/pricing#Commercial_Sale">More Details</a>
         <ul>
             <li><b></b>'For Sale' Board</li>
             <li><b></b> Printable Brochures</li>
             <li><b></b> Manage Your Listing 24/7</li>
-            <li><b></b> SMS Alerts & Enquiry Forwarding</li>
+
         </ul>
     </div>
     <div class="plan" id="most-popular">
@@ -290,7 +300,7 @@
         <a class="signup" href="/pricing#Commercial_Sale">More Details</a>
         <ul>
             <li><b></b>'For Sale' Board</li>
-            <li><b></b> Printable Brochures</li>
+
             <li><b></b> Manage Your Listing 24/7</li>
             <li><b></b> List on commercialrealestate.com.au</li>
         </ul>
@@ -300,22 +310,34 @@
 <div id="pricing-table" class="clear">
     <h1>Commercial Rental Packages</h1>
     <div class="plan">
+        <h3>Basic<span>$99</span></h3>
+        <a class="signup" href="/pricing#Commercial_Rent">More Details</a>
+        <ul>
+
+            <li><b></b> Extended customer support</li>
+            <li><b></b> Printable Brochures</li>
+            <li><b></b> Manage Your Listing 24/7</li>
+            <li><b></b>Fully Signed PDF Applications</li>
+        </ul>
+    </div>
+    <div class="plan">
         <h3>Gold<span>$199</span></h3>
         <a class="signup" href="/pricing#Commercial_Rent">More Details</a>
         <ul>
-            <li><b></b>'For Lease' Board</li>
+            <li><b></b> Extended customer support</li>
             <li><b></b> Printable Brochures</li>
-            <li><b></b> Manage Your Listing 24/7</li>
-            <li><b></b> SMS Alerts & Enquiry Forwarding</li>
+            <li><b></b>'For Lease' Board</li>
+            <li><b></b>Fully Signed PDF Applications</li>
         </ul>
     </div>
     <div class="plan" id="most-popular">
         <h3>Professional<span>$399</span></h3>
         <a class="signup" href="/pricing#Commercial_Rent">More Details</a>
         <ul>
-            <li><b></b>'For Sale' Board</li>
+            <li><b></b>'For Lease' Board</li>
             <li><b></b> Printable Brochures</li>
             <li><b></b> Manage Your Listing 24/7</li>
+
             <li><b></b> List on commercialrealestate.com.au</li>
         </ul>
     </div>
@@ -324,26 +346,25 @@
 <div id="pricing-table" class="clear">
     <h1>Other Business Packages</h1>
     <div class="plan">
-        <h3>Business Sales Package<span>$490</span></h3>
+        <h3>Business Sales Package<span>$99</span></h3>
         <a class="signup" href="/pricing#Business_Sale">More Details</a>
         <ul>
 
             <li><b></b> Printable Brochures</li>
             <li><b></b> Manage Your Listing 24/7</li>
-            <li><b></b> SMS Alerts & Enquiry Forwarding</li>
-            <li><b></b> Panel of Experts</li>
+
             <li><b></b> Extended Customer Support</li>
         </ul>
     </div>
     <div class="plan"  >
-        <h3>Photo Sign Package<span>$399</span></h3>
+        <h3>Photo Sign Package<span>$799</span></h3>
         <a class="signup" href="/pricing#Business_Sale">More Details</a>
         <ul>
             <li><b></b>Weekly Property Reports</li>
             <li><b></b>1 x large 'SOLD' sticker</li>
-            <li><b></b> Printable Color Brochures</li>
+
             <li><b></b> Manage Your Listing 24/7</li>
-            <li><b></b> large PHOTO SIGN</li>
+
         </ul>
     </div>
 </div>
