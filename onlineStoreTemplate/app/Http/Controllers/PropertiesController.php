@@ -9,6 +9,7 @@ use App\Mail\PropertyUpdated;
 use App\Models\Category;
 use App\Models\History;
 use App\Models\Packages;
+use App\Models\Payment;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\PropertyType;
@@ -105,7 +106,7 @@ class PropertiesController extends Controller
     public function create()
     {
         $id = Auth::user()->id;
-        $packages = Packages::where('user_id' , '=', $id);
+        $packages = Payment::where('user_id' , '=', $id);
         $sale = 0;
         $rent = 0 ;
         if ($packages == null ){
@@ -124,7 +125,7 @@ class PropertiesController extends Controller
             if( $sale == 0 && $rent ==0 ){
                 return redirect('/packages')->with('message', 'Please Register in a package!');
             }else{
-                return view('Properties.create' , compact('sale', 'rent'));
+                return view('Properties.create' , compact('sale', 'rent', 'packages'));
             }
 
         }

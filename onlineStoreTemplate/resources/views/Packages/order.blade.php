@@ -21,6 +21,42 @@
                                     <a id="price">{{$pack->price}}</a>
                                 </td>
                             </tr>
+                            @if(!\Illuminate\Support\Facades\Auth::guest())
+                                @if(\Illuminate\Support\Facades\Auth::user()->role < 2)
+                                    @if($pack->id < 6 || ($pack->id > 7 && $pack->id < 11))
+                            <tr>
+                                <td colspan="2">
+                                    <input id="additioanl" type="checkbox" class="icon-" onclick="additional_clicked()">
+                                    <label for="additioanl">
+                                        Aplly 30-Days sponsorship.
+                                    </label>
+
+                                    <script>
+                                        var additional = document.getElementById("additioanl");
+                                        var y = 0;
+                                        function additional_clicked(){
+                                            if(additional.checked ){
+                                                y = parseInt(document.getElementById('total').innerHTML);
+                                                y += 99;
+                                                y = y.toFixed(2);
+                                                document.getElementById('total').innerHTML = y ;
+                                                document.getElementById('amount').value = y ;
+                                            }else{
+                                                y = parseInt(document.getElementById('total').innerHTML);
+                                                y -= 99;
+                                                y = y.toFixed(2);
+                                                document.getElementById('total').innerHTML = y ;
+                                                document.getElementById('amount').value = y ;
+                                            }
+
+                                        }
+                                    </script>
+                                </td>
+
+                            </tr>
+                                    @endif
+                                @endif
+                            @endif
                             <tr>
                                 <td>
                                     Tax
@@ -58,7 +94,7 @@
                                                 <input type="hidden" value="{{$pack->title}}" name="package">
 
                                                 <input type="hidden" value="" id="amount" name="amount">
-                                                <input type="submit" value="Pay now">
+                                                <input type="submit" value="Pay now" class="btn-primary1">
 
 
                                         </center>
@@ -74,7 +110,7 @@
     <script>
         var x =  parseInt(document.getElementById('price').innerHTML);
         x += x * 0.095;
-        x = x.toFixed(2)
+        x = x.toFixed(2);
         document.getElementById('total').innerHTML =x;
         document.getElementById('amount').value =x;
     </script>

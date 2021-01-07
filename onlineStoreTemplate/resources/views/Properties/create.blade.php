@@ -27,6 +27,20 @@
 
                     <div class="">
                         <div class="raw ">
+                            <div class="  form-label-group">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        {{ Form::label('packageId','Which Package would you like to use for this property:') }}
+                                    </div>
+                                    <div class="col-md-5">
+                                        <select name="packageId">
+                                            @foreach($packages as $pack)
+                                                <option value="{{$pack->id}}">{{ $pack->title }} </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div {{--maps class="col-md-6" style="height:300px"--}}>
                                 <script
@@ -50,9 +64,9 @@
 
                                 </div>
                                 @error('latitude')
-                                <span class="alert-danger" role="alert">
-                                                <strong>Please use a valid location from the options</strong>
-                                            </span>
+                                    <span class="alert-danger" role="alert">
+                                        <strong>Please use a valid location from the options</strong>
+                                    </span>
                                 @enderror
                                 <br/>
 

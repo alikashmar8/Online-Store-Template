@@ -41,7 +41,6 @@ class PaymentController extends Controller
 
     public function store(Request $request)
     {
-
         $id = Auth::user()->id;
         $pay = new Payment();
         $pay->user_id = $id;
@@ -94,6 +93,7 @@ class PaymentController extends Controller
 
         $pay = Payment::findOrFail($request->payid);
         $pay->status = 'paid';
+
         $pay->save();
         return redirect('/userPayments');
 
