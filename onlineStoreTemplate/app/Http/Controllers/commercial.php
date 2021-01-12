@@ -16,6 +16,8 @@ use App\Models\commercial;
 use App\Models\CommercialImage;
 use App\Models\commTypes;
 use App\Models\History;
+use App\Models\Packages;
+use App\Models\Payment;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\PropertyType;
@@ -40,7 +42,34 @@ class commercialController extends Controller
     }
     public function create()
     {
-        return view('commercial.createCommercial');
+        $id = Auth::user()->id;
+        $payment = Payment::find($id);
+        $packages = null;
+        $ab[] = null;
+        if ($payment != null ) {
+            $payment =  $payment->where('status' , '=','paid')->where('used' ,'=', 0)->get();
+            /*foreach ($payment as $pay) {
+                $pay->title = Packages::where('title', '=', $pay->package)->get();*/
+
+            foreach ($payment as $pay){
+                $packages = Packages::where('title', '=', $pay->package)->first() ;
+                if ($packages->id > 7) {
+                    $ab[] += $packages->id;
+                }
+
+            }
+            if (  count($ab) <= 1) {
+                return redirect('/packages')->with('message', 'Please Register in a Residential package!');;
+
+            } else {
+
+                return view('commercial.createCommercial', compact( 'ab'));
+
+            }
+        }else{
+            return redirect('/packages')->with('message', 'Please Register in a Residential  package!');
+        }
+        //return view('commercial.createCommercial');
     }
 
     public function store(Request $request)
@@ -73,6 +102,7 @@ class commercialController extends Controller
         $com->userId = Auth::user()->id;
         $com->category = $request->category;
         $com->type = $request->type;
+        $com->extra3 = $request->packageId;
 
         $com->save();
         // Handle File Upload
@@ -121,11 +151,18 @@ class commercialController extends Controller
         $history->isDeleted = 0;
         $history->save();
 
+
+        $package = Packages::findOrFail($request->packageId) ;
+        $payment = Payment::all()->where( 'user_id' , '=',  Auth::user()->id)->where('package','=', $package->title)->first();
+        $payment->used = 1;
+        $payment->save();
+
+
         $mail = Auth::user()->email;
         Mail::to('ozpropertymarket@gmail.com')->send(new NewCommercial());
         Mail::to($mail)->send(new PropertyCreated());
 
-        return redirect('/myCommercial')->with('message', 'Commercial Property Created Successfully!');
+        return redirect('/myCommercial')->with('message', 'Commercial Property Created Successfully!' );
     }
 
     public function show($id)

@@ -19,21 +19,22 @@
 
 
                 <h2>Place New Property</h2>
-                <a class="btn-primary1 " href="/packages">Packages</a>
+                <a class="btn-primary1 m-3 p-2 float-right" href="/packages">Register in a new Packages</a>
+                <br/>
 
                 <div class="p-5">
 
                     {{ Form::open(['action' => 'App\Http\Controllers\PropertiesController@store','method'=>'POST','enctype'=>'multipart/form-data']) }}
 
                     <div class="">
-                        <div class="raw ">
+                        <div class=" raw">
                             <div class="  form-label-group">
                                 <div class="row">
                                     <div class="col-md-5">
                                         {{ Form::label('packageId','Which Package would you like to use for this property:') }}
                                     </div>
                                     <div class="col-md-5">
-                                        <select name="packageId">
+                                        <select name="packageId" id="packageId" onchange="checkCategory()">
                                             @for( $z=1 ; $z<count($aa); $z++)
 
                                                 <option value="{{$aa[$z]}}">{{ \App\Models\Packages::findOrFail( $aa[$z])->title }} </option>
@@ -152,10 +153,27 @@
                                         {{ Form::label('category','Listing Type:') }}
                                     </div>
                                     <div class="col-md-5">
-                                        <select name="category">
-                                            @foreach(\App\Models\Category::all() as $type)
-                                                <option value="{{$type->id}}">{{ $type->title }} </option>
-                                            @endforeach
+                                        <select name="category" id="category">
+                                            <script>
+                                                var category = document.getElementById('category');
+                                                var packageId = document.getElementById('packageId');
+                                                var  selectedValue = 0;
+                                                selectedValue = packageId.options[0].text;
+                                                if(selectedValue.includes('Sale')){
+                                                    category.innerHTML = "<option value='1' >Sell</option>";
+                                                }else {
+                                                    category.innerHTML = "<option value='2'>Rent</option> <option value='3' >Share</option>";
+                                                }
+
+                                                function checkCategory(){
+                                                    selectedValue = packageId.options[packageId.selectedIndex].text;
+                                                    if(selectedValue.includes('Sale')){
+                                                        category.innerHTML = "<option value='1' >Sell</option>";
+                                                    }else {
+                                                        category.innerHTML = "<option value='2'>Rent</option> <option value='3' >Share</option>";
+                                                    }
+                                                }
+                                            </script>
                                         </select>
                                     </div>
                                 </div>

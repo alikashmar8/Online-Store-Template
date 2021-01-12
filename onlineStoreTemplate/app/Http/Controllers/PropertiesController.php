@@ -179,6 +179,7 @@ class PropertiesController extends Controller
         $property->accepted = 0;
         $property->userId = Auth::user()->id;
         $property->categoryId = $request->category;
+        $property->packageId = $request->packageId;
         $property->typeId = $request->type;
 
         $property->save();
@@ -225,7 +226,7 @@ class PropertiesController extends Controller
         $history->save();
 
 
-        $package = Packages::findOrFail($request->packageId)->first();
+        $package = Packages::findOrFail($request->packageId);
         $payment = Payment::all()->where( 'user_id' , '=',  Auth::user()->id)->where('package','=', $package->title)->first();
         $payment->used = 1;
         $payment->save();

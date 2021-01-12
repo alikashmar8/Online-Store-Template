@@ -27,6 +27,7 @@
                         <th scope="col">Showing Price</th>
                         <th scope="col">Type</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Package</th>
                         <th scope="col">Show</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -107,6 +108,9 @@
                             @else
                                 <td class="text-success">Listed</td>
                             @endif
+
+
+                            <td class="text-success">{{ \App\Models\Packages::findOrFail($user->packageId)->title }} </td>
 
                             <td><a class="btn btn-success" href="/properties/{{$user->id}}">Show</a></td>
 

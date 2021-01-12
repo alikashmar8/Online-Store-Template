@@ -17,8 +17,13 @@
 
             <div class="container creat_app ">
 
-
                 <h2>Place New Commercial Property</h2>
+                <a class="btn-primary1 m-3 p-2 float-right" href="/packages">Register in a new Packages</a>
+                <br/>
+
+
+
+
 
                 <div class="p-5">
 
@@ -27,6 +32,25 @@
                         @csrf
                         <div class="">
                             <div class="raw ">
+
+                                <div class="  form-label-group">
+                                    <div class="row">
+                                        <div class="col-md-5">
+
+                                            <label for="packageId">
+                                                Which Package would you like to use for this property:
+                                            </label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <select name="packageId" id="packageId" onchange="checkCategory()">
+                                                @for( $z=1 ; $z<count($ab); $z++)
+
+                                                    <option value="{{$ab[$z]}}"> {{ \App\Models\Packages::findOrFail( $ab[$z])->title }} </option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div {{--maps class="col-md-6" style="height:300px"--}}>
                                     <script
@@ -116,10 +140,28 @@
                                 <div class="  form-label-group">
                                     <label for="category">Listing Type:</label>
 
-                                    <select name="category">
-                                        <option value="1" >Sell</option>
-                                        <option value="2">Lease</option>
-                                        <option value="3" >Invest</option>
+                                    <select name="category" id="category">
+                                        <script>
+                                            var category = document.getElementById('category');
+                                            var packageId = document.getElementById('packageId');
+                                            var selectedValue = packageId.options[0].text;
+                                            if(selectedValue.includes('Sale')){
+                                                category.innerHTML = "<option value='1' >Sell</option>";
+                                            }else {
+                                                category.innerHTML = "<option value='2'>Lease</option> <option value='3' >Invest</option>";
+                                            }
+
+                                            function checkCategory(){
+                                                selectedValue = packageId.options[packageId.selectedIndex].text;
+                                                if(selectedValue.includes('Sale')){
+                                                    category.innerHTML = "<option value='1' >Sell</option>";
+                                                }else {
+                                                    category.innerHTML = "<option value='2'>Lease</option> <option value='3' >Invest</option>";
+                                                }
+                                            }
+                                        </script>
+
+
                                     </select>
                                 </div><BR/>
                                 <div class="  form-label-group">

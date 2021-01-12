@@ -21,10 +21,10 @@
                     <thead class="">
                     <tr>
                         <th scope="col" >#</th>
-                        <th scope="col">Payment Method</th>
                         <th scope="col">Package</th>
                         <th scope="col">Price <small>AUD</small></th>
                         <th scope="col">Status</th>
+                        <th scope="col">Used Package </th>
                         <th scope="col">Date</th>
                         <th scope="col">Receipt</th>
 
@@ -35,12 +35,16 @@
                         <tr>
                             <td   >{{ $pay->id }}</td>
 
-                            <td> {{ $pay->payment_method }} </td>
 
                             <td>  {{ $pay->package }} </td>
 
                             <td>  {{ $pay->amount }} </td>
                             <td>  {{ $pay->status }} </td>
+                            <td> @if($pay->used == 1 ) <p style="color: green" >Yes</p>
+                                @else <p style="color: red" >No</p>
+                                @endif
+
+                            </td>
                             <td>  {{ $pay->created_at }} </td>
 
                             <td>@if($pay->status == "paid")

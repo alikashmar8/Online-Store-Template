@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\commercial;
+use App\Models\Packages;
+use App\Models\Payment;
 use App\Models\PropertyImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +18,9 @@ class commercialController extends Controller
     }
     public function create()
     {
-        return view('commercial.createCommercial');
+
+
+        //return view('commercial.createCommercial');
     }
     public function destroy($id)
     {
@@ -81,6 +85,12 @@ class commercialController extends Controller
                 $image->save();
             }
         }
+
+        $package = Packages::findOrFail($request->packageId)->first();
+        $payment = Payment::all()->where( 'user_id' , '=',  Auth::user()->id)->where('package','=', $package->title)->first();
+        $payment->used = 1;
+        $payment->save();
+
         //$mail = Auth::user()->email;
         //Mail::to('ozpropertymarket@gmail.com')->send(new NewPropertyMail());
         //Mail::to($mail)->send(new PropertyCreated());

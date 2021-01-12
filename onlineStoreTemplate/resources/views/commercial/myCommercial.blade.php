@@ -27,6 +27,7 @@
                         <th scope="col">Showing Price</th>
                         <th scope="col">Type</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Package</th>
                         <th scope="col">Show</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -111,6 +112,8 @@
                             @else
                                 <td class="text-success">Listed</td>
                             @endif
+
+                            <td class="text-success">{{ \App\Models\Packages::findOrFail($com->extra3)->title }} </td>
 
                             <td><a class="btn btn-success" href="/commercial/{{$com->id}}">Show</a></td>
 
