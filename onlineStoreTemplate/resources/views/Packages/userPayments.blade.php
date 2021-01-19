@@ -50,7 +50,7 @@
                             <td>@if($pay->status == "paid")
                                     <a class="btn btn-success" href="/invoice/{{$pay->id}}"><i class="fas fa-download"></i></a>
                                 @else
-                                    <a class="btn btn-warning"  ><i class="fas fa-download"></i></a>
+                                    <a class="btn btn-warning" href="/completePayment/{{$pay->id}}" ><i class="fas fa-download"></i></a>
                                 @endif
 
                             </td>
@@ -61,7 +61,7 @@
                 </table>
 
             @else
-                <h3>You didn't have any payments yet!</h3>
+                <h3>You haven't register in any payments yet!</h3>
             @endif
         </div>
 

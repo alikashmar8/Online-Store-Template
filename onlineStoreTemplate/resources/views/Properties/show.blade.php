@@ -212,6 +212,37 @@ Thanks
                                         <input type="submit" value="Send" class="btn-primary1">
 
                                     </form>
+                                @else
+                                    <h4>Current Package</h4>
+                                    <p>{{\App\Models\Packages::findOrFail($user->packageId)->title}}
+                                        <input type="hidden" id="currentPrice" value="{{\App\Models\Packages::findOrFail($user->packageId)->price}}">
+                                    </p>
+
+                                    <div class="  form-label-group">
+                                        <div class="  row">
+
+                                            <form>
+                                                <select name="newPackageId" id="newPackageId" onchange="calculatePrice()" >
+                                                    @foreach(\App\Models\Packages::all() as $a  )
+                                                        <option value="{{$a->id}}">{{$a->title}} </option>
+                                                    @endforeach
+                                                </select>
+                                                <a class="btn-primary1 float-right" style="color: #fff" href="/upgrade/{{$user->id}}">Upgrade </a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        var currentPrice = document.getElementById('currentPrice');
+                                        var newPrice = document.getElementById('newPackageId').value;
+
+                                        function calculatePrice(){
+                                            newPrice =
+                                        }
+                                    </script>
+
+
+
+
                                 @endif
                             </div>
                         @endif

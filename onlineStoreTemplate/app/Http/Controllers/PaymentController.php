@@ -41,17 +41,21 @@ class PaymentController extends Controller
 
     public function store(Request $request)
     {
-        $id = Auth::user()->id;
-        $pay = new Payment();
-        $pay->user_id = $id;
-        $pay->payment_method = $request->payment_method;
-        $pay->package = $request->package;
-        $pay->amount = $request->amount;
-        $amount = $request->amount;
-        $pay->status = 'pending';
+        if ($request->type == 'new') {
+            $id = Auth::user()->id;
+            $pay = new Payment();
+            $pay->user_id = $id;
+            $pay->payment_method = $request->payment_method;
+            $pay->package = $request->package;
+            $pay->amount = $request->amount;
+            $amount = $request->amount;
+            $pay->status = 'pending';
 
 
-        $pay->save();
+            $pay->save();
+        }else{
+            $pay = Payment::findOrFail($request->type);
+        }
 
         //$mail = Auth::user()->email;
         //Mail::to('ozpropertymarket@gmail.com')->send(new NewPropertyMail());

@@ -519,8 +519,30 @@ class PropertiesController extends Controller
     public function package($id)
     {
         $pack = Packages::findOrFail($id);
+        $pack->type = 'new';
 
         return view('Packages.order', compact('pack'));
     }
+
+    public function complete($id)
+    {
+        $pack = Payment::findOrFail($id);
+        $pack->type = 'old';
+        $pack->price = $pack->amount;
+
+        return view('Packages.order', compact('pack'));
+    }
+
+
+    public function upgradePackage($id)
+    {
+        $property = Property::findOrFail($id);
+        $pack = Packages::findOrFail($property->packageId);
+
+
+        return view('Packages.order', compact('pack'));
+    }
+
+
 
 }

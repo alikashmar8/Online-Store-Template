@@ -63,6 +63,8 @@
                                 </td>
                                 <td>
                                     9.5%
+                                    <input type="hidden" name="type" value="@if($pack->type == 'new') new @else {{$pack->id}} @endif">
+
                                 </td>
                             </tr>
                             <tr>

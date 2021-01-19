@@ -161,6 +161,10 @@ Route::get('/order/{id}', function () {
 Route::get('/order/{id}', '\App\Http\Controllers\PropertiesController@package')->middleware('auth');
 Route::post('storePayment', '\App\Http\Controllers\PaymentController@store')->name('storePayment');
 
+Route::get('/completePayment/{id}', '\App\Http\Controllers\PropertiesController@complete')->middleware('auth');
+Route::get('/upgrade/{id}', '\App\Http\Controllers\PropertiesController@upgradePackage')->middleware('auth');
+
+
 Route::get('/userPayments', '\App\Http\Controllers\PaymentController@index')->middleware(['auth', 'verified']);
 Route::get('/adminPayments', '\App\Http\Controllers\PaymentController@index')->middleware(['auth', 'verified']);
 
