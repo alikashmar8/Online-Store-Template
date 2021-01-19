@@ -97,6 +97,8 @@ Route::resource('users', '\App\Http\Controllers\UsersController', ['except' => [
 Route::get('/users/{id}', '\App\Http\Controllers\UsersController@show')->middleware('auth');
 Route::delete('/users/destroy/{id}', '\App\Http\Controllers\UsersController@destroy')->middleware('auth');
 
+Route::post('reset_password', '\App\Http\Controllers\ResetPasswordController@forgetRequest');
+
 //Route::get('/properties/{id}', '\App\Http\Controllers\PropertiesController@edit')->middleware('auth');
 Route::get('/properties/myProperties', '\App\Http\Controllers\PropertiesController@myProperties')->middleware(['auth', 'verified']);
 Route::resource('properties', '\App\Http\Controllers\PropertiesController', ['except' => ['show']])->middleware(['auth', 'verified']);
