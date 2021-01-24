@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use App\Models\commercial;
+use Illuminate\Support\Facades\DB;
+
 
 class PropertiesController extends Controller
 {
@@ -519,28 +521,49 @@ class PropertiesController extends Controller
     public function package($id)
     {
         $pack = Packages::findOrFail($id);
-        $pack->type = 'new';
 
-        return view('Packages.order', compact('pack'));
-    }
-
-    public function complete($id)
-    {
-        $pack = Payment::findOrFail($id);
-        $pack->type = 'old';
-        $pack->price = $pack->amount;
 
         return view('Packages.order', compact('pack'));
     }
 
 
-    public function upgradePackage($id)
+
+    public function upgradePackage(Request $request)
     {
-        $property = Property::findOrFail($id);
-        $pack = Packages::findOrFail($property->packageId);
+        $newPackage = Packages::findOrFail($request->newPackageId);
+        $oldPackage = Packages::findOrFail($request->oldPackage);
+        $property = Property::findOrFail($request->propertyId);
+
+        $oldPayment = Payment::where('user_id' , '=' , $property->userId);
+        $oldPayment = $oldPayment->where('used' , '='  , 1);
+        $oldPayment = $oldPayment->where('status' , '=' , 'paid');
+        //$oldPayment = $oldPayment->where('package', 'like' , '%'.$oldPackage->title .'%');
+        $oldPayment = $oldPayment->first();
+
+        $newPayments = Payment::where('user_id' , '=' , $property->userId);
+        $newPayments = $newPayments->where('used' , '=' , 0);
+        $newPayments = $newPayments->where('status' , '=' , 'paid');
+        $newPayments = $newPayments->where('package', '=' , $newPackage->title);
+        $newPayments = $newPayments->first();
 
 
-        return view('Packages.order', compact('pack'));
+
+        if ($newPayments != null && $oldPayment != null  ){
+            $oldPayment->used = 0;
+            $oldPayment->save();
+            $newPayments->used = 1 ;
+            $newPayments->save();
+            $property->packageId = $newPackage->id;
+            $property->save();
+            return redirect('/properties/'.$property->id ) ;
+        }
+        else{
+            return redirect('/pricing#Residential_Sale' );
+        }
+
+
+
+
     }
 
 

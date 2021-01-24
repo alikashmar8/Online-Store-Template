@@ -390,4 +390,44 @@ class commercialController extends Controller
     }
 
 
+    public function upgradePackageCom(Request $request)
+    {
+        $newPackage = Packages::findOrFail($request->newPackageId);
+        $oldPackage = Packages::findOrFail($request->oldPackage);
+        $property = commercial::findOrFail($request->propertyId);
+
+        $oldPayment = Payment::where('user_id' , '=' , $property->userId);
+        $oldPayment = $oldPayment->where('used' , '='  , 1);
+        $oldPayment = $oldPayment->where('status' , '=' , 'paid');
+        //$oldPayment = $oldPayment->where('package', 'like' , '%'.$oldPackage->title .'%');
+        $oldPayment = $oldPayment->first();
+
+        $newPayments = Payment::where('user_id' , '=' , $property->userId);
+        $newPayments = $newPayments->where('used' , '=' , 0);
+        $newPayments = $newPayments->where('status' , '=' , 'paid');
+        $newPayments = $newPayments->where('package', '=' , $newPackage->title);
+        $newPayments = $newPayments->first();
+
+
+
+        if ($newPayments != null && $oldPayment != null  ){
+            $oldPayment->used = 0;
+            $oldPayment->save();
+            $newPayments->used = 1 ;
+            $newPayments->save();
+            $property->extra3 = $newPackage->id;
+            $property->save();
+            return redirect('/commercial/'.$property->id ) ;
+        }
+        else{
+            return redirect('/pricing ' );
+        }
+
+
+
+
+    }
+
+
+
 }

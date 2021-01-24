@@ -219,26 +219,29 @@ Thanks
                                     </p>
 
                                     <div class="  form-label-group">
-                                        <div class="  row">
+                                        <div class="row">
 
-                                            <form>
-                                                <select name="newPackageId" id="newPackageId" onchange="calculatePrice()" >
+                                            <form action="{{ route('upgradePackage') }}" method="post"  >
+                                                @csrf
+                                                <br/>
+                                                <label for="newPackageId">Upgrade your current package for this property:</label>
+                                                <br/>
+                                                <select name="newPackageId" id="newPackageId" >
                                                     @foreach(\App\Models\Packages::all() as $a  )
-                                                        <option value="{{$a->id}}">{{$a->title}} </option>
+                                                        @if( $a->id  < 8 || $a->id > 13  )
+                                                            @if ( $a->id > $user->packageId )
+                                                                <option value="{{$a->id}}">{{$a->title}} </option>
+                                                            @endif
+                                                        @endif
                                                     @endforeach
                                                 </select>
-                                                <a class="btn-primary1 float-right" style="color: #fff" href="/upgrade/{{$user->id}}">Upgrade </a>
+
+                                                <input type="hidden" name="oldPackage" value="{{$user->packageId}}">
+                                                <input type="hidden" name="propertyId" value="{{$user->id}}">
+                                                <input type="submit" value="Upgrade" class="btn-primary1 float-right" style="color: #fff">
                                             </form>
                                         </div>
                                     </div>
-                                    <script>
-                                        var currentPrice = document.getElementById('currentPrice');
-                                        var newPrice = document.getElementById('newPackageId').value;
-
-                                        function calculatePrice(){
-                                            newPrice =
-                                        }
-                                    </script>
 
 
 

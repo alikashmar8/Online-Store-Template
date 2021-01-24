@@ -196,6 +196,35 @@ Thanks
                                         <input type="submit" value="Send" class="btn-primary1">
 
                                     </form>
+                                @else
+                                    <h4>Current Package</h4>
+                                    <p>{{\App\Models\Packages::findOrFail($com->extra3)->title}}
+                                    </p>
+
+                                    <div class="  form-label-group">
+                                        <div class="row">
+
+                                            <form action="{{ route('upgradePackageCommercial') }}" method="post"  >
+                                                @csrf
+                                                <br/>
+                                                <label for="newPackageId">Upgrade your current package for this property:</label>
+                                                <br/>
+                                                <select name="newPackageId" id="newPackageId" >
+                                                    @foreach(\App\Models\Packages::all() as $a  )
+                                                        @if( $a->id  > 7  )
+                                                            @if ( $a->id > $com->extra3 )
+                                                                <option value="{{$a->id}}">{{$a->title}} </option>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+                                                </select>
+
+                                                <input type="hidden" name="oldPackage" value="{{$com->extra3}}">
+                                                <input type="hidden" name="propertyId" value="{{$com->id}}">
+                                                <input type="submit" value="Upgrade" class="btn-primary1 float-right" style="color: #fff">
+                                            </form>
+                                        </div>
+                                    </div>
                                 @endif
                             </div>
                         @endif

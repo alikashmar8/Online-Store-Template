@@ -41,7 +41,7 @@ class PaymentController extends Controller
 
     public function store(Request $request)
     {
-        if ($request->type == 'new') {
+
             $id = Auth::user()->id;
             $pay = new Payment();
             $pay->user_id = $id;
@@ -53,9 +53,7 @@ class PaymentController extends Controller
 
 
             $pay->save();
-        }else{
-            $pay = Payment::findOrFail($request->type);
-        }
+
 
         //$mail = Auth::user()->email;
         //Mail::to('ozpropertymarket@gmail.com')->send(new NewPropertyMail());

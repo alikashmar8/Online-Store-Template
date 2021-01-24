@@ -57,22 +57,21 @@
                                     @endif
                                 @endif
                             @endif
-                            <tr>
+                            <!--tr>
                                 <td>
                                     Tax
                                 </td>
                                 <td>
-                                    9.5%
-                                    <input type="hidden" name="type" value="@if($pack->type == 'new') new @else {{$pack->id}} @endif">
+                                    0%
 
                                 </td>
-                            </tr>
+                            </tr-->
                             <tr>
                                 <td>
                                     <b>Total</b>
                                 </td>
                                 <td>
-                                    <b id="total"></b>
+                                    $ <b id="total"></b> AUD
                                 </td>
                             </tr>
 
@@ -111,7 +110,7 @@
     </div>
     <script>
         var x =  parseInt(document.getElementById('price').innerHTML);
-        x += x * 0.095;
+        //x += x * 0.095;
         x = x.toFixed(2);
         document.getElementById('total').innerHTML =x;
         document.getElementById('amount').value =x;
