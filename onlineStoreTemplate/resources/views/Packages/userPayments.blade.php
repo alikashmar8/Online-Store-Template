@@ -47,7 +47,7 @@
                             </td>
                             <td>  {{ $pay->created_at }} </td>
 
-                            <td>@if($pay->status == "paid")
+                            <td>@if($pay->status != "pending")
                                     <a class="btn btn-success" href="/invoice/{{$pay->id}}"><i class="fas fa-download"></i></a>
                                 @else
                                     <a class="btn btn-warning" href="/completePayment/{{$pay->id}}" ><i class="fas fa-download"></i></a>

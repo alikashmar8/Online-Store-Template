@@ -99,6 +99,8 @@
 
                         <div class="">
                             <h3>Details:</h3>
+
+                            <a class="btn-primary1 m-3 p-2 float-right" style="color: white" href="/brochure/{{$user->id}}"> <i class="fas fa-paste"></i> Brochure </a>
                             <hr>
 
                             <div class="post-details ">
@@ -131,6 +133,9 @@
                                 </p>
                                 <p><a style="font-size:25px; font-weight: 600;  ">Placed On:</a>
                                     {{ $user->created_at->toDateString() }}</p>
+
+                                <br/>
+
                             </div>
                         </div>
 

@@ -198,3 +198,6 @@ Route::get('/invoice', function () {
 Route::get('/invoice/{id}', '\App\Http\Controllers\PaymentController@getInvoice')->middleware(['auth', 'verified']);
 
 
+Route::get('/brochure/{id}', '\App\Http\Controllers\PropertiesController@brochure') ;
+
+

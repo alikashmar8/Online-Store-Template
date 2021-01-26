@@ -28,7 +28,7 @@
                                 <td colspan="2">
                                     <input id="additioanl" type="checkbox" class="icon-" onclick="additional_clicked()">
                                     <label for="additioanl">
-                                        Aplly 30-Days sponsorship.
+                                        Apply 30-Days sponsorship.
                                     </label>
 
                                     <script>
@@ -41,12 +41,15 @@
                                                 y = y.toFixed(2);
                                                 document.getElementById('total').innerHTML = y ;
                                                 document.getElementById('amount').value = y ;
+                                                document.getElementById('apply').value = 1;
+
                                             }else{
                                                 y = parseInt(document.getElementById('total').innerHTML);
                                                 y -= 99;
                                                 y = y.toFixed(2);
                                                 document.getElementById('total').innerHTML = y ;
                                                 document.getElementById('amount').value = y ;
+                                                document.getElementById('apply').value = 0;
                                             }
 
                                         }
@@ -94,6 +97,7 @@
 
                                                 <input type="hidden" value="{{$pack->title}}" name="package">
 
+                                                <input type="hidden" name="apply" id="apply" >
                                                 <input type="hidden" value="" id="amount" name="amount">
                                                 <input type="submit" value="Pay now" class="btn-primary1">
 
@@ -114,5 +118,6 @@
         x = x.toFixed(2);
         document.getElementById('total').innerHTML =x;
         document.getElementById('amount').value =x;
+        document.getElementById('apply').value = 0;
     </script>
 @endsection

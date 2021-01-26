@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Payment;
 use App\Models\PropertyImage;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class PaymentController extends Controller
     {
         if (!Auth::guest() && Auth::user()->role != 0){
             $id= Auth::user()->id;
-            $payment = Payment::where('user_id', '=', $id)->get();
+            $payment = Payment::where('user_id', '=', $id)->where('status', '!=', 'pending')->get();
             return view('Packages.userPayments')->with('payment' , $payment);
         }else{
             $payment = Payment::all();
@@ -50,6 +51,9 @@ class PaymentController extends Controller
             $pay->amount = $request->amount;
             $amount = $request->amount;
             $pay->status = 'pending';
+            if( $request->apply == 1 ){
+                $pay->status = 'sponsorship';
+            }
 
 
             $pay->save();
@@ -96,6 +100,7 @@ class PaymentController extends Controller
         $pay = Payment::findOrFail($request->payid);
         $pay->status = 'paid';
 
+
         $pay->save();
         return redirect('/userPayments');
 
@@ -107,6 +112,9 @@ class PaymentController extends Controller
     //invoice
     public function getInvoice($id){
         $pay = \App\Models\Payment::findOrFail($id);
+        if(Auth::user()->role == 1 )
+            $pay->company =  Company::where('AgentId', Auth::user()->id)->first();
+
         $pdf = PDF::loadView('pdf.invoice' , compact('pay'));
 
         return $pdf->download('invoice.pdf');

@@ -43,7 +43,7 @@ class commercialController extends Controller
     public function create()
     {
         $id = Auth::user()->id;
-        $payment = Payment::find($id);
+        $payment = Payment::where('user_id' , '=' , $id);
         $packages = null;
         $ab[] = null;
         if ($payment != null ) {

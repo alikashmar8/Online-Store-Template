@@ -7,6 +7,7 @@ use App\Mail\PropertyAcceptedMail;
 use App\Mail\PropertyCreated;
 use App\Mail\PropertyUpdated;
 use App\Models\Category;
+use App\Models\Company;
 use App\Models\History;
 use App\Models\Packages;
 use App\Models\Payment;
@@ -14,6 +15,7 @@ use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\PropertyType;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -108,7 +110,7 @@ class PropertiesController extends Controller
     public function create()
     {
         $id = Auth::user()->id;
-        $payment = Payment::find($id);
+        $payment = Payment::where('user_id' , '=' , $id);
         $packages = null;
         $aa[] = null;
         if ($payment != null ) {
@@ -564,6 +566,16 @@ class PropertiesController extends Controller
 
 
 
+    }
+
+    public function brochure($id)
+    {
+        $property = Property::findOrFail($id);
+
+        $property->images = PropertyImage::where('propertyId', $property->id)->get();
+        $pdf = PDF::loadView('pdf.brochure' , compact('property'));
+
+        return $pdf->download('brochure.pdf');
     }
 
 
