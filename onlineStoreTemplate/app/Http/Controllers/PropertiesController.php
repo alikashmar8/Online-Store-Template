@@ -190,6 +190,7 @@ class PropertiesController extends Controller
         // Handle File Upload
         if ($request->hasFile('images')) {
             foreach ($request->images as $image) {
+
                 // Get filename with the extension
                 $filenameWithExt = $image->getClientOriginalName();
                 // Get just filename

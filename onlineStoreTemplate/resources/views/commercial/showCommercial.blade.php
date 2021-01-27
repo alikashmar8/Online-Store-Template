@@ -88,6 +88,8 @@
 
                         <div class="">
                             <h3>Details:</h3>
+
+                            <a class="btn-primary1 m-3 p-2 float-right" style="color: white" href="/comBrochure/{{$com->id}}"> <i class="fas fa-paste"></i> Brochure </a>
                             <hr>
 
                             <div class="post-details ">
@@ -198,6 +200,7 @@ Thanks
                                     </form>
                                 @else
                                     <h4>Current Package</h4>
+
                                     <p>{{\App\Models\Packages::findOrFail($com->extra3)->title}}
                                     </p>
 
@@ -225,6 +228,33 @@ Thanks
                                             </form>
                                         </div>
                                     </div>
+
+
+                                    @if($com->extra3 == 6 ||$com->extra3 == 7 ||$com->extra3 == 11 || $com->extra3 == 12 ||$com->extra3 == 13 )
+                                        <hr>
+                                        <h4>PDF Application</h4>
+                                        <div class="  form-label-group">
+                                            <div class="row">
+
+                                                <form action="{{ route('getPdf') }}" method="get"  >
+                                                    @csrf
+                                                    <br/>
+                                                    <label for="state">Select the state:</label>
+                                                    <br/>
+                                                    <select name="state" id="state" >
+                                                        <option value="WA">WA </option>
+                                                        <option value="SA">SA </option>
+                                                        <option value="NSW">NSW </option>
+                                                        <option value="NT">NT </option>
+                                                        <option value="VIC">VIC </option>
+                                                        <option value="QLD">QLD </option>
+                                                        <option value="ACT">ACT </option>
+                                                    </select>
+                                                    <input type="submit" value="Download" class="btn-primary1 float-right" style="color: #fff">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    @endif
                                 @endif
                             </div>
                         @endif

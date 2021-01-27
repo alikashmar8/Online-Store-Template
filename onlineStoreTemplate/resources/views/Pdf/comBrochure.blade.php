@@ -23,20 +23,20 @@
 <body style="margin: 0">
 
 <table  style="margin: 0 ; width: 100%;"> >
-   <tr style="height:10%; width: 100%;" >
-       <td colspan="2" style="height:10%; width: 100%;padding: 10px; margin: 0px; background: #e4002b; color: white; ">
-           <h1>{{$property->locationDescription}}</h1>
-           <p class="float-right" style="text-align: right">
-               @if($property->category == 1 )
-                   Sell
-               @elseif($property->category == 2)
-                   Rent
-               @else
-                   Share
-               @endif
-               | $ {{$property->price}} <small>AUD</small></p>
-       </td>
-   </tr>
+    <tr style="height:10%; width: 100%;" >
+        <td colspan="2" style="height:10%; width: 100%;padding: 10px; margin: 0px; background: #e4002b; color: white; ">
+            <h1>{{$property->location}}</h1>
+            <p class="float-right" style="text-align: right">
+                @if($property->category == 1 )
+                    Sell
+                @elseif($property->category == 2)
+                    Lease
+                @else
+                    Invest
+                @endif
+                |  $ {{$property->price}} <small>AUD</small></p>
+        </td>
+    </tr>
 
     <tr class="my-3" style="height: 50%;width: 100%">
         <td style="width: 100%">
@@ -66,10 +66,7 @@
             <br/><br/>
 
             <p style="font-size: 22px">
-                {{$property->bedroomsNumber}} <img src="logo/bed.png" style="width: 30px">&nbsp;&nbsp;&nbsp;
-                {{$property->bathroomsNumber}} <img src="logo/bath.png" style="width: 30px">&nbsp;&nbsp;&nbsp;
-                {{$property->parkingNumber}} <img src="logo/car.png" style="width: 30px"&nbsp;
-                | {{ \App\Models\PropertyType::findOrFail($property->typeId)->title }}
+                {{$property->floor}}  m<sup>2</sup> | {{ \App\Models\commTypes::findOrFail($property->type)->title }}
             </p>
         </td>
         <td style="width: 40%">

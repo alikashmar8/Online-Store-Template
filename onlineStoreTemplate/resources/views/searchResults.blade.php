@@ -24,7 +24,7 @@
                 {{--                            <p><a style="font-weight: bold"> Phone number:</a> +{{ $agent->phoneNumberCode }}-{{$agent->phoneNumber}}</p>--}}
                 {{--                            <p><a style="font-weight: bold"> Email:</a> {{$agent->email}}</p>--}}
                 {{--                        </div>--}}
-                <div class="col-md-4 text-center animate-box" data-animate-effect="fadeIn">
+                <div class=" text-center animate-box" style="display: inline-block" data-animate-effect="fadeIn">
                     <div class="fh5co-staff">
                         <img style="width: 200px; height: 200px;"
                              src="{{url('/storage/user_profile_images/' . $agent->profileImg)}}" alt="Profile Picture">

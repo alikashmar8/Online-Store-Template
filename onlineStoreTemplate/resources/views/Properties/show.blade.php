@@ -49,6 +49,17 @@
                     @endif
                 @endif
                 <div class="post ">
+                    @if(\Illuminate\Support\Facades\Auth::user()->role == 0 )
+                        @if($user->packageId == 4 || $user->packageId == 5 )
+                        This property is registered in 'Professional Photography', you can edit it:
+                            <a class="btn-primary1 m-3 p-2 " style="color: white" href="/properties/{{$user->id}}/edit">
+                                <i class="fa fa-cogs" aria-hidden="true"></i>
+                                Edit
+                            </a>
+                         @endif
+                        <br/>
+                    @endif
+
 
                     <div id="carouselEx" class="carousel slide carousel-fade " data-ride="carousel">
                         <div class="carousel-inner">
@@ -248,7 +259,31 @@ Thanks
                                         </div>
                                     </div>
 
+                                    @if($user->packageId == 6 ||$user->packageId == 7 ||$user->packageId == 11 || $user->packageId == 12 ||$user->packageId == 13 )
+                                        <hr>
+                                        <h4>PDF Application</h4>
+                                        <div class="  form-label-group">
+                                            <div class="row">
 
+                                                <form action="{{ route('getPdf') }}" method="get"  >
+                                                    @csrf
+                                                    <br/>
+                                                    <label for="state">Select the state:</label>
+                                                    <br/>
+                                                    <select name="state" id="state" >
+                                                        <option value="WA">WA </option>
+                                                        <option value="SA">SA </option>
+                                                        <option value="NSW">NSW </option>
+                                                        <option value="NT">NT </option>
+                                                        <option value="VIC">VIC </option>
+                                                        <option value="QLD">QLD </option>
+                                                        <option value="ACT">ACT </option>
+                                                    </select>
+                                                    <input type="submit" value="Download" class="btn-primary1 float-right" style="color: #fff">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    @endif
 
 
                                 @endif

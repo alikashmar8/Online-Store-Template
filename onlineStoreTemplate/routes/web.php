@@ -199,5 +199,21 @@ Route::get('/invoice/{id}', '\App\Http\Controllers\PaymentController@getInvoice'
 
 
 Route::get('/brochure/{id}', '\App\Http\Controllers\PropertiesController@brochure') ;
+Route::get('/comBrochure/{id}', '\App\Http\Controllers\commercialController@brochure') ;
 
+Route::get('/getPdf', function (Request $request) {
+    /*$pdf = 'pdfApp/'.$request->state ;
+    return $pdf->download('invoice.pdf');*/
+        //PDF file is stored under project/public/download/info.pdf
+        $file= public_path(). "/pdfApp/".$request->state.".pdf";
+
+        $headers = array(
+            'Content-Type: application/pdf',
+        );
+
+        return Response::download($file, $request->state.' Pdf Application.pdf' );
+
+
+
+})->name('getPdf');
 

@@ -22,6 +22,7 @@ use App\Models\Property;
 use App\Models\PropertyImage;
 use App\Models\PropertyType;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -420,12 +421,22 @@ class commercialController extends Controller
             return redirect('/commercial/'.$property->id ) ;
         }
         else{
-            return redirect('/pricing ' );
+            return redirect('/pricing#Commercial_Sale ' );
         }
 
 
 
 
+    }
+
+    public function brochure($id)
+    {
+        $property = commercial::findOrFail($id);
+
+        $property->images = CommercialImage::where('commercialId', $property->id)->get();
+        $pdf = PDF::loadView('pdf.comBrochure' , compact('property'));
+
+        return $pdf->download('brochure.pdf');
     }
 
 
