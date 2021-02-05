@@ -60,7 +60,7 @@ class commercialController extends Controller
 
             }
             if (  count($ab) <= 1) {
-                return redirect('/packages')->with('message', 'Please Register in a Residential package!');;
+                return redirect('/packages')->with('message', 'Please Register in a Residential package!');
 
             } else {
 
@@ -400,7 +400,7 @@ class commercialController extends Controller
         $oldPayment = Payment::where('user_id' , '=' , $property->userId);
         $oldPayment = $oldPayment->where('used' , '='  , 1);
         $oldPayment = $oldPayment->where('status' , '=' , 'paid');
-        //$oldPayment = $oldPayment->where('package', 'like' , '%'.$oldPackage->title .'%');
+        $oldPayment = $oldPayment->where('package', '=' , $oldPackage->title );
         $oldPayment = $oldPayment->first();
 
         $newPayments = Payment::where('user_id' , '=' , $property->userId);
@@ -417,11 +417,16 @@ class commercialController extends Controller
             $newPayments->used = 1 ;
             $newPayments->save();
             $property->extra3 = $newPackage->id;
+            if($newPackage->id > 10  && $newPackage->id < 14){
+                $property->category = 2;
+            }else{
+                $property->category = 1;
+            }
             $property->save();
             return redirect('/commercial/'.$property->id ) ;
         }
         else{
-            return redirect('/pricing#Commercial_Sale ' );
+            return redirect('/order/'.$newPackage->id )->with('message', 'Please register in this package first!');
         }
 
 

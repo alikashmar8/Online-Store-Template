@@ -4,13 +4,13 @@
             <div class="col-lg-5 col-xs-12 about-company">
 
                 <h2><a href="/" style="color: black ; text-decoration: none">OZ Property Market</a></h2><br/>
-                <p class="pr-5  ">Oz Property Market is your best agent to sell, rent, or share your user without
+                <p class="pr-5 text-white ">Oz Property Market is your best agent to sell, rent, or share your user without
                     wasting money and time. </p>
-                <p><a href="#">
+                <p><a href="https://www.facebook.com/Oz-Property-Market-113634257185562" target="_blank">
                         <i class="fa fa-facebook-square mr-1"></i>
                     </a>
-                    <a href="#">
-                        <i class="fa fa-linkedin-square"></i>
+                    <a href="https://www.instagram.com/ozpropertymarket/?hl=en" target="_blank">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
                     </a>
                 </p>
             </div>
@@ -27,9 +27,9 @@
             </div>
             <div class="col-lg-4 col-xs-12 location">
                 <h4 class="mt-lg-0 mt-sm-4">Location</h4><br/>
-                <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
-                <p class="mb-0"><i class="fa fa-phone mr-3"></i>(541) 754-3010</p>
-                <p><i class="fa fa-envelope-o mr-3"></i>info@hsdf.com</p>
+                <p class=" text-white">22, Lorem ipsum dolor, consectetur adipiscing</p>
+                <p class="mb-0 text-white"><i class="fa fa-phone mr-3"></i>(541) 754-3010</p>
+                <p class=" text-white"><i class="fa fa-envelope-o mr-3"></i>info@hsdf.com</p>
 
             </div>
         </div>

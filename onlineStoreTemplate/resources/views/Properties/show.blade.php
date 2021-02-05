@@ -228,6 +228,36 @@ Thanks
                                         <input type="submit" value="Send" class="btn-primary1">
 
                                     </form>
+
+
+                                    {{--report--}}
+                                    <hr>
+
+                                    <h4>Admin Notes:</h4>
+                                    <p style="white-space: pre-line; border: none; border-left: 3px solid #e4002b;   padding: 20px; color: #0a0807"> {{ $user->contactInfo }}
+                                    </p>
+                                    <BR/>
+
+                                        @if($user->userId != \Illuminate\Support\Facades\Auth::id())
+                                        <hr>
+                                            <form action="/reportProperty" method="get">
+                                                @csrf
+                                                <input type="hidden" value="/properties/{{ $user->id }}" name="id">
+
+                                                <div class="form-label-group">
+                                                    <h6>Report this listing:</h6>
+                                                    <label class="form-label-group" for="message">
+                                                        <small>
+                                                        If there is inappropriate or incorrect details please report this listing.
+                                                        </small>
+                                                    </label>
+
+
+                                                </div>
+                                                <input type="submit" value="Send" class="btn-primary1" style="font-size: 12px;padding: 3px">
+
+                                            </form>
+                                        @endif
                                 @else
                                     <h4>Current Package</h4>
                                     <p>{{\App\Models\Packages::findOrFail($user->packageId)->title}}
@@ -245,9 +275,10 @@ Thanks
                                                 <select name="newPackageId" id="newPackageId" >
                                                     @foreach(\App\Models\Packages::all() as $a  )
                                                         @if( $a->id  < 8 || $a->id > 13  )
-                                                            @if ( $a->id > $user->packageId )
+
                                                                 <option value="{{$a->id}}">{{$a->title}} </option>
-                                                            @endif
+
+
                                                         @endif
                                                     @endforeach
                                                 </select>

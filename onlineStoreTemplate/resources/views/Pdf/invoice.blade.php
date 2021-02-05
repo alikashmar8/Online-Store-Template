@@ -13,7 +13,7 @@
     </style>
     <title></title>
 </head>
-<body onload="setPrice()">
+<body>
 
 <table  >
     <tbody>
@@ -131,40 +131,24 @@
 </table>
 <table  >
     <tbody>
-    <tr>
-        <td width="453" valign="top">
-            <p>
-                SHIPPING HANDLING
-            </p>
-        </td>
-        <td width="123" valign="top">
-            <p id="shipping">
-                0
-            </p>
-        </td>
-    </tr>
+
     <tr>
 
-        <td width="351" valign="top">
-            <p>
-                <strong>TOTAL</strong>
+        <td width="453" valign="top">
+            <p style="width: 100%; text-align: right">
+                <strong>TOTAL &nbsp;&nbsp;&nbsp;</strong>
             </p>
         </td>
         <td width="123" valign="top">
             <p id="total">
+                    {{$pay->amount }}
+
+
+
+
 
             </p>
-            <script>
-                function setPrice(){
-                    var total = document.getElementById('total');
-                    var shipping = parseInt( document.getElementById('shipping').innerHTML);
-                    var price = parseInt( document.getElementById('price').innerHTML);
 
-                    price = shipping + price;
-                    total.innerHTML = String(price) ;
-                }
-
-            </script>
         </td>
     </tr>
 

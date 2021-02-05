@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactForPropertyMail;
+use App\Mail\reportProperty;
 use App\Mail\EvaluateFormMail;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
@@ -54,4 +55,12 @@ class EmailsController extends Controller
         return redirect("/");
     }
 
+    public function reportProperty(Request $request){
+        $data = $request->id;
+        Mail::to( 'ozpropertymarket@gmail.com')->send(new reportProperty($data));
+        return back();
+
+    }
+
 }
+

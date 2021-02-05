@@ -233,24 +233,65 @@
                         <div class="col-md-1 ">  </div>
 
                         <div class="col-md-5 bg-white p-2 my-3">
+                            <h2>All Properies = {{ count($allProperties) }}</h2>
+                            <a href="/acceptedProperties" style="color: #e4002b">Check Now</a>
+                        </div>
+
+                        <div class="col-md-1">  </div>
+
+                        <div class="col-md-5 bg-white p-2 my-3">
                             <h2>Properies waiting for confirmation = {{ count($notAcceptedProperties) }}</h2>
-                            <a href="/acceptProperties">Check Now</a>
+                            <a href="/acceptProperties" style="color: #e4002b">Check Now</a>
+                        </div>
+
+                        <div class="col-md-1">  </div>
+
+                        <div class="col-md-5 bg-white p-2 my-3">
+                            <h2>All Commercials = {{ count($allCommercials) }}</h2>
+                            <a href="/allCommercials" style="color: #e4002b">Check Now</a>
                         </div>
 
                         <div class="col-md-1">  </div>
 
                         <div class="col-md-5 bg-white p-2 my-3">
                             <h2>Commercials waiting for confirmation = {{ count($notAcceptedCommercials) }}</h2>
-                            <a href="/acceptCommercials">Check Now</a>
+                            <a href="/acceptCommercials" style="color: #e4002b">Check Now</a>
+                        </div>
+
+
+                        <div class="col-md-1"></div>
+
+                        <div class="col-md-5 bg-white p-2  my-3">
+                            <h2>All Users: {{ count($allUsers) }}</h2>
+                            <a href="/users" style="color: #e4002b">See Users</a>
+
                         </div>
 
                         <div class="col-md-1"></div>
 
                         <div class="col-md-5 bg-white p-2  my-3">
-                            <h2>New User Last 24 Hrs: {{ count($recentUsers) }}</h2>
-                            <a href="/users">See Users</a>
+                            <h2>New User in the last 24 hrs: {{ count($recentUsers) }}</h2>
+                            <a href="/users" style="color: #e4002b">See Users</a>
 
                         </div>
+
+
+                        <div class="col-md-1"></div>
+
+                        <div class="col-md-5 bg-white p-2  my-3">
+                            <h2>All Payments: {{ count($allPayments) }}</h2>
+                            <a href="/adminPayments" style="color: #e4002b">See Payments</a>
+
+                        </div>
+
+                        <div class="col-md-1"></div>
+
+                        <div class="col-md-5 bg-white p-2  my-3">
+                            <h2> New Payments in the last 24 hrs: {{ count($allEarnings) }}</h2>
+                            <a href="/adminPayments" style="color: #e4002b">See Payments</a>
+
+                        </div>
+
 
                     </div>
                 @endif

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewPackage;
+use App\Mail\PropertyAcceptedMail;
 use App\Models\Company;
 use App\Models\Payment;
 use App\Models\PropertyImage;
@@ -9,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -52,7 +55,7 @@ class PaymentController extends Controller
             $amount = $request->amount;
             $pay->status = 'pending';
             if( $request->apply == 1 ){
-                $pay->status = 'sponsorship';
+                $pay->status = 'pending_sponsorship';
             }
 
 
@@ -98,11 +101,20 @@ class PaymentController extends Controller
     {
 
         $pay = Payment::findOrFail($request->payid);
-        $pay->status = 'paid';
+        if($pay->status != 'pending_sponsorship'){
+            $pay->status = 'paid';
+        }else{
+            $pay->status = 'sponsorship';
+        }
+
 
 
         $pay->save();
+        $user = Auth::user()->email;
+
+        Mail::to($user)->send(new NewPackage());
         return redirect('/userPayments');
+
 
 
     }
@@ -112,10 +124,13 @@ class PaymentController extends Controller
     //invoice
     public function getInvoice($id){
         $pay = \App\Models\Payment::findOrFail($id);
-        if(Auth::user()->role == 1 )
+        if(Auth::user()->role == 1 ){
             $pay->company =  Company::where('AgentId', Auth::user()->id)->first();
 
-        $pdf = PDF::loadView('pdf.invoice' , compact('pay'));
+        }
+
+
+        $pdf = PDF::loadView('pdf.invoice' , compact('pay' ));
 
         return $pdf->download('invoice.pdf');
 

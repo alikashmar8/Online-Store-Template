@@ -52,10 +52,16 @@ class PropertiesController extends Controller
         } else {
             if (!Auth::guest()) {
                 if (Auth::user()->role == 0) {
+                    $allProperties = Property::all();
+                    $allCommercials = commercial::all();
+                    $allUsers = User::all();
+                    $allPayments = Payment::where('status', '!=' , 'pending')->get();
+                    $allEarnings = $allPayments->where('created_at', '>=', new DateTime('today'));
                     $notAcceptedProperties = Property::where('accepted', '=', 0)->get();
                     $recentUsers = User::where('created_at', '>=', new DateTime('today'))->get();
                     $notAcceptedCommercials = commercial::where('accepted', '=', 0)->get();
-                    return view("welcome", compact('notAcceptedProperties', 'recentUsers', 'notAcceptedCommercials'));
+
+                    return view("welcome", compact('notAcceptedProperties', 'recentUsers', 'notAcceptedCommercials','allProperties' ,'allCommercials','allUsers','allPayments','allEarnings'));
                 }
             }
         }
@@ -557,11 +563,16 @@ class PropertiesController extends Controller
             $newPayments->used = 1 ;
             $newPayments->save();
             $property->packageId = $newPackage->id;
+            if($newPackage->id == 6 || $newPackage->id == 7){
+                $property->categoryId = 2;
+            }else{
+                $property->categoryId = 1;
+            }
             $property->save();
             return redirect('/properties/'.$property->id ) ;
         }
         else{
-            return redirect('/pricing#Residential_Sale' );
+            return redirect('/order/'.$newPackage->id )->with('message', 'Please register in this package first!');
         }
 
 

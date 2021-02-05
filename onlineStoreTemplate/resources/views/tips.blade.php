@@ -286,21 +286,8 @@
                 </p>
             </div>
 
-            <div data-v-3e5285c0="" data-v-7b9eaa4d="" class="div-tip">
-                <h3 data-v-3e5285c0="" class="h3-tips">
-                    <span data-v-3e5285c0="" class="mr-2">Q</span>
-                    <a> Can I purchase a ‘For Lease’ signboard?</a>
 
 
-                </h3>
-                <p data-v-3e5285c0="" class="p-tip">
-                    You most certainly can! Simply contact our friendly team at
-                    <a href="tel:1300289697">1300 289 697</a>
-                    or
-                    <a href="mailto:support@buyMyplace.com.au">
-                        support@buyMyplace.com.au</a> to add this to your campaign.
-                </p>
-            </div>
         <div data-v-3e5285c0="" data-v-7b9eaa4d="" class="div-tip">
             <h3 data-v-3e5285c0="" class="h3-tips">
                 <span data-v-3e5285c0="" class="mr-2">Q</span>
