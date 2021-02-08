@@ -218,3 +218,14 @@ Route::get('/getPdf', function (Request $request) {
 
 })->name('getPdf');
 
+
+
+
+//inspection
+Route::post('/setInspection','\App\Http\Controllers\PropertiesController@setInspection')->name('setInspection');
+
+Route::get('/deleteInspection/{id}','\App\Http\Controllers\PropertiesController@deleteInspection')->middleware(['auth', 'verified']);
+Route::get('/inspect/{id}','\App\Http\Controllers\PropertiesController@Inspect')->middleware(['auth', 'verified']);
+
+
+

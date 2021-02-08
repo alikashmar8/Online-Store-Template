@@ -7,16 +7,17 @@
 <bR/>
 
 <div style="width: 85%; background: #fff; color: #0a0807;text-align: left;   margin: auto; padding: 20px">
-    <h1> A user is contacting you regarding your property</h1>
+    <h1> A user is contacting you regarding your property inspection</h1>
 
 
-    <p>User Name: {{ $data['userName'] }} </p><br/>
+    <p>User Name: {{ $data['userName'] }} </p>
 
-    <p>User Email: {{ $data['userEmail'] }} </p><br/>
+    <p> User Phone Number: {{ $data['phone'] }} </p>
 
-    <p>Property ID: {{ $data['propertyId'] }} </p> <br/>
+    <p>User Email: {{ $data['userEmail'] }} </p>
 
-    <p style="white-space: pre-line"> Message: {{ $data['message'] }} </p><br/>
+    <p>Property of ID {{ $data['propertyId'] }} in {{ $data['address'] }} </p>
+    <p>Inspection Time: {{ $data['date'] }} - {{ $data['time'] }}</p>
 
 
 

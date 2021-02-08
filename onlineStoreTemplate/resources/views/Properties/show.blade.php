@@ -24,7 +24,7 @@
 
                                 @else
                                     <div class="alert alert-danger">
-                                        Your user is not accepted yet! Kindly wait admin confirmation.
+                                        Your property is not accepted yet! Kindly wait admin confirmation.
                                     </div>
 
                                 @endif
@@ -49,7 +49,7 @@
                     @endif
                 @endif
                 <div class="post ">
-                    @if(\Illuminate\Support\Facades\Auth::user()->role == 0 )
+                    @if(!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::user()->role == 0 )
                         @if($user->packageId == 4 || $user->packageId == 5 )
                         This property is registered in 'Professional Photography', you can edit it:
                             <a class="btn-primary1 m-3 p-2 " style="color: white" href="/properties/{{$user->id}}/edit">
@@ -109,10 +109,11 @@
                     <div class="dkn">
 
                         <div class="">
+                            <hr>
                             <h3>Details:</h3>
 
                             <a class="btn-primary1 m-3 p-2 float-right" style="color: white" href="/brochure/{{$user->id}}"> <i class="fas fa-paste"></i> Brochure </a>
-                            <hr>
+
 
                             <div class="post-details ">
 
@@ -152,6 +153,7 @@
 
                         <br/><br/>
                         <div class="">
+                            <hr>
                             {{--      maps   --}}
                             <p id="lat" style="display: none">{{ $user->latitude }}</p>
                             <p id="lng" style="display: none">{{ $user->longitude }}</p>
@@ -184,7 +186,120 @@
 
 
                         </div>
+                        <br/>
 
+                        <div class="">
+                            <hr>
+                            <h3>Inspection time:</h3>
+                            @if(!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::id() != $user->userId)
+                                <p class="date my-1 py-1 px-3 alert-warning">
+                                    <small>
+                                        Note that when you inspect your name and contact details will be sent to the owner via email.
+                                    </small>
+                                </p>
+                            @endif
+                            @if(!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::id() == $user->userId)
+                                <button class="btn-primary1 float-right " data-toggle="modal" data-target="#exampleModal">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i> Set Inspection Time
+                                </button>
+
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Inspection Time</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="alert alert-warning">
+                                                Set new inspection time
+                                            </div>
+
+                                            <form action="{{route('setInspection')}}" method="post"   >
+
+                                                @csrf
+
+                                                <div class="modal-body">
+                                                    <div class="form-group form-label-group">
+                                                        <input type="hidden" value="{{ $user->id }}" name="id">
+                                                        <label for="date" class="col-form-label">Date:</label>
+                                                        <input type="date" class="form-control"  name="date" required>
+                                                    </div>
+
+                                                    <div class="form-group form-label-group">
+                                                        <label for="startTime" class="col-form-label">Start Time:</label>
+                                                        <input type="time" class="form-control "  name="startTime" required>
+                                                    </div>
+
+                                                    <div class="form-group form-label-group">
+                                                        <label for="endTime" class="col-form-label">Start Time:</label>
+                                                        <input type="time" class="form-control "  name="endTime" required>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary btn-primary2" data-dismiss="modal">Close</button>
+                                                    <input type="submit" class="btn btn-success btn-primary2" value="Set">
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            @endif
+
+                            <div class="post-details ">
+                                <br/>
+
+                            @if( count($inspectionTime)>0  )
+                                    <div>
+                                @foreach($inspectionTime as $in)
+
+                                    <div class="row" style="border-bottom: 2px solid #e4002b50; width: 100%;">
+
+                                        <div style="display: inline-block">
+                                            <p class="date my-1 py-1 px-3">{{$in->date}}: {{$in->startTime}} - {{$in->endTime}}</p>
+                                        </div>
+                                        <div style="display: inline-block">
+                                            @if(!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::id() == $user->userId)
+                                                <p class="date my-1 px-3 btn-primary1" >
+                                                    <a href="/deleteInspection/{{$in->id}}" style="color: white">Delete</a>
+                                                </p>
+                                            @else
+                                                @if(!\Illuminate\Support\Facades\Auth::guest())
+                                                    <p class="date my-1 px-3 btn-primary1">
+                                                        <a href="/inspect/{{$in->id}}" style="color: white"  id="inpect">Inpect</a>
+                                                    </p>
+
+                                                @else
+                                                    <p class="date my-1 py-1 px-3 alert-warning"> Login to Inpect</p>
+
+                                                @endif
+                                            @endif
+
+
+                                        </div>
+                                    </div>
+
+
+                                @endforeach
+                                </div>
+
+                            @else
+                                <p>Contact the owner to arrange a new inspection time</p>
+
+                            @endif
+
+
+
+
+
+                            </div>
+
+
+                        </div>
                         <br/><br/>
 
 

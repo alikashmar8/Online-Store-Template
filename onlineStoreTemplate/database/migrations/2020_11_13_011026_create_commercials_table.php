@@ -23,6 +23,7 @@ class CreateCommercialsTable extends Migration
             $table->integer('category')->nullable();
             $table->integer('userId')->nullable();
             $table->integer('accepted')->nullable();
+            $table->integer('sold')->default(0);
             $table->text('location')->nullable();
             $table->double('lang')->nullable();
             $table->double('lan')->nullable();

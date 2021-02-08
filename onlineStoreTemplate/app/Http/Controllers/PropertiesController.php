@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Inspect;
 use App\Mail\NewPropertyMail;
 use App\Mail\PropertyAcceptedMail;
 use App\Mail\PropertyCreated;
@@ -9,6 +10,7 @@ use App\Mail\PropertyUpdated;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\History;
+use App\Models\InspectionTime;
 use App\Models\Packages;
 use App\Models\Payment;
 use App\Models\Property;
@@ -263,8 +265,9 @@ class PropertiesController extends Controller
 
 
         $property->images = PropertyImage::where('propertyId', $property->id)->get();
+        $inspectionTime = InspectionTime::where('propertyId', $property->id)->get();
 
-        return view("Properties.show")->with('user', $property);
+        return view("Properties.show" )->with('user', $property)->with('inspectionTime', $inspectionTime);
     }
 
     /**
@@ -590,6 +593,48 @@ class PropertiesController extends Controller
         return $pdf->download('brochure.pdf');
     }
 
+    public function setInspection(Request $request){
 
+
+        $inspect = new InspectionTime;
+        $inspect->propertyId = $request->id;
+        $inspect->date = $request->date;
+        $inspect->startTime= $request->startTime;
+        $inspect->endTime = $request->endTime;
+        $inspect->save();
+
+        return redirect('/properties/'.$request->id);
+
+
+
+    }
+
+    public function deleteInspection($id){
+        $ins = InspectionTime::findOrFail($id);
+        $property = Property::findOrFail($ins->propertyId);
+        $ins->delete();
+        return redirect('/properties/'.$property->id)->with('message', 'Inspection time deleted successfully!');
+    }
+
+    public function Inspect($id){
+        $ins = InspectionTime::findOrFail($id);
+        $property = Property::findOrFail($ins->propertyId);
+        $user = User::findOrFail($property->userId);
+
+        $data = array(
+            'propertyId' => $property->id,
+            'address' => $property->locationDescription,
+            'phone' => Auth::user()->phoneNumber,
+
+            'userId' => Auth::user()->id,
+            'userName' => Auth::user()->name,
+            'userEmail' => Auth::user()->email,
+            'date' => $ins->date,
+            'time' => $ins->startTime,
+
+        );
+        Mail::to( $user->email )->send(new Inspect($data));
+        return redirect('/properties/'.$property->id)->with('message', 'Inspection request sent to the owner successfully! ');;
+    }
 
 }
