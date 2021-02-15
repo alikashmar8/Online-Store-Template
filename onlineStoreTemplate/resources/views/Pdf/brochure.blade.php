@@ -27,9 +27,9 @@
        <td colspan="2" style="height:10%; width: 100%;padding: 10px; margin: 0px; background: #e4002b; color: white; ">
            <h1>{{$property->locationDescription}}</h1>
            <p class="float-right" style="text-align: right">
-               @if($property->category == 1 )
+               @if($property->categoryId == 1 )
                    Sell
-               @elseif($property->category == 2)
+               @elseif($property->categoryId == 2)
                    Rent
                @else
                    Share
@@ -45,10 +45,21 @@
 
                 @foreach($property->images as $image )
                     @if(pathinfo($image->url, PATHINFO_EXTENSION) !='mp4')
-                        <img class="d-block w-100"
-                             style=" width: 30% ; display: inline-block"
-                             src="storage/properties_images/{{$image->url}}"
-                             alt="No Image">
+                        @if($loop->first)
+                        <div  style="width: 500px;height: 300px ; display: block;margin-bottom: 50px ">
+                            <img class=""
+                                 style="width: 100%;height:100% ;object-fit: cover; "
+                                 src="storage/properties_images/{{$image->url}}"
+                                 alt="No Image">
+                        </div>
+                        @else
+                        <div  style="width: 250px;height: 150px ; display: inline-block; margin-top: 0px ;">
+                            <img class=""
+                                 style="width: 100%;height:100% ; object-fit: cover; "
+                                 src="storage/properties_images/{{$image->url}}"
+                                 alt="No Image">
+                        </div>
+                        @endif
                     @endif
 
                 @endforeach

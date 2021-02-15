@@ -1,19 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="hero" style="height: 120px;  background-image: linear-gradient(#df0505, #f5f5f5);
 
-    <div class="container bg-white m-3">
-        <div class="col-md-5">
+    ">
+        <div class="inner">
+
+        </div>
+    </div>
+    <h1 style=" text-align: center">Properties Histories</h1>
+    <BR><BR>
+
+    <div class="container bg-white " style="overflow-x: scroll;">
+        <div class="">
             <table class="table1" id="myDataTable">
-                <thead class="">
+                <thead class="thead-dark">
                 <tr>
-                    <th scope="col" hidden>Property ID</th>
+                    <th scope="col" style="text-align: center">Property ID</th>
                 </tr>
                 </thead>
                 <tbody class="">
                 @foreach($properties as $property)
                     <tr>
-                        <td><a href="/histories/properties/{{$property->propertyId}}">{{ $property->propertyId }}</a>
+                        <td><a href="/histories/properties/{{$property->propertyId}}" style="color: #e4002b">{{ $property->propertyId }}</a>
                         </td>
                     </tr>
                 @endforeach

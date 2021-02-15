@@ -62,7 +62,7 @@
                 </table>
 
             @else
-                <h2>No Users in DB</h2>
+                <h2>No Users yet</h2>
             @endif
         </div>
 

@@ -1,18 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container bg-white m-3">
-        <div style="overflow-y: scroll;">
+    <div class="hero" style="height: 120px;  background-image: linear-gradient(#df0505, #f5f5f5);
+
+    ">
+        <div class="inner">
+
+        </div>
+    </div>
+    <h1 style=" text-align: center">Details</h1>
+    <BR><BR>
+
+    <div class="container bg-white " style="overflow-y: scroll;">
+        <div >
             @if($type == 'property' || $type == 'commercial')
                 <table class="table1" id="myDataTable">
-                    <thead class="">
+                    <thead class="thead-dark">
                     <tr>
                         <th scope="col">Property ID</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Rooms Number</th>
+                        @if($type != 'commercial')
                         <th scope="col">Bathrooms Number</th>
                         <th scope="col">Parking Number</th>
                         <th scope="col">Bedrooms Number</th>
+                        @endif
                         @if($type == 'commercial')
                             <th scope="col">Floors</th>
                         @endif
@@ -29,19 +40,43 @@
                     </thead>
                     <tbody class="">
                     @foreach($histories as $property)
-                        <tr @if($property->isCreated == 1)class="bg-success"
+                        <tr @if($property->isCreated == 1)style="background-color: #88df9c"
                             @endif @if($property->isDeleted == 1)class="bg-danger"
-                            @endif @if($property->isUpdated == 1)class="bg-secondary" @endif>
-                            <td>{{ $property->propertyId }}</td>
-                            <td>{{ $property->post_description }}</td>
-                            <td>{{ $property->post_roomsNumber }}</td>
-                            <td>{{ $property->post_bathroomsNumber }}</td>
-                            <td>{{ $property->post_parkingNumber }}</td>
-                            <td>{{ $property->post_bedroomsNumber }}</td>
+                            @endif @if($property->isUpdated == 1)style="background-color: #9a9ea1" @endif>
+
+                            <td>
+                                @if($type != 'commercial'){{ $property->propertyId }}
+                                @elseif($type == 'commercial'){{$property->commercialId}}
+                                @endif
+                            </td>
+
+                            <td>
+                                <p style="white-space: pre-line;color: #23272b">
+                                    {{ $property->post_description }}
+                                </p>
+                            </td>
+
+                            @if($type != 'commercial')
+                                <td>{{ $property->post_bathroomsNumber }}</td>
+                                <td>{{ $property->post_parkingNumber }}</td>
+                                <td>{{ $property->post_bedroomsNumber }}</td>
+                            @endif
+
                             @if($type == 'commercial')
-                                <td>{{ $property->commercial_floor }}</td> @endif
-                            <td>@if($property->post_accepted == 0)False @else True @endif</td>
-                            <td><a href="/users/{{ $property->post_userId }}">{{ $property->post_userId }}</a></td>
+                                <td>{{ $property->commercial_floor }}</td>
+                            @endif
+
+                            <td>
+                                @if($property->post_accepted == 0)False
+                                @else True
+                                @endif
+                            </td>
+
+                            <td>
+                                <a href="/users/{{ $property->post_userId }}" style="color: #23272b">
+                                    {{ $property->post_userId }}
+                                </a>
+                            </td>
                             <td>{{ $property->post_category }}</td>
                             <td>{{ $property->post_type }}</td>
                             <td>{{ $property->post_locationDescription }}</td>
@@ -80,7 +115,7 @@
                                 <td>Agent</td>@endif @if($user->user_role == 2)
                                 <td>Normal User</td>@endif
                             <td>+{{ $user->user_phoneNumberCode }} {{$user->user_phoneNumber}}</td>
-                            <td>{{ $user->user_bio }}</td>
+                            <td><p style="white-space: pre-line; color: #212529" >{{ $user->user_bio }}</p></td>
                             <td>{{ $user->created_at }}</td>
                         </tr>
                     @endforeach

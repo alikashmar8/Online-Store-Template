@@ -45,10 +45,21 @@
 
                 @foreach($property->images as $image )
                     @if(pathinfo($image->url, PATHINFO_EXTENSION) !='mp4')
-                        <img class="d-block w-100"
-                             style=" width: 30% ; display: inline-block"
-                             src="storage/properties_images/{{$image->url}}"
-                             alt="No Image">
+                        @if($loop->first)
+                            <div  style="width: 500px;height: 300px ; display: block;margin-bottom: 50px ">
+                                <img class=""
+                                     style="width: 100%;height:100% ;object-fit: cover; "
+                                     src="storage/properties_images/{{$image->url}}"
+                                     alt="No Image">
+                            </div>
+                        @else
+                            <div  style="width: 250px;height: 150px ; display: inline-block; margin-top: 0px ;">
+                                <img class=""
+                                     style="width: 100%;height:100% ; object-fit: cover; "
+                                     src="storage/properties_images/{{$image->url}}"
+                                     alt="No Image">
+                            </div>
+                        @endif
                     @endif
 
                 @endforeach
