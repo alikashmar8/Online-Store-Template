@@ -2,15 +2,17 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Oz Property Market</title>
-
+    <link rel="icon" href="{{asset('logo/fav.jpg')}}" type="image/gif" sizes="16x16">
     <!-- Fonts -->
     <!link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind&family=Pacifico&family=Sansita+Swashed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
     {{--    Scripts--}}
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -72,13 +74,16 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css"/>
 
+    <style>
 
+
+    </style>
 </head>
 
 <body class="bg-css">
 <div>
     <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue" >
-        <a class="navbar-brand " href="/">Oz Property Market</a>
+        <a class="navbar-brand " href="/"><img src="{{asset('logo/logowithout.png')}}" style="width:100%; max-width: 220px"></a>
         {{--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">--}}
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -215,18 +220,19 @@
                     <li class="nav-item">
                         <a class="special-link mr-3" href="/users/{{ Auth::id() }}">
 
-                            <img style="width: 20px; height: 20px;" class="rounded"
+                            <img style="width: 40px; height: 40px; border-radius: 50%;"
                                  src="{{url('/storage/user_profile_images/' . Auth::user()->profileImg )}}"
                             >
                             {{--                            id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre--}}
                             {{--                           data-toggle="dropdown" --}}
-                            {{ Auth::user()->name }}
+                            {{-- Auth::user()->name --}}
                         </a>
                     </li>
                     <!li class="  m-1"><!/li>
                     <li>
-                        <a class="btn btn-light text-warning m-1" style="padding: 4px" role="button" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Logout</a>
+                        <a class="btn btn-light  m-1" style="padding: 4px; color: #e4002b"
+                           role="button" onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">Logout</a>
 
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
                             {{--                            <a class="dropdown-item text-white" href="{{ route('logout') }}"--}}

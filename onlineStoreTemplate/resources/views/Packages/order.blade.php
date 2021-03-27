@@ -24,7 +24,7 @@
                                     Price
                                 </td>
                                 <td>
-                                    <a id="price">{{$pack->price}}</a>
+                                    <a id="price">{{$pack->amount}}</a>
                                 </td>
                             </tr>
                             @if(!\Illuminate\Support\Facades\Auth::guest())

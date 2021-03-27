@@ -159,14 +159,14 @@
 <br/>
 <p>
     <br clear="all"/>
-    Make all checks payable to Company Name
+    Make all checks payable to Oz Property Market
 </p>
 <p>
     If you have any questions concerning this invoice, contact Name, Phone,
     Email
 </p>
 <p style="text-align: center; font-weight: bold;">
-    thank you for choosing Oz property market
+    Thank you for choosing Oz Property Market
 </p>
 
 

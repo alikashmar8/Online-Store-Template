@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use App\Models\commercial;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
 
 
 class PropertiesController extends Controller
@@ -198,22 +199,45 @@ class PropertiesController extends Controller
         // Handle File Upload
         if ($request->hasFile('images')) {
             foreach ($request->images as $image) {
+                if($image->getClientOriginalExtension() == 'mp4') {
+                    // Get filename with the extension
+                    $filenameWithExt = $image->getClientOriginalName();
+                    // Get just filename
+                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                    // Get just ext
+                    $extension = $image->getClientOriginalExtension();
+                    // Filename to store
+                    $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                    // Upload Image
+                    $path = $image->storeAs('public/properties_images', $fileNameToStore);
 
-                // Get filename with the extension
-                $filenameWithExt = $image->getClientOriginalName();
-                // Get just filename
-                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                // Get just ext
-                $extension = $image->getClientOriginalExtension();
-                // Filename to store
-                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-                // Upload Image
-                $path = $image->storeAs('public/properties_images', $fileNameToStore);
+                    $image = new PropertyImage;
+                    $image->propertyId = $property->id;
+                    $image->url = $fileNameToStore;
+                    $image->save();
 
-                $image = new PropertyImage;
-                $image->propertyId = $property->id;
-                $image->url = $fileNameToStore;
-                $image->save();
+                }else {
+                    $Name = time() . '.' . $image->getClientOriginalExtension();
+
+                    $destinationPath = public_path('storage/properties_images/');
+                    $img = Image::make($image->getRealPath());
+                    $img->resize(650, 650, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($destinationPath . '/' . time() . $image->getClientOriginalName());
+
+                    /*$user->profileImg = time().$image->getClientOriginalName();*/
+                    $fileNameToStore = time() . $image->getClientOriginalName();
+                    $image = new PropertyImage;
+                    $image->propertyId = $property->id;
+                    $image->url = $fileNameToStore;
+                    $image->save();
+
+
+                    $destinationPath = public_path('/storage/images');
+                    //$image->move($destinationPath, $Name);
+                }
+
+
             }
         }
 
@@ -240,7 +264,7 @@ class PropertiesController extends Controller
 
 
         $package = Packages::findOrFail($request->packageId);
-        $payment = Payment::all()->where( 'user_id' , '=',  Auth::user()->id)->where('package','=', $package->title)->first();
+        $payment = Payment::all()->where( 'user_id' , '=',  Auth::user()->id)->where('package','=', $package->title)->where('used' , '=',0)->first();
         $payment->used = 1;
         $payment->save();
 
@@ -321,21 +345,43 @@ class PropertiesController extends Controller
             if (count($request->images) > 0) {
                 $this->deleteImages($id);
                 foreach ($request->images as $image) {
-                    // Get filename with the extension
-                    $filenameWithExt = $image->getClientOriginalName();
-                    // Get just filename
-                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                    // Get just ext
-                    $extension = $image->getClientOriginalExtension();
-                    // Filename to store
-                    $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-                    // Upload Image
-                    $path = $image->storeAs('public/properties_images', $fileNameToStore);
+                    if($image->getClientOriginalExtension() == 'mp4') {
+                        // Get filename with the extension
+                        $filenameWithExt = $image->getClientOriginalName();
+                        // Get just filename
+                        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                        // Get just ext
+                        $extension = $image->getClientOriginalExtension();
+                        // Filename to store
+                        $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                        // Upload Image
+                        $path = $image->storeAs('public/properties_images', $fileNameToStore);
 
+                        $image = new PropertyImage;
+                        $image->propertyId = $property->id;
+                        $image->url = $fileNameToStore;
+                        $image->save();
+                    }else{
+                    $Name = time().'.'.$image->getClientOriginalExtension();
+
+                    $destinationPath = public_path('storage/properties_images/');
+
+                        $img = Image::make($image->getRealPath());
+                        $img->resize(650, 650, function ($constraint) {
+                            $constraint->aspectRatio();
+                        })->save($destinationPath . '/' . time() . $image->getClientOriginalName());
+
+                    /*$user->profileImg = time().$image->getClientOriginalName();*/
+                    $fileNameToStore = time().$image->getClientOriginalName();
                     $image = new PropertyImage;
                     $image->propertyId = $property->id;
                     $image->url = $fileNameToStore;
                     $image->save();
+
+
+                    $destinationPath = public_path('/storage/images');
+                    //$image->move($destinationPath, $Name);
+                    }
                 }
             }
         }
@@ -415,9 +461,12 @@ class PropertiesController extends Controller
         $imags = PropertyImage::where('propertyId', '=', $id);
         $images = $imags->get();
         foreach ($images as $image) {
-            Storage::delete('public/properties_image/' . $image->url);
             $path = public_path() . '\storage\properties_images\\' . $image->url;
-            unlink($path);
+            if(  file_exists($path)){
+                Storage::delete('public/properties_image/' . $image->url);
+                //$path = public_path() . '\storage\properties_images\\' . $image->url;
+                unlink($path);
+            }
         }
         $imags->delete();
     }
@@ -427,7 +476,7 @@ class PropertiesController extends Controller
 
         //$category = Category::where('title', '=', 'Buy')->first();
         //$properties = Property::where('categoryId', $category->id)->where('accepted', '=', 1);
-        $properties = Property::whereIn('categoryId', [1])->where('accepted', '=', 1);
+        $properties = Property::whereIn('categoryId', [1])->where('accepted', '=', 1)->where('packageId','>',0);
         if (isset($request->sort) && $request->sort != -1) {
             switch ($request->sort) {
                 case 'priceHighToLow':
@@ -456,7 +505,7 @@ class PropertiesController extends Controller
     public function rentIndex(Request $request)
     {
 //        $category = Category::where('title', '=', 'Rent')->orWhere('title', '=', 'Share')->get();
-        $properties = Property::whereIn('categoryId', [2, 3])->where('accepted', '=', 1);
+        $properties = Property::whereIn('categoryId', [2, 3])->where('accepted', '=', 1)->where('packageId','>',0);
         if (isset($request->sort) && $request->sort != -1) {
             switch ($request->sort) {
                 case 'priceHighToLow':
@@ -530,11 +579,10 @@ class PropertiesController extends Controller
         return redirect('/properties/' . $property->id);
     }
 
-    public function package($id)
+    public function package($id, $amount)
     {
         $pack = Packages::findOrFail($id);
-
-
+        $pack->amount = $amount;
         return view('Packages.order', compact('pack'));
     }
 
@@ -542,15 +590,20 @@ class PropertiesController extends Controller
 
     public function upgradePackage(Request $request)
     {
+
         $newPackage = Packages::findOrFail($request->newPackageId);
-        $oldPackage = Packages::findOrFail($request->oldPackage);
+        if ($request->oldPackage != 0) {
+            $oldPackage = Packages::findOrFail($request->oldPackage);
+        }
         $property = Property::findOrFail($request->propertyId);
 
-        $oldPayment = Payment::where('user_id' , '=' , $property->userId);
-        $oldPayment = $oldPayment->where('used' , '='  , 1);
-        $oldPayment = $oldPayment->where('status' , '=' , 'paid');
-        //$oldPayment = $oldPayment->where('package', 'like' , '%'.$oldPackage->title .'%');
+
+        $oldPayment = Payment::where('user_id', '=', $property->userId);
+        $oldPayment = $oldPayment->where('used', '=', 1);
+        $oldPayment = $oldPayment->where('status', '=', 'paid');
+        $oldPayment = $oldPayment->where('package', 'like' , '%'.$oldPackage->title .'%');
         $oldPayment = $oldPayment->first();
+
 
         $newPayments = Payment::where('user_id' , '=' , $property->userId);
         $newPayments = $newPayments->where('used' , '=' , 0);
@@ -558,11 +611,7 @@ class PropertiesController extends Controller
         $newPayments = $newPayments->where('package', '=' , $newPackage->title);
         $newPayments = $newPayments->first();
 
-
-
-        if ($newPayments != null && $oldPayment != null  ){
-            $oldPayment->used = 0;
-            $oldPayment->save();
+        if ($request->oldPackage == 0){
             $newPayments->used = 1 ;
             $newPayments->save();
             $property->packageId = $newPackage->id;
@@ -573,9 +622,35 @@ class PropertiesController extends Controller
             }
             $property->save();
             return redirect('/properties/'.$property->id ) ;
-        }
-        else{
-            return redirect('/order/'.$newPackage->id )->with('message', 'Please register in this package first!');
+        }else {
+            if ($newPayments != null && $oldPayment != null) {
+                $oldPayment->used = 0;
+                $oldPayment->save();
+                $newPayments->used = 1;
+                $newPayments->save();
+                $property->packageId = $newPackage->id;
+                if ($newPackage->id == 6 || $newPackage->id == 7) {
+                    $property->categoryId = 2;
+                } else {
+                    $property->categoryId = 1;
+                }
+                $property->save();
+                return redirect('/properties/' . $property->id);
+            } else {
+                $difference = $newPackage->price - $oldPackage->price;
+                if ($difference > 0) {
+
+
+
+
+                    return redirect('/order/' . $newPackage->id . '/' . $difference)->with('message', 'Please pay the rest for the new package, then link it to this listing.');
+                } else {
+                    return redirect('/order/' . $newPackage->id . '/' . $newPackage->price)->with('message', 'Please register in this package first, then link it to this listing.');
+
+                }
+
+
+            }
         }
 
 
@@ -637,4 +712,18 @@ class PropertiesController extends Controller
         return redirect('/properties/'.$property->id)->with('message', 'Inspection request sent to the owner successfully! ');;
     }
 
+    public function soldProperty(Request $request){
+        $property= \App\Models\Property::findOrFail($request->propertyId);
+        $property->sold =1;
+        $property->save();
+
+        $sold = new \App\Models\SoldProperty();
+        $sold->propertyId = $request->propertyId;
+        $sold->type = 1 ;
+        $sold->extra= "";
+        $sold->save();
+        return redirect('/properties/'.$property->id)->with('message', 'Property marked as SOLD successfully');
+
+
+    }
 }

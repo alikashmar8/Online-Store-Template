@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero" style=" background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/profile.jpg);
+    <div class="hero" style=" background-image: url({{asset('/images1/profile.jpg')}});
     ">
         <div
             style="position: absolute; width:100%;top: 0;height: 20px; background-image: linear-gradient(#df0505, transparent); ">

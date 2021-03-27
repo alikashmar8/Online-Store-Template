@@ -49,10 +49,12 @@
                                 @foreach($com->images as $image)
                                     <div class="carousel-item @if($loop->first) active @endif"  style="position: relative; z-index :1;top :0;left :0;width :100%;height :50vw;overflow :hidden;display: flex;" >
                                         @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
-                                            <video class="d-block w-100"  style="  height: 100%; width: 800px;object-fit: cover;" autoplay controls>
+                                            <video class="d-block w-100"
+                                                   style="  height: 100%; width: 800px;object-fit: cover;"
+                                                   autoplay controls muted>
                                                 <source
                                                     src="{{url('/storage/commercials_images/' . $image->url)}}"
-                                                    type="video/mp4">
+                                                    type="video/mp4" >
 
                                             </video>
                                         @else
@@ -222,10 +224,13 @@ Thanks
 
                                 @else
                                     <h4>Current Package</h4>
-
-                                    <p>{{\App\Models\Packages::findOrFail($com->extra3)->title}}
-                                    </p>
-
+                                    @if($com->extra3 > 0)
+                                        <p>
+                                            {{\App\Models\Packages::findOrFail($com->extra3)->title}}
+                                        </p>
+                                    @else
+                                        <p> Please use a package for this property to be listed </p>
+                                    @endif
                                     <div class="  form-label-group">
                                         <div class="row">
 
@@ -234,7 +239,7 @@ Thanks
                                                 <br/>
                                                 <label for="newPackageId">Upgrade your current package for this property:</label>
                                                 <br/>
-                                                <select name="newPackageId" id="newPackageId" >
+                                                <select name="newPackageId" id="newPackageId" style="font-size: 13px">
                                                     @foreach(\App\Models\Packages::all() as $a  )
                                                         @if( $a->id  > 7  )
                                                                 <option value="{{$a->id}}">{{$a->title}} </option>

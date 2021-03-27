@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/profile.jpg);
+    <div class="hero" style=" background-image: url({{asset('/images1/profile.jpg')}});
     ">
         <div
             style="position: absolute; width:100%;top: 0;height: 20px; background-image: linear-gradient(#df0505, transparent); ">
@@ -21,7 +21,7 @@
             <div class=" profile">
                 <div class="num1">
                     <img class=" img-thumbnail"
-                         src="{{url('/storage/user_profile_images/' . $user->profileImg)}}"
+                         src="{{url('/user_profile_images/' . $user->profileImg)}}"
                          alt="Profile Image">
                     <p> ID: {{$user->id}}</p>
 
@@ -113,9 +113,8 @@
                         <table>
                             <tr>
                                 <td>
-                                    <a href="/packages" class="btn-primary1"> Register in new package</a>
-                                </td>
-                                <td> <a href="/userPayments" class="btn-primary1"> Payment History </a> </td>
+                                    <a href="/packages" class="btn-primary1" style="display: inline-block;margin: 5px"> Register in new package</a>
+                                 <a href="/userPayments" class="btn-primary1" style="display: inline-block;margin: 5px;"> Payment History </a> </td>
                             </tr>
                         </table>
                     </div>
@@ -247,7 +246,7 @@
 
                     <div class="form-group form-label-group">
                         <label for="profileImg">Profile Image:</label>
-                        <input id="profileImg" type="file" class="@error('profileImg') is-invalid @enderror "
+                        <input id="profileImg" type="file" class="@error('profileImg') is-invalid @enderror " accept=".png, .jpg"
                                name="profileImg" value="{{ old('profileImg') }}" autocomplete="profileImg" autofocus>
                     </div>
                     @error('profileImg')

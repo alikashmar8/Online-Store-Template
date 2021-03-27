@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/insight.jpg); background-position: 50% 30%;
+    <div class="hero" style=" background-image: url({{asset('/images1/insight.jpg')}}); background-position: 50% 30%;
     ">
 
         <div class="inner">
@@ -110,7 +110,13 @@
                             @endif
 
 
-                            <td class="text-success">{{ \App\Models\Packages::findOrFail($user->packageId)->title }} </td>
+                            <td class="text-success">
+                                @if($user->packageId == 0)
+                                    <a class="text-danger"> Not Set </a>
+                                @else
+                                    {{ \App\Models\Packages::findOrFail($user->packageId)->title }}
+                                @endif
+                            </td>
 
                             <td><a class="btn btn-success" href="/properties/{{$user->id}}">Show</a></td>
 

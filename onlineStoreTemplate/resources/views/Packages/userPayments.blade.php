@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/insight.jpg); background-position: 50% 30%;
+    <div class="hero" style=" background-image: url({{asset('/images1/insight.jpg')}}); background-position: 50% 30%;
     ">
 
         <div class="inner">

@@ -139,6 +139,7 @@
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/phenx/php-svg-lib" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/barryvdh/laravel-dompdf" />
       <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/sabberworm/php-css-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/onlineStoreTemplate/vendor/intervention/image" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -27,6 +27,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 use function GuzzleHttp\Promise\all;
 
 
@@ -109,21 +110,43 @@ class commercialController extends Controller
         // Handle File Upload
         if ($request->hasFile('images')) {
             foreach ($request->images as $image) {
-                // Get filename with the extension
-                $filenameWithExt = $image->getClientOriginalName();
-                // Get just filename
-                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                // Get just ext
-                $extension = $image->getClientOriginalExtension();
-                // Filename to store
-                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-                // Upload Image
-                $path = $image->storeAs('public/commercials_images', $fileNameToStore);
+                if($image->getClientOriginalExtension() == 'mp4') {
+                    // Get filename with the extension
+                    $filenameWithExt = $image->getClientOriginalName();
+                    // Get just filename
+                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                    // Get just ext
+                    $extension = $image->getClientOriginalExtension();
+                    // Filename to store
+                    $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                    // Upload Image
+                    $path = $image->storeAs('public/commercials_images', $fileNameToStore);
 
-                $image = new CommercialImage();
-                $image->commercialId = $com->id;
-                $image->url = $fileNameToStore;
-                $image->save();
+                    $image = new CommercialImage;
+                    $image->commercialId = $com->id;
+                    $image->url = $fileNameToStore;
+                    $image->save();
+                }else{
+                    $Name = time() . '.' . $image->getClientOriginalExtension();
+
+                    $destinationPath = public_path('storage/commercials_images/');
+                    $img = Image::make($image->getRealPath());
+                    $img->resize(650, 650, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($destinationPath . '/' . time() . $image->getClientOriginalName());
+
+                    /*$user->profileImg = time().$image->getClientOriginalName();*/
+                    $fileNameToStore = time() . $image->getClientOriginalName();
+                    $image = new CommercialImage;
+                    $image->commercialId = $com->id;
+                    $image->url = $fileNameToStore;
+                    $image->save();
+
+
+                    $destinationPath = public_path('/storage/images');
+                    //$image->move($destinationPath, $Name);
+
+                }
             }
         }
 
@@ -214,21 +237,43 @@ class commercialController extends Controller
             if (count($request->images) > 0) {
                 $this->deleteImages($id);
                 foreach ($request->images as $image) {
-                    // Get filename with the extension
-                    $filenameWithExt = $image->getClientOriginalName();
-                    // Get just filename
-                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                    // Get just ext
-                    $extension = $image->getClientOriginalExtension();
-                    // Filename to store
-                    $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-                    // Upload Image
-                    $path = $image->storeAs('public/commercials_images', $fileNameToStore);
+                    if($image->getClientOriginalExtension() == 'mp4') {
+                        // Get filename with the extension
+                        $filenameWithExt = $image->getClientOriginalName();
+                        // Get just filename
+                        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                        // Get just ext
+                        $extension = $image->getClientOriginalExtension();
+                        // Filename to store
+                        $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                        // Upload Image
+                        $path = $image->storeAs('public/commercials_images', $fileNameToStore);
 
-                    $image = new CommercialImage();
-                    $image->commercialId = $com->id;
-                    $image->url = $fileNameToStore;
-                    $image->save();
+                        $image = new CommercialImage();
+                        $image->commercialId = $com->id;
+                        $image->url = $fileNameToStore;
+                        $image->save();
+                    }else{
+                        $Name = time() . '.' . $image->getClientOriginalExtension();
+
+                        $destinationPath = public_path('storage/commercials_images/');
+                        $img = Image::make($image->getRealPath());
+                        $img->resize(650, 650, function ($constraint) {
+                            $constraint->aspectRatio();
+                        })->save($destinationPath . '/' . time() . $image->getClientOriginalName());
+
+                        /*$user->profileImg = time().$image->getClientOriginalName();*/
+                        $fileNameToStore = time() . $image->getClientOriginalName();
+                        $image = new CommercialImage();
+                        $image->commercialId = $com->id;
+                        $image->url = $fileNameToStore;
+                        $image->save();
+
+
+                        $destinationPath = public_path('/storage/images');
+                        //$image->move($destinationPath, $Name);
+
+                    }
                 }
             }
         }
@@ -368,8 +413,10 @@ class commercialController extends Controller
         foreach ($images as $image) {
 
             $path = public_path() . '\storage\commercials_images\\' . $image->url;
-            unlink($path);
-            Storage::delete('public/commercials_images/' . $image->url);
+            if(  file_exists($path)) {
+                unlink($path);
+                Storage::delete('public/commercials_images/' . $image->url);
+            }
         }
         $imags->delete();
     }
@@ -394,7 +441,9 @@ class commercialController extends Controller
     public function upgradePackageCom(Request $request)
     {
         $newPackage = Packages::findOrFail($request->newPackageId);
-        $oldPackage = Packages::findOrFail($request->oldPackage);
+        if ($request->oldPackage != 0) {
+            $oldPackage = Packages::findOrFail($request->oldPackage);
+        }
         $property = commercial::findOrFail($request->propertyId);
 
         $oldPayment = Payment::where('user_id' , '=' , $property->userId);
@@ -410,23 +459,40 @@ class commercialController extends Controller
         $newPayments = $newPayments->first();
 
 
-
-        if ($newPayments != null && $oldPayment != null  ){
-            $oldPayment->used = 0;
-            $oldPayment->save();
+        if ($request->oldPackage == 0){
             $newPayments->used = 1 ;
             $newPayments->save();
             $property->extra3 = $newPackage->id;
-            if($newPackage->id > 10  && $newPackage->id < 14){
+            if ($newPackage->id > 10 && $newPackage->id < 14) {
                 $property->category = 2;
-            }else{
+            } else {
                 $property->category = 1;
             }
             $property->save();
             return redirect('/commercial/'.$property->id ) ;
-        }
-        else{
-            return redirect('/order/'.$newPackage->id )->with('message', 'Please register in this package first!');
+        }else {
+            if ($newPayments != null && $oldPayment != null) {
+                $oldPayment->used = 0;
+                $oldPayment->save();
+                $newPayments->used = 1;
+                $newPayments->save();
+                $property->extra3 = $newPackage->id;
+                if ($newPackage->id > 10 && $newPackage->id < 14) {
+                    $property->category = 2;
+                } else {
+                    $property->category = 1;
+                }
+                $property->save();
+                return redirect('/commercial/' . $property->id);
+            } else {
+                $difference = $newPackage->price - $oldPackage->price;
+                if ($difference > 0) {
+                    return redirect('/order/' . $newPackage->id . '/' . $difference)->with('message', 'Please pay the rest for the new package, then link it to this listing.');
+                } else {
+                    return redirect('/order/' . $newPackage->id . '/' . $newPackage->price)->with('message', 'Please register in this package first, then link it to this listing.');
+
+                }
+            }
         }
 
 

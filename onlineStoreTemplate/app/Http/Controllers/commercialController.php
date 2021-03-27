@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 use App\Models\commercial;
+use App\Models\CommercialImage;
 use App\Models\Packages;
 use App\Models\Payment;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class commercialController extends Controller
 {
@@ -69,21 +71,43 @@ class commercialController extends Controller
         // Handle File Upload
         if ($request->hasFile('images')) {
             foreach ($request->images as $image) {
-                // Get filename with the extension
-                $filenameWithExt = $image->getClientOriginalName();
-                // Get just filename
-                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                // Get just ext
-                $extension = $image->getClientOriginalExtension();
-                // Filename to store
-                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-                // Upload Image
-                $path = $image->storeAs('public/properties_images', $fileNameToStore);
+                if($image->getClientOriginalExtension() == 'mp4') {
+                    // Get filename with the extension
+                    $filenameWithExt = $image->getClientOriginalName();
+                    // Get just filename
+                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                    // Get just ext
+                    $extension = $image->getClientOriginalExtension();
+                    // Filename to store
+                    $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                    // Upload Image
+                    $path = $image->storeAs('public/commercials_images', $fileNameToStore);
 
-                $image = new PropertyImage;
-                $image->propertyId = $com->id;
-                $image->url = $fileNameToStore;
-                $image->save();
+                    $image = new CommercialImage();
+                    $image->commercialId = $com->id;
+                    $image->url = $fileNameToStore;
+                    $image->save();
+                }else{
+                    $Name = time() . '.' . $image->getClientOriginalExtension();
+
+                    $destinationPath = public_path('storage/commercials_images/');
+                    $img = Image::make($image->getRealPath());
+                    $img->resize(650, 650, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($destinationPath . '/' . time() . $image->getClientOriginalName());
+
+                    /*$user->profileImg = time().$image->getClientOriginalName();*/
+                    $fileNameToStore = time() . $image->getClientOriginalName();
+                    $image = new CommercialImage;
+                    $image->commercialId = $com->id;
+                    $image->url = $fileNameToStore;
+                    $image->save();
+
+
+                    $destinationPath = public_path('/storage/images');
+                    //$image->move($destinationPath, $Name);
+
+                }
             }
         }
 

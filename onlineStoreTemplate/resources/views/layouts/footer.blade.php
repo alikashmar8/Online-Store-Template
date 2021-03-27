@@ -1,9 +1,9 @@
 <div class="footer">
     <div class="">
-        <div class="row p-4">
+        <div class="row p-4" style="margin: 0 !important;">
             <div class="col-lg-5 col-xs-12 about-company">
 
-                <h2><a href="/" style="color: black ; text-decoration: none">OZ Property Market</a></h2><br/>
+                <h2><a href="/" style="color: black ; text-decoration: none"><img src="{{asset('logo/logowithout.png')}}" style="width:100%; max-width: 320px"></a></h2><br/>
                 <p class="pr-5 text-white ">Oz Property Market is your best agent to sell, rent, or share your user without
                     wasting money and time. </p>
                 <p><a href="https://www.facebook.com/Oz-Property-Market-113634257185562" target="_blank">
@@ -35,7 +35,7 @@
         </div>
         <div class="  ">
             <div class="col copyright p-2 " >
-                <p class=""><small >© 2020 Real Estate, all Rights Reserved. Developed by <a href="https://webside.xyz/" target="_blank" style="color: #e4002b">WebSide</a> </small></p>
+                <p class=""><small >© 2020 Real Estate, all Rights Reserved. Developed by <a href="https://webside.com.au/" target="_blank" style="color: #e4002b">WebSide</a> </small></p>
             </div>
         </div>
     </div>

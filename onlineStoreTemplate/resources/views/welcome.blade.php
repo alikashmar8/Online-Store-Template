@@ -5,7 +5,7 @@
     @if(\Illuminate\Support\Facades\Auth::guest() || (!\Illuminate\Support\Facades\Auth::guest() && \Illuminate\Support\Facades\Auth::user()->role != 0))
         {{--        if user guest or not admin --}}
         <div class="hero"
-             style=" height: 600px; background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/home.jpg); background-position: 50% 40%;">
+             style=" height: 600px; background-image: url({{asset('images1/home.jpg')}}); background-position: 50% 40%;">
 
 
             <div class="inner " style="text-align: left;">
@@ -225,7 +225,7 @@
     @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
                     {{--            admin home page--}}
 
-        <div class="hero" style=" height: 600px; background-image: url(https://www.webside.com.au/MK/img/m1.jpg); background-position: 50% 40%;">
+        <div class="hero" style=" height: 600px; background-image: url({{asset('images1/home.jpg')}}); background-position: 50% 40%;">
 
         </div>
                     <div class="row container py-0" style="margin: auto">

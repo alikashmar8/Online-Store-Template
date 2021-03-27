@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero" style="height: 600px; background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/buy.jpg);
+    <div class="hero" style="height: 600px; background-image: url({{asset('/images1/buy.jpg')}});
     ">
 
         <div class="inner" style="color: #0a0807; text-shadow:0px 0px 10px #e4002b">
@@ -168,7 +168,7 @@
                             <div class="post my-5">
                                 @if($com->created_at > \Carbon\Carbon::now()->subDays(14))
                                     <div class="new-prop">
-                                        <img src="https://webside.com.au/MK/hackathon/imagaga123/images1/flag.svg"
+                                        <img src="{{asset('/images1/flag.svg')}}"
                                              style="border: none">
                                     </div>
                                 @endif

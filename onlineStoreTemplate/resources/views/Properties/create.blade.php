@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/sell.jpg);
+    <div class="hero" style=" background-image: url({{asset('/images1/sell.jpg')}});
     ">
 
         <div class="inner">
@@ -34,7 +34,7 @@
                                         {{ Form::label('packageId','Which Package would you like to use for this property:') }}
                                     </div>
                                     <div class="col-md-5">
-                                        <select name="packageId" id="packageId" onchange="checkCategory()">
+                                        <select name="packageId" id="packageId" onchange="checkCategory()" style="font-size: 12px;">
                                             @for( $z=1 ; $z<count($aa); $z++)
 
                                                 <option value="{{$aa[$z]}}">{{ \App\Models\Packages::findOrFail( $aa[$z])->title }} </option>
@@ -250,7 +250,7 @@
 
                             <div class="  form-label-group">
                                 {{ Form::label('images','Images:') }}
-                                <input type="file" name="images[]" id="file" accept=".png, .jpg, .mp4" multiple>
+                                <input type="file" name="images[]" style="width: 80%;" id="file" accept=".png, .jpg, .mp4" multiple>
                                 <i class='far fa-question-circle' data-toggle="tooltip" data-placement="top"
                                    title="Supported file types are (mp4/jpg/png)"></i>
                                 <br>

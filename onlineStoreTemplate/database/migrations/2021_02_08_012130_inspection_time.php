@@ -13,7 +13,7 @@ class InspectionTime extends Migration
      */
     public function up()
     {
-        Schema::create('inspection_times', function (Blueprint $table) {
+        Schema::create('inspection_time', function (Blueprint $table) {
             $table->id();
             $table->integer('propertyId');
             $table->date('date');

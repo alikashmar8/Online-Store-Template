@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero" style=" height: 500px; background-image: url(https://webside.com.au/MK/hackathon/imagaga123/images1/agent.jpg);
+    <div class="hero" style=" height: 500px; background-image: url({{asset('/images1/agent.jpg')}});
     ">
 
         <div class="inner">
@@ -23,8 +23,8 @@
 
                     <div class="search-bar-section ">
 
-                    <p style="margin: 20px;  color: white;">Search By:</p>
-                    <select name="searchBy">
+                    <!--p style="margin: 20px;  color: white;">Search By:</p-->
+                    <select name="searchBy" style="display: inline-block">
                         <option value="name">Agent Name</option>
                         <option value="companyName">Company Name</option>
                         {{--

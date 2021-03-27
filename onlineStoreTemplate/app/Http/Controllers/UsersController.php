@@ -13,6 +13,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class UsersController extends Controller
 {
@@ -137,9 +138,10 @@ class UsersController extends Controller
 
         if ($request['profileImg'] != null) {
             if ($user->profileImg != 'profileImage.png') {
-                Storage::delete('public/user_profile_images/' . $user->profileImg);
+                Storage::delete('public/storage/user_profile_images/' . $user->profileImg);
             }
             $image = $request['profileImg'];
+            /*
             // Get filename with the extension
             $filenameWithExt = $image->getClientOriginalName();
             // Get just filename
@@ -151,6 +153,20 @@ class UsersController extends Controller
             // Upload Image
             $user->profileImg = $fileNameToStore;
             $path = $image->storeAs('public/user_profile_images', $fileNameToStore);
+        */
+            $request['profileImg'] = time().'.'.$image->getClientOriginalExtension();
+
+            $destinationPath = public_path('storage/user_profile_images');
+            $img = Image::make($image->getRealPath());
+            $img->resize(300, 300, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($destinationPath.'/'.time().$image->getClientOriginalName());
+
+            $user->profileImg = time().$image->getClientOriginalName();
+
+            $destinationPath = public_path('/storage/images');
+            $image->move($destinationPath, $request['profileImg']);
+
         } else {
             $user->profileImg = 'profileImage.png';
         }

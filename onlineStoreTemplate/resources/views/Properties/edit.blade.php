@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="p-2"></div>
-        <div class="post p-4 m-5">
+        <div class="post p-4 my-5">
             <h1>Edit Property:</h1>
             <div class="alert alert-warning">Editing your user will need admin confirmation to get listed again!
             </div>

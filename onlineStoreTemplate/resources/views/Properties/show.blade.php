@@ -70,7 +70,7 @@
                                         @if(pathinfo($image->url, PATHINFO_EXTENSION) ==='mp4')
                                             <video class="d-block w-100"
                                                    style="height:  100%; width: 800px;object-fit: cover;" autoplay
-                                                   controls>
+                                                   controls muted>
                                                 <source
                                                     src="{{url('/storage/properties_images/' . $image->url)}}"
                                                     type="video/mp4">
@@ -234,7 +234,7 @@
                                                     </div>
 
                                                     <div class="form-group form-label-group">
-                                                        <label for="endTime" class="col-form-label">Start Time:</label>
+                                                        <label for="endTime" class="col-form-label">End Time:</label>
                                                         <input type="time" class="form-control "  name="endTime" required>
                                                     </div>
                                                 </div>
@@ -274,7 +274,7 @@
                                                     </p>
 
                                                 @else
-                                                    <p class="date my-1 py-1 px-3 alert-warning"> Login to Inpect</p>
+                                                    <p class="date my-1 py-1 px-3 alert-warning"> Login to Inspect</p>
 
                                                 @endif
                                             @endif
@@ -375,10 +375,14 @@ Thanks
                                         @endif
                                 @else
                                     <h4>Current Package</h4>
+                                    @if($user->packageId > 0)
                                     <p>{{\App\Models\Packages::findOrFail($user->packageId)->title}}
                                         <input type="hidden" id="currentPrice" value="{{\App\Models\Packages::findOrFail($user->packageId)->price}}">
                                     </p>
-
+                                    @else
+                                        <p> Please use a package for this property to be listed </p>
+                                    @endif
+                                    @if($user->sold == 0 )
                                     <div class="  form-label-group">
                                         <div class="row">
 
@@ -387,11 +391,13 @@ Thanks
                                                 <br/>
                                                 <label for="newPackageId">Upgrade your current package for this property:</label>
                                                 <br/>
-                                                <select name="newPackageId" id="newPackageId" >
+                                                <select name="newPackageId" id="newPackageId" style="font-size: 13px">
                                                     @foreach(\App\Models\Packages::all() as $a  )
                                                         @if( $a->id  < 8 || $a->id > 13  )
+                                                            @if($a->id != $user->packageId)
 
                                                                 <option value="{{$a->id}}">{{$a->title}} </option>
+                                                            @endif
 
 
                                                         @endif
@@ -404,6 +410,11 @@ Thanks
                                             </form>
                                         </div>
                                     </div>
+                                    @else
+                                        <p class="alert-danger">Your Listing is SOLD</p>
+                                    @endif
+
+
 
                                     @if($user->packageId == 6 ||$user->packageId == 7 ||$user->packageId == 11 || $user->packageId == 12 ||$user->packageId == 13 )
                                         <hr>
@@ -430,7 +441,23 @@ Thanks
                                             </div>
                                         </div>
                                     @endif
-
+                                        {{--@if($user->sold == 0 )
+                                        <hr>
+                                        <h4>Mark as <b>SOLD</b></h4>
+                                        <div class="  form-label-group">
+                                            <div class="row">
+                                                <p style="  border: none; border-left: 3px solid #e4002b;   padding: 20px; color: #0a0807">
+                                                    If you sold this listing please click bellow. The listing will be marked as "SOLD"
+                                                    for 2 weeks and the deleted with its package.
+                                                </p>
+                                                <form action="{{ route('soldProperty') }}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" value="{{$user->id}}" name="propertyId">
+                                                    <input type="submit" value="Proceed" class="btn-primary1" style="color: #fff; ">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    @endif--}}
 
                                 @endif
                             </div>
@@ -443,6 +470,7 @@ Thanks
 
 
                 </div>
+
             </div>
         </div>
         <div class="main3">

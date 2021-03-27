@@ -20,7 +20,10 @@ use Illuminate\Http\Request;
 use App\Mail\NewPropertyMail;
 
 Route::get('/em', function () {
-    return new NewPropertyMail;
+    $id = 1;
+    $property = \App\Models\Property::findOrFail($id);
+    $property->images = \App\Models\PropertyImage::where('propertyId', $property->id)->get();
+    return view('Pdf.brochure' , compact('property'));
 });
 
 
@@ -108,6 +111,9 @@ Route::get('/userShowProperty', '\App\Http\Controllers\PropertiesController@show
 Route::get('/userHideProperty', '\App\Http\Controllers\PropertiesController@hideProperty');
 Route::get('/search-agents', '\App\Http\Controllers\SearchController@searchAgent');
 Route::get('/search-properties', '\App\Http\Controllers\SearchController@searchProperties');
+//sold
+Route::post('soldProperty','\App\Http\Controllers\PropertiesController@soldProperty')->name('soldProperty');
+
 
 Auth::routes(['verify' => true]);
 
@@ -161,7 +167,7 @@ Route::get('/pricing', function () {
 Route::get('/order/{id}', function () {
     return view('Packages.order');
 });
-Route::get('/order/{id}', '\App\Http\Controllers\PropertiesController@package')->middleware('auth');
+Route::get('/order/{id}/{amount}', '\App\Http\Controllers\PropertiesController@package')->middleware('auth');
 Route::post('storePayment', '\App\Http\Controllers\PaymentController@store')->name('storePayment');
 
 //Route::get('/completePayment/{id}', '\App\Http\Controllers\PropertiesController@complete')->middleware('auth');

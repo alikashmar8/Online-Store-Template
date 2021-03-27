@@ -5,9 +5,16 @@
     <title></title>
 
     <style>
+        @page { margin: 0px; }
         body{
-            font-family: Arial, Helvetica, sans-serif;
-        }/*
+            font-family: "Open Sans", Arial, sans-serif;
+            width: 760px;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        /*
         table, th, td {
             border: 1px solid black;
             border-spacing: 10px;
@@ -22,13 +29,13 @@
 </head>
 <body style="margin: 0">
 
-<table  style="margin: 0 ; width: 100%;"> >
-    <tr style="height:10%; width: 100%;" >
-        <td colspan="2" style="height:10%; width: 100%;padding: 10px; margin: 0px; background: #e4002b; color: white; ">
-            <h1>{{$property->location}}</h1>
-            <p class="float-right" style="text-align: right">
+<table  style="margin: 0 ; width: 760px;"> >
+    <tr style="height:10%;  " >
+        <td colspan="2" style="height:10%;  padding: 10px; margin: 0px; background: #e4002b; color: white; ">
+            <h1 style="font-family: 'Sansita Swashed', cursive !important;">{{$property->location}}</h1>
+            <p  style=" ">
                 @if($property->category == 1 )
-                    Sell
+                    Sale
                 @elseif($property->category == 2)
                     Lease
                 @else
@@ -38,57 +45,105 @@
         </td>
     </tr>
 
-    <tr class="my-3" style="height: 50%;width: 100%">
-        <td style="width: 100%">
+    <tr class="my-3" style="height: 50%; ">
+        <td  >
             <br/><br/>
             @if(count($property->images)>0)
-
+                <p style="display: none"> {{$i=0}}</p>
+                <table>
                 @foreach($property->images as $image )
                     @if(pathinfo($image->url, PATHINFO_EXTENSION) !='mp4')
-                        @if($loop->first)
-                            <div  style="width: 500px;height: 300px ; display: block;margin-bottom: 50px ">
-                                <img class=""
-                                     style="width: 100%;height:100% ;object-fit: cover; "
-                                     src="storage/properties_images/{{$image->url}}"
-                                     alt="No Image">
-                            </div>
-                        @else
-                            <div  style="width: 250px;height: 150px ; display: inline-block; margin-top: 0px ;">
-                                <img class=""
-                                     style="width: 100%;height:100% ; object-fit: cover; "
-                                     src="storage/properties_images/{{$image->url}}"
-                                     alt="No Image">
-                            </div>
-                        @endif
+                            <p style="display: none"> {{$i++}}</p>
+                            @if($i == 1)
+                                <tr  >
+                                    <td colspan="2" rowspan="2">
+                                        <div  style="width: 500px;height: 300px ; display: block;margin-bottom: 0px ">
+                                            <img class=""
+                                                 style="width:auto;max-width: 500px;height:100% ;object-fit: cover; "
+                                                 src="storage/commercials_images/{{$image->url}}"
+                                                 alt="No Image">
+                                        </div>
+                                    </td>
+                                    @elseif($i==2)
+                                        <td>
+                                            <div  style="width: 250px;height: 150px ; display: block; margin-top: 0px ;">
+                                                <img class=""
+                                                     style="width:auto;max-width: 250px;height:100% ; object-fit: cover; "
+                                                     src="storage/commercials_images/{{$image->url}}"
+                                                     alt="No Image">
+                                            </div>
+                                        </td>
+                                </tr>
+                            @elseif($i==3)
+                                <tr>
+                                    <td>
+                                        <div  style="width: 250px;height: 150px ; display: block; margin-top: 0px ;">
+                                            <img class=""
+                                                 style="width:auto;max-width: 250px;height:100% ; object-fit: cover; "
+                                                 src="storage/commercials_images/{{$image->url}}"
+                                                 alt="No Image">
+                                        </div>
+                                    </td>
+                                </tr>
+                            @elseif($i==4)
+                                <tr>
+                                    <td  >
+                                        <div  style="width: 250px;height: 150px ; display: block; margin-top: 0px ;">
+                                            <img class=""
+                                                 style="width:auto;max-width: 250px;height:100% ; object-fit: cover; "
+                                                 src="storage/commercials_images/{{$image->url}}"
+                                                 alt="No Image">
+                                        </div>
+                                    </td>
+                                    @elseif($i==5)
+                                        <td>
+                                            <div  style="width: 250px;height: 150px ; display: block; margin-top: 0px ;">
+                                                <img class=""
+                                                     style="width:auto;max-width: 250px;height:100% ; object-fit: cover; "
+                                                     src="storage/commercials_images/{{$image->url}}"
+                                                     alt="No Image">
+                                            </div>
+                                        </td>
+                                    @elseif($i==6)
+                                        <td>
+                                            <div  style="width: 250px;height: 150px ; display: block; margin-top: 0px ;">
+                                                <img class=""
+                                                     style="width:auto;max-width: 250px;height:100% ; object-fit: cover; "
+                                                     src="storage/commercials_images/{{$image->url}}"
+                                                     alt="No Image">
+                                            </div>
+                                        </td>
+                                </tr>
+
+                                @endif
                     @endif
 
                 @endforeach
 
-
+                </table>
             @endif
         </td>
 
     </tr>
 
     <tr style="height: 40%;">
-        <td style="width: 60%">
+        <td   >
             <p style="white-space: pre-line">{{$property->description}}</p>
 
             <br/><br/>
 
             <p style="font-size: 22px">
                 {{$property->floor}}  m<sup>2</sup> | {{ \App\Models\commTypes::findOrFail($property->type)->title }}
+
+                <img src="logo/logo2.png"  style="width :20%; float: right;transform: translateY(-50%);">
             </p>
-        </td>
-        <td style="width: 40%">
-            <img src="logo/logo2.png"  style="width :80%; vertical-align: bottom">
         </td>
     </tr>
 </table>
 <br/><br/>
 
 <p style="text-align: center; font-weight: bold;">
-    thank you for choosing Oz property market
+    Thank you for choosing Oz property market
 </p>
 
 
