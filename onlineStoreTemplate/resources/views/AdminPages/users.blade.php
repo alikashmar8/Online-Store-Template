@@ -120,7 +120,6 @@
                     $tr = $tr.prev('.parent');
                 }
                 var data = table.row($tr).data();
-                // console.log(data);
                 $('#deleteId').val(data[0]);
             });
 

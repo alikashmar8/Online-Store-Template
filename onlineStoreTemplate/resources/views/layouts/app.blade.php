@@ -8,7 +8,8 @@
     <link rel="icon" href="{{asset('logo/fav.jpg')}}" type="image/gif" sizes="16x16">
     <!-- Fonts -->
     <!link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Hind&family=Pacifico&family=Sansita+Swashed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind&family=Pacifico&family=Sansita+Swashed&display=swap"
+          rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,6 +17,10 @@
 
     {{--    Scripts--}}
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    {{--    JQuery--}}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 
     {{--    leafletMap--}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
@@ -41,8 +46,8 @@
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="{{ URL::asset('css/icomoon.css') }}">
     <!-- Bootstrap  -->
-{{--    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">--}}
-    <!-- Superfish -->
+    {{--    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">--}}
+<!-- Superfish -->
     <link rel="stylesheet" href="{{ URL::asset('css/superfish.css') }}">
     <!-- Flexslider  -->
     <link rel="stylesheet" href="{{ URL::asset('css/flexslider.css') }}">
@@ -82,8 +87,9 @@
 
 <body class="bg-css">
 <div>
-    <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue" >
-        <a class="navbar-brand " href="/"><img src="{{asset('logo/logowithout.png')}}" style="width:100%; max-width: 220px"></a>
+    <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue">
+        <a class="navbar-brand " href="/"><img src="{{asset('logo/logowithout.png')}}"
+                                               style="width:100%; max-width: 220px"></a>
         {{--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">--}}
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -139,19 +145,19 @@
                         </li>
 
 
-                <li class="nav-item">
-                    <a href="/findAgents" class="special-link">Find agent</a>
-                </li>
+                        <li class="nav-item">
+                            <a href="/findAgents" class="special-link">Find agent</a>
+                        </li>
 
-                <li class="nav-item">
-                    <a href="/tips" class="special-link">Tips</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/evaluate" class="special-link">Evaluate</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/insurance" class="special-link">Insurance</a>
-                </li>
+                        <li class="nav-item">
+                            <a href="/tips" class="special-link">Tips</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/evaluate" class="special-link">Evaluate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/insurance" class="special-link">Insurance</a>
+                        </li>
 
             </ul>
             <ul class="nav navbar-nav mr-auto">
@@ -178,19 +184,19 @@
                     </li>
 
 
-                <li class="nav-item">
-                    <a href="/findAgents" class="special-link">Find agent</a>
-                </li>
+                    <li class="nav-item">
+                        <a href="/findAgents" class="special-link">Find agent</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a href="/tips" class="special-link">Tips</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/evaluate" class="special-link">Evaluate</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/insurance" class="special-link">Insurance</a>
-                </li>
+                    <li class="nav-item">
+                        <a href="/tips" class="special-link">Tips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/evaluate" class="special-link">Evaluate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/insurance" class="special-link">Insurance</a>
+                    </li>
 
             </ul>
             <ul class="nav navbar-nav mr-auto">
