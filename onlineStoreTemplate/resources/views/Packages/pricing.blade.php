@@ -719,7 +719,9 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Manage Your Listing 24/7</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('To enable you to build, edit & update your listing whenever you want, we offer a custom designed, easy to use application. \n'+
+'You\'ll get led to your property dashboard when you list your property. You can edit, upload or alter your property status here to \'Available or under offer or Sold\'')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:42.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -736,7 +738,12 @@
                         <strong><span
                                 style="font-size:16px;color:#e4002b;">Fully Signed PDF Applications</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('Your prospective tenant has the option to complete a full application, using 1 form, if they want to do so. You may also use this option if you\'d like prospective tenants to supply all their supporting documentation at the time of application.\n'+
+'1Form\n'+
+'1Form is now known as the industry standard in Australia for online rental applications. Prospective tenants can apply, along with most of the larger franchise websites and many of the independent real estate pages, for rental properties listed on almost every real estate platform, including realestate.com.au. In an application, prospective tenants simply fill out the details. \n'+
+'Supporting Documents\n'+
+'1Form users can scan, upload and attach copies of their relevant identification and supporting documentation to their application. These documents will simply be attached to the application email you receive which also contains the PDF application.')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:36.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -752,7 +759,8 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Rental Re-listing Guarantee</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('If you need to re-list your property for rental at any time within 2 months of posting your advertisement for any cause, you will be able to re-list your property free of charge.\n'+
+'In the case that a tenant wishes to break the lease within the first 2 months, or if any other unexpected situations occur, the rental re-listing guarantee covers you if this falls within the first 2 months of release.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
@@ -769,7 +777,9 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Extended Customer Support</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('We provide extended assistance well outside of working hours as part of our dedication to delivering outstanding service. No external call-centres are used by Oz Property Market; you can always communicate directly with an individual staff member when you phone, email or talk with us online.\n'+
+'Phone, Email & Live Chat\n'+
+'We can easily be reached by telephone, email and live chat, whichever method fits your needs best. Help involves not only technological difficulties that you may need assistance with, but also any real estate advice that you may need, such as coping with a particular bid, setting and setting your price, performing \'Available for Inspections\' etc.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
@@ -786,7 +796,12 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">&apos;For Lease&apos; Board</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('All \'For Lease\' board panels are lightweight but durable, weatherproof, and simple to mount. A \'For Lease\' Board makes it easier for by passers and genuine people to identify your property when visiting for inspection.\n'+
+'\n'+
+'Contact Details\n'+
+'Your board will come with a space on it where you can write the unit number of your property (if applicable) and another space where you can write your preferred contact number\n'+
+'Delivery\n'+
+'As soon as you have verified your shipment address, your \'For Lease\' sign will normally be sent out. In most situations, within a week the sign will delivered.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
@@ -826,7 +841,10 @@
                         <strong><span
                                 style="font-size:16px;color:#e4002b;">Listing on domain.com.au (standard listing)</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('Your property will be listed, until rented, on domain.com.au. Domain.com.au is part of the Fairfax Media Network and is one of the major destinations for property seekers in Australia.\n'+
+'Domain offers the most detailed and easiest search experience with suburban precise information, a world-leading \'radar\' search feature, easy home updates, sold property listings, sales history and Australia\'s leading property search application on the iPhone. More than 228 million page views are carried out per month by more than 3 million unique Domain.com.au browsers.\n'+
+'Real-time Enquiry Handling\n'+
+'To place you and prospective buyers in communication with each other as easily and effectively as possible, Oz Property Market uses all the latest technology. Online enquiries are automatically processed and arrive in real-time in your own inbox, without any interference required by us.')"></i></strong>
                     </p>
 
                 </td>
@@ -900,7 +918,8 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Printable Brochures</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('Use our professional printable brochures to make a great impression. These high-resolution brochures are ready for printing and can be submitted directly to a professional printer or printed from your computer at home. They are perfect for giving out or emailing prospective buyers to individuals attending your open home.')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:42.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -920,7 +939,9 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Manage Your Listing 24/7</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('Our cutting-edge software helps you both to build and manage your property easily and quickly. As it appears on websites like realestate.com.au, you have absolute control over the specification of your listing.\n'+
+'If you want to adjust your listing, just log in at any time and make any adjustments you need (edit the description price, photos etc.). The editing is completely automated and there is no fee for your listing to make adjustments. You don\'t have to wait for us to edit the requests for action; you can do this at any time yourself.')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:42.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:41.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -962,7 +983,10 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Extended Customer Support</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('We provide extended assistance well outside of working hours as part of our dedication to delivering outstanding service. No external call-centers are used for Oz Property Market; you can always interact directly with a staff member while phoning, emailing or chatting with us online.\n'+
+'\n'+
+'Phone, Email & Live Chat\n'+
+'We can easily be reached by telephone, email and live chat, whichever method fits your needs best. Help involves not only technological difficulties that you may need assistance with, but also any real estate advice that you may need, such as coping with a particular bid, setting and setting your price, performing \'Available for Inspections\' etc.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:42.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
@@ -983,7 +1007,13 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">&apos;For Sale&apos; Board</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('A \'For Sale\' Board panels are lightweight but durable, weatherproof, and simple to mount. A \'For Sale\' board for your property is an ever-present salesperson.\n'+
+'\n'+
+'\n'+
+'Contact Details\n'+
+'Your board will come with a space on it where you can write the unit number of your property (if applicable) and another space where you can write your preferred contact number.\n'+
+'Delivery\n'+
+'Metro properties include professional installation. A driver will come out at a specified time that suits you, and will install the board in your desired location. Non-Metro properties will be sent as a Flat Pack (delivered by a courier), which you will need to assemble it.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:42.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
@@ -1005,7 +1035,9 @@
                         <strong><span
                                 style="font-size:16px;color:#e4002b;">List on commercialrealestate.com.au</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('Commercialrealestate.com.au is a dedicated national company operating as part domain group in Fairfax media.   Commercialrealestate.com.au provides an integrated combination of web, print and social media advertisement solutions that is exclusive to the commercial property industry in Australia.\n'+
+'The multi-media channels of commercialrealestate.com.au make it simple for property seekers to search and discover commercial property for sale and lease. With property news, commentary and informative content delivered by highly experienced business and commercial real estate journalists, purchasers can keep your eye on the market.\n'+
+'More than 50,000 listings, including office, retail, manufacturing, warehouse, hotel and agricultural properties, as well as land, can be easily explored by commercialrealestate.com.au.')"></i></strong>
                     </p>
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <span style="color:black;">&nbsp;</span></p>
@@ -1036,7 +1068,7 @@
                                 <strong><span style="font-size:16px;color:#e4002b;">Get 30-Days sponsorship on our website slideshow your property for Adiitional $ 99 ONLY!</span><i
                                         class="fa fa-question-circle mx-1" data-toggle="modal"
                                         data-target="#exampleModal"
-                                        onclick="setDetails('')"></i></strong>
+                                        onclick="setDetails('Advertise your property at the top of our page for Tens of Thousands to view and inquire. This unique feature is a great way to bring attention of many genuine buyers to inquire and promote their interest.')"></i></strong>
                             </p>
                         </td>
 
@@ -1110,7 +1142,9 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Manage Your Listing 24/7</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('Our cutting-edge software helps you both to build and manage your property easily and quickly. As it appears on websites like realestate.com.au, you have absolute control over the specification of your listing.\n'+
+'If you want to adjust your listing, just log in at any time and make any adjustments you need (edit the description price, photos etc.). The editing is completely automated and there is no fee for your listing to make adjustments. You don\'t have to wait for us to edit the requests for action; you can do this at any time yourself.')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  35.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -1142,7 +1176,12 @@
                         <strong><span
                                 style="font-size:16px;color:#e4002b;">Fully Signed PDF Applications</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('Your prospective tenant has the option of completing a complete application using 1 form, if they want to do so. You may also use this option if you would like prospective tenants at the time of application to provide all their supporting documentation.\n'+
+'1Form\n'+
+'1Form is now known as the industry standard in Australia for online rental applications. Prospective tenants can apply, along with most of the larger franchise websites and many of the independent real estate pages, for rental properties listed on almost every real estate platform, including realestate.com.au. In an application, prospective tenants simply fill out the details and apply. \n'+
+'Supporting Documents\n'+
+'1Form users are able to search, upload and attach to their application copies of their related identity and supporting documents. The application email you get, which also includes the PDF application, will simply be attached to these documents.')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  33.35pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -1162,7 +1201,8 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Printable Brochures</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('Use our professional printable brochures to make a great impression. These high-resolution brochures are ready for printing and can be submitted directly to a professional printer or printed from your computer at home. They are perfect for giving out or emailing prospective buyers to individuals attending your open home.')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -1194,7 +1234,10 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Extended Customer Support</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('We provide extended assistance well outside of working hours as part of our dedication to delivering outstanding service. No external call-centers are used for Oz Property Market; you can always interact directly with a staff member while phoning, emailing or chatting with us online.\n'+
+'\n'+
+'Phone, Email & Live Chat\n'+
+'We can easily be reached by telephone, email and live chat, whichever method fits your needs best. Help involves not only technological difficulties that you may need assistance with, but also any real estate advice that you may need, such as coping with a particular bid, setting and setting your price, performing \'Available for Inspections\' etc.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
@@ -1216,7 +1259,13 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">&apos;For Lease&apos; Board</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('All \'For Lease\'  board panels are lightweight but durable, weatherproof, and simple to mount. A \'For Lease\' Board makes it easier for by passers and genuine people to identify your property when visiting for inspection.\n'+
+'\n'+
+'Contact Details\n'+
+'Your board will come with a space on it where you can enter your property\'s unit number (if applicable) and another space where you can enter your preferred contact number.\n'+
+'\n'+
+'Delivery\n'+
+'As soon as you have verified your shipment address, your \'For Lease\' sign will normally be sent out. In most situations, within a week the sign will delivered.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
@@ -1238,7 +1287,9 @@
                         <strong><span
                                 style="font-size:16px;color:#e4002b;">Listing on commercialrealestate.com.au</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('Commercialrealestate.com.au is a dedicated national company operating as part domain group in Fairfax media.    Commercialrealestate.com.au provides an integrated combination of web, print and social media advertisement solutions that is exclusive to the commercial property industry in Australia.\n'+
+'The multi-media channels of commercialrealestate.com.au make it simple for property seekers to search and discover commercial property for sale and lease. With property news, commentary and informative content delivered by highly experienced business and commercial real estate journalists, purchasers can keep your eye on the market.\n'+
+'More than 50,000 listings, including office, retail, manufacturing, warehouse, hotel and agricultural properties, as well as land, can be easily explored by commercialrealestate.com.au.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:80.75pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:60.95pt;">
@@ -1306,7 +1357,9 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Printable Brochures</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('Use our professional printable brochures to make a great impression. These high-resolution brochures are ready for printing and can be submitted directly to a professional printer or printed from your computer at home. They are perfect for giving out or emailing prospective buyers to individuals attending your open home.\n'+
+'Our Photo Boards are a great way of presenting your property professionally to the public, and attracting buyers who may not be actively looking online.')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -1318,7 +1371,9 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Manage Your Listing 24/7</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('Our cutting-edge software helps you to build and manage your company listing easily and quickly. As it appears on portals like Seek Business and Domain Business, you have full control over the specifics of your listing.\n'+
+'If you want to adjust your listing, just log in at any time and make any adjustments you need (edit the description price, photos etc.).  The editing is completely automated and there is no fee for your listing to make adjustments. You don\'t have to wait for us to edit the requests for action; you can do this at any time yourself.')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  40.55pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -1346,7 +1401,10 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Extended Customer Support</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('We provide extended assistance well outside of working hours as part of our dedication to delivering outstanding service. No external call-centers are used for Oz Property Market; you can always interact directly with a staff member while phoning, emailing or chatting with us online.\n'+
+'\n'+
+'Phone, Email & Live Chat\n'+
+'We can easily be reached by telephone, email and live chat, whichever method fits your needs best. Help involves not only technological challenges that you may need help with, but also any guidance that you may need, such as coping with a particular bid, setting and setting your price, reacting to offers from your company\'s potential customers, etc.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:80.55pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:45.75pt;">
@@ -1401,7 +1459,8 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Weekly Property Reports</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('This weekly report helps you understand and analysis your weekly views and think about the future of your property. This feature is very useful as it can help you understand your market value of your property and make any changes if necessary.')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -1413,7 +1472,7 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Unlimited Color Brochures</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('Use our professional printable brochures to make a great impression. These high-resolution brochures are print-ready and can be sent directly from your home computer to a professional printer or can be printed.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
@@ -1428,7 +1487,10 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">Manage your Listing 24/7</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong></p>
+                                onclick="setDetails('Our cutting-edge software allows you to easily and quickly both create and manage your business listing. You have complete control over the details of your listing as it appears on portals like Seek Business and Domain Business.\n'+
+'\n'+
+'If you’d like to edit your listing, simply login any time and make any change you need to (edit the description price, photos etc.). Editing is fully automated and there is no charge for making changes to your listing. You do not need to wait for us to action edit requests; you are able to do this yourself at any time.')"></i></strong>
+                    </p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
@@ -1441,7 +1503,7 @@
                         <strong><span
                                 style="font-size:16px;color:#e4002b;">Add up 33 photos of your property</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('You can show the potential of your property with purchasing our package with professional photographers or you can take them yourself and upload them. This allows buyers to acknowledge the full potential of the property and contact you if interested. ')"></i></strong>
                     </p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
@@ -1470,7 +1532,11 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span style="font-size:16px;color:#e4002b;">1 x large PHOTO SIGN (1800x1200) installed* (or Flatpack)</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('Our Photo Boards are a great way of presenting your property professionally to the public, and attracting buyers who may not be actively looking online.\n'+
+'CONTACT DETAILS\n'+
+'After submitting photographs and text for your photo board, we will prepare a proof for you.  You will have the opportunity to make as many changes as you like, until you are happy with the final design.\n'+
+'DELIVERY\n'+
+'Metro properties include professional installation. A driver will come out at a specified time, and will install the board in your desired location. Non-Metro properties will be sent as a Flat Pack (delivered by a courier), which you will need to assemble it.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  52.9pt;">
@@ -1484,7 +1550,9 @@
                         <strong><span
                                 style="font-size:16px;color:#e4002b;">1 x large &apos;SOLD&apos; sticker</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
+                                onclick="setDetails('\'SOLD\' sticker and zipped ties\n'+
+'When installing your \'For Sale\', cable ties & screws are used. They can be used to attach the sign to any form of fencing, balcony, or can be used to fix the sign to stakes in timber.\n'+
+'Placing your SOLD sticker on your sign is one of the BEST parts of selling your house, knowing you have just potentially saved yourself thousands.')"></i></strong>
                     </p>
                 </td>
                 <td style="width:80.55pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:50.05pt;">
