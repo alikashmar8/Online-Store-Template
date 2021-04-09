@@ -46,77 +46,75 @@
                             {{--                            </div>--}}
                             {{--                            <div class="search-bar-nav ">--}}
 
-                            {{--                                <label for="3" id="share-label"> Share</label>--}}
-                            {{--                                <input type="radio" class="search-bar-nav-remove" name="category" value="3"  id="3" onclick="share_clicked();"  >--}}
+                                {{--                                <label for="3" id="share-label"> Share</label>--}}
+                                {{--                                <input type="radio" class="search-bar-nav-remove" name="category" value="3"  id="3" onclick="share_clicked();"  >--}}
 
-                            {{--                            </div>--}}
+                                {{--                            </div>--}}
 
                         </div>
 
                         <div class="search-bar-section">
 
-                            <input class="location1" type="search" placeholder="Search by Location" {{--name="address"--}} name="location"
-                                   onFocus="initializeAutocomplete()" id="locality" >
+                            <input class="location1" type="search" placeholder="Search by Location or Description"
+                                   {{--name="address"--}} name="location"
+                                   onFocus="initializeAutocomplete()" id="locality">
 
 
-                            <button type="submit"   class="btn-primary1 submit">Search
+                            <button type="submit" class="btn-primary1 submit">Search
                             </button>
-
-
 
 
                         </div>
 
                         <div class="search-bar-section">
                             <div style="width: 100%">
-                            <select name="type">
-                                <option class="option" name="type" value=-1>Property type</option>
-                                @foreach($types as $type)
-                                    <option class="option" name="type" value="{{ $type->id }}"
-                                            id="{{ $type->id }}">{{ $type->title }}</option>
+                                <select name="type">
+                                    <option class="option" name="type" value=-1>Property type</option>
+                                    @foreach($types as $type)
+                                        <option class="option" name="type" value="{{ $type->id }}"
+                                                id="{{ $type->id }}">{{ $type->title }}</option>
 
-                                @endforeach
-                            </select>
+                                    @endforeach
+                                </select>
 
 
-                            <select name="bedroomsNumber">
-                                <option class="option" value="-1">Beds</option>
-                                <option class="option" value="1">1</option>
-                                <option class="option" value="2">2</option>
-                                <option class="option" value="3">3</option>
-                                <option class="option" value="4">4</option>
-                                <option class="option" value="5">5+</option>
-                            </select>
-                            <select id="min-price" name="minPrice">
+                                <select name="bedroomsNumber">
+                                    <option class="option" value="-1">Beds</option>
+                                    <option class="option" value="1">1</option>
+                                    <option class="option" value="2">2</option>
+                                    <option class="option" value="3">3</option>
+                                    <option class="option" value="4">4</option>
+                                    <option class="option" value="5">5+</option>
+                                </select>
+                                <select id="min-price" name="minPrice">
 
-                                <option class="option" name="100" value="0">Min Price</option>
-                                <option class="option" name="100" value="500000">$500,000</option>
-                                <option class="option" name="100" value="750000">$ 750,000</option>
-                                <option class="option" name="100" value="1000000">$ 1,000,000</option>
-                                <option class="option" name="100" value="1500000">$ 1,500,000</option>
-                                <option class="option" name="100" value="2000000">$ 2,000,000</option>
+                                    <option class="option" name="100" value="0">Min Price</option>
+                                    <option class="option" name="100" value="500000">$500,000</option>
+                                    <option class="option" name="100" value="750000">$ 750,000</option>
+                                    <option class="option" name="100" value="1000000">$ 1,000,000</option>
+                                    <option class="option" name="100" value="1500000">$ 1,500,000</option>
+                                    <option class="option" name="100" value="2000000">$ 2,000,000</option>
 
-                            </select>
-                            <select id="max-price" name="maxPrice">
-                                <option class='option' name="100" value="1000000000">Max Price</option>
-                                <option class='option' name="100" value="2000000">$ 2,000,000</option>
-                                <option class='option' name="100" value="5000000">$ 5,000,000</option>
-                                <option class='option' name="100" value="10000000">$ 10,000,000</option>
-                                <option class='option' name="100" value="12000000">$ 12,000,000</option>
-                                <option class='option' name="100" value="15000000">$ 15,000,000</option>
+                                </select>
+                                <select id="max-price" name="maxPrice">
+                                    <option class='option' name="100" value="1000000000">Max Price</option>
+                                    <option class='option' name="100" value="2000000">$ 2,000,000</option>
+                                    <option class='option' name="100" value="5000000">$ 5,000,000</option>
+                                    <option class='option' name="100" value="10000000">$ 10,000,000</option>
+                                    <option class='option' name="100" value="12000000">$ 12,000,000</option>
+                                    <option class='option' name="100" value="15000000">$ 15,000,000</option>
 
-                            </select>
+                                </select>
                             </div>
                         </div>
 
                     </form>
 
 
-
                 </div>
 
 
-        </div>
+            </div>
         </div>
 
         <div class="main1">
@@ -222,107 +220,110 @@
         </div>
     @else
 
-    @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
-                    {{--            admin home page--}}
+        @if(\Illuminate\Support\Facades\Auth::user()->role == 0)
+            {{--            admin home page--}}
 
-        <div class="hero" style=" height: 600px; background-image: url({{asset('images1/home.jpg')}}); background-position: 50% 40%;">
+            <div class="hero"
+                 style=" height: 600px; background-image: url({{asset('images1/home.jpg')}}); background-position: 50% 40%;">
 
-        </div>
-                    <div class="row container py-0" style="margin: auto">
+            </div>
+            <div class="row container py-0" style="margin: auto">
 
-                        <div class="col-md-1 ">  </div>
+                <div class="col-md-1 "></div>
 
-                        <div class="col-md-5 bg-white p-2 my-3">
-                            <h2>All Properies = {{ count($allProperties) }}</h2>
-                            <a href="/acceptedProperties" style="color: #e4002b">Check Now</a>
-                        </div>
+                <div class="col-md-5 bg-white p-2 my-3">
+                    <h2>All Properies = {{ count($allProperties) }}</h2>
+                    <a href="/acceptedProperties" style="color: #e4002b">Check Now</a>
+                </div>
 
-                        <div class="col-md-1">  </div>
+                <div class="col-md-1"></div>
 
-                        <div class="col-md-5 bg-white p-2 my-3">
-                            <h2>Properies waiting for confirmation = {{ count($notAcceptedProperties) }}</h2>
-                            <a href="/acceptProperties" style="color: #e4002b">Check Now</a>
-                        </div>
+                <div class="col-md-5 bg-white p-2 my-3">
+                    <h2>Properies waiting for confirmation = {{ count($notAcceptedProperties) }}</h2>
+                    <a href="/acceptProperties" style="color: #e4002b">Check Now</a>
+                </div>
 
-                        <div class="col-md-1">  </div>
+                <div class="col-md-1"></div>
 
-                        <div class="col-md-5 bg-white p-2 my-3">
-                            <h2>All Commercials = {{ count($allCommercials) }}</h2>
-                            <a href="/allCommercials" style="color: #e4002b">Check Now</a>
-                        </div>
+                <div class="col-md-5 bg-white p-2 my-3">
+                    <h2>All Commercials = {{ count($allCommercials) }}</h2>
+                    <a href="/allCommercials" style="color: #e4002b">Check Now</a>
+                </div>
 
-                        <div class="col-md-1">  </div>
+                <div class="col-md-1"></div>
 
-                        <div class="col-md-5 bg-white p-2 my-3">
-                            <h2>Commercials waiting for confirmation = {{ count($notAcceptedCommercials) }}</h2>
-                            <a href="/acceptCommercials" style="color: #e4002b">Check Now</a>
-                        </div>
-
-
-                        <div class="col-md-1"></div>
-
-                        <div class="col-md-5 bg-white p-2  my-3">
-                            <h2>All Users: {{ count($allUsers) }}</h2>
-                            <a href="/users" style="color: #e4002b">See Users</a>
-
-                        </div>
-
-                        <div class="col-md-1"></div>
-
-                        <div class="col-md-5 bg-white p-2  my-3">
-                            <h2>New User in the last 24 hrs: {{ count($recentUsers) }}</h2>
-                            <a href="/users" style="color: #e4002b">See Users</a>
-
-                        </div>
+                <div class="col-md-5 bg-white p-2 my-3">
+                    <h2>Commercials waiting for confirmation = {{ count($notAcceptedCommercials) }}</h2>
+                    <a href="/acceptCommercials" style="color: #e4002b">Check Now</a>
+                </div>
 
 
-                        <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
 
-                        <div class="col-md-5 bg-white p-2  my-3">
-                            <h2>All Payments: {{ count($allPayments) }}</h2>
-                            <a href="/adminPayments" style="color: #e4002b">See Payments</a>
+                <div class="col-md-5 bg-white p-2  my-3">
+                    <h2>All Users: {{ count($allUsers) }}</h2>
+                    <a href="/users" style="color: #e4002b">See Users</a>
 
-                        </div>
+                </div>
 
-                        <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
 
-                        <div class="col-md-5 bg-white p-2  my-3">
-                            <h2> New Payments in the last 24 hrs: {{ count($allEarnings) }}</h2>
-                            <a href="/adminPayments" style="color: #e4002b">See Payments</a>
+                <div class="col-md-5 bg-white p-2  my-3">
+                    <h2>New User in the last 24 hrs: {{ count($recentUsers) }}</h2>
+                    <a href="/users" style="color: #e4002b">See Users</a>
 
-                        </div>
+                </div>
 
 
-                    </div>
-                @endif
+                <div class="col-md-1"></div>
 
-            @endif
+                <div class="col-md-5 bg-white p-2  my-3">
+                    <h2>All Payments: {{ count($allPayments) }}</h2>
+                    <a href="/adminPayments" style="color: #e4002b">See Payments</a>
+
+                </div>
+
+                <div class="col-md-1"></div>
+
+                <div class="col-md-5 bg-white p-2  my-3">
+                    <h2> New Payments in the last 24 hrs: {{ count($allEarnings) }}</h2>
+                    <a href="/adminPayments" style="color: #e4002b">See Payments</a>
+
+                </div>
+
+
+            </div>
+        @endif
+
+    @endif
 
     <script>
-        function buy_clicked(){
-            document.getElementById("buy-label").style.background="#e4002b";
-            document.getElementById("rent-label").style.background="#91969c";
-            document.getElementById("share-label").style.background="#91969c";
+        function buy_clicked() {
+            document.getElementById("buy-label").style.background = "#e4002b";
+            document.getElementById("rent-label").style.background = "#91969c";
+            document.getElementById("share-label").style.background = "#91969c";
 
 
             document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='500000'>$500,000</option><option class='option' name='100' value='750000'>$ 750,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option><option class='option' name='100' value='1500000'>$ 1,500,000</option><option class='option' name='100' value='2000000'>$ 2,000,000</option>";
             document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='2000000'>$ 2,000,000</option><option class='option' name='100' value='5000000'>$ 5,000,000</option><option class='option' name='100' value='10000000'>$ 10,000,000</option><option class='option' name='100' value='12000000'>$ 12,000,000</option><option class='option' name='100' value='15000000'>$ 15,000,000</option>";
 
         }
-        function rent_clicked(){
-            document.getElementById("buy-label").style.background="#91969c";
-            document.getElementById("rent-label").style.background="#e4002b";
-            document.getElementById("share-label").style.background="#91969c";
+
+        function rent_clicked() {
+            document.getElementById("buy-label").style.background = "#91969c";
+            document.getElementById("rent-label").style.background = "#e4002b";
+            document.getElementById("share-label").style.background = "#91969c";
             document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='100'>$100</option><option class='option' name='100' value='250'>$ 250</option><option class='option' name='100' value='500'>$ 500</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option>";
             document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='750'>$ 750</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option><option class='option' name='100' value='3000'>$ 3,000</option><option class='option' name='100' value='5000'>$ 5,000</option>";
 
 
         }
-        function share_clicked(){
-            document.getElementById("buy-label").style.background="#91969c";
 
-            document.getElementById("rent-label").style.background="#91969c";
-            document.getElementById("share-label").style.background="#e4002b";
+        function share_clicked() {
+            document.getElementById("buy-label").style.background = "#91969c";
+
+            document.getElementById("rent-label").style.background = "#91969c";
+            document.getElementById("share-label").style.background = "#e4002b";
             document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='100'>$100</option><option class='option' name='100' value='250'>$ 250</option><option class='option' name='100' value='500'>$ 500</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option>";
             document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='750'>$ 750</option><option class='option' name='100' value='1000'>$ 1,000</option><option class='option' name='100' value='2000'>$ 2,000</option><option class='option' name='100' value='3000'>$ 3,000</option><option class='option' name='100' value='5000'>$ 5,000</option>";
 
@@ -331,38 +332,38 @@
     </script>
 
     {{--scripts for google locations--}}
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initAutocomplete&libraries=places&v=weekly"
-    defer
-></script>
-<script type="text/javascript">
-    function initializeAutocomplete() {
-        var input = document.getElementById('locality');
-        // var options = {
-        //   types: ['(regions)'],
-        //   componentRestrictions: {country: "IN"}
-        // };
-        var options = {}
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1CbPQ2HCLV38r9m68B8VCv51JBVke5TM&callback=initAutocomplete&libraries=places&v=weekly"
+        defer
+    ></script>
+    <script type="text/javascript">
+        function initializeAutocomplete() {
+            var input = document.getElementById('locality');
+            // var options = {
+            //   types: ['(regions)'],
+            //   componentRestrictions: {country: "IN"}
+            // };
+            var options = {}
 
-        var autocomplete = new google.maps.places.Autocomplete(input, options);
+            var autocomplete = new google.maps.places.Autocomplete(input, options);
 
-        google.maps.event.addListener(autocomplete, 'place_changed', function() {
-            var place = autocomplete.getPlace();
-            var lat = place.geometry.location.lat();
-            var lng = place.geometry.location.lng();
-            var placeId = place.place_id;
-            // to set city name, using the locality param
-            var componentForm = {
-                locality: 'short_name',
-            };
-            for (var i = 0; i < place.address_components.length; i++) {
-                var addressType = place.address_components[i].types[0];
-                if (componentForm[addressType]) {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    document.getElementById("city").value = val;
+            google.maps.event.addListener(autocomplete, 'place_changed', function () {
+                var place = autocomplete.getPlace();
+                var lat = place.geometry.location.lat();
+                var lng = place.geometry.location.lng();
+                var placeId = place.place_id;
+                // to set city name, using the locality param
+                var componentForm = {
+                    locality: 'short_name',
+                };
+                for (var i = 0; i < place.address_components.length; i++) {
+                    var addressType = place.address_components[i].types[0];
+                    if (componentForm[addressType]) {
+                        var val = place.address_components[i][componentForm[addressType]];
+                        document.getElementById("city").value = val;
+                    }
                 }
-            }
-        });
-    }
-</script>
+            });
+        }
+    </script>
 @endsection
