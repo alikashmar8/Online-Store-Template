@@ -12,7 +12,6 @@ use App\Models\PropertyImage;
 use App\Models\PropertyType;
 use App\Models\User;
 use Illuminate\Http\Request;
-use function Sodium\add;
 
 class SearchController extends Controller
 {
@@ -56,7 +55,6 @@ class SearchController extends Controller
 
     public function searchProperties(Request $request)
     {
-//        dd($request);
         $properties = Property::where('accepted', '=', 1);
         $properties = $properties->where('locationDescription', 'like', '%' . $request->location . '%')->orWhere('description', 'like', '%' . $request->location . '%');
 
@@ -151,7 +149,7 @@ class SearchController extends Controller
 
         $category = $request->category;
 
-        return view('commercial.indexCommercial', compact('searched', 'commercials', 'types', 'minPrice', 'maxPrice', 'minFloor', 'maxFloor' , 'category'));
+        return view('commercial.indexCommercial', compact('searched', 'commercials', 'types', 'minPrice', 'maxPrice', 'minFloor', 'maxFloor', 'category'));
 
     }
 }
