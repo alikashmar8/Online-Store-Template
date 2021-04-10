@@ -44,7 +44,21 @@
         //-moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
         //-webkit-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
         //box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+            overflow: hidden;
         }
+
+        #pricing-table #most-popular .popular{
+            position: absolute;
+            transform: translate(-40%, -25%) rotate(-45deg);
+            color: yellow;
+            background: #e4002b;
+            /* height: 100; */
+            /* width: 150px; */
+            padding: 15px;
+            padding-right: 60px;
+            padding-left: 60px;
+        }
+
 
         .ss{
             margin-left: 50%;
@@ -226,6 +240,7 @@
         </div>
 
         <div class="plan" id="most-popular">
+            <p class="popular"> POPULAR</p>
             <h3>Platinum<span>$1490</span></h3>
             <a class="signup" href="/pricing#Residential_Sale">More Details</a>
             <ul>
@@ -262,6 +277,7 @@
         </ul>
     </div>
     <div class="plan" id="most-popular">
+        <p class="popular"> POPULAR</p>
         <h3>Professional<span>$199</span></h3>
         <a class="signup" href="/pricing#Residential_Rent">More Details</a>
         <ul>
@@ -296,6 +312,7 @@
         </ul>
     </div>
     <div class="plan" id="most-popular">
+        <p class="popular"> POPULAR</p>
         <h3>Professional<span>$790</span></h3>
         <a class="signup" href="/pricing#Commercial_Sale">More Details</a>
         <ul>
@@ -331,6 +348,7 @@
         </ul>
     </div>
     <div class="plan" id="most-popular">
+        <p class="popular"> POPULAR</p>
         <h3>Professional<span>$399</span></h3>
         <a class="signup" href="/pricing#Commercial_Rent">More Details</a>
         <ul>

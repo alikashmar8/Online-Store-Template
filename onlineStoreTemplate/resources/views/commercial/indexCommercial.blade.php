@@ -71,7 +71,7 @@
                                         </select>
 
                                         <select id="min-price" name="minPrice">
-                                            <option class='option' name='100' value='0'>Min Price</option>
+                                            <option class='option' name='100' value='0'>Price (min)</option>
                                             <option class='option' name='100' value='100000'>$100,000</option>
                                             <option class='option' name='100' value='150000'>$ 150,000</option>
                                             <option class='option' name='100' value='200000'>$ 200,000</option>
@@ -80,7 +80,7 @@
 
                                         </select>
                                         <select id="max-price" name="maxPrice" >
-                                            <option class='option' name='100' value='1000000000'>Max Price</option>
+                                            <option class='option' name='100' value='1000000000'>Price (max)</option>
                                             <option class='option' name='100' value='200000'>$ 200,000</option>
                                             <option class='option' name='100' value='500000'>$ 500,000</option>
                                             <option class='option' name='100' value='1000000'>$ 1,000,000</option>
@@ -309,6 +309,11 @@
         }
         @endif
 
+        @if(isset($searched))
+        document.getElementById('locality').value = "{{$searched}}";
+
+        @endif
+
         $(document).ready(function () {
             $("#sort").on("change", function () {
                 this.form.submit();
@@ -340,10 +345,9 @@
             document.getElementById("min-price").style.display = "inline-block" ;
             document.getElementById("max-price").style.display = "inline-block" ;
 
+            document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Price (min)</option><option class='option' name='100' value='100000'>$100,000</option><option class='option' name='100' value='150000'>$ 150,000</option><option class='option' name='100' value='200000'>$ 200,000</option><option class='option' name='100' value='500000'>$ 500,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option>";
+            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Price (max)</option><option class='option' name='100' value='200000'>$ 200,000</option><option class='option' name='100' value='500000'>$ 500,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option><option class='option' name='100' value='2500000'>$ 2,500,000</option><option class='option' name='100' value='5000000'>$ 5,000,000</option>";
 
-            /*document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='100000'>$100,000</option><option class='option' name='100' value='150000'>$ 150,000</option><option class='option' name='100' value='200000'>$ 200,000</option><option class='option' name='100' value='500000'>$ 500,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option>";
-            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='200000'>$ 200,000</option><option class='option' name='100' value='500000'>$ 500,000</option><option class='option' name='100' value='1000000'>$ 1,000,000</option><option class='option' name='100' value='2500000'>$ 2,500,000</option><option class='option' name='100' value='5000000'>$ 5,000,000</option>";
-            */
             document.getElementById("categ").value = 1;
         }
         function rent_clicked(){
@@ -353,9 +357,9 @@
 
             document.getElementById("min-price").style.display = "inline-block" ;
             document.getElementById("max-price").style.display = "inline-block" ;
-            /*document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Min Price</option><option class='option' name='100' value='5000'>$ 5,000</option><option class='option' name='100' value='10000'>$ 10,000</option><option class='option' name='100' value='20000'>$ 20,000</option><option class='option' name='100' value='50000'>$ 50,000</option><option class='option' name='100' value='100000'>$ 100,000</option>";
-            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Max Price</option><option class='option' name='100' value='50000'>$ 50,000</option><option class='option' name='100' value='100000'>$ 100,000</option><option class='option' name='100' value='200000'>$ 200,000</option><option class='option' name='100' value='300000'>$ 300,000</option><option class='option' name='100' value='500000'>$ 500,000</option>";
-            */
+            document.getElementById("min-price").innerHTML = "<option class='option' name='100' value='0'>Price p.a. (min)</option><option class='option' name='100' value='5000'>$5,000 p.a.</option> <option class='option' name='100' value='10000'>$10,000 p.a.</option> <option class='option' name='100' value='20000'>$20,000 p.a.</option> <option class='option' name='100' value='25000'>$25,000 p.a.</option> <option class='option' name='100' value='30000'>$30,000 p.a.</option> <option class='option' name='100' value='35000'>$35,000 p.a.</option> <option class='option' name='100' value='40000'>$40,000 p.a.</option> <option class='option' name='100' value='45000'>$45,000 p.a.</option> <option class='option' name='100' value='50000'>$50,000 p.a.</option> <option class='option' name='100' value='60000'>$60,000 p.a.</option> <option class='option' name='100' value='70000'>$70,000 p.a.</option> <option class='option' name='100' value='80000'>$80,000 p.a.</option> <option class='option' name='100' value='90000'>$90,000 p.a.</option> <option class='option' name='100' value='100000'> $100,000 p.a.</option> <option class='option' name='100' value='150000'> $150,000 p.a.</option> <option class='option' name='100' value='200000'> $200,000 p.a.</option> <option class='option' name='100' value='250000'> $250,000 p.a.</option> <option class='option' name='100' value='500000'> $500,000 p.a.</option> <option class='option' name='100' value='1000000'>$1,000,000 p.a.</option> <option class='option' name='100' value='2000000'> $2,000,000 p.a.</option>";
+            document.getElementById("max-price").innerHTML = "<option class='option' name='100' value='1000000000'>Price p.a. (max)</option><option class='option' name='100' value='5000'>$5,000 p.a.</option> <option class='option' name='100' value='10000'>$10,000 p.a.</option> <option class='option' name='100' value='20000'>$20,000 p.a.</option> <option class='option' name='100' value='25000'>$25,000 p.a.</option> <option class='option' name='100' value='30000'>$30,000 p.a.</option> <option class='option' name='100' value='35000'>$35,000 p.a.</option> <option class='option' name='100' value='40000'>$40,000 p.a.</option> <option class='option' name='100' value='45000'>$45,000 p.a.</option> <option class='option' name='100' value='50000'>$50,000 p.a.</option> <option class='option' name='100' value='60000'>$60,000 p.a.</option> <option class='option' name='100' value='70000'>$70,000 p.a.</option> <option class='option' name='100' value='80000'>$80,000 p.a.</option> <option class='option' name='100' value='90000'>$90,000 p.a.</option> <option class='option' name='100' value='100000'> $100,000 p.a.</option> <option class='option' name='100' value='150000'> $150,000 p.a.</option> <option class='option' name='100' value='200000'> $200,000 p.a.</option> <option class='option' name='100' value='250000'> $250,000 p.a.</option> <option class='option' name='100' value='500000'> $500,000 p.a.</option> <option class='option' name='100' value='1000000'>$1,000,000 p.a.</option> <option class='option' name='100' value='2000000'> $2,000,000 p.a.</option>";
+
             document.getElementById("categ").value = 2;
 
         }

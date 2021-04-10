@@ -68,27 +68,27 @@
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:22.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>self taken</span>
+                        <span  style="color:black;">Self taken</span>
                     </p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:22.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>self taken</span>
+                        <span  style="color:black;">Self taken</span>
                     </p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>self taken</span>
+                        <span  style="color:black;">Self taken</span>
                     </p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>Professional Photography</span>
+                        <span  style="color:black;">Professional Photography</span>
                     </p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>Professional Photography</span>
+                        <span  style="color:black;">Professional Photography</span>
                     </p>
                 </td>
             </tr>
@@ -102,27 +102,27 @@
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:33.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>Self printed (Unlimited)</span>
+                        <span  style="color:black;">Self printed (Unlimited)</span>
                     </p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:33.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>Self printed (Unlimited)</span>
+                        <span  style="color:black;">Self printed (Unlimited)</span>
                     </p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:33.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>Self printed (Unlimited)</span>
+                        <span  style="color:black;">Self printed (Unlimited)</span>
                     </p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:33.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>50 X A4 Gloss Brochures (Delivered)</span>
+                        <span  style="color:black;">50 X A4 Gloss Brochures (Delivered)</span>
                     </p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:33.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>50 X A4 Gloss Brochures (Delivered)</span>
+                        <span  style="color:black;">50 X A4 Gloss Brochures (Delivered)</span>
                     </p>
                 </td>
             </tr>
@@ -136,23 +136,23 @@
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <!--tr>
@@ -160,19 +160,19 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">Buyer phone connection service</span></strong></p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr-->
             <tr>
@@ -188,23 +188,23 @@
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -219,23 +219,23 @@
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -251,23 +251,23 @@
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:63.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:63.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:63.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:63.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:63.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -282,23 +282,23 @@
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -315,23 +315,23 @@
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -352,19 +352,19 @@
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
 
@@ -386,19 +386,19 @@
                 </td>
                 <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -448,15 +448,15 @@
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -479,15 +479,15 @@
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -510,15 +510,15 @@
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -542,15 +542,15 @@
                 </td>
                 <td style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <!--tr>
@@ -570,7 +570,7 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">&nbsp;</span></p>
                 </td>
                 <td style="width:88.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:47.25pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr-->
             <tr>
@@ -605,7 +605,7 @@
                 </td>
                 <td style="width:88.0pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:100.8pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
 
                 </td>
             </tr>
@@ -725,11 +725,11 @@
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:42.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:102.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:42.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -747,11 +747,11 @@
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:36.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:102.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:36.0pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -765,11 +765,11 @@
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:102.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -784,11 +784,11 @@
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:102.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -810,7 +810,7 @@
                 </td>
                 <td style="width:102.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <!--tr>
@@ -818,10 +818,10 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">SMS &nbsp;Alerts &amp; Enquiry Forwarding</span></strong></p>
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:54.75pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:102.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:54.75pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -829,10 +829,10 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">Panel of Experts</span></strong></p>
                 </td>
                 <td style="width:75.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:102.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr-->
             <tr>
@@ -854,7 +854,7 @@
                 </td>
                 <td style="width:102.0pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:62.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -923,15 +923,15 @@
                 </td>
                 <td style="width:42.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -945,15 +945,15 @@
                 </td>
                 <td style="width:42.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:41.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:41.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <!--tr>
@@ -961,10 +961,10 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">SMS Alerts &amp; Enquiry Forwarding</span></strong></p>
                 </td>
                 <td style="width:42.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -972,10 +972,10 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">Panel of Experts</span></strong></p>
                 </td>
                 <td style="width:42.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr-->
             <tr>
@@ -991,15 +991,15 @@
                 </td>
                 <td style="width:42.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:31.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -1018,15 +1018,15 @@
                 </td>
                 <td style="width:42.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:92.45pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -1055,7 +1055,7 @@
                 </td>
                 <td style="width:92.45pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:62.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
 
                 </td>
             </tr>
@@ -1148,15 +1148,15 @@
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  35.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  35.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  35.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <!--tr>
@@ -1164,10 +1164,10 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">SMS &nbsp;Alerts &amp; Enquiry Forwarding</span></strong></p>
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  58.8pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  58.8pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr-->
             <tr>
@@ -1185,15 +1185,15 @@
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  33.35pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  33.35pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  35.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -1206,15 +1206,15 @@
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  35.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
 
@@ -1223,10 +1223,10 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">Panel of Experts</span></strong></p>
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr-->
             <tr>
@@ -1242,15 +1242,15 @@
                 </td>
                 <td style="width:80.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  35.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
 
@@ -1274,11 +1274,11 @@
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  35.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -1302,7 +1302,7 @@
                 </td>
                 <td style="width:109.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  35.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -1363,7 +1363,7 @@
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -1377,7 +1377,7 @@
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  40.55pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <!--tr>
@@ -1385,7 +1385,7 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">SMS &nbsp;alerts &amp; Enquiry Forwarding</span></strong></p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  52.9pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -1393,7 +1393,7 @@
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><strong><span style="font-size:16px;color:#e4002b;">Panel of Experts</span></strong></p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  34.8pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:black;">X</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'><span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr-->
             <tr>
@@ -1409,7 +1409,7 @@
                 </td>
                 <td style="width:80.55pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:45.75pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -1464,7 +1464,7 @@
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -1478,7 +1478,7 @@
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <span
-                            style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>(self printed)</span>
+                            style="color:black;">Self printed</span>
                     </p>
                 </td>
             </tr>
@@ -1494,36 +1494,21 @@
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  15.25pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
                 <td style="width:216.7pt;border:solid windowtext 1.0pt;border-top:  none;background:#f2f2f2;padding:0cm 1.5pt 0cm 1.5pt;height:30.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
                         <strong><span
-                                style="font-size:16px;color:#e4002b;">Add up 33 photos of your property</span><i
+                                style="font-size:16px;color:#e4002b;">Add up to 33 photos of your property</span><i
                                 class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
                                 onclick="setDetails('You can show the potential of your property with purchasing our package with professional photographers or you can take them yourself and upload them. This allows buyers to acknowledge the full potential of the property and contact you if interested. ')"></i></strong>
                     </p>
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
-                </td>
-            </tr>
-
-            <tr>
-                <td style="width:216.7pt;border:solid windowtext 1.0pt;border-top:  none;background:#f2f2f2;padding:0cm 1.5pt 0cm 1.5pt;height:30.5pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <strong><span
-                                style="font-size:16px;color:#e4002b;">Add up to 33 photos of your user</span><i
-                                class="fa fa-question-circle mx-1" data-toggle="modal" data-target="#exampleModal"
-                                onclick="setDetails('')"></i></strong>
-                    </p>
-                </td>
-                <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  30.5pt;">
-                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style='font-size:11px;font-family:"Arial","sans-serif";color:#333333;'>X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
 
@@ -1541,7 +1526,7 @@
                 </td>
                 <td style="width:80.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:  52.9pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>
@@ -1557,7 +1542,7 @@
                 </td>
                 <td style="width:80.55pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 1.5pt 0cm 1.5pt;height:50.05pt;">
                     <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:center;'>
-                        <span style="color:black;">X</span></p>
+                        <span style="color:green;"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                 </td>
             </tr>
             <tr>

@@ -8,8 +8,7 @@
     <link rel="icon" href="{{asset('logo/fav.jpg')}}" type="image/gif" sizes="16x16">
     <!-- Fonts -->
     <!link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Hind&family=Pacifico&family=Sansita+Swashed&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind&family=Pacifico&family=Sansita+Swashed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,10 +16,6 @@
 
     {{--    Scripts--}}
     <script src="{{ asset('js/app.js') }}" defer></script>
-
-    {{--    JQuery--}}
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
 
     {{--    leafletMap--}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
@@ -87,9 +82,8 @@
 
 <body class="bg-css">
 <div>
-    <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue">
-        <a class="navbar-brand " href="/"><img src="{{asset('logo/logowithout.png')}}"
-                                               style="width:100%; max-width: 220px"></a>
+    <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top navbar-dark bg-blue" >
+        <a class="navbar-brand " href="/"><img src="{{asset('logo/logowithout.png')}}" style="width:100%; max-width: 220px"></a>
         {{--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">--}}
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -224,7 +218,7 @@
                 @else
 
                     <li class="nav-item">
-                        <a class="special-link mr-3" href="/users/{{ Auth::id() }}">
+                        <a class="  mr-3" href="/users/{{ Auth::id() }}" style="padding : 0px">
 
                             <img style="width: 40px; height: 40px; border-radius: 50%;"
                                  src="{{url('/storage/user_profile_images/' . Auth::user()->profileImg )}}"
@@ -236,7 +230,7 @@
                     </li>
                     <!li class="  m-1"><!/li>
                     <li>
-                        <a class="btn btn-light  m-1" style="padding: 4px; color: #e4002b"
+                        <a class="btn " style="padding: 4px; color: #e4002b"
                            role="button" onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">Logout</a>
 

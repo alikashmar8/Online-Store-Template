@@ -58,7 +58,7 @@ class SearchController extends Controller
     {
 //        dd($request);
         $properties = Property::where('accepted', '=', 1);
-        $properties = $properties->where('locationDescription', 'like', '%' . $request->location . '%');
+        $properties = $properties->where('locationDescription', 'like', '%' . $request->location . '%')->orWhere('description', 'like', '%' . $request->location . '%');
 
         if ($request->type != -1) {
             $properties = $properties->where('typeId', '=', $request->type);
@@ -109,7 +109,7 @@ class SearchController extends Controller
     public function searchCommercials(Request $request)
     {
         $commercials = commercial::where('accepted', '=', 1);
-        $commercials = $commercials->where('location', 'like', '%' . $request->location . '%');
+        $commercials = $commercials->where('location', 'like', '%' . $request->location . '%')->orWhere('description', 'like', '%' . $request->location . '%');
 
         if ($request->type != -1) {
             $commercials = $commercials->where('type', '=', $request->type);
