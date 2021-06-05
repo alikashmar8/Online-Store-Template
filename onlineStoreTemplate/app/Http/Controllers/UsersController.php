@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Company;
 use App\Models\CountryCode;
 use App\Models\History;
 use App\Models\Payment;
 use App\Models\Property;
-use App\Models\PropertyImage;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +23,7 @@ class UsersController extends Controller
 
     public function agentsIndex()
     {
-        $users = User::where('role','=',1)->get();
+        $users = User::where('role', '=', 1)->get();
         return view('AdminPages.users', compact('users'));
     }
 
@@ -37,7 +35,7 @@ class UsersController extends Controller
         }
         $membership = Payment::where('user_id', '=', $id)->get();
 
-        return view('Users.show', compact('user' , 'membership'));
+        return view('Users.show', compact('user', 'membership'));
     }
 
     public function registerAgent()
@@ -154,15 +152,15 @@ class UsersController extends Controller
             $user->profileImg = $fileNameToStore;
             $path = $image->storeAs('public/user_profile_images', $fileNameToStore);
         */
-            $request['profileImg'] = time().'.'.$image->getClientOriginalExtension();
+            $request['profileImg'] = time() . '.' . $image->getClientOriginalExtension();
 
             $destinationPath = public_path('storage/user_profile_images');
             $img = Image::make($image->getRealPath());
             $img->resize(300, 300, function ($constraint) {
                 $constraint->aspectRatio();
-            })->save($destinationPath.'/'.time().$image->getClientOriginalName());
+            })->save($destinationPath . '/' . time() . $image->getClientOriginalName());
 
-            $user->profileImg = time().$image->getClientOriginalName();
+            $user->profileImg = time() . $image->getClientOriginalName();
 
             $destinationPath = public_path('/storage/images');
             $image->move($destinationPath, $request['profileImg']);
@@ -191,6 +189,32 @@ class UsersController extends Controller
 
         $user->save();
         return redirect('users/' . $user->id)->with('message', 'Profile Updated !');
+    }
+
+    public function apiGetById($id)
+    {
+        $user = User::findOrFail($id);
+        return response()->json([
+            $user
+        ], 200);
+    }
+
+    public function apiEdit($id, Request $request)
+    {
+        $user = User::findOrFail($id);
+
+        $user->email = $request->email;
+        $user->name = $request->name;
+        $user->bio = $request->bio;
+        $user->phoneNumber = $request->phoneNumber;
+
+        $user->save();
+
+        return response()->json([
+            $user
+        ], 200);
+
+
     }
 
 }

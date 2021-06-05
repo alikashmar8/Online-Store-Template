@@ -8,7 +8,7 @@ use App\Mail\PropertyAcceptedMail;
 use App\Mail\PropertyCreated;
 use App\Mail\PropertyUpdated;
 use App\Models\Category;
-use App\Models\Company;
+use App\Models\commercial;
 use App\Models\History;
 use App\Models\InspectionTime;
 use App\Models\Packages;
@@ -23,8 +23,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
-use App\Models\commercial;
-use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
 
@@ -58,13 +56,13 @@ class PropertiesController extends Controller
                     $allProperties = Property::all();
                     $allCommercials = commercial::all();
                     $allUsers = User::all();
-                    $allPayments = Payment::where('status', '!=' , 'pending')->get();
+                    $allPayments = Payment::where('status', '!=', 'pending')->get();
                     $allEarnings = $allPayments->where('created_at', '>=', new DateTime('today'));
                     $notAcceptedProperties = Property::where('accepted', '=', 0)->get();
                     $recentUsers = User::where('created_at', '>=', new DateTime('today'))->get();
                     $notAcceptedCommercials = commercial::where('accepted', '=', 0)->get();
 
-                    return view("welcome", compact('notAcceptedProperties', 'recentUsers', 'notAcceptedCommercials','allProperties' ,'allCommercials','allUsers','allPayments','allEarnings'));
+                    return view("welcome", compact('notAcceptedProperties', 'recentUsers', 'notAcceptedCommercials', 'allProperties', 'allCommercials', 'allUsers', 'allPayments', 'allEarnings'));
                 }
             }
         }
@@ -119,33 +117,33 @@ class PropertiesController extends Controller
     public function create()
     {
         $id = Auth::user()->id;
-        $payment = Payment::where('user_id' , '=' , $id);
+        $payment = Payment::where('user_id', '=', $id);
         $packages = null;
         $aa[] = null;
-        if ($payment != null ) {
-            $payment =  $payment  ->where('status' , '=','paid')->where('used' ,'=', 0)->get();
+        if ($payment != null) {
+            $payment = $payment->where('status', '=', 'paid')->where('used', '=', 0)->get();
             /*foreach ($payment as $pay) {
                 $pay->title = Packages::where('title', '=', $pay->package)->get();*/
 
-            foreach ($payment as $pay){
-                $packages = Packages::where('title', '=', $pay->package)->first() ;
+            foreach ($payment as $pay) {
+                $packages = Packages::where('title', '=', $pay->package)->first();
                 if ($packages->id < 6) {
-                    $aa[] += $packages->id ;
+                    $aa[] += $packages->id;
                 } elseif ($packages->id > 5 && $packages->id < 8) {
-                    $aa[] += $packages->id ;
+                    $aa[] += $packages->id;
                 }
 
             }
-            if (  count($aa) == 1) {
+            if (count($aa) == 1) {
                 return redirect('/packages')->with('message', 'Please Register in a Residential package!');;
 
             } else {
 
 
-                return view('Properties.create', compact( 'aa'));
+                return view('Properties.create', compact('aa'));
 
             }
-        }else{
+        } else {
             return redirect('/packages')->with('message', 'Please Register in a Residential  package!');
         }
 
@@ -199,7 +197,7 @@ class PropertiesController extends Controller
         // Handle File Upload
         if ($request->hasFile('images')) {
             foreach ($request->images as $image) {
-                if($image->getClientOriginalExtension() == 'mp4') {
+                if ($image->getClientOriginalExtension() == 'mp4') {
                     // Get filename with the extension
                     $filenameWithExt = $image->getClientOriginalName();
                     // Get just filename
@@ -216,7 +214,7 @@ class PropertiesController extends Controller
                     $image->url = $fileNameToStore;
                     $image->save();
 
-                }else {
+                } else {
                     $Name = time() . '.' . $image->getClientOriginalExtension();
 
                     $destinationPath = public_path('storage/properties_images/');
@@ -264,7 +262,7 @@ class PropertiesController extends Controller
 
 
         $package = Packages::findOrFail($request->packageId);
-        $payment = Payment::all()->where( 'user_id' , '=',  Auth::user()->id)->where('package','=', $package->title)->where('used' , '=',0)->first();
+        $payment = Payment::all()->where('user_id', '=', Auth::user()->id)->where('package', '=', $package->title)->where('used', '=', 0)->first();
         $payment->used = 1;
         $payment->save();
 
@@ -291,7 +289,7 @@ class PropertiesController extends Controller
         $property->images = PropertyImage::where('propertyId', $property->id)->get();
         $inspectionTime = InspectionTime::where('propertyId', $property->id)->get();
 
-        return view("Properties.show" )->with('user', $property)->with('inspectionTime', $inspectionTime);
+        return view("Properties.show")->with('user', $property)->with('inspectionTime', $inspectionTime);
     }
 
     /**
@@ -345,7 +343,7 @@ class PropertiesController extends Controller
             if (count($request->images) > 0) {
                 $this->deleteImages($id);
                 foreach ($request->images as $image) {
-                    if($image->getClientOriginalExtension() == 'mp4') {
+                    if ($image->getClientOriginalExtension() == 'mp4') {
                         // Get filename with the extension
                         $filenameWithExt = $image->getClientOriginalName();
                         // Get just filename
@@ -361,26 +359,26 @@ class PropertiesController extends Controller
                         $image->propertyId = $property->id;
                         $image->url = $fileNameToStore;
                         $image->save();
-                    }else{
-                    $Name = time().'.'.$image->getClientOriginalExtension();
+                    } else {
+                        $Name = time() . '.' . $image->getClientOriginalExtension();
 
-                    $destinationPath = public_path('storage/properties_images/');
+                        $destinationPath = public_path('storage/properties_images/');
 
                         $img = Image::make($image->getRealPath());
                         $img->resize(650, 650, function ($constraint) {
                             $constraint->aspectRatio();
                         })->save($destinationPath . '/' . time() . $image->getClientOriginalName());
 
-                    /*$user->profileImg = time().$image->getClientOriginalName();*/
-                    $fileNameToStore = time().$image->getClientOriginalName();
-                    $image = new PropertyImage;
-                    $image->propertyId = $property->id;
-                    $image->url = $fileNameToStore;
-                    $image->save();
+                        /*$user->profileImg = time().$image->getClientOriginalName();*/
+                        $fileNameToStore = time() . $image->getClientOriginalName();
+                        $image = new PropertyImage;
+                        $image->propertyId = $property->id;
+                        $image->url = $fileNameToStore;
+                        $image->save();
 
 
-                    $destinationPath = public_path('/storage/images');
-                    //$image->move($destinationPath, $Name);
+                        $destinationPath = public_path('/storage/images');
+                        //$image->move($destinationPath, $Name);
                     }
                 }
             }
@@ -462,7 +460,7 @@ class PropertiesController extends Controller
         $images = $imags->get();
         foreach ($images as $image) {
             $path = public_path() . '\storage\properties_images\\' . $image->url;
-            if(  file_exists($path)){
+            if (file_exists($path)) {
                 Storage::delete('public/properties_image/' . $image->url);
                 //$path = public_path() . '\storage\properties_images\\' . $image->url;
                 unlink($path);
@@ -476,7 +474,7 @@ class PropertiesController extends Controller
 
         //$category = Category::where('title', '=', 'Buy')->first();
         //$properties = Property::where('categoryId', $category->id)->where('accepted', '=', 1);
-        $properties = Property::whereIn('categoryId', [1])->where('accepted', '=', 1)->where('packageId','>',0);
+        $properties = Property::whereIn('categoryId', [1])->where('accepted', '=', 1)->where('packageId', '>', 0);
         if (isset($request->sort) && $request->sort != -1) {
             switch ($request->sort) {
                 case 'priceHighToLow':
@@ -505,7 +503,7 @@ class PropertiesController extends Controller
     public function rentIndex(Request $request)
     {
 //        $category = Category::where('title', '=', 'Rent')->orWhere('title', '=', 'Share')->get();
-        $properties = Property::whereIn('categoryId', [2, 3])->where('accepted', '=', 1)->where('packageId','>',0);
+        $properties = Property::whereIn('categoryId', [2, 3])->where('accepted', '=', 1)->where('packageId', '>', 0);
         if (isset($request->sort) && $request->sort != -1) {
             switch ($request->sort) {
                 case 'priceHighToLow':
@@ -587,7 +585,6 @@ class PropertiesController extends Controller
     }
 
 
-
     public function upgradePackage(Request $request)
     {
 
@@ -601,28 +598,28 @@ class PropertiesController extends Controller
         $oldPayment = Payment::where('user_id', '=', $property->userId);
         $oldPayment = $oldPayment->where('used', '=', 1);
         $oldPayment = $oldPayment->where('status', '=', 'paid');
-        $oldPayment = $oldPayment->where('package', 'like' , '%'.$oldPackage->title .'%');
+        $oldPayment = $oldPayment->where('package', 'like', '%' . $oldPackage->title . '%');
         $oldPayment = $oldPayment->first();
 
 
-        $newPayments = Payment::where('user_id' , '=' , $property->userId);
-        $newPayments = $newPayments->where('used' , '=' , 0);
-        $newPayments = $newPayments->where('status' , '=' , 'paid');
-        $newPayments = $newPayments->where('package', '=' , $newPackage->title);
+        $newPayments = Payment::where('user_id', '=', $property->userId);
+        $newPayments = $newPayments->where('used', '=', 0);
+        $newPayments = $newPayments->where('status', '=', 'paid');
+        $newPayments = $newPayments->where('package', '=', $newPackage->title);
         $newPayments = $newPayments->first();
 
-        if ($request->oldPackage == 0){
-            $newPayments->used = 1 ;
+        if ($request->oldPackage == 0) {
+            $newPayments->used = 1;
             $newPayments->save();
             $property->packageId = $newPackage->id;
-            if($newPackage->id == 6 || $newPackage->id == 7){
+            if ($newPackage->id == 6 || $newPackage->id == 7) {
                 $property->categoryId = 2;
-            }else{
+            } else {
                 $property->categoryId = 1;
             }
             $property->save();
-            return redirect('/properties/'.$property->id ) ;
-        }else {
+            return redirect('/properties/' . $property->id);
+        } else {
             if ($newPayments != null && $oldPayment != null) {
                 $oldPayment->used = 0;
                 $oldPayment->save();
@@ -641,8 +638,6 @@ class PropertiesController extends Controller
                 if ($difference > 0) {
 
 
-
-
                     return redirect('/order/' . $newPackage->id . '/' . $difference)->with('message', 'Please pay the rest for the new package, then link it to this listing.');
                 } else {
                     return redirect('/order/' . $newPackage->id . '/' . $newPackage->price)->with('message', 'Please register in this package first, then link it to this listing.');
@@ -654,8 +649,6 @@ class PropertiesController extends Controller
         }
 
 
-
-
     }
 
     public function brochure($id)
@@ -663,35 +656,37 @@ class PropertiesController extends Controller
         $property = Property::findOrFail($id);
 
         $property->images = PropertyImage::where('propertyId', $property->id)->get();
-        $pdf = PDF::loadView('pdf.brochure' , compact('property'));
+        $pdf = PDF::loadView('pdf.brochure', compact('property'));
 
         return $pdf->download('brochure.pdf');
     }
 
-    public function setInspection(Request $request){
+    public function setInspection(Request $request)
+    {
 
 
         $inspect = new InspectionTime;
         $inspect->propertyId = $request->id;
         $inspect->date = $request->date;
-        $inspect->startTime= $request->startTime;
+        $inspect->startTime = $request->startTime;
         $inspect->endTime = $request->endTime;
         $inspect->save();
 
-        return redirect('/properties/'.$request->id);
-
+        return redirect('/properties/' . $request->id);
 
 
     }
 
-    public function deleteInspection($id){
+    public function deleteInspection($id)
+    {
         $ins = InspectionTime::findOrFail($id);
         $property = Property::findOrFail($ins->propertyId);
         $ins->delete();
-        return redirect('/properties/'.$property->id)->with('message', 'Inspection time deleted successfully!');
+        return redirect('/properties/' . $property->id)->with('message', 'Inspection time deleted successfully!');
     }
 
-    public function Inspect($id){
+    public function Inspect($id)
+    {
         $ins = InspectionTime::findOrFail($id);
         $property = Property::findOrFail($ins->propertyId);
         $user = User::findOrFail($property->userId);
@@ -708,22 +703,75 @@ class PropertiesController extends Controller
             'time' => $ins->startTime,
 
         );
-        Mail::to( $user->email )->send(new Inspect($data));
-        return redirect('/properties/'.$property->id)->with('message', 'Inspection request sent to the owner successfully! ');;
+        Mail::to($user->email)->send(new Inspect($data));
+        return redirect('/properties/' . $property->id)->with('message', 'Inspection request sent to the owner successfully! ');;
     }
 
-    public function soldProperty(Request $request){
-        $property= \App\Models\Property::findOrFail($request->propertyId);
-        $property->sold =1;
+    public function soldProperty(Request $request)
+    {
+        $property = \App\Models\Property::findOrFail($request->propertyId);
+        $property->sold = 1;
         $property->save();
 
         $sold = new \App\Models\SoldProperty();
         $sold->propertyId = $request->propertyId;
-        $sold->type = 1 ;
-        $sold->extra= "";
+        $sold->type = 1;
+        $sold->extra = "";
         $sold->save();
-        return redirect('/properties/'.$property->id)->with('message', 'Property marked as SOLD successfully');
+        return redirect('/properties/' . $property->id)->with('message', 'Property marked as SOLD successfully');
 
 
     }
+
+    public function apiGetAllProperties()
+    {
+        $properties = Property::all();
+        foreach ($properties as $property) {
+            $property->images = PropertyImage::where('propertyId', $property->id)->get();
+        }
+        return $properties;
+    }
+
+    public function apiStore(Request $request)
+    {
+
+        $property = new Property();
+        $property->price = $request->price;
+        $property->description = $request->description;
+        $property->longitude = $request->longitude;
+        $property->latitude = $request->latitude;
+        $property->locationDescription = $request->locationDescription;
+
+        if (isset($request->showPrice)) $property->showPrice = $request->showPrice; else $property->showPrice = 0;
+
+        $property->bedroomsNumber = $request->roomsNumber;
+        $property->accepted = 0;
+        $property->userId = $request->creatorId;
+        $property->categoryId = $request->categoryId;
+        $property->typeId = $request->listingTypeId;
+        $property->contactInfo = $request->contactInfo;
+        $property->save();
+        // Handle File Upload
+        if ($request->hasFile('images')) {
+
+            $Name = time() . '.' . $request->image->getClientOriginalExtension();
+
+            $destinationPath = public_path('storage/properties_images/');
+            $img = Image::make($request->image->getRealPath());
+            $img->resize(650, 650, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($destinationPath . '/' . time() . $request->image->getClientOriginalName());
+
+            $fileNameToStore = time() . $request->image->getClientOriginalName();
+            $image = new PropertyImage;
+            $image->propertyId = $property->id;
+            $image->url = $fileNameToStore;
+            $image->save();
+        }
+
+        return response()->json([
+            $property
+        ], 202);
+    }
+
 }
